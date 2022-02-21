@@ -13,32 +13,51 @@
 
 <body>
  <div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
-  <div class="bg-white" id="sidebar-wrapper">
+    <div class="bg-white" id="sidebar-wrapper">
 
-   <div class="list-group list-group-flush my-3">
-    <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-tachometer-alt me-2"></i>main paig</a>
-    <a href="/dashboard2" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-university  "></i>
-     Faculty</a>
-     <a href="/dashboard3" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-        class="fas fa-chart-line me-2"></i>Department</a>
-    <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-paperclip me-2"></i>Doctors</a>
-      <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-        class="fas fa-shopping-cart me-2"></i>Activities</a>
-        <a href="/dashboard6" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-            class="fas fa-gift me-2"></i>انواع انجازات الدكتور</a>
-          <a href="/dashboard7" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-            class="fas fa-comment-dots me-2"></i>انواع التواصل</a>
-    <a href="/dashboard11" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-      class="fas fa-map-marker-alt me-2"></i>اداره الاقسام لجامعه</a>
-    <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-      class="fas fa-power-off me-2"></i>Logout</a>
-   </div>
-  </div>
-  <!-- /#sidebar-wrapper -->
+        <div class="list-group list-group-flush my-3">
+            <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-university  "></i>main paig</a>
+            <a href="/dashboard2"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-university  "></i>
+             Faculty</a>
+             <a href="/dashboard3"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-tachometer-alt me-2"></i>Department</a>
+            <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-chart-line me-2"></i>Doctors</a>
+
+            <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-shopping-cart me-2"></i>Activities</a>
+              <a href="/dashboard6" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-gift me-2"></i>انواع انجازات الدكتور</a>
+              <a href="/dashboard7" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-comment-dots me-2"></i>انواع التواصل</a>
+                <a href="/dashboard8" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>جدول المحاضرات </a>
+                <a href="/dashboard9" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"></i>جدول العملي</a>
+                    <a href="/dashboard10" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"></i>جدول الامتحانات النهائي</a>
+                        <a href="/dashboard11" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-map-marker-alt me-2"></i>اداره الاقسام لجامعه</a>
+                <a href="/dashboard13" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2">المعامل</i></a>
+                    <a href="/dashboard15" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">الانفاقيات الجامعيه</i></a>
+           <a href="/dashboard14" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="fas fa-map-marker-alt me-2"> الحرم الجامعي</i></a>
+                   <a href="/dashboard15"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2">  التقويم الاكاديمي  </i></a>
+                   <a href="/dashboard16" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"> مركز اللغه الانجليزيه </i></a>
+                   <a href="/dashboard17" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"> مجلة الجامعة</i></a>
+                   <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                    class="fas fa-chart-line me-2"> معدل القبول و الاقساط
+     </i></a>
+
+       </div>
+      </div>idebar-wrapper -->
 
   <!-- Page Content -->
   <div id="page-content-wrapper">

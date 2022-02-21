@@ -38,7 +38,18 @@
                     <input type="file" accept="pdf/*" class="form-control" id='pdf' name='pdf'>
                 </div>
             </div>
+ <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">الكلام المختصر</label>
+                    <input type="text" class="form-control" name='abstract_ar' id='abstract_ar'>
+                </div>
 
+                <div class="form-group col-md-6">
+                    <label for="name">Abstractof Word</label>
+                    <input type="text" class="form-control" name='abstract_en' id='abstract_en' >
+                </div>
+            </div>
+      
 
 
 

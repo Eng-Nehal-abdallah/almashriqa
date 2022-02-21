@@ -14,7 +14,7 @@ class AgreementController extends Controller
         $agreements = Agreement::all();
         $faculties = Facutly::all();
         $departments = Department::all();
-        return view('lang\agreement', compact('agreements','faculties','departments'));
+        return view('lang.agreement', compact('agreements','faculties','departments'));
     }
     public function index()
     {    $faculties = Facutly::all();
@@ -28,7 +28,7 @@ class AgreementController extends Controller
     {
 
 $agreement=Agreement::all();
-        return view('agreement\dashboard',compact('agreement'));
+        return view('agreement.dashboard',compact('agreement'));
     }
 
 
@@ -36,7 +36,7 @@ $agreement=Agreement::all();
     public function edit(Agreement $agreement)
     {
 
-        return view('agreement\edit', ['agreement' => $agreement]);
+        return view('agreement.edit', ['agreement' => $agreement]);
     }
 
     // start update
@@ -48,7 +48,8 @@ $agreement=Agreement::all();
             'name_en' => request('name_en'),
             'details_ar' => request('details_ar'),
             'details_en' => request('details_en'),
-
+            'abstract_ar' => request('abstract_ar'),
+            'abstract_en' => request('abstract_en'),
 
         ]);
 
@@ -110,7 +111,7 @@ $agreement=Agreement::all();
     public function insert()
     {
 
-        return view('agreement\create');
+        return view('agreement.create');
     }
     public function create(Request $request)
     {
@@ -157,7 +158,8 @@ $agreement=Agreement::all();
         $data->name_en = $request->name_en;
         $data->details_ar = $request->details_ar;
         $data->details_en = $request->details_en;
-
+        $data->abstract_en = $request->abstract_en;
+        $data->abstract_ar = $request->abstract_ar;
 
         $data->save();
         return redirect('/dashboard12');

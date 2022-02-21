@@ -173,12 +173,14 @@
          <tr>
           <th scope="col">#</th>
 
-          <th scope="col">Image</th>
-          <th scope="col">pdf</th>
-          <th scope="col">Name ar</th>
-          <th scope="col">Name en</th>
-          <th scope="col">details_ar</th>
-          <th scope="col">details_en</th>
+          <th scope="col">صورة</th>
+          <th scope="col">ملف</th>
+          <th scope="col"> العنوان بالعربي</th>
+          <th scope="col">العنوان الانجليزي</th>
+          <th scope="col">التفاصيل بالعربي</th>
+          <th scope="col">التفاصيل بالانجليزي</th>
+          <th scope="col">الكلام المختصر</th>
+          <th scope="col">الكلام المختصر  بالانجليزي</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
          </tr>
@@ -199,6 +201,9 @@
 
 
 
+          <td>{{$data->abstract_ar }}</td>
+
+          <td>{{$data->abstract_en }}</td>
 
 
 

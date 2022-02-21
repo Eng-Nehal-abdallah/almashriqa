@@ -23,5 +23,7 @@ class Agreement extends Model
     'details_ar',
     'image',
     'pdf',
+    'abstract_ar',
+    'abstract_en'
     ];
 }

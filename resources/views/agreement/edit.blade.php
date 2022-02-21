@@ -22,9 +22,32 @@
                     <label for="name">الاسم</label>
                     <input type="text" class="form-control" name='name_ar' id='name' value="{{ $agreement->name_ar}}">
                 </div>
+
                 <div class="form-group col-md-6">
                     <label for="name">name</label>
                     <input type="text" class="form-control" name='name_en' id='name' value="{{ $agreement->name_en }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">الكلام المختصر</label>
+                    <input type="text" class="form-control" name='abstract_ar' id='abstract_ar' value="{{ $agreement->abstract_ar}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="name">Abstractof Word</label>
+                    <input type="text" class="form-control" name='abstract_en' id='abstract_en' value="{{ $agreement->abstract_en }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">التفاصيل </label>
+                    <input type="text" class="form-control" name='details_ar' id='details_ar' value="{{ $agreement->details_ar}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="name">Details</label>
+                    <input type="text" class="form-control" name='details_ar' id='details_ar' value="{{ $agreement->details_ar }}">
                 </div>
             </div>
             <div class="form-row">
@@ -34,13 +57,13 @@
                 </div>
 
 
-                <div class="form-row">
+
                     <div class="form-group col-md-6">
                         <label for="image">pdf</label>
                         <input type="file" class="form-control" id='pdf' name='pdf'>
                     </div>
 
-
+                </div>
 
 
 
