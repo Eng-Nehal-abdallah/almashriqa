@@ -1,0 +1,168 @@
+:root {
+  --main-bg-color: #000e7b;
+  --main-text-color: #020065;
+  --second-text-color: #dcdcdc;
+  --second-bg-color: #6cc0f8;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+#wrapper {
+  overflow-x: hidden;
+  background-color: #cecece;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+.list-group-item {
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active {
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-weight: bold;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.h1 .col-md-4 {
+  overflow: hidden;
+}
+
+.h1 .col-md-4 .inner {
+  color: #fff !important;
+  background: #7abcff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+}
+
+.h1 .col-md-4 .inner2 {
+  color: #fff !important;
+  background: #ffc578;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: linear-gradient(135deg, #ffc578 0%, #fb9d23 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc578', endColorstr='#fb9d23', GradientType=1);
+}
+
+.h1 .col-md-4 .inner3 {
+  color: #fff !important;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff3019+0,cf0404+100;Red+3D */
+  background: #ff3019;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff3019 0%, #cf0404 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3019', endColorstr='#cf0404', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.section-2 {
+  color: #bbbec5;
+  border: none;
+}
+
+.section-2 thead {
+  background-color: #000e7b;
+  color: #333;
+  border-color: #bbbec5 !important;
+}
+
+.section-2 * {
+  border-color: #bbbec5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-2 .main {
+  font-size: 50px !important;
+  color: #000e7b;
+}
+
+.section-2 table {
+  color: #ffff !important;
+}
+
+.section-2 td img {
+  width: 80px;
+  max-height: 70px;
+}
+
+.section-4 .col-md-3 .inner {
+  background: #7abcff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  padding: 10px;
+}
+/*# sourceMappingURL=dashboard.css.map */
