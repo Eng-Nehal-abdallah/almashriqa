@@ -35,7 +35,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -120,128 +121,57 @@
 
 
 
-
     <!-- start section 1 -->
     <!-- ======= Portfolio Section ======= -->
     <div id="portfolio" class="portfolio section-1 portfolio-area area-padding fix">
         <div class="container">
 
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="head ">
-                        <h2 class="heading">كل الانجازات</h2>
-                        <small>{{ $facutly->name_ar }}</small>
+
+            <div class="card border-light mb-3">
+                <h5 class="card-header text-center">الانجازات</h5>
+                <div class="card-body">
+                    <div class="row awesome-project-content portfolio-container">
+                        @foreach ($achievements as $ach)
+                            @if ($ach->id_facutly == $facutly->id)
+                                <!-- portfolio-item start -->
+                                <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+                                    <div class="single-awesome-project">
+                                        <div class="awesome-img">
+                                            <a name="link" href="/ach/{{ $ach->id }}/show"><img
+                                                    src="/{{ $ach->image }}" alt="" /></a>
+                                            <div class="add-actions text-center">
+                                                <div class="project-dec">
+                                                    <a class="portfolio-lightbox" data-gallery="myGallery"
+                                                        href="/ach/{{ $ach->id }}/show">
+                                                        <h4>{{ $ach->name_en }}</h4>
+                                                        @foreach ($types as $type)
+                                                            @if ($type->id == $ach->id_types)
+                                                                <span>{{ $type->name_en }}</span>
+                                                            @endif
+                                                        @endforeach
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- portfolio-item end -->
+                            @endif
+                        @endforeach
+
+
 
                     </div>
                 </div>
             </div>
-            <div class="row awesome-project-content portfolio-container">
-                @foreach ($achievements as $ach)
-                    @if ($ach->id_facutly == $facutly->id)
-                        <!-- portfolio-item start -->
-                        <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-                            <div class="single-awesome-project">
-                                <div class="awesome-img">
-                                    <a name="link" href="/ach/{{ $ach->id }}/show"><img src="/{{ $ach->image }}"
-                                            alt="" /></a>
-                                    <div class="add-actions text-center">
-                                        <div class="project-dec">
-                                            <a class="portfolio-lightbox" data-gallery="myGallery"
-                                                href="/ach/{{ $ach->id }}/show">
-                                                <h4>{{ $ach->name_ar }}</h4>
-                                                @foreach ($types as $type)
-                                                    @if ($type->id == $ach->id_types)
-                                                        <span>{{ $type->name_ar }}</span>
-                                                    @endif
-                                                @endforeach
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- portfolio-item end -->
-                    @endif
-                @endforeach
-                {{-- <!-- portfolio-item start -->
-    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-     <div class="single-awesome-project">
-      <div class="awesome-img">
-       <a href="#"><img src="/imgs/header.png" alt="" /></a>
-       <div class="add-actions text-center">
-        <div class="project-dec">
-         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
-          <h4>Business City</h4>
-          <span>Web Development</span>
-         </a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <!-- portfolio-item end -->
 
-    <!-- portfolio-item start -->
-    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-     <div class="single-awesome-project">
-      <div class="awesome-img">
-       <a href="#"><img src="/imgs/header.png" alt="" /></a>
-       <div class="add-actions text-center">
-        <div class="project-dec">
-         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
-          <h4>Business City</h4>
-          <span>Web Development</span>
-         </a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <!-- portfolio-item end -->
-
-    <!-- portfolio-item start -->
-    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-     <div class="single-awesome-project">
-      <div class="awesome-img">
-       <a href="#"><img src="/imgs/header.png" alt="" /></a>
-       <div class="add-actions text-center">
-        <div class="project-dec">
-         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
-          <h4>Business City</h4>
-          <span>Web Development</span>
-         </a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <!-- portfolio-item end -->
-
-    <!-- portfolio-item start -->
-    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-     <div class="single-awesome-project">
-      <div class="awesome-img">
-       <a href="#"><img src="/imgs/header.png" alt="" /></a>
-       <div class="add-actions text-center">
-        <div class="project-dec">
-         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
-          <h4>Business City</h4>
-          <span>Web Development</span>
-         </a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <!-- portfolio-item end --> --}}
-
-
-            </div>
         </div>
     </div><!-- End Portfolio Section -->
 
-
-    <!-- End section 1 -->
 
 
 
