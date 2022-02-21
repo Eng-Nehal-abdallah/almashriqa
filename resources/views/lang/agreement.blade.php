@@ -31,7 +31,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -42,7 +42,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -98,13 +99,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -122,30 +123,28 @@
 
 
     <!-- start section 1 -->
+    <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
             <div class="alert text-center alert-light">
-                <h3><i class="fas fa-handshake"></i>this is smla</h3>
+                <h5>ملخص طريقة التقديم على جامعة المشرق 2022/2021</h5>
             </div>
             <div class="row justify-content-around">
-                @foreach ($agreements as $ag)
-                    <div class="col-md-5">
-                        <img class="rounded" src="{{ $ag->image }}" alt="">
-                        <i class="fas fa-handshake"></i>
-                        <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
-                        <p>{{ $ag->details_en }}</p>
-                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
-                        <a class="btn  btn-light" href"{{ $ag->pdf }}">see partical</a>
+                <div class="col-md-12">
+                    <ul>
+                        <li><i class='bx bx-select-multiple'></i>اCreate a personal account, where you will choose a
+                            username, password, and password and prove your personal phone number. </li>
 
-                    </div>
-                @endforeach
+                        <li><i class='bx bx-select-multiple'></i>بعد انشائك للحساب الشخصي ستقوم بتفعيل الخدمات الساندة
+                            ضمن الحساب و كما موضح في التعليمات سيرشدك النظام بعد ذلك الى مرحلة ملء البيانات الطلابية حيث
+                            ستختار الحالة التي تنطبق عليك ضمن سبعة حالات معدة مسبقا ضمن النظام. </li>
 
-                <div class="col-md-5">
-
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End section 1 -->
     <!-- End section 1 -->
 
 

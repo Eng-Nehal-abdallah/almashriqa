@@ -125,18 +125,6 @@
 
 
 
-    <!-- end navbar -->
-    <!-- start section  1-->
-    <section class="section-1">
-        <div class="container">
-            <div class="head1">
-                <h1>Campus</h1>
-
-            </div>
-    </section>
-    <!-- end section  1-->
-
-
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
@@ -147,11 +135,11 @@
     <section class="section-2">
         <div class="row justify-content-around">
 
-            <div class="col-md-12 ">
+            <div class="col-md-5">
+
                 <img src="{{ $compus->image }}" alt="">
             </div>
-
-            <div class="col-md-12 my-5">
+            <div class="col-md-5">
                 <h2> {{ $compus->name_en }}</h2>
                 <p>{{ $compus->details_en }}.</p>
             </div>

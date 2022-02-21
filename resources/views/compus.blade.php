@@ -23,11 +23,11 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="text-right">
 
     <!-- start navbar -->
     <!-- start navbar -->
-    <header dir="rtl"  id="header" class="fixed-top">
+    <header dir="rtl" id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -36,7 +36,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -110,18 +111,7 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-    <!-- end navbar -->
 
-    <!-- end navbar -->
-    <!-- start section  1-->
-    <section class="section-1">
-        <div class="container">
-            <div class="head1">
-                <h1>Campus</h1>
-
-            </div>
-    </section>
-    <!-- end section  1-->
 
 
     <!-- start light & dark -->
@@ -146,7 +136,6 @@
         </div>
         </div>
     </section>
-
 
 
 
