@@ -171,10 +171,10 @@
                                                 data-toggle="dropdown" aria-expanded="false">
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
-                                            @foreach ($departments as $department)
-                                                @if ($department->id_facutly == $Facutly->id)
-                                                    <div class="dropdown-menu">
 
+                                                    <div class="dropdown-menu">
+                                                        @foreach ($departments as $department)
+                                                        @if ($department->id_facutly == $Facutly->id)
                                                         <a class="dropdown-item"
                                                             href="/department/{{ $department->id }}/show">{{ $department->name_en }}</a>
                                                 @endif
@@ -188,10 +188,10 @@
                     </div>
             </div>
             @endforeach
-
             </div>
-
+        </div>
     </section>
+
 
 
 

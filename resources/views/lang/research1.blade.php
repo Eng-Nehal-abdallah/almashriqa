@@ -89,7 +89,7 @@
 
 
                                 <ul>
-                                    @foreach ($faculties as $f)
+                                    @foreach ($Facutlies as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -198,7 +198,7 @@
 
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $lab)
-                    @if ($lab->id_facutly == $achievement->id_facutly)
+                    @if ($lab->id_doctor == $achievement->id_doctor)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">

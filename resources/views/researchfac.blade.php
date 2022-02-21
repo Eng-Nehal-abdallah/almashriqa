@@ -164,10 +164,10 @@
                                                     data-toggle="dropdown" aria-expanded="false">
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
-                                                @foreach ($departments as $department)
-                                                    @if ($department->id_facutly == $Facutly->id)
-                                                        <div class="dropdown-menu">
 
+                                                        <div class="dropdown-menu">
+                                                            @foreach ($departments as $department)
+                                                            @if ($department->id_facutly == $Facutly->id)
                                                             <a class="dropdown-item"
                                                                 href="/departmentt/{{ $department->id }}/research">{{ $department->name_ar }}</a>
                                                     @endif

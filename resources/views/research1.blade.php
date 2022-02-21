@@ -192,7 +192,7 @@
 
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $lab)
-                    @if ($lab->id_facutly == $achievement->id_facutly)
+                    @if ($lab->id_doctor == $achievement->id_doctor)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">
