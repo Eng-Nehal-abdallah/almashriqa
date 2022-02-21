@@ -93,7 +93,7 @@ img {
 // start seeciton 1
 section.section-1 {
  align-items: center;
- margin:  110px 0;
+ margin: 110px 0;
  position: relative;
  z-index: 10;
 
@@ -119,7 +119,7 @@ section.section-1 {
 
  .card {
   position: relative;
-//   overflow: hidden;
+  //   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0px 0px 10px rgb(196, 196, 196);
 
@@ -195,26 +195,25 @@ section.section-1 {
 
 
 @media screen and (max-width:500px) {
-    .section-1 {
-     flex-wrap: wrap;
-     flex-direction: column;
+ .section-1 {
+  flex-wrap: wrap;
+  flex-direction: column;
 
 
-    .img-content {
-        max-width: 700px;
-        margin: 20px 0;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 10px;
+  .img-content {
+   max-width: 700px;
+   margin: 20px 0;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 0;
+   border-top-right-radius: 10px;
 
-       }
-    }
-
-
+  }
+ }
 
 
 
-   }
+}
+
 // end section 1
 
 
@@ -281,20 +280,22 @@ section.section-2 {
 
 
 }
-@media (max-width:785px){
-    .header{
-        .caption{
 
-            h1{
-                font-size: 2.5rem !important;
-            }
-            h5 {
-                color: #e2e2e2;
-                font-size: 2rem;
-               }
+@media (max-width:785px) {
+ .header {
+  .caption {
 
-        }
-    }
+   h1 {
+    font-size: 2.5rem !important;
+   }
+
+   h5 {
+    color: #e2e2e2;
+    font-size: 2rem;
+   }
+
+  }
+ }
 }
 
 

@@ -88,20 +88,21 @@ section.section-1 {
 ================================================== */
 
 
-@media (max-width:785px){
-    .header{
-        .caption{
+@media (max-width:785px) {
+ .header {
+  .caption {
 
-            h1{
-                font-size: 2.5rem !important;
-            }
-            h5 {
-                color: #e2e2e2;
-                font-size: 2rem;
-               }
+   h1 {
+    font-size: 2.5rem !important;
+   }
 
-        }
-    }
+   h5 {
+    color: #e2e2e2;
+    font-size: 2rem;
+   }
+
+  }
+ }
 }
 
 
@@ -115,20 +116,25 @@ section.section-1 {
 
 // start section 1
 section.section-1 {
- img {
-  width: 100%;
+
+ margin-top: 150px 0 !important;
+
+ &.dark {
+  color: #fff;
+
+  .heading {
+   color: #fff;
+  }
  }
 
- .carousel-item {
-  overflow: hidden !important;
-  width: 100%;
-
-  height: 300px;
-
-
+ img {
+  max-height: 250px;
+  // width: 100%;
+  object-fit: fill;
  }
 
 }
+
 
 
 

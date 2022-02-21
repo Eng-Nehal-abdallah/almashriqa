@@ -112,6 +112,19 @@ section.section-1 .col-md-5 i {
   border-radius: 50%;
 }
 
+section.section-1 .bx {
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+li {
+  list-style: none;
+}
+
 .heading {
   font-family: myFirstFont;
   src: url(../font/Rockwell-Font/ROCK.TTF);

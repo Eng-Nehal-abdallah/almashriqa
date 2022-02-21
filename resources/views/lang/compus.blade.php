@@ -33,7 +33,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -44,7 +44,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -100,13 +101,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -124,18 +125,6 @@
 
 
 
-    <!-- end navbar -->
-    <!-- start section  1-->
-    <section class="section-1">
-        <div class="container">
-            <div class="head1">
-                <h1>Campus</h1>
-
-            </div>
-    </section>
-    <!-- end section  1-->
-
-
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
@@ -146,11 +135,11 @@
     <section class="section-2">
         <div class="row justify-content-around">
 
-            <div class="col-md-12 ">
+            <div class="col-md-5">
+
                 <img src="{{ $compus->image }}" alt="">
             </div>
-
-            <div class="col-md-12 my-5">
+            <div class="col-md-5">
                 <h2> {{ $compus->name_en }}</h2>
                 <p>{{ $compus->details_en }}.</p>
             </div>
@@ -158,6 +147,8 @@
         </div>
         </div>
     </section>
+    <!-- End header -->
+
 
 
 

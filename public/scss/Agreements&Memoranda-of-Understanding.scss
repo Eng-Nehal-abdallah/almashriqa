@@ -9,10 +9,11 @@ $thirdColor:#721846;
 body {
  background-color: rgb(226, 226, 226);
  overflow-x: hidden;
-    &.dark{
-        background-color: #333;
-        color: #fff;
-    }
+
+ &.dark {
+  background-color: #333;
+  color: #fff;
+ }
 }
 
 h1.heading {
@@ -137,7 +138,18 @@ section.section-1 {
  }
 
 
+ .bx {
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 50%;
+ }
+}
 
+li {
+ list-style: none;
 }
 
 .heading {
@@ -158,20 +170,21 @@ section.section-2 {
 }
 
 
-@media (max-width:785px){
-    .header{
-        .caption{
+@media (max-width:785px) {
+ .header {
+  .caption {
 
-            h1{
-                font-size: 2.5rem !important;
-            }
-            h5 {
-                color: #e2e2e2;
-                font-size: 2rem;
-               }
+   h1 {
+    font-size: 2.5rem !important;
+   }
 
-        }
-    }
+   h5 {
+    color: #e2e2e2;
+    font-size: 2rem;
+   }
+
+  }
+ }
 }
 
 

@@ -35,7 +35,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="text-right">
 
     <!-- start navbar -->
     <header dir="rtl" id="header" class="fixed-top">
@@ -47,7 +47,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -171,20 +172,45 @@
 
 
 
-    <!-- start section-2 -->
     <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="section-2 portfolio-area area-padding fix">
+    <div id="portfolio" class="portfolio section-1 portfolio-area area-padding fix">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="head ">
-                        <h2 class="heading"> اخر التحديث</h2>
-                        <small> الانجازات</small>
+
+
+            <div class="card border-light mb-3">
+                <h5 class="card-header text-center">كل الانجازات</h5>
+                <div class="card-body">
+                    <div class="row awesome-project-content portfolio-container">
+                        @foreach ($achievements as $lab)
+                            @if ($lab->id_facutly == $achievement->id_facutly)
+                                <!-- portfolio-item start -->
+                                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item filter-app portfolio-item">
+                                    <div class="single-awesome-project">
+                                        <div class="awesome-img">
+                                            <a href="/ach/{{ $lab->id }}/show"><img src="/{{ $lab->image }}"
+                                                    alt="" /></a>
+                                            <div class="add-actions text-center">
+                                                <div class="project-dec">
+                                                    <a class="portfolio-lightbox" data-gallery="myGallery"
+                                                        href="/ach/{{ $lab->id }}/show">
+                                                        <h4>{{ $lab->name_ar }}</h4>
+                                                        <span>{{ $lab->details_ar }}</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+
+
 
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
 
 
             <div class="row awesome-project-content portfolio-container">
@@ -214,63 +240,68 @@
 
                 <!-- End section-2 -->
             </div>
+=======
+>>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
         </div>
-        </section>
+    </div><!-- End Portfolio Section -->
 
 
 
 
-        <!--start footer -->
-
-        <!-- start footer -->
-        @extends('layouts.footer-ar')
-
-        <!-- start jquery -->
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <!-- start owl carousel -->
-
-        <!-- start bootstrap -->
-        <script src="/js/jquery.slim.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/slick.min.js"></script>
-
-        <!-- start section -->
-        <script src="/js/main.js"></script>
-        <script src="/js/dark.js"></script>
 
 
-        <script src="/js/nav.js"></script>
-        <script>
-            var bool = true;
 
-            $(document).ready(function() {
-                $('#lang').on('click', function() {
+    <!--start footer -->
 
-                    if (bool == true) {
-                        $("header").removeAttr("dir", "ltr");
-                        $("header").attr("dir", "rtl");
+    <!-- start footer -->
+    @extends('layouts.footer-ar')
 
-                        $('.section-1').removeClass('text-left')
-                        $('.section-1').addClass('text-right')
+    <!-- start jquery -->
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <!-- start owl carousel -->
 
-                        $('.section-2').removeClass('text-left')
-                        $('.section-2').addClass('text-right')
-                        bool = false;
-                    } else if (bool == false) {
-                        $("header").removeAttr("dir");
-                        $("header").attr("dir", "ltr");
+    <!-- start bootstrap -->
+    <script src="/js/jquery.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/slick.min.js"></script>
 
-                        $('.section-1').removeClass('text-right')
-                        $('.section-1').addClass('text-left')
-                        $('.section-2').removeClass('text-right')
-                        $('.section-2').addClass('text-left')
-                        bool = true;
-                    }
+    <!-- start section -->
+    <script src="/js/main.js"></script>
+    <script src="/js/dark.js"></script>
 
-                })
+
+    <script src="/js/nav.js"></script>
+    <script>
+        var bool = true;
+
+        $(document).ready(function() {
+            $('#lang').on('click', function() {
+
+                if (bool == true) {
+                    $("header").removeAttr("dir", "ltr");
+                    $("header").attr("dir", "rtl");
+
+                    $('.section-1').removeClass('text-left')
+                    $('.section-1').addClass('text-right')
+
+                    $('.section-2').removeClass('text-left')
+                    $('.section-2').addClass('text-right')
+                    bool = false;
+                } else if (bool == false) {
+                    $("header").removeAttr("dir");
+                    $("header").attr("dir", "ltr");
+
+                    $('.section-1').removeClass('text-right')
+                    $('.section-1').addClass('text-left')
+                    $('.section-2').removeClass('text-right')
+                    $('.section-2').addClass('text-left')
+                    bool = true;
+                }
+
             })
-        </script>
+        })
+    </script>
 
 
 
