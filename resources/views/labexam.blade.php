@@ -76,10 +76,6 @@
                         </ul>
                     </li>
 
-                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
-
-
-
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
 
 

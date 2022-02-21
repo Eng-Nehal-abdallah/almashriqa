@@ -63,7 +63,6 @@
                         </ul>
                     </li>
 
-                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
 
 
 

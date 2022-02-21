@@ -61,10 +61,6 @@
                         </ul>
                     </li>
 
-                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
-
-
-
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
 
 
@@ -163,7 +159,7 @@
                                 <div class="member-info">
                                     <h4>ر</h4>
                                     <span>{{ $doctor['details_ar'] }} </span>
-                                    <a class="btn shadow-sm btn-dark" href="/docen/{{ $doctor->id }}/show">
+                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">
                                     عرض الملف
                                     </a>
 

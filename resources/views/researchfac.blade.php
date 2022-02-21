@@ -76,7 +76,7 @@
                         </ul>
                     </li>
 
-                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
+
 
 
 
@@ -181,6 +181,9 @@
                         </div>
                 </div>
                 @endforeach
+                </div>
+            </div>
+        </div>
 
     </section>
 

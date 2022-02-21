@@ -72,8 +72,6 @@
                                 </ul>
                             </li>
 
-                            <li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a></li>
-
 
 
                             <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
