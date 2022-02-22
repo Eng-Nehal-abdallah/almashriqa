@@ -444,7 +444,7 @@
     <!-- End  section 2 -->
 
     <!-- start sectoin 7 -->
-    <section class="section-7 ">
+    <section class="section-7 py-4 ">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-md-5 ">
