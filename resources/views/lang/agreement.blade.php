@@ -53,7 +53,7 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
+                                    <li><a href="/facutlydocen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -115,7 +115,6 @@
                     </nav><!-- .navbar -->
 
                 </div>
-        </div>
     </header><!-- End Header -->
     <!-- end navbar -->
 
@@ -125,23 +124,27 @@
     <section class="section-1">
         <div class="container">
             <div class="alert text-center alert-light">
-                <h5>ملخص طريقة التقديم على جامعة المشرق 2022/2021</h5>
+                <h3><i class="fas fa-handshake"></i>Details</h3>
             </div>
             <div class="row justify-content-around">
-                <div class="col-md-12">
-                    <ul>
-                        <li><i class='bx bx-select-multiple'></i>اCreate a personal account, where you will choose a
-                            username, password, and password and prove your personal phone number. </li>
+                @foreach ($agreements as $ag)
+                    <div class="col-md-5">
+                        <img class="rounded" src="{{ $ag->image }}" alt="">
+                        <i class="fas fa-handshake"></i>
+                        <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
+                        <p>{{ $ag->abstract_en }}</p>
+                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
+                        <a href="/agreementsen/{{ $ag->id }}/show" class="btn btn-secondary">More</a>
+                    </div>
+                @endforeach
 
-                        <li><i class='bx bx-select-multiple'></i>بعد انشائك للحساب الشخصي ستقوم بتفعيل الخدمات الساندة
-                            ضمن الحساب و كما موضح في التعليمات سيرشدك النظام بعد ذلك الى مرحلة ملء البيانات الطلابية حيث
-                            ستختار الحالة التي تنطبق عليك ضمن سبعة حالات معدة مسبقا ضمن النظام. </li>
+                <div class="col-md-5">
 
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- End section 1 -->
     <!-- End section 1 -->
 

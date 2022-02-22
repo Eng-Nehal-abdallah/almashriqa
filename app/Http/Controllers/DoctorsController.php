@@ -6,6 +6,7 @@ use App\Models\achievement;
 use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Leaderuni;
 use App\Models\Social;
 use App\Models\Type;
 use App\Models\Typeachievement;
@@ -16,7 +17,77 @@ use Illuminate\Support\Facades\Hash;
 use function PHPSTORM_META\type;
 
 class DoctorsController extends Controller
-{public function show(Facutly $Facutly)
+{
+    public function indexdoctor()
+    {
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        return view('Facutliesdoc', compact('Facutlies', 'departments'));
+
+        // return view('Certifieds');
+    }
+    public function indexdocen()
+    {
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        return view('lang\Facutliesdoc', compact('Facutlies', 'departments'));
+
+        // return view('Certifieds');
+    }
+
+
+
+
+    public function doctors(Facutly $facutly)
+    { $types=Type::all();
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        $leaders=Leaderuni::all();
+        $doctors=Doctors::all();
+        $socials=Social::all();
+        return view('doctor-card',['facutly'=>$facutly] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
+
+        // return view('Certifieds');
+    }
+    public function doctorsen(Facutly $facutly)
+    {  $leaders=Leaderuni::all();
+        $doctors=Doctors::all();
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        $types=Type::all();
+        $socials=Social::all();
+        return view('lang\doctor-card',['facutly'=>$facutly] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
+
+        // return view('Certifieds');
+    }
+
+
+
+    public function doctorsdepart(Department $department)
+    { $types=Type::all();
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        $leaders=Leaderuni::all();
+        $doctors=Doctors::all();
+        $socials=Social::all();
+        return view('doctor-cardde',['department'=>$department] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
+
+        // return view('Certifieds');
+    }
+    public function doctorsendepart(Department $department)
+    {  $leaders=Leaderuni::all();
+        $doctors=Doctors::all();
+        $departments = Department::all();
+        $Facutlies = Facutly::all();
+        $types=Type::all();
+        $socials=Social::all();
+        return view('lang\doctor-cardde',['department'=>$department] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
+
+        // return view('Certifieds');
+    }
+
+
+    public function show(Facutly $Facutly)
     { $Facutlies = Facutly::all();
         $departments = Department::all();
         $doctors = Doctors::all();

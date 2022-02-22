@@ -59,7 +59,7 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
+                                    <li><a href="/facutlydocen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -122,8 +122,8 @@
                     </nav><!-- .navbar -->
 
                 </div>
-        </div>
-    </header><!-- End Header -->
+            </header>
+     <!-- End Header -->
     <!-- end navbar -->
 
 

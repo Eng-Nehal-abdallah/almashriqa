@@ -6,10 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- start bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
+    <!-- start box icon -->
+    <link href='/scss/UniLeader.css' rel='stylesheet'>
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="/scss/doctor-card.css">
 
     @extends('layouts.head-ar')
+
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
@@ -18,19 +29,11 @@
     <title>Document</title>
 </head>
 
-
-
-
-
-
-<body class="light">
-
-    <!-- start navbar -->
+<body>
     <!-- start navbar -->
     <header dir="rtl"  id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <ul><li><a href="/login"> تسجيل الدخول </a></li>
-            </ul>
+
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
                     class="img-fluid"></a>
             <!-- Uncomment below if you prefer to use text as a logo -->
@@ -67,12 +70,11 @@
                     </li>
 
 
-
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -111,37 +113,94 @@
     <!-- end navbar -->
 
 
-
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
     </div>
     <!-- start light & dark -->
+    <!-- start header -->
 
 
+<br>
+<br>
+<br>
 
-    <!-- start section 1 -->
-    <section class="section-1 text-left">
-        @foreach ($admins as $admin)
-            <div class="container">
-                <h2>{{ $admin->name_ar }}</h2>
-                <hr>
-                <p>{{ $admin->details_ar }}
-                </p>
-                <div class="alert text-center alert-light" role="alert">
-                    الاقسام الادارية
-                </div>
-                <div class="table-responsive-lg">
-                    {!! html_entity_decode($admin->tablecode) !!}
-                </div>
-            </div>
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-2">
+     <div class="container">
+      <h1 class="text-center my-5">عميد الكلية  </h1>
+      <div class="row text-right">
+@foreach ($leaders as $leader)
+    @if($leader->id_facutly==$department->id_facutly)
+
+       <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
+        <div class="member">
+         <div class="member-img">
+          <img src="/{{ $leader->image }}" class="img-fluid imgs" alt="">
+
+          <div class="social">
+            @foreach ($types as $type)
+            @foreach ($socials as $social)
+                @if ($social->id_type == $type->id && $leader->id == $social->id_leader)
+                    <a href="$social->link">{{ $type->name_ar }}</a>
+                @endif
+            @endforeach
         @endforeach
+          </div>
+         </div>
+         <div class="member-info">
+          <h4>{{ $leader->name_ar }}</h4>
+          <span>{{ $leader->position_ar }}</span>
+          <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
 
-    </section>
+         </div>
+        </div>
+       </div>
+       @endif
+       @endforeach
+
+
+      </div>
+      <h1 class="text-center my-5">الكادر التدريسي للكلية   </h1>
+
+      <div class="row text-right">
+
+        @foreach ($doctors as $doc)
+
+@if($doc->id_department==$department->id)
+       <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+        <div class="member">
+         <div class="member-img">
+          <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
+          <div class="social">
+            @foreach ($types as $type)
+            @foreach ($socials as $social)
+                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                    <a href="$social->link">{{ $type->name_ar }}</a>
+                @endif
+            @endforeach
+        @endforeach
+          </div>
+         </div>
+         <div class="member-info">
+          <h4>{{$doc->name_ar }}</h4>
+          <span>{{$doc->private_specific_ar  }}/{{ $doc->public_specific_ar }}</span>
+          <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+         </div>
+        </div>
+       </div>
+       @endif
+       @endforeach
 
 
 
-    <!-- end section 1 -->
+      </div>
+
+     </div>
+    </section><!-- End Team Section -->
+
+
+
 
 
 
@@ -152,57 +211,28 @@
     @extends('layouts.footer-ar')
 
     <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
-
-
-
-    <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-
-    <script>
-        var bool = true;
-
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
-
-                    $('p').removeClass('text-left')
-                    $('p').addClass('text-right')
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-
-                    bool = false;
-                } else if (bool == false) {
-
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
-
-                    $('p').removeClass('text-right')
-                    $('p').addClass('text-left')
-
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-
-
-                    bool = true;
-                }
-
-            })
-        })
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/dark.js') }}"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
+
+
 
 
 </body>
+
+</html>

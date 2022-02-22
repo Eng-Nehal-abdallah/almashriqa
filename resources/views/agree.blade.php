@@ -6,38 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
-
     @extends('layouts.head-ar')
+    <link rel="stylesheet" href="/scss/Agreements&Memoranda-of-Understanding.css">
+
+
+
     <!-- start wol js -->
+
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
     <title>Document</title>
 </head>
 
 
+<body class="text-right" dir="rtl">
 
-
-
-
-<body class="light">
 
     <!-- start navbar -->
-    <!-- start navbar -->
-    <header dir="rtl"  id="header" class="fixed-top">
+    <header dir="rtl" id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <ul><li><a href="/login"> تسجيل الدخول </a></li>
-            </ul>
+
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
                     class="img-fluid"></a>
             <!-- Uncomment below if you prefer to use text as a logo -->
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -65,7 +64,6 @@
 
                         </ul>
                     </li>
-
 
 
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
@@ -110,6 +108,28 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
+    <!-- start section 1 -->
+    <section class="section-1">
+        <div class="container">
+            <div class="alert text-center alert-light">
+                <h5>ملخص طريقة التقديم على جامعة المشرق 2022/2021</h5>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-md-12">
+                    <ul>
+                        @foreach ($agreements as $m )
+
+
+                        <li><i class='bx bx-select-multiple'></i>{{$m->details_ar}} </li>
+
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End section 1 -->
 
 
     <!-- start light & dark -->
@@ -117,55 +137,30 @@
         <i class="fas moon"></i>
     </div>
     <!-- start light & dark -->
-
-
-
-    <!-- start section 1 -->
-    <section class="section-1 text-left">
-        @foreach ($admins as $admin)
-            <div class="container">
-                <h2>{{ $admin->name_ar }}</h2>
-                <hr>
-                <p>{{ $admin->details_ar }}
-                </p>
-                <div class="alert text-center alert-light" role="alert">
-                    الاقسام الادارية
-                </div>
-                <div class="table-responsive-lg">
-                    {!! html_entity_decode($admin->tablecode) !!}
-                </div>
-            </div>
-        @endforeach
-
-    </section>
-
-
+    <!-- starting section 1 -->
 
     <!-- end section 1 -->
-
-
-
-
 
     <!--start footer -->
 
     @extends('layouts.footer-ar')
-
     <!-- start jquery -->
     <script src="/js/jquery-3.6.0.min.js"></script>
+
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
     <script src="/js/jquery.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
-
+    <script src="/js/slick.min.js"></script>
 
 
     <!-- start section -->
     <script src="/js/main.js"></script>
     <script src="/js/dark.js"></script>
+    <script src="/js/nav.js"></script>
+    {{-- <script src="/js/dark.js"></script> --}}
 
     <script>
         var bool = true;
@@ -174,35 +169,45 @@
             $('#lang').on('click', function() {
 
                 if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
-
-                    $('p').removeClass('text-left')
-                    $('p').addClass('text-right')
+                    $("header").removeAttr("dir", "ltr");
+                    $("header").attr("dir", "rtl");
 
                     $('.section-1').removeClass('text-left')
                     $('.section-1').addClass('text-right')
 
-
+                    $('.section-2').removeClass('text-left')
+                    $('.section-2').addClass('text-right')
                     bool = false;
                 } else if (bool == false) {
-
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
-
-                    $('p').removeClass('text-right')
-                    $('p').addClass('text-left')
+                    $("header").removeAttr("dir");
+                    $("header").attr("dir", "ltr");
 
                     $('.section-1').removeClass('text-right')
                     $('.section-1').addClass('text-left')
-
-
+                    $('.section-2').removeClass('text-right')
+                    $('.section-2').addClass('text-left')
                     bool = true;
                 }
 
             })
         })
+
+        $(document).ready(function() {
+            var dark = document.querySelector('.dark-mood > .fas');
+
+            var x = 0;
+            dark.on('click', function() {
+                if (x == 0) {
+                    $('body').addClass('dark');
+
+                }
+            })
+
+
+
+        })
     </script>
 
-
 </body>
+
+</html>

@@ -60,7 +60,7 @@
                                 <li><a href="/leaderunien">University Presidency </a></li>
                                 <li><a href="/feesen">Tuition fees </a></li>
                                 <li><a href="/strategyen">University strategy </a></li>
-                                <li><a href="/facutlyen">Doctors </a></li>
+                                <li><a href="/facutlydocen">Doctors </a></li>
                                 <li><a href="/agreementsen">Agreements </a></li>
 
                                 <li><a href="/leaderworden">University President word</a></li>
@@ -80,16 +80,9 @@
                             </ul>
                         </li>
 
-<<<<<<< HEAD
-=======
-                        <li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a></li>
-
-
->>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
-
                         <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
                                     class="bi bi-chevron-down"></i></a>
-
+<<<
 
                             <ul>
                                 @foreach ($faculties as $f)

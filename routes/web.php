@@ -17,6 +17,7 @@ use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\MagazinController;
 use App\Http\Controllers\MashController;
+use App\Http\Controllers\MechineController;
 use App\Http\Controllers\PaperController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\ResearchController;
@@ -31,6 +32,7 @@ use App\Models\Admindepart;
 use App\Models\Department;
 use App\Models\Type;
 use App\Models\Lecture;
+use App\Models\Mechine;
 use App\Models\Studentfirst;
 use Illuminate\Support\Facades\Route;
 use Whoops\Run;
@@ -56,7 +58,19 @@ Route::get('/register', function(){
 });
 
 Auth::routes();
+//show faculty all for doctor
+Route::get('/facutlydocen', [DoctorsController::class, 'indexdocen']);
+//show faculty all for doctor
+Route::get('/facutlydoc', [DoctorsController::class, 'indexdoctor']);
 
+//show faculty all for doctor
+Route::get('/carddoc/{facutly}/show', [DoctorsController::class, 'doctors']);
+//show faculty all for doctor
+Route::get('/carddocen/{facutly}/show', [DoctorsController::class, 'doctorsen']);
+//show faculty all for doctor
+Route::get('/departcarddoc/{department}/show', [DoctorsController::class, 'doctorsdepart']);
+//show faculty all for doctor
+Route::get('/departcarddocen/{department}/show', [DoctorsController::class, 'doctorsendepart']);
 //show page dashboard
 Route::get('/s/{facutly}', [SubjectController::class, 'subject']);
 //show page dashboard
@@ -103,6 +117,16 @@ Route::get('/admindepartmenten', [AdmindepartController::class, 'indexen']);
 //show agreements
 Route::get('/agreements', [AgreementController::class, 'index']);
 //show agreements
+Route::get('/mechine', [MechineController::class, 'index']);
+//show agreements
+Route::get('/mechineen', [MechineController::class, 'indexen']);
+//show agreements
+Route::get('/mechineen', [MechineController::class, 'indexen']);
+//show agreements
+Route::get('/agreements/{agreement}/show', [AgreementController::class, 'details']);
+//show agreements
+//show agreements
+Route::get('/agreementsen/{agreement}/show', [AgreementController::class, 'detailsen']);
 Route::get('/agreementsen', [AgreementController::class, 'indexen']);
 
 //labs
@@ -142,6 +166,9 @@ Route::get('/facutlyresearchen', [UniversitiesController::class, 'showresearchen
 Route::get('/facutlylaben', [UniversitiesController::class, 'showlaben']);
 //show faculty to choose some achievements
 Route::get('/patenten', [UniversitiesController::class, 'index2en']);
+
+
+
 
 
 //paper
@@ -567,6 +594,8 @@ Route::get('/doctorsen/{Department}/show', [DoctorsController::class, 'shDen']);
 //show profile
 Route::get('docen/{doctor}/show', [DoctorsController::class, 'profileen']);
 //show department for faculty
+
+
 Route::get('/departmenten/{department}/show', [DepartmentController::class, 'shen']);
 //show requiremeznt of faculty
 Route::get('/requirementen', [RequirementController::class, 'indexen']);

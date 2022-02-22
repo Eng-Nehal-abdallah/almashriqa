@@ -16,6 +16,13 @@ class AgreementController extends Controller
         $departments = Department::all();
         return view('lang.agreement', compact('agreements','faculties','departments'));
     }
+    public function indexenag()
+    {
+        $agreements = Agreement::all();
+        $faculties = Facutly::all();
+        $departments = Department::all();
+        return view('lang.agree', compact('agreements','faculties','departments'));
+    }
     public function index()
     {    $faculties = Facutly::all();
         $departments = Department::all();
@@ -23,13 +30,34 @@ class AgreementController extends Controller
 
         return view('agreement', compact('agreements','faculties','faculties','departments'));
     }
+    public function detailsen(Agreement $agreement)
+    {    $faculties = Facutly::all();
+        $departments = Department::all();
+        $agreements = Agreement::all();
 
+        return view('lang.agreement-inner', ['agreement'=>$agreement],compact('agreements','faculties','faculties','departments'));
+    }
+    public function details(Agreement $agreement)
+    {    $faculties = Facutly::all();
+        $departments = Department::all();
+        $agreements = Agreement::all();
+
+        return view('agreement-inner', ['agreement'=>$agreement],compact('agreements','faculties','faculties','departments'));
+    }
     public function index2()
     {
 
 $agreement=Agreement::all();
         return view('agreement.dashboard',compact('agreement'));
     }
+    public function indexag()
+    {    $faculties = Facutly::all();
+        $departments = Department::all();
+        $agreements = Agreement::all();
+
+        return view('agree', compact('agreements','faculties','faculties','departments'));
+    }
+
 
 
     // start edit

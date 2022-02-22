@@ -8,13 +8,16 @@
 
     <!-- start bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/navbar.css">
 
     <!-- start box icon -->
+    <link href='/css/boxicons.min.css' rel='stylesheet'>
 
-
-    <link rel="stylesheet" href="/scss/researchers-inner2.css">
+    <link rel="stylesheet" href="/scss/researchers.css">
     <link rel="stylesheet" href="/scss/table-test.css">
+
+
+
     @extends('layouts.head-en')
 
     <!-- start box icon -->
@@ -22,15 +25,13 @@
     <!--start fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/navbar.css">
 
     <!-- start wol js -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href=./css/slick.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
-
-
     <title>Document</title>
 </head>
 
@@ -39,7 +40,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                    class="img-fluid"></a>
+                class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -50,8 +51,7 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul>
-                            <li><a href="/login"> login</a></li>
+                        <ul><li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -82,6 +82,9 @@
                             </li>
 
 
+
+
+
                             <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
                                         class="bi bi-chevron-down"></i></a>
 
@@ -104,13 +107,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/facutlylecen">Term lecture table</a></li>
-                                    <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
-                                </ul>
-                            </li>
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylecen">Term lecture table</a></li>
+                            <li><a href="/facutlyexamen">Exam Table </a></li>
+                            <li><a href="/labexamfacen">lab Exam Table </a></li>
+                        </ul>
+                    </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -127,6 +130,7 @@
     <!-- end navbar -->
 
 
+
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
@@ -136,97 +140,63 @@
     <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="heading">{{ $achievement->name_en }}</h2>
-                    <p>{{ $achievement->details_en }}</p>
-                </div>
-                <div class="col-md-6">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/{{ $achievement->image }}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ $achievement->image }}" class="d-block w-100" alt="...">
-                            </div>
+            <div class="head">
+                <h1 class="heading">college</h1>
 
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </button>
-                    </div>
-                </div>
+                <br>
 
             </div>
-            <hr>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- End section 1 -->
-
-
-
-    <!-- start section-2 -->
-    <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="section-2 portfolio-area area-padding fix">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="head ">
-                        <h2 class="heading"> the last</h2>
-                        <small> all achievement</small>
+                @foreach ($Facutlies as $Facutly)
 
-                    </div>
-                </div>
-            </div>
 
-            <div class="row awesome-project-content portfolio-container">
-                @foreach ($achievements as $lab)
-                    @if ($lab->id_doctor == $achievement->id_doctor)
-                        <!-- portfolio-item start -->
-                        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item filter-app portfolio-item">
-                            <div class="single-awesome-project">
-                                <div class="awesome-img">
-                                    <a href="/achen/{{ $lab->id }}/show"><img src="/{{ $lab->image }}"
-                                            alt="" /></a>
-                                    <div class="add-actions text-center">
-                                        <div class="project-dec">
-                                            <a class="portfolio-lightbox" data-gallery="myGallery"
-                                                href="/achen/{{ $lab->id }}/show">
-                                                <h4>{{ $lab->name_en }}</h4>
-                                                <span>{{ $lab->details_en }}</span>
-                                            </a>
+                    <div class="col-md-6 col-sm-6 col-11" >
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4 img-content">
+                                    <img src="{{ $Facutly->image }}" alt="...">
+                                </div>
+
+
+
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title heading">{{ $Facutly->name_en }}</h5>
+                                        <p class="card-text">{{ $Facutly->about_facutly_en }}</p>
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm" href="carddocen/{{ $Facutly->id }}/show">
+                                                {{ $Facutly->name_en }}</a>
+                                            <button type="button"
+                                                class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+
+                                                    <div class="dropdown-menu">
+                                                        @foreach ($departments as $department)
+                                                        @if ($department->id_facutly == $Facutly->id)
+                                                        <a class="dropdown-item"
+                                                            href="/departcarddocen/{{ $department->id }}/show">{{ $department->name_en }}</a>
+                                                @endif
+                                            @endforeach
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
-                <!-- portfolio-item start -->
-
-                <!-- End section-2 -->
+                    </div>
+            </div>
+            @endforeach
             </div>
         </div>
-    </div>
+    </section>
 
 
 
-    <!-- start footer -->
+
+    <!-- End section 1 -->
     @extends('layouts.footer-en')
-
 
 
 
@@ -238,48 +208,20 @@
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/slick.min.js"></script>
-
-    <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-
-
-    <script src="/js/nav.js"></script>
-    <script>
-        var bool = true;
-
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-                    bool = false;
-                } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
-
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-                    bool = true;
-                }
-
-            })
-        })
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
+    <script src="{{ asset('js/dark.js') }}"></script>
 
 
 </body>
