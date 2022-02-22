@@ -14,7 +14,6 @@
 
 
 
-
     <!-- start wol js --/agreement
  <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -259,34 +258,41 @@
 
 
     {{-- start abojut secction --}}
-    <section class="section-about">
+    <!-- start section 6 -->
+    <section class="section-6  text-center">
+
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-8">
-                    <div class="card border-dark mb-3">
-                        <div class="card-header">Header</div>
-                        <div class="card-body text-dark">
-                            <h5 class="card-title">Dark card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                        </div>
-                    </div>
+            <h1 class="heading"> عن الجامعة</h1>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora
+                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium
+                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate
+                        alias, blanditiis ut veniam?
+
+                    </p>
+
                 </div>
             </div>
+
     </section>
+
+    <!-- end section 6 -->
 
 
     {{-- end about seection --}}
 
     <!-- start section 3 -->
-    <section class="section-3  bg-light">
+    <section class="section-3 my-5 py-4  bg-light">
         <div class="container">
             <div class="caption ">
                 <h1 class="text-center">
                     نشاطات الكلية
                 </h1>
             </div>
-            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+            <div class="responsive">
                 @foreach ($activities as $act)
                     @if ($act->id_faculty == $facutly->id)
                         <div>
@@ -303,7 +309,8 @@
                                 @endforeach
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
-                                <a class="btn main m-auto " href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                                <a class="btn btn-block btn-warning main m-auto "
+                                    href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
                             </div>
                         </div>
                     @endif
@@ -359,14 +366,14 @@
     <!-- start seection 6 -->
 
     <!-- start section 3 -->
-    <section class="section-3  bg-light">
+    <section class="section-5  bg-light">
         <div class="container">
             <div class="caption ">
                 <h1 class="text-center my-3">
                     المختبرات
                 </h1>
             </div>
-            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+            <div class="center">
                 @foreach ($labs as $lab)
                     @if ($lab->id_faculty == $facutly->id)
                         <div>
@@ -378,7 +385,8 @@
                                 <h4 class="">{{ $lab->name_ar }}</h4>
 
                                 <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
-                                <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
+                                <a href="/lab/{{ $lab->id }}/show"
+                                    class="btn btn-block btn-warning main m-auto ">التفاصيل</a>
                             </div>
                         </div>
                     @endif
@@ -459,9 +467,6 @@
 
                         </div>
 
-
-
-
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -497,9 +502,9 @@
 
 
     <script>
-        $('.center').slick({
+        $('.section-5 .center').slick({
             centerMode: true,
-            centerPadding: '30px',
+
             slidesToShow: 3,
             autoplay: true,
             responsive: [{
@@ -507,16 +512,16 @@
                     settings: {
                         arrows: true,
                         centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
+                        centerPadding: '20px',
+                        slidesToShow: 2
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 550,
                     settings: {
                         arrows: true,
                         centerMode: true,
-                        centerPadding: '40px',
+                        centerPadding: '10px',
                         slidesToShow: 1
                     }
                 }
@@ -528,8 +533,9 @@
             dots: true,
             infinite: false,
             speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            margin: '30px',
             responsive: [{
                     breakpoint: 1024,
                     settings: {
@@ -540,22 +546,24 @@
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 900,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 560,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        infinite: false,
+                        dots: false
+
                     }
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
+
             ]
         });
     </script>
@@ -600,8 +608,6 @@
             })
         });
     </script>
-
-
 
 </body>
 
