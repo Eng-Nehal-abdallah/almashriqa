@@ -345,7 +345,7 @@ return response()->json($data);
     }
       public function profileen(Doctors $doctor)
     {$faculties =Facutly::all();
-        $departments=Facutly::all();
+        $departments=Department::all();
         $achievementes=achievement::all();
         $socials=Social::all();
         $types=Typeachievement::all();

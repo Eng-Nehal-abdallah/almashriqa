@@ -28,5 +28,7 @@ class achievement extends Model
         'id_types',
 
     'id_doctor',
+    'id_leader',
+    'id_leaderuni'
   ];
 }

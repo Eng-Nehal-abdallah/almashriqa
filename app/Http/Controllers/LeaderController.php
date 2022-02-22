@@ -53,7 +53,7 @@ class LeaderController extends Controller
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $socials = Social::all();
-        return view('doctors\social media\dashboard', ['doctor' => $doctor], compact('socials','Facutlies','departments'));
+        return view('leader\social media\dashboard', ['doctor' => $doctor], compact('socials','Facutlies','departments'));
     }
     public function shD(Department $Department)
     {      $Facutlies = Facutly::all();
@@ -71,7 +71,7 @@ class LeaderController extends Controller
     {
         $facutlies = Facutly::all();
         $departments=Department::all();
-        return view('doctors\create',compact('facutlies','departments'));
+        return view('leader.create',compact('facutlies','departments'));
     }
     public function insert_socialmedia(Leader $doctor)
     {$types=Type::all();
@@ -87,7 +87,7 @@ class LeaderController extends Controller
 
         $data->name_ar = $request->name_ar;
         $data->link = $request->link;
-        $data->id_doctor = $request->id_doctor;
+        $data->id_leader = $request->id_leader;
         $data->name_en = $request->name_en;
 
 
@@ -252,27 +252,27 @@ return response()->json($data);
         $doctors = Leader::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
+        return view('leader.dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
     }
     public function index()
     {
         $doctors = Leader::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboard', compact('doctors','facutlies','departments'));
+        return view('leader.dashboard', compact('doctors','facutlies','departments'));
     }
    //start edit
    public function editdoc(Leader $doctor)
    {$facutlies =Facutly::all();
        $departments=Facutly::all();
-       return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+       return view('leader.edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
    }
 
     //start edit
     public function edit(Leader $doctor)
     {$facutlies =Facutly::all();
         $departments=Facutly::all();
-        return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+        return view('leader.edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
     }
     //start edit
     public function profile(Leader $doctor)
@@ -363,18 +363,18 @@ return response()->json($data);
         $data->details_ar = $request->details_ar;
 
         $data->save();
-        return redirect('/dashboard4');
+        return redirect('/dashboard25');
     }
     public function destroy(Leader $doctor)
     {
         $doctor->delete();
 
-        return redirect("/dashboard4");
+        return redirect("/dashboard25");
     }
     public function destroysocial(Social $social)
     {
         $social->delete();
 
-        return redirect("/dashboard4");
+        return redirect("/dashboard25");
     }
 }
