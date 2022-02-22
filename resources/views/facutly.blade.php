@@ -10,6 +10,8 @@
     @extends('layouts.head-ar')
 
     <link rel="stylesheet" href="{{ asset('/scss/universities.css') }}">
+    <link rel="stylesheet" href="/scss/dark&light.css">
+
 
 
 
@@ -21,7 +23,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="text-right">
     <!-- start navbar -->
     <header dir="rtl" id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
@@ -32,7 +34,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -105,14 +108,13 @@
 
 
 
-    <center>
     <ul class="nav justify-content-center child">
 
         <li class="nav-item">
             <a class="nav-link" href="/s/{{ $facutly['id'] }}">المحاضرات</a>
         </li>
     </ul>
-</center>
+
     <div class="header">
         <div class="content">
             <div class="row justify-content-around">
@@ -140,8 +142,11 @@
     <!-- start light & dark -->
 
     <!-- start section 6 -->
-    <section class="section-6 " dir="rtl">
+    <section class="section-6 my-4 " dir="rtl">
         <div class="container">
+            <div class="alert text-center alert-light">
+                <h5>عميد الكلية</h5>
+            </div>
             <div class="row justify-content-around">
                 <div class="col-md-5">
                     <img src="/imgs/header.png" alt="">
@@ -157,6 +162,10 @@
 
     <!-- End section 6 -->
 
+    <div class="container">
+        <hr>
+
+    </div>
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-9 section-bg">
@@ -168,7 +177,7 @@
                             <div class="member">
                                 <div class="member-img">
 
-                                    <img src="/{{ $doctor->image}}" class="img-fluid imgs" alt="">
+                                    <img src="/{{ $doctor->image }}" class="img-fluid imgs" alt="">
                                     <div class="social">
                                         @foreach ($socials as $social)
                                             @if ($social->id_doctor == $doctor->id)
@@ -179,7 +188,9 @@
                                 </div>
                                 <div class="member-info">
                                     <h4>{{ $doctor['name_ar'] }} </h4>
-                                    <span>{{ $doctor->private_specific_ar }}/{{ $doctor['public_specific_ar'] }} </span>
+                                    <span>{{ $doctor->private_specific_ar }}/{{ $doctor['public_specific_ar'] }}
+                                    </span>
+                                    <br><br>
                                     <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زيارة الملف
                                         الشخصي</a>
 
@@ -200,7 +211,185 @@
     </section><!-- End Team Section -->
 
 
+    <!-- start section 5 -->
+    <section class="section-5 text-right" dir="rtl">
+        <div class="container">
+            <div class="row ">
 
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4">الرؤية</h2>
+                        <hr>
+                    </div>
+                    <p>
+                        {{ $facutly['view_ar'] }}</p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4">الرسالة </h2>
+                        <hr>
+                    </div>
+                    <p> {{ $facutly['message_ar'] }}</p>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4">الاهداف</h2>
+                        <hr>
+                    </div>
+                    <ul>
+                        <li> {{ $facutly['goal_ar'] }}</li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <hr>
+
+
+        </div>
+    </section>
+    <!-- end section 5 -->
+
+
+
+    {{-- start abojut secction --}}
+    <section class="section-about">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8">
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">Header</div>
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    {{-- end about seection --}}
+
+    <!-- start section 3 -->
+    <section class="section-3  bg-light">
+        <div class="container">
+            <div class="caption ">
+                <h1 class="text-center">
+                    نشاطات الكلية
+                </h1>
+            </div>
+            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+                @foreach ($activities as $act)
+                    @if ($act->id_faculty == $facutly->id)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $act->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
+
+                                <h4>{{ $act->name_ar }}</h4>
+                                @foreach ($doctors as $doc)
+                                    @if ($act->id_doctor == $doc->id)
+                                        <h4>{{ $doc->name_ar }}</h4>
+                                    @endif
+                                @endforeach
+
+                                <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
+                                <a class="btn main m-auto " href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+            </div>
+
+        </div>
+
+
+    </section>
+    <!-- end section 3 -->
+
+
+
+
+
+
+
+    <!-- end section 4 -->
+
+    <!-- start seection 6 -->
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers ">
+        <div class="container" data-aos="fade-up">
+            <hr>
+            <h2 class="text-center my-3">الطلبة الاوائل</h2>
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                @foreach ($students as $st)
+                    @if ($st->id_facutly == $facutly->id)
+                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
+
+                            <div class="member">
+                                <img src="/{{ $st->image }}" class="img-fluid" alt="">
+                                <div class="member-content">
+                                    <h1 class="inside">{{ $st->grade_ar }}</h1>
+
+                                    <h4>{{ $st->name_ar }}</h4>
+                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+
+            </div>
+
+        </div>
+    </section><!-- End Trainers Section -->
+
+    <!-- start seection 6 -->
+
+    <!-- start section 3 -->
+    <section class="section-3  bg-light">
+        <div class="container">
+            <div class="caption ">
+                <h1 class="text-center my-3">
+                    المختبرات
+                </h1>
+            </div>
+            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+                @foreach ($labs as $lab)
+                    @if ($lab->id_faculty == $facutly->id)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $lab->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
+
+                                <h4 class="">{{ $lab->name_ar }}</h4>
+
+                                <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
+                                <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end section 3 -->
 
     <!-- start  section 2 -->
     <section class="section-2 ">
@@ -246,89 +435,6 @@
 
     <!-- End  section 2 -->
 
-
-
-    <!-- start section 3 -->
-    <section class="section-3  bg-light">
-        <div class="container">
-            <div class="caption ">
-                <h1 class="text-center">
-                    نشاطات الكلية
-                </h1>
-            </div>
-            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-@foreach ($activities as $act)
-@if($act->id_faculty==$facutly->id)
-
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $act->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
-
-                        <h4>{{ $act->name_ar }}</h4>
-@foreach ($doctors as $doc)
-    @if($act->id_doctor==$doc->id)
-    <h4>{{ $doc->name_ar }}</h4>
-    @endif
-@endforeach
-
-                        <p style="font-weight: bold;" class="second">{{$act->detaila_ar}}</p>
-                        <a  class="btn main m-auto "href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
-                    </div>
-                </div>
-                @endif
-                @endforeach
-
-            </div>
-
-        </div>
-
-
-    </section>
-    <!-- end section 3 -->
-
-
-
-
-
-
-
-    <!-- end section 4 -->
-
-    <!-- start seection 6 -->
-    <!-- ======= Trainers Section ======= -->
-    <section id="trainers" class="trainers ">
-        <div class="container" data-aos="fade-up">
-            <hr>
-            <h2 class="text-center my-3">الطلبة الاوائل</h2>
-            <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                @foreach($students as $st)
-                @if($st->id_facutly ==$facutly->id)
-                <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
-
-                    <div class="member">
-                        <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h1 class="inside">{{ $st->grade_ar }}</h1>
-
-                            <h4>{{ $st->name_ar }}</h4>
-                            <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
-
-                        </div>
-                    </div>
-                </div>
-                @endif
-@endforeach
-
-
-            </div>
-
-        </div>
-    </section><!-- End Trainers Section -->
-
-    <!-- start seection 6 -->
-
     <!-- start sectoin 7 -->
     <section class="section-7 ">
         <div class="container">
@@ -352,6 +458,10 @@
                             @endforeach
 
                         </div>
+
+
+
+
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -360,91 +470,7 @@
             </div>
         </div>
     </section>
-
-
     <!-- start seection 6 -->
-
-
-
-    <!-- start section 5 -->
-    <section class="section-5 ">
-        <div class="container">
-            <div class="row ">
-
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرؤية</h2>
-                    </div>
-                    <p>
-                        {{ $facutly['view_ar'] }}</p>
-
-                </div>
-
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرسالة </h2>
-                    </div>
-                    <p> {{ $facutly['message_ar'] }}.</p>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الاهداف</h2>
-                    </div>
-                    <ul>
-                        <li> {{ $facutly['goal_ar'] }}</li>
-                    </ul>
-
-                </div>
-
-            </div>
-            <hr>
-
-        </div>
-    </section>
-    <!-- end section 5 -->
-
-
-    <!-- start section 3 -->
-    <section class="section-3  bg-light">
-        <div class="container">
-            <div class="caption ">
-                <h1 class="text-center my-3">
-                    المختبرات
-                </h1>
-            </div>
-            <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-            @foreach($labs as $lab)
-            @if($lab->id_faculty==$facutly->id)
-
-
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $lab->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
-
-                        <h4 class="">{{ $lab->name_ar }}</h4>
-
-                        <p style="font-weight: bold;" class="second ">{{$lab->details_ar}}.</p>
-                        <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
-                    </div>
-                </div>
-
-                @endif
-@endforeach
-
-            </div>
-
-        </div>
-
-    </section>
-    <!-- end section 3 -->
-
-
 
 
     <!-- start footer -->
@@ -452,53 +478,25 @@
 
 
 
+    <!-- start jquery -->
+    <script src=" {{ asset('/js/jquery-3.6.0.min.js') }}"></script>
+    <!-- start owl carousel -->
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- start bootstrap -->
+    <script src=" {{ asset('/js/jquery.slim.min.js') }}"></script>
+    <script src=" {{ asset('/js/popper.min.js') }}"></script>
+    <script src=" {{ asset('/js/bootstrap.min.js') }}"></script>
 
-
+    <script type="text/javascript" src="{{ asset('/js/slick.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/nav.js"></script>
+    <script src=" {{ asset('/js/main.js') }}"></script>
+    <script src=" {{ asset('/js/dark.js') }}"></script>
+    <script src=" {{ asset('/js/nav.js') }}"></script>
 
 
     <script>
-        $(function() {
-            var header = $(".start-style");
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-
-                if (scroll >= 10) {
-                    header.removeClass('start-style').addClass("scroll-on");
-                } else {
-                    header.removeClass("scroll-on").addClass('start-style');
-                }
-            });
-        });
-        //Animation
-        //Menu On Hover
-        $('body').on('mouseenter mouseleave', '.nav-item', function(e) {
-            if ($(window).width() > 750) {
-                var _d = $(e.target).closest('.nav-item');
-                _d.addClass('show');
-                setTimeout(function() {
-                    _d[_d.is(':hover') ? 'addClass' : 'removeClass']('show');
-                }, 1);
-            }
-        });
-        //Switch light/dark
-        // END NAVBAR
-
         $('.center').slick({
             centerMode: true,
             centerPadding: '30px',
@@ -581,83 +579,29 @@
     </script>
 
     <script>
-        var bool = true;
+        var dark = document.querySelector('.dark-mood > .fas');
+
 
         $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-
-                    $('.section-3').removeClass('text-left')
-                    $('.section-3').addClass('text-right')
-
-                    $('.section-4').removeClass('text-left')
-                    $('.section-4').addClass('text-right')
-
-                    $('.section-5').removeClass('text-left')
-                    $('.section-5').addClass('text-right')
-
-                    $('.section-6').removeClass('text-left')
-                    $('.section-6').addClass('text-right')
-
-                    $('.section-7').removeClass('text-left')
-                    $('.section-7').addClass('text-right')
-
-                    $('.section-8').removeClass('text-left')
-                    $('.section-8').addClass('text-right')
-                    $(".section-8").removeAttr("dir", "ltr");
-                    $(".section-8").attr("dir", "rtl");
-
-                    $('.section-9').removeClass('text-left')
-                    $('.section-9').addClass('text-right')
-                    bool = false;
-                } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
-
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-
-                    $('.section-3').removeClass('text-right')
-                    $('.section-3').addClass('text-left')
-
-                    $('.section-4').removeClass('text-right')
-                    $('.section-4').addClass('text-left')
-
-                    $('.section-5').removeClass('text-right')
-                    $('.section-5').addClass('text-left')
-
-                    $('.section-6').removeClass('text-right')
-                    $('.section-6').addClass('text-left')
-
-                    $('.section-7').removeClass('text-right')
-                    $('.section-7').addClass('text-left')
-
-                    $('.section-8').removeClass('text-right')
-                    $('.section-8').addClass('text-left')
-
-                    $(".section-8").removeAttr("dir");
-                    $(".section-8").attr("dir", "ltr");
-
-                    $('.section-9').removeClass('text-right')
-                    $('.section-9').addClass('text-left')
-                    bool = true;
-                }
+            $(dark).on('click', function() {
+                $('body').toggleClass('dark');
+                $('.section-1').toggleClass('dark');
+                $('.section-2').toggleClass('dark');
+                $('.section-2').toggleClass('text-right');
+                $('.section-3').toggleClass('dark');
+                $('.section-4').toggleClass('dark');
+                $('.section-5').toggleClass('dark');
+                $('.section-6').toggleClass('dark');
+                $('.section-7').toggleClass('dark');
+                $('.section-8').toggleClass('dark');
+                $('.btn-outline-dark').toggleClass('btn-outline-light')
+                $('footer').toggleClass('dark');
 
             })
-        })
+        });
     </script>
+
+
 
 </body>
 
