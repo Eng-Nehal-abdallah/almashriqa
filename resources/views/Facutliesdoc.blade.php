@@ -2,25 +2,25 @@
 <html lang="en">
 
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/scss/researchers.css">
+    <link rel="stylesheet" href="/scss/researchers.css">
 
-        @extends('layouts.head-ar')
-        <link rel="stylesheet" href="/css/navbar.css">
+    @extends('layouts.head-ar')
+    <link rel="stylesheet" href="/css/navbar.css">
 
-        <!-- start wol js -->
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="/css/slick.css" />
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+    <!-- start wol js -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
 
 
-        <title>Document</title>
-    </head>
+    <title>Document</title>
+</head>
 
 
 <body>
@@ -35,7 +35,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -127,7 +128,6 @@
             <div class="head">
                 <h1 class="heading">الكلية</h1>
                 <br>
-
             </div>
             <div class="row">
                 @foreach ($faculties as $Facutly)
@@ -137,7 +137,6 @@
                                 <div class="col-md-4 img-content">
                                     <img src="{{ $Facutly->image }}" alt="...">
                                 </div>
-
 
 
                                 <div class="col-md-8">
@@ -153,22 +152,22 @@
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
 
-                                                    <div class="dropdown-menu">
-                                                        @foreach ($departments as $department)
-                                                        @if ($department->id_facutly == $Facutly->id)
+                                            <div class="dropdown-menu">
+                                                @foreach ($departments as $department)
+                                                    @if ($department->id_facutly == $Facutly->id)
                                                         <a class="dropdown-item"
                                                             href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </section>
@@ -178,13 +177,6 @@
 
     <!-- start footer -->
     @extends('layouts.footer-ar')
-
-
-
-    <!-- start footer -->
-    @extends('layouts.footer-ar')
-
-
 
 
 
