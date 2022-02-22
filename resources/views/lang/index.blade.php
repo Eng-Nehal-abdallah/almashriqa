@@ -28,7 +28,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -39,7 +39,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -94,13 +95,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -258,7 +259,7 @@
 
 
 
-                                <div class="col-md-2 col-sm-5 col-6">
+                <div class="col-md-2 col-sm-5 col-6">
                     <div class="caption">
                         <i class='bx bx-select-multiple'></i>
 
@@ -433,7 +434,7 @@
 
 
     <!-- start section 8 -->
-    {{--  <section class="section-8 ">
+    {{-- <section class="section-8 ">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -461,7 +462,7 @@
             </div>
 
         </div>
-    </section>  --}}
+    </section> --}}
 
     <!-- end section 8 -->
 
@@ -575,6 +576,29 @@
                 // settings: "unslick"
                 // instead of a settings object
             ]
+        });
+    </script>
+
+    <script>
+        var dark = document.querySelector('.dark-mood > .fas');
+
+
+        $(document).ready(function() {
+            $(dark).on('click', function() {
+                $('body').toggleClass('dark');
+                $('.section-1').toggleClass('dark');
+                $('.section-2').toggleClass('dark');
+                $('.section-2').toggleClass('text-right');
+                $('.section-3').toggleClass('dark');
+                $('.section-4').toggleClass('dark');
+                $('.section-5').toggleClass('dark');
+                $('.section-6').toggleClass('dark');
+                $('.section-7').toggleClass('dark');
+                $('.section-8').toggleClass('dark');
+                $('.btn-outline-dark').toggleClass('btn-outline-light')
+                $('footer').toggleClass('dark');
+
+            })
         });
     </script>
 

@@ -32,6 +32,7 @@ use App\Models\Department;
 use App\Models\Type;
 use App\Models\Lecture;
 use App\Models\Studentfirst;
+use App\Models\University;
 use Illuminate\Support\Facades\Route;
 use Whoops\Run;
 
@@ -1375,23 +1376,11 @@ Route::get('/subjectdepart/{department}/show', [SubjectController::class, 'depar
 
 
 
+// chart test
+Route::get('/chart' , [UniversitiesController::class , 'char']);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/chartEn' , [UniversitiesController::class , 'charEn']);
 
 // testing
 Route::get('/agreenment-inner' , function(){
