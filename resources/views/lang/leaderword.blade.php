@@ -59,6 +59,8 @@
                                 <li><a href="/facutlylaben">labs</a></li>
                                 <li><a href="/facutlyresearchen">achievements </a></li>
                                 <li><a href="/compusen">compus </a></li>
+                                <li><a href="/chartEn">statistics </a></li>
+
                                 {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                             </ul>
                         </li>

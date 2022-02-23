@@ -37,7 +37,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -53,6 +54,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -127,30 +130,32 @@
                 <div class="col-md-5">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="/{{ $lab->image }}" class="d-block w-100" alt="...">
-                          </div>
+                            <div class="carousel-item active">
+                                <img src="/{{ $lab->image }}" class="d-block w-100" alt="...">
+                            </div>
 
                         </div>
-                       <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
+                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
+                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
                         </button>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-md-5">
 
                     <div class="alert text-center alert-light" role="alert">
                         {{ $lab->name_ar }}
-                    <br>
-                    {{ $lab->details_ar }}
+                        <br>
+                        {{ $lab->details_ar }}
 
 
-                </div>
+                    </div>
                 </div>
             </div>
         </div>

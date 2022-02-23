@@ -40,7 +40,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -51,7 +51,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -68,6 +69,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -106,13 +109,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>

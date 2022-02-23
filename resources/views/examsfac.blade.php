@@ -37,7 +37,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -53,6 +54,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -148,30 +151,30 @@
                                             <div class="btn-group">
                                                 <a class="btn btn-sm" href="/e/{{ $Facutly->id }}/show">
                                                     {{ $Facutly->name_ar }} </a>
-                                                    <button type="button"
+                                                <button type="button"
                                                     class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
                                                     data-toggle="dropdown" aria-expanded="false">
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
 
 
-                                                    <div class="dropdown-menu">
-                                                        @foreach ($departments as $department)
+                                                <div class="dropdown-menu">
+                                                    @foreach ($departments as $department)
                                                         @if ($department->id_facutly == $Facutly->id)
-                                                        <a class="dropdown-item"
-                                                            href="/examsd/{{ $Facutly->id }}/show">{{ $department->name_ar }}</a>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                                            <a class="dropdown-item"
+                                                                href="/examsd/{{ $Facutly->id }}/show">{{ $department->name_ar }}</a>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
 
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </div>
-                @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>

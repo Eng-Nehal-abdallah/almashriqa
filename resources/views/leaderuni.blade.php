@@ -55,6 +55,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -173,29 +175,27 @@
 
             <div class="row text-right">
                 @foreach ($leaders as $leader)
-
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                @foreach ($types as $type)
-                                @foreach ($socials as $social)
-                                    @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                        <a href="$social->link">{{ $type->name_ar }}</a>
-                                    @endif
-                                @endforeach
-                            @endforeach
+                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_ar }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4> {{ $leader->name_ar }} </h4>
+                                <span> {{ $leader->position_ar }} </span>
+                                <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4> {{ $leader->name_ar }}   </h4>
-                            <span> {{ $leader->position_ar }}  </span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>

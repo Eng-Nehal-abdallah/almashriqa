@@ -67,6 +67,8 @@
                                 <li><a href="/facutlylaben">labs</a></li>
                                 <li><a href="/facutlyresearchen">achievements </a></li>
                                 <li><a href="/compusen">compus </a></li>
+                                <li><a href="/chartEn">statistics </a></li>
+
                                 {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                             </ul>
                         </li>
@@ -80,48 +82,47 @@
                             </ul>
                         </li>
 
-<<<<<<< HEAD
-=======
-                        <li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a></li>
+                        <<<<<<< HEAD=======<li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a>
+                            </li>
 
 
->>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
+                            >>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
 
-                        <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                    class="bi bi-chevron-down"></i></a>
+                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                        class="bi bi-chevron-down"></i></a>
 
 
-                            <ul>
-                                @foreach ($faculties as $f)
-                                    <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                        @foreach ($departments as $depart)
-                                            @if ($depart->id_facutly == $f->id)
-                                                <ul>
-                                                    <li><a
-                                                            href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                    </li>
-                                                </ul>
-                                            @endif
-                                        @endforeach
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="/facutlylecen">Term lecture table</a></li>
-                                <li><a href="/facutlyexamen">Exam Table </a></li>
-                                <li><a href="/labexamfacen">lab Exam Table </a></li>
-                            </ul>
-                        </li>
+                                <ul>
+                                    @foreach ($faculties as $f)
+                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                            @foreach ($departments as $depart)
+                                                @if ($depart->id_facutly == $f->id)
+                                                    <ul>
+                                                        <li><a
+                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                        </li>
+                                                    </ul>
+                                                @endif
+                                            @endforeach
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
-                        <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                        <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                        <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                        <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                 </nav><!-- .navbar -->

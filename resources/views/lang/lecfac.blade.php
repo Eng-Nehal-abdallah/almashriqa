@@ -1,106 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
 
-    <!DOCTYPE html>
-    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-        <!-- start bootstrap -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-        <!-- start box icon -->
-        <link rel="stylesheet" href="/scss/researchers.css">
-        <!--start fontawesome -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- start box icon -->
+    <link rel="stylesheet" href="/scss/researchers.css">
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
-        <link rel="stylesheet" href="/scss/leadersUni.css">
+    <link rel="stylesheet" href="/scss/leadersUni.css">
 
-        @extends('layouts.head-en')
+    @extends('layouts.head-en')
 
-        <!-- start wol js -->
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="/css/slick.css" />
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
-        <title>Document</title>
-    </head>
+    <!-- start wol js -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+    <title>Document</title>
+</head>
 
-    <body>
-        <header id="header" class="fixed-top">
-            <div class="container d-flex align-items-center justify-content-between">
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
 
-                <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
+            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
                     class="img-fluid"></a>
 
-                <header id="header" class="fixed-top">
-                    <div class="container d-flex align-items-center justify-content-between">
+            <div class="container d-flex align-items-center justify-content-between">
 
-                        <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                                class="img-fluid"></a>
-                        <!-- Uncomment below if you prefer to use text as a logo -->
-                        <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                        class="img-fluid"></a>
+                <!-- Uncomment below if you prefer to use text as a logo -->
+                <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
-                        <nav id="navbar" class="navbar">
-                            <ul><li><a href="/login"> login</a></li>
-                            </ul>
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a href="/login"> login</a></li>
+                    </ul>
+                    <ul>
+                        <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                            class="bi bi-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="/abouten">About University</a></li>
-                                        <li><a href="/leaderunien">University Presidency </a></li>
-                                        <li><a href="/feesen">Tuition fees </a></li>
-                                        <li><a href="/strategyen">University strategy </a></li>
-                                        <li><a href="/facutlyen">Doctors </a></li>
-                                        <li><a href="/agreementsen">Agreements </a></li>
+                                <li><a href="/abouten">About University</a></li>
+                                <li><a href="/leaderunien">University Presidency </a></li>
+                                <li><a href="/feesen">Tuition fees </a></li>
+                                <li><a href="/strategyen">University strategy </a></li>
+                                <li><a href="/facutlyen">Doctors </a></li>
+                                <li><a href="/agreementsen">Agreements </a></li>
 
-                                        <li><a href="/leaderworden">University President word</a></li>
-                                        <li><a href="/facutlylaben">labs</a></li>
-                                        <li><a href="/facutlyresearchen">achievements </a></li>
-                                        <li><a href="/compusen">compus </a></li>
-                                        {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                            class="bi bi-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="/agreementsen">LogIN Machine </a></li>
-                                        <li><a href="/accepten">Acceptable Rules </a></li>
-                                        <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
+                                <li><a href="/leaderworden">University President word</a></li>
+                                <li><a href="/facutlylaben">labs</a></li>
+                                <li><a href="/facutlyresearchen">achievements </a></li>
+                                <li><a href="/compusen">compus </a></li>
+                                <li><a href="/chartEn">statistics </a></li>
 
-                                    </ul>
-                                </li>
+                                {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="/agreementsen">LogIN Machine </a></li>
+                                <li><a href="/accepten">Acceptable Rules </a></li>
+                                <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
+                            </ul>
+                        </li>
 
 
 
-                                <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                            class="bi bi-chevron-down"></i></a>
+
+                        <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                    class="bi bi-chevron-down"></i></a>
 
 
-                                    <ul>
-                                        @foreach ($faculties as $f)
-                                            <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                        {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                                @foreach ($departments as $depart)
-                                                    @if ($depart->id_facutly == $f->id)
-                                                        <ul>
-                                                            <li><a
-                                                                    href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                            </li>
-                                                        </ul>
-                                                    @endif
-                                                @endforeach
-                                            </li>
+                            <ul>
+                                @foreach ($faculties as $f)
+                                    <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                                {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <ul>
+                                                    <li><a
+                                                            href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                    </li>
+                                                </ul>
+                                            @endif
                                         @endforeach
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="/facutlylecen">Term lecture table</a></li>
@@ -109,19 +109,19 @@
                             </ul>
                         </li>
 
-                                <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                                <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                                <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+                        <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                        <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                        <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                                <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
-                            </ul>
-                            <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                        </nav><!-- .navbar -->
+                        <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+                </nav><!-- .navbar -->
 
-                    </div>
             </div>
-        </header><!-- End Header -->
-        <!-- end navbar -->
+        </div>
+    </header><!-- End Header -->
+    <!-- end navbar -->
 
     <!-- start light & dark -->
     <div class="dark-mood ">
@@ -166,24 +166,24 @@
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
 
-                                            @foreach ($departments as $department)
-                                                @if ($department->id_facutly == $Facutly->id)
-                                                    <div class="dropdown-menu">
+                                                @foreach ($departments as $department)
+                                                    @if ($department->id_facutly == $Facutly->id)
+                                                        <div class="dropdown-menu">
 
-                                                        <a class="dropdown-item"
-                                                            href="/ld/{{ $department->id }}/show">{{ $department->name_en }}</a>
-                                                @endif
-                                            @endforeach
-                                        </div>
-
-
+                                                            <a class="dropdown-item"
+                                                                href="/ld/{{ $department->id }}/show">{{ $department->name_en }}</a>
+                                                    @endif
+                                                @endforeach
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                </div>
+                @endforeach
 
     </section>
 

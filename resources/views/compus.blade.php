@@ -53,6 +53,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>

@@ -32,7 +32,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -48,6 +49,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -261,7 +264,7 @@
 
                 </div>
 
-                                <div class="col-md-2 col-sm-5 col-6">
+                <div class="col-md-2 col-sm-5 col-6">
                     <div class="caption">
                         <i class='bx bx-select-multiple'></i>
 
@@ -321,7 +324,7 @@
                     <div>
                         <div class="card">
 
-                            <img  src="{{ $act->image }}" class="card-img" alt="...">
+                            <img src="{{ $act->image }}" class="card-img" alt="...">
 
                         </div>
                         <div class="card p-3 ">
@@ -393,7 +396,7 @@
 
                             <div class="card">
 
-                                <img  src="{{ $act->image }}" class="card-img" alt="...">
+                                <img src="{{ $act->image }}" class="card-img" alt="...">
 
                             </div>
                             <div class="card p-3 ">
@@ -427,7 +430,7 @@
 
 
 
-    {{--  <!-- start section 8 -->
+    {{-- <!-- start section 8 -->
     <section class="section-8 ">
         <div class="container-fluid">
 
@@ -493,7 +496,7 @@
         </div>
     </section>
 
-    <!-- end section 8 -->  --}}
+    <!-- end section 8 --> --}}
 
 
     <!--start footer -->

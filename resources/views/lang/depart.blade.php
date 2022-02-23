@@ -48,7 +48,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -59,7 +59,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -76,6 +77,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -113,13 +116,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -196,7 +199,7 @@
                                     <h4>ر</h4>
                                     <span>{{ $doctor['details_en'] }} </span>
                                     <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">Visit
-                                        </a>
+                                    </a>
 
 
                                 </div>
@@ -251,7 +254,7 @@
                     <div class="count">{{ $activities->count() }}</div>
 
                     <br>
-                    <p> Activity  </p>
+                    <p> Activity </p>
                 </div>
 
             </div>
@@ -277,27 +280,26 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-@foreach ($activities as $act)
-@if($act->id_faculty==$department->id_facutly)
+                @foreach ($activities as $act)
+                    @if ($act->id_faculty == $department->id_facutly)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $act->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $act->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
+                                <h4>{{ $act->name_en }}</h4>
+                                @foreach ($doctors as $doc)
+                                    @if ($act->id_doctor == $doc->id)
+                                        <h4>{{ $doc->name_en }}</h4>
+                                    @endif
+                                @endforeach
 
-                        <h4>{{ $act->name_en }}</h4>
-@foreach ($doctors as $doc)
-    @if($act->id_doctor==$doc->id)
-    <h4>{{ $doc->name_en }}</h4>
-    @endif
-@endforeach
-
-                        <p style="font-weight: bold;" class="second">{{$act->detaila_en}}</p>
-                        <a  class="btn main m-auto "href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
-                    </div>
-                </div>
-                @endif
+                                <p style="font-weight: bold;" class="second">{{ $act->detaila_en }}</p>
+                                <a class="btn main m-auto " href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
 
             </div>
@@ -321,23 +323,23 @@
             <hr>
             <h2 class="text-center my-3">First Students </h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                @foreach($students as $st)
-                @if($st->id_facutly==$department->id_facutly)
-                <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
+                @foreach ($students as $st)
+                    @if ($st->id_facutly == $department->id_facutly)
+                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
 
-                    <div class="member">
-                        <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h1 class="inside">{{ $st->grade_en }}</h1>
+                            <div class="member">
+                                <img src="/{{ $st->image }}" class="img-fluid" alt="">
+                                <div class="member-content">
+                                    <h1 class="inside">{{ $st->grade_en }}</h1>
 
-                            <h4>{{ $st->name_en }}</h4>
-                            <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
+                                    <h4>{{ $st->name_en }}</h4>
+                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @endif
-@endforeach
+                    @endif
+                @endforeach
 
 
             </div>
@@ -364,25 +366,22 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-            @foreach($labs as $lab)
-            @if($lab->id_faculty==$department->id_facutly)
+                @foreach ($labs as $lab)
+                    @if ($lab->id_faculty == $department->id_facutly)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $lab->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
+                                <h4 class="">{{ $lab->name_en }}</h4>
 
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $lab->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
-
-                        <h4 class="">{{ $lab->name_en }}</h4>
-
-                        <p style="font-weight: bold;" class="second ">{{$lab->details_en}}.</p>
-                        <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">Details</a>
-                    </div>
-                </div>
-
-                @endif
-@endforeach
+                                <p style="font-weight: bold;" class="second ">{{ $lab->details_en }}.</p>
+                                <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">Details</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
             </div>
 

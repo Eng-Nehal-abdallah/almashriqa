@@ -44,7 +44,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -60,6 +61,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -133,7 +136,7 @@
 
 
 
-<br><br><br><br>
+    <br><br><br><br>
 
     <!-- End section-2 -->
 
@@ -147,26 +150,26 @@
 
             <div class="row">
                 @foreach ($labs as $lab)
-                @if($lab->id_faculty==$facutly->id)
+                    @if ($lab->id_faculty == $facutly->id)
+                        <div class="col-md-4">
+                            <div class="card">
 
-                    <div class="col-md-4">
-                        <div class="card">
-
-                            <img src="/{{ $lab->image }}" class="card-img" alt="...">
+                                <img src="/{{ $lab->image }}" class="card-img" alt="...">
 
 
+                            </div>
+                            <div class="card p-3 ">
+                                <h4 class="">{{ $lab->name_ar }}</h4>
+
+
+                                <p class="second">
+                                    {{ $lab->details_ar }}
+                                    <br>
+                                </p>
+                                <a href="/lab/{{ $lab->id }}/show"
+                                    class="btn  btn-warning main m-auto ">التفاصيل</a>
+                            </div>
                         </div>
-                        <div class="card p-3 ">
-                            <h4 class="">{{ $lab->name_ar }}</h4>
-
-
-                            <p class="second">
-                                {{ $lab->details_ar }}
-                                <br>
-                            </p>
-                            <a href="/lab/{{ $lab->id }}/show" class="btn  btn-warning main m-auto ">التفاصيل</a>
-                        </div>
-                    </div>
                     @endif
                 @endforeach
 

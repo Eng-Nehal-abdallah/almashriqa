@@ -64,6 +64,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -210,10 +212,7 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
-
-
-            <div class="row awesome-project-content portfolio-container">
+            <<<<<<< HEAD <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $lab)
                     @if ($lab->id_doctor == $achievement->id_doctor)
                         <!-- portfolio-item start -->
@@ -239,10 +238,10 @@
                 <!-- portfolio-item start -->
 
                 <!-- End section-2 -->
-            </div>
-=======
->>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
         </div>
+        =======
+        >>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
+    </div>
     </div><!-- End Portfolio Section -->
 
 

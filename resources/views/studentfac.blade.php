@@ -32,7 +32,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -48,6 +49,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -105,11 +108,11 @@
 
     <ul class="nav justify-content-center child">
         <center>
-        <li class="nav-item">
-            <a class="nav-link" href="/subjectp/{{ $facutly['id'] }}/show">Lectures</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/subjectp/{{ $facutly['id'] }}/show">Lectures</a>
+            </li>
     </ul>
-</center>
+    </center>
     <div class="header">
         <div class="content">
             <div class="row justify-content-around">
@@ -160,7 +163,7 @@
                                     <h4>ر</h4>
                                     <span>{{ $doctor['details_ar'] }} </span>
                                     <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">
-                                    عرض الملف
+                                        عرض الملف
                                     </a>
 
 
@@ -255,27 +258,26 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-@foreach ($activities as $act)
-@if($act->id_faculty==$facutly->id)
+                @foreach ($activities as $act)
+                    @if ($act->id_faculty == $facutly->id)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $act->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $act->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
+                                <h4>{{ $act->name_ar }}</h4>
+                                @foreach ($doctors as $doc)
+                                    @if ($act->id_doctor == $doc->id)
+                                        <h4>{{ $doc->name_ar }}</h4>
+                                    @endif
+                                @endforeach
 
-                        <h4>{{ $act->name_ar }}</h4>
-@foreach ($doctors as $doc)
-    @if($act->id_doctor==$doc->id)
-    <h4>{{ $doc->name_ar }}</h4>
-    @endif
-@endforeach
-
-                        <p style="font-weight: bold;" class="second">{{$act->detaila_ar}}</p>
-                        <a  class="btn main m-auto "href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
-                    </div>
-                </div>
-                @endif
+                                <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
+                                <a class="btn main m-auto " href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
 
             </div>
@@ -335,23 +337,23 @@
             <hr>
             <h2 class="text-center my-3">الطلبة الاوائل</h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                @foreach($students as $st)
-                @if($st->id_facutly ==$facutly->id)
-                <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
+                @foreach ($students as $st)
+                    @if ($st->id_facutly == $facutly->id)
+                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
 
-                    <div class="member">
-                        <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h1 class="inside">{{ $st->grade_ar }}</h1>
+                            <div class="member">
+                                <img src="/{{ $st->image }}" class="img-fluid" alt="">
+                                <div class="member-content">
+                                    <h1 class="inside">{{ $st->grade_ar }}</h1>
 
-                            <h4>{{ $st->name_ar }}</h4>
-                            <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
+                                    <h4>{{ $st->name_ar }}</h4>
+                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @endif
-@endforeach
+                    @endif
+                @endforeach
 
 
             </div>
@@ -378,8 +380,8 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             @foreach ($departments as $department)
                                 @if ($department->id_facutly == $facutly->id)
-                                    <a class="dropdown-item"
-                                        href="href="/subjectdepart/{{ $department['id'] }}">{{ $department->name_ar }}</a>
+                                    <a class="dropdown-item" href="href="
+                                        /subjectdepart/{{ $department['id'] }}">{{ $department->name_ar }}</a>
                                 @endif
                             @endforeach
 
@@ -447,32 +449,32 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-@foreach($labs as $lab)
-@if($lab->id_facutly==$facutly->id)
-                <div>
-                    <div class="card ">
-                        <img src="{{ $lab->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
+                @foreach ($labs as $lab)
+                    @if ($lab->id_facutly == $facutly->id)
+                        <div>
+                            <div class="card ">
+                                <img src="{{ $lab->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
-                        <h4 class="">{{ $lab->name_ar }}</h4>
-                        <h4>{{ $lab->name_ar }}</h4>
+                                <h4 class="">{{ $lab->name_ar }}</h4>
+                                <h4>{{ $lab->name_ar }}</h4>
 
 
-                        <p style="font-weight: bold;" class="second ">{{$lab->details_ar}}.</p>
-                        <a href="lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
-                    </div>
-                </div>
+                                <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
+                                <a href="lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
+                            </div>
+                        </div>
 
             </div>
 
         </div>
-@endif
-@endforeach
+        @endif
+        @endforeach
     </section>
     <!-- end section 3 -->
 
-    {{--  <!-- start section 8 -->
+    {{-- <!-- start section 8 -->
     <section class="section-8 ">
         <div class="container ">
             <div class="col-md-12">
@@ -500,7 +502,7 @@
             </div>
         </div>
     </section>
-    <!-- End section 8 -->  --}}
+    <!-- End section 8 --> --}}
 
 
     <!-- start footer -->

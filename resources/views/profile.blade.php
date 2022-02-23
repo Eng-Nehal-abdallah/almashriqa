@@ -49,7 +49,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -65,6 +66,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -239,18 +242,19 @@
 
                     </h1>
                     <a href="{{ $doctor->pdf }}" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
-                     <a href="/d/{{ $doctor->id }}/research" class="btn-1 outer-shadow hover-in-shadow"> تفاصيل الانجازات</a>
+                    <a href="/d/{{ $doctor->id }}/research" class="btn-1 outer-shadow hover-in-shadow"> تفاصيل
+                        الانجازات</a>
 
                 </div>
 
 
-        <div class="row">
-            <div class="about-tabs">
+                <div class="row">
+                    <div class="about-tabs">
 
 
-            </div>
+                    </div>
 
-            {{-- <div class="skill-item" style="">
+                    {{-- <div class="skill-item" style="">
 
             @foreach ($achievementes as $ach)
                 @if ($ach->id_doctor == $doctor->id)
@@ -281,8 +285,9 @@
 
                     </div>
             </div> --}}
+                </div>
+            </div>
         </div>
-            </div></div>
     </section>
     <!-- about section end -->
 

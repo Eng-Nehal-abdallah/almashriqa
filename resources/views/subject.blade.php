@@ -34,7 +34,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -50,6 +51,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -121,118 +124,119 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-     <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-      <div class="d-flex align-items-center">
-       <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-       <h2 class="fs-2 m-0">Elmashriq</h2>
-      </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0">Elmashriq</h2>
+            </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-user me-2"></i>person name
-         </a>
-         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>person name
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <li><a class="dropdown-item" href="#">Logout</a></li>
-         </ul>
-        </li>
-       </ul>
-      </div>
-     </nav>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
     </div>
     <h3 class="text-light"> Lecture</h3>
 
-      <!-- start seection 2 -->
-      <div class="table-responsive-xl">
-       <div class="row section-2 my-5">
+    <!-- start seection 2 -->
+    <div class="table-responsive-xl">
+        <div class="row section-2 my-5">
 
-<br>
-        <div style="overflow-x: auto;" class="col bg-light rounded shadow-sm">
-         <table class="table table-light section-2 ">
-          <thead>
-           <tr>
-            <th scope="col">#</th>
-
-
-            <th scope="col">Name ar</th>
-            <th scope="col">Name en</th>
-            <th scope="col">level_ar</th>
-            <th scope="col">leve_en</th>
-            <th scope="col">pdf</th>
-            <th scope="col">code</th>
-            <th scope="col"> type</th>
-            <th scope="col">faculty</th>
-            <th scope="col"> department</th>
-
-           </tr>
-          </thead>
-          <tbody class="text-dark">
-              @foreach ($subjects as $data )
-              @if($data->id_facutly==$facutly->id)
-              @if($data->type="public")
-           <tr>
-            <th scope="row">#</th>
+            <br>
+            <div style="overflow-x: auto;" class="col bg-light rounded shadow-sm">
+                <table class="table table-light section-2 ">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
 
 
-            <td>{{$data->name_ar }}</td>
-            <td>{{$data->name_en }}</td>
+                            <th scope="col">Name ar</th>
+                            <th scope="col">Name en</th>
+                            <th scope="col">level_ar</th>
+                            <th scope="col">leve_en</th>
+                            <th scope="col">pdf</th>
+                            <th scope="col">code</th>
+                            <th scope="col"> type</th>
+                            <th scope="col">faculty</th>
+                            <th scope="col"> department</th>
 
-            <td>{{$data->level_ar }}</td>
-
-            <td>{{$data->level_en }}</td>
-
-
-            <td><a href="{{$data->pdf }}">Download</a></td>
-
-            <td>{{$data->code }}</td>
-
-
-
-            <td>{{$data->type }}</td>
-
-
-            <td>
-              @foreach($faculties as $f)
-              @if($f->id==$data->id_facutly)
-             {{ $f->name_ar }}
-              @endif
-              @endforeach
-            </td>
-            <td>
-                @foreach($departments as $d)
-                @if($d->id==$data->id_department)
-               {{ $d->name_ar }}
-                @endif
-                @endforeach
-              </td>
+                        </tr>
+                    </thead>
+                    <tbody class="text-dark">
+                        @foreach ($subjects as $data)
+                            @if ($data->id_facutly == $facutly->id)
+                                @if ($data->type = 'public')
+                                    <tr>
+                                        <th scope="row">#</th>
 
 
+                                        <td>{{ $data->name_ar }}</td>
+                                        <td>{{ $data->name_en }}</td>
+
+                                        <td>{{ $data->level_ar }}</td>
+
+                                        <td>{{ $data->level_en }}</td>
+
+
+                                        <td><a href="{{ $data->pdf }}">Download</a></td>
+
+                                        <td>{{ $data->code }}</td>
+
+
+
+                                        <td>{{ $data->type }}</td>
+
+
+                                        <td>
+                                            @foreach ($faculties as $f)
+                                                @if ($f->id == $data->id_facutly)
+                                                    {{ $f->name_ar }}
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach ($departments as $d)
+                                                @if ($d->id == $data->id_department)
+                                                    {{ $d->name_ar }}
+                                                @endif
+                                            @endforeach
+                                        </td>
 
 
 
 
-           </tr>
-           @endif
-           @endif
-           @endforeach
-          </tbody>
-         </table>
 
+
+                                    </tr>
+                                @endif
+                            @endif
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-       </div>
-      </div>
+    </div>
 
-      <!-- end section 2 -->
+    <!-- end section 2 -->
 
 
 

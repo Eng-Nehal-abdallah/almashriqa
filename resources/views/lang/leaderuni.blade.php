@@ -34,90 +34,91 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center justify-content-between">
+            <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                            class="img-fluid"></a>
-                    <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                        class="img-fluid"></a>
+                <!-- Uncomment below if you prefer to use text as a logo -->
+                <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
-                    <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
-                        </ul>
-                        <ul>
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/abouten">About University</a></li>
-                                    <li><a href="/leaderunien">University Presidency </a></li>
-                                    <li><a href="/feesen">Tuition fees </a></li>
-                                    <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
-                                    <li><a href="/agreementsen">Agreements </a></li>
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a href="/login"> login</a></li>
+                    </ul>
+                    <ul>
+                        <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="/abouten">About University</a></li>
+                                <li><a href="/leaderunien">University Presidency </a></li>
+                                <li><a href="/feesen">Tuition fees </a></li>
+                                <li><a href="/strategyen">University strategy </a></li>
+                                <li><a href="/facutlyen">Doctors </a></li>
+                                <li><a href="/agreementsen">Agreements </a></li>
 
-                                    <li><a href="/leaderworden">University President word</a></li>
-                                    <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
-                                    <li><a href="/compusen">compus </a></li>
-                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/agreementsen">LogIN Machine </a></li>
-                                    <li><a href="/accepten">Acceptable Rules </a></li>
-                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
+                                <li><a href="/leaderworden">University President word</a></li>
+                                <li><a href="/facutlylaben">labs</a></li>
+                                <li><a href="/facutlyresearchen">achievements </a></li>
+                                <li><a href="/compusen">compus </a></li>
+                                <li><a href="/chartEn">statistics </a></li>
 
-                                </ul>
-                            </li>
+                                {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="/agreementsen">LogIN Machine </a></li>
+                                <li><a href="/accepten">Acceptable Rules </a></li>
+                                <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
-
-
-
-                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                        class="bi bi-chevron-down"></i></a>
+                            </ul>
+                        </li>
 
 
-                                <ul>
-                                    @foreach ($faculties as $f)
-                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-                                                    <ul>
-                                                        <li><a
-                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                        </li>
-                                                    </ul>
-                                                @endif
-                                            @endforeach
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
 
-                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
-                        </ul>
-                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                        <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                    class="bi bi-chevron-down"></i></a>
 
-                </div>
+
+                            <ul>
+                                @foreach ($faculties as $f)
+                                    <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                                {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <ul>
+                                                    <li><a
+                                                            href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                    </li>
+                                                </ul>
+                                            @endif
+                                        @endforeach
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="/facutlylecen">Term lecture table</a></li>
+                                <li><a href="/facutlyexamen">Exam Table </a></li>
+                                <li><a href="/labexamfacen">lab Exam Table </a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                        <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                        <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+
+                        <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+                </nav><!-- .navbar -->
+
+            </div>
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
@@ -130,82 +131,80 @@
     <!-- start light & dark -->
     <!-- start header -->
 
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
-     <div class="container">
-      <h1 class="text-center my-5">University Presidency </h1>
-      <div class="row text-right">
+        <div class="container">
+            <h1 class="text-center my-5">University Presidency </h1>
+            <div class="row text-right">
 
 
-        @foreach ($doctors as $doct)
-        <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-            <div class="member">
-                <div class="member-img">
-                    <img src="{{ $doct->image }}" class="img-fluid imgs" alt="">
-                    <div class="social">
-                        @foreach ($types as $type)
-                            @foreach ($socials as $social)
-                                @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                    <a href="$social->link">{{ $type->name_ثى }}</a>
-                                @endif
-                            @endforeach
-                        @endforeach
-                    </div>
-                </div>
-                <div class="member-info">
-                    <h4>{{ $doct->name_en }}</h4>
-                    <span>{{ $doct->position_en }}</span>
-                    <a href="#" class="btn btn-dark my-3 ">Visit Profile  </a>
+                @foreach ($doctors as $doct)
+                    <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $doct->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_ثى }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>{{ $doct->name_en }}</h4>
+                                <span>{{ $doct->position_en }}</span>
+                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
 
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-
-
-
-      </div>
-      <h1 class="text-center my-5">Deans of the University </h1>
-
-      <div class="row text-right">
-        @foreach ($leaders as $leader)
-
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                @foreach ($types as $type)
-                                @foreach ($socials as $social)
-                                    @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                        <a href="$social->link">{{ $type->name_en }}</a>
-                                    @endif
-                                @endforeach
-                            @endforeach
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4> {{ $leader->name_en }}   </h4>
-                            <span> {{ $leader->position_en }}  </span>
-                            <a href="#" class="btn btn-dark my-3 ">Visit Profile   </a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
 
 
-      </div>
 
-     </div>
+
+            </div>
+            <h1 class="text-center my-5">Deans of the University </h1>
+
+            <div class="row text-right">
+                @foreach ($leaders as $leader)
+                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_en }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4> {{ $leader->name_en }} </h4>
+                                <span> {{ $leader->position_en }} </span>
+                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div>
+
+        </div>
     </section><!-- End Team Section -->
 
 

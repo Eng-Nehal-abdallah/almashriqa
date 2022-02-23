@@ -43,7 +43,8 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                <ul>
+                    <li><a href="/login"> تسجيل الدخول </a></li>
                 </ul>
                 <ul>
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
@@ -59,6 +60,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -143,9 +146,8 @@
             <h3 class="my-3 p-3 ">معدل القبول والاقساط الدراسية لعام 2021-2022</h3>
             <!-- <p>small text</p> -->
         </div>
-@foreach ($fees as$f )
-
-@endforeach
+        @foreach ($fees as $f)
+        @endforeach
         <div class="container">
             {!! html_entity_decode($f->tablecode) !!}
         </div>
