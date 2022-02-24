@@ -32,9 +32,29 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
+
                 <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
@@ -48,6 +68,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -97,7 +119,7 @@
                     <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
                     <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
 
-                    <li><a class="nav-link scrollto" href="/en">اللغة </a></li>
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
             </nav><!-- .navbar -->
@@ -118,10 +140,11 @@
         </div>
         <div class="overlay"></div>
 
-        <div class="overlay1"></div>
+
 
     </div>
     <!-- end header -->
+
 
     <!-- start after head -->
 
@@ -136,6 +159,27 @@
     </div>
 
     <!-- end after head -->
+    @guest
+
+        @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+        @endif
+    @else
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}
+                {{ Auth::user()->id }}
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+            </div>
+        </li>
+
+    @endguest
 
     <!-- start light & dark -->
     <div class="dark-mood ">
@@ -261,7 +305,7 @@
 
                 </div>
 
-                                <div class="col-md-2 col-sm-5 col-6">
+                <div class="col-md-2 col-sm-5 col-6">
                     <div class="caption">
                         <i class='bx bx-select-multiple'></i>
 
@@ -321,7 +365,7 @@
                     <div>
                         <div class="card">
 
-                            <img  src="{{ $act->image }}" class="card-img" alt="...">
+                            <img src="{{ $act->image }}" class="card-img" alt="...">
 
                         </div>
                         <div class="card p-3 ">
@@ -393,7 +437,7 @@
 
                             <div class="card">
 
-                                <img  src="{{ $act->image }}" class="card-img" alt="...">
+                                <img src="{{ $act->image }}" class="card-img" alt="...">
 
                             </div>
                             <div class="card p-3 ">
@@ -427,7 +471,7 @@
 
 
 
-    {{--  <!-- start section 8 -->
+    <!-- start section 8 -->
     <section class="section-8 ">
         <div class="container-fluid">
 
@@ -493,7 +537,7 @@
         </div>
     </section>
 
-    <!-- end section 8 -->  --}}
+    <!-- end section 8 -->
 
 
     <!--start footer -->
@@ -569,11 +613,11 @@
                 },
 
                 {
-                    breakpoint: 480,
+                    breakpoint: 560,
                     settings: {
-                        arrows: true,
+                        arrows: false,
                         centerMode: true,
-                        centerPadding: '0px',
+                        centerPadding: '10px',
                         slidesToShow: 1
                     }
                 }

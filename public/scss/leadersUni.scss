@@ -81,20 +81,21 @@ img {
 }
 
 
-@media (max-width:785px){
-    .header{
-        .caption{
+@media (max-width:785px) {
+ .header {
+  .caption {
 
-            h1{
-                font-size: 2.5rem !important;
-            }
-            h5 {
-                color: #e2e2e2;
-                font-size: 2rem;
-               }
+   h1 {
+    font-size: 2.5rem !important;
+   }
 
-        }
-    }
+   h5 {
+    color: #e2e2e2;
+    font-size: 2rem;
+   }
+
+  }
+ }
 }
 
 .overlay {
@@ -145,11 +146,11 @@ section.section-1 {
   text-align: left;
  }
 
- &.dark{
+ &.dark {
 
-    h1{
-        color: #fff;
-    }
+  h1 {
+   color: #fff;
+  }
  }
 
 
@@ -175,7 +176,6 @@ section.section-1 {
 
 
 }
-
 
 
 // start footer
@@ -316,4 +316,9 @@ footer {
 
  }
 
+}
+
+
+img {
+ width: 100%;
 }

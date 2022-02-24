@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/scss/dark&light.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
 
@@ -29,7 +30,7 @@
 <body>
 
     <!-- start navbar -->
-    <header dir="rtl" id="header" class="fixed-top">
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -38,10 +39,29 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
+
                 <ul>
-                    <li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
-                <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
@@ -55,6 +75,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -67,6 +89,8 @@
 
                         </ul>
                     </li>
+
+
 
 
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
@@ -102,7 +126,7 @@
                     <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
                     <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
 
-                    <li><a class="nav-link scrollto" href="/en">اللغة </a></li>
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
             </nav><!-- .navbar -->
@@ -173,29 +197,27 @@
 
             <div class="row text-right">
                 @foreach ($leaders as $leader)
-
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                @foreach ($types as $type)
-                                @foreach ($socials as $social)
-                                    @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                        <a href="$social->link">{{ $type->name_ar }}</a>
-                                    @endif
-                                @endforeach
-                            @endforeach
+                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_ar }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4> {{ $leader->name_ar }} </h4>
+                                <span> {{ $leader->position_ar }} </span>
+                                <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4> {{ $leader->name_ar }}   </h4>
-                            <span> {{ $leader->position_ar }}  </span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>

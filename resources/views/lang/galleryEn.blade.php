@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- start bootstrap -->
 
-    <!-- start box icon -->
-    <link href='/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="/scss/leaderword.css">
-    @extends('layouts.head-en')
+
+    <link rel="stylesheet" href="/scss/gallery.css">
+    @extends('layouts.head-ar')
     <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
-    <!-- start wol js -->
 
+
+
+    <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
-
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
     <title>Document</title>
+
+
+
+    <link rel="stylesheet" href="/scss/about-us.css">
+
+
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <!-- start wol js -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick-theme.css" />
+
+    <link rel="stylesheet" href=/css/navbar.css">
+
+    <title>Document</title>
 </head>
 
-
-
-
-<body>
-
-
+<body dir="ltr">
+    <!-- start box icon -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -47,6 +64,8 @@
 
                     <nav id="navbar" class="navbar">
 
+                        <ul>
+                            @guest
 
                                 @if (Route::has('login'))
                                     <li class="nav-item">
@@ -145,76 +164,72 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
-    </div>
-    <!-- start light & dark -->
 
-
-    <!-- start section 1 -->
-    <section class="section-1">
-        <div class="container-fluid">
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-
-                    {{-- {{ $mash->word_ar }} --}}
-                    <img src="/{{ $mash->leaderimage}}" alt="">
-
+    <sectionl class="section-1">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
                 </div>
-
-            </div>
-
-            <div class="container">
-                <div class="alert text-center my-3  alert-light">
-                    <h3 class="heading text-center"> Leader word </h3>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-
-                    <p>
-                        {{ $mash->word_En }}
-                    </p>
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
                 </div>
             </div>
         </div>
-    </section>
-
-
-
-
-    <!-- end section 1 -->
-
+    </sectionl>
 
 
     <!--start footer -->
 
-    @extends('layouts.footer-en')
+    @extends('layouts.footer-ar')
 
 
     <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src=/js/jquery-3.6.0.min.js"></script>
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script src=/js/jquery.slim.min.js"></script>
+    <script src=/js/popper.min.js"></script>
+    <script src=/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=/js/slick.min.js"></script>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/lang.js"></script>
-    <script src="/js/nav.js"></script>
+    <script src=/js/main.js"></script>
+    <script src=/js/dark.js"></script>
+    <script src=/js/lang.js"></script>
+
+    <script src=" {{ asset('/js/jquery-3.6.0.min.js') }}"></script>
+    <!-- start owl carousel -->
+
+    <!-- start bootstrap -->
+    <script src=" {{ asset('/js/jquery.slim.min.js') }}"></script>
+    <script src=" {{ asset('/js/popper.min.js') }}"></script>
+    <script src=" {{ asset('/js/bootstrap.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('/js/slick.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- start section -->
+    <script src=" {{ asset('/js/main.js') }}"></script>
+    <script src=" {{ asset('/js/dark.js') }}"></script>
+    <script src=" {{ asset('/js/nav.js') }}"></script>
 
 
 
+    <script>
+        $(function() {
+            var header = $(".start-style");
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
 
-
-
+                if (scroll >= 10) {
+                    header.removeClass('start-style').addClass("scroll-on");
+                } else {
+                    header.removeClass("scroll-on").addClass('start-style');
+                }
+            });
+        });
+    </script>
 
     <script>
         var bool = true;
@@ -245,7 +260,6 @@
             })
         })
     </script>
-
 </body>
 
 </html>

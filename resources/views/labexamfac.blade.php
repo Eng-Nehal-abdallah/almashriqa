@@ -27,8 +27,9 @@
 
 
 <body>
+
     <!-- start navbar -->
-    <header dir="rtl" id="header" class="fixed-top">
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -37,9 +38,29 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
+
                 <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
@@ -53,6 +74,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -65,6 +88,7 @@
 
                         </ul>
                     </li>
+
 
 
 
@@ -91,17 +115,17 @@
                     <li class="dropdown"><a href="/labexamfac"><span>التعليم الالكتروني</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/labexamfac">جدول المحاضرات الحضورية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات الالكترونية</a></li>
-
+                            <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
+                            <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
+                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto " href="/facutlyresearch"> الانشطه</a></li>
+
                     <li><a class="nav-link scrollto" href="/magazin">مجلة الجامعة</a></li>
                     <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
                     <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
 
-                    <li><a class="nav-link scrollto" href="/en">اللغة </a></li>
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
             </nav><!-- .navbar -->
@@ -109,7 +133,6 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
 
     <!-- start light & dark -->
@@ -156,14 +179,14 @@
                                                 </button>
 
 
-                                                    <div class="dropdown-menu">
-                                                        @foreach ($departments as $department)
+                                                <div class="dropdown-menu">
+                                                    @foreach ($departments as $department)
                                                         @if ($department->id_facutly == $Facutly->id)
-                                                        <a class="dropdown-item"
-                                                            href="/labexamd/{{ $department->id }}/show">{{ $department->name_ar }}</a>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                                            <a class="dropdown-item"
+                                                                href="/labexamd/{{ $department->id }}/show">{{ $department->name_ar }}</a>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
 
 
                                             </div>
@@ -173,8 +196,8 @@
                             </div>
                         </div>
 
-                    </div>
-                    @endforeach
+                </div>
+                @endforeach
 
             </div>
         </div>

@@ -24,6 +24,8 @@
 </head>
 
 <body class="text-left" dir="ltr">
+
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -39,10 +41,30 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
+
                         <ul>
-                            <li><a href="/login"> login</a></li>
-                        </ul>
-                        <ul>
+                            @guest
+
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    </li>
+                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                @endif
+                            @else
+                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
+
+                            @endguest
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -57,6 +79,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -69,6 +93,7 @@
 
                                 </ul>
                             </li>
+
 
 
 
@@ -107,7 +132,7 @@
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
@@ -434,35 +459,70 @@
 
 
     <!-- start section 8 -->
-    {{-- <section class="section-8 ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <h1 class="heading">
-                        another option
-                    </h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quisquam animi quam maiores
-                        nesciunt nobis unde
-                        velit ratione iure doloribus!</p>
+    <section class="section-8 ">
+        <div class="container-fluid">
 
-                    <button class="btn btn-light">Browse <i class='bx bx-right-arrow-alt'></i></button>
+            <h2 class="text-center">University Gallery</h2>
+
+
+
+            <div class="center">
+
+                <div class="img-content">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+
+                </div>
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
                 </div>
 
 
-                <div class="col-md-6">
-                    <h2 class="heading">
-                        another option
-                    </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quisquam animi quam maiores
-                        nesciunt nobis unde
-                        velit ratione iure doloribus!</p>
-                    <button class="btn btn-light">Browse <i class='bx bx-right-arrow-alt'></i></button>
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
                 </div>
+
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+                </div>
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+                </div>
+
 
             </div>
 
+
+
+
         </div>
-    </section> --}}
+    </section>
 
     <!-- end section 8 -->
 
@@ -540,6 +600,42 @@
                 }
             ]
         });
+
+        $('.section-8 .center').slick({
+            centerMode: true,
+            centerPadding: '30px',
+            slidesToShow: 3,
+            autoplay: true,
+            responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 2
+                    }
+                },
+
+                {
+                    breakpoint: 560,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
     </script>
 
     <script>
@@ -601,10 +697,6 @@
             })
         });
     </script>
-
-
-
-    <script src="{{ asset('/js/nav2.js') }}/js/nav2.js"></script>
 
 
 

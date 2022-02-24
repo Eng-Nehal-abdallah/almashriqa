@@ -9,6 +9,8 @@
 
 
     <link rel="stylesheet" href="{{ asset('/scss/universities.css') }}">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-ar')
 
 
@@ -23,7 +25,7 @@
 <body style="background-color:gray">
 
     <!-- start navbar -->
-    <header dir="rtl" id="header" class="fixed-top">
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -32,9 +34,29 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
+
                 <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
@@ -48,6 +70,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -60,6 +84,8 @@
 
                         </ul>
                     </li>
+
+
 
 
                     <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
@@ -95,7 +121,7 @@
                     <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
                     <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
 
-                    <li><a class="nav-link scrollto" href="/en">اللغة </a></li>
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
             </nav><!-- .navbar -->
@@ -112,115 +138,116 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-     <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-      <div class="d-flex align-items-center">
-       <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-       <h2 class="fs-2 m-0">Elmashriq</h2>
-      </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0">Elmashriq</h2>
+            </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-user me-2"></i>person name
-         </a>
-         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>person name
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <li><a class="dropdown-item" href="#">Logout</a></li>
-         </ul>
-        </li>
-       </ul>
-      </div>
-     </nav>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
     </div>
     <h3 class="text-light"> Lecture</h3>
 
-      <!-- start seection 2 -->
-      <div class="table-responsive-xl">
-       <div class="row section-2 my-5">
+    <!-- start seection 2 -->
+    <div class="table-responsive-xl">
+        <div class="row section-2 my-5">
 
-<br>
-        <div style="overflow-x: auto;" class="col bg-light rounded shadow-sm">
-         <table class="table table-light section-2 ">
-          <thead>
-           <tr>
-            <th scope="col">#</th>
-
-
-            <th scope="col">Name ar</th>
-            <th scope="col">Name en</th>
-            <th scope="col">level_ar</th>
-            <th scope="col">leve_en</th>
-            <th scope="col">pdf</th>
-            <th scope="col">code</th>
-            <th scope="col"> type</th>
-            <th scope="col">faculty</th>
-            <th scope="col"> department</th>
-
-           </tr>
-          </thead>
-          <tbody class="text-dark">
-              @foreach ($subjects as $data )
-              @if($data->id_facutly==$facutly->id)
-           <tr>
-            <th scope="row">#</th>
+            <br>
+            <div style="overflow-x: auto;" class="col bg-light rounded shadow-sm">
+                <table class="table table-light section-2 ">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
 
 
-            <td>{{$data->name_ar }}</td>
-            <td>{{$data->name_en }}</td>
+                            <th scope="col">Name ar</th>
+                            <th scope="col">Name en</th>
+                            <th scope="col">level_ar</th>
+                            <th scope="col">leve_en</th>
+                            <th scope="col">pdf</th>
+                            <th scope="col">code</th>
+                            <th scope="col"> type</th>
+                            <th scope="col">faculty</th>
+                            <th scope="col"> department</th>
 
-            <td>{{$data->level_ar }}</td>
-
-            <td>{{$data->level_en }}</td>
-
-
-            <td><a href="{{$data->pdf }}">Download</a></td>
-
-            <td>{{$data->code }}</td>
-
-
-
-            <td>{{$data->type }}</td>
-
-
-            <td>
-              @foreach($faculties as $f)
-              @if($f->id==$data->id_facutly)
-             {{ $f->name_ar }}
-              @endif
-              @endforeach
-            </td>
-            <td>
-                @foreach($departments as $d)
-                @if($d->id==$data->id_department)
-               {{ $d->name_ar }}
-                @endif
-                @endforeach
-              </td>
+                        </tr>
+                    </thead>
+                    <tbody class="text-dark">
+                        @foreach ($subjects as $data)
+                            @if ($data->id_facutly == $facutly->id)
+                                <tr>
+                                    <th scope="row">#</th>
 
 
+                                    <td>{{ $data->name_ar }}</td>
+                                    <td>{{ $data->name_en }}</td>
+
+                                    <td>{{ $data->level_ar }}</td>
+
+                                    <td>{{ $data->level_en }}</td>
+
+
+                                    <td><a href="{{ $data->pdf }}">Download</a></td>
+
+                                    <td>{{ $data->code }}</td>
+
+
+
+                                    <td>{{ $data->type }}</td>
+
+
+                                    <td>
+                                        @foreach ($faculties as $f)
+                                            @if ($f->id == $data->id_facutly)
+                                                {{ $f->name_ar }}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach ($departments as $d)
+                                            @if ($d->id == $data->id_department)
+                                                {{ $d->name_ar }}
+                                            @endif
+                                        @endforeach
+                                    </td>
 
 
 
 
-           </tr>
-           @endif
-           @endforeach
-          </tbody>
-         </table>
 
+
+                                </tr>
+                            @endif
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-       </div>
-      </div>
-      <section class="section-7 ">
+    </div>
+    <section class="section-7 ">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-md-5 ">
@@ -237,7 +264,7 @@
                             @foreach ($departments as $department)
                                 @if ($department->id_facutly == $facutly->id)
                                     <a class="dropdown-item"
-                                      href="/subjectdepart/{{ $department['id'] }}/show">{{ $department->name_ar }}</a>
+                                        href="/subjectdepart/{{ $department['id'] }}/show">{{ $department->name_ar }}</a>
                                 @endif
                             @endforeach
 
@@ -251,7 +278,7 @@
         </div>
     </section>
 
-      <!-- end section 2 -->
+    <!-- end section 2 -->
 
 
 
@@ -386,84 +413,7 @@
         });
     </script>
 
-    <script>
-        var bool = true;
 
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-
-                    $('.section-3').removeClass('text-left')
-                    $('.section-3').addClass('text-right')
-
-                    $('.section-4').removeClass('text-left')
-                    $('.section-4').addClass('text-right')
-
-                    $('.section-5').removeClass('text-left')
-                    $('.section-5').addClass('text-right')
-
-                    $('.section-6').removeClass('text-left')
-                    $('.section-6').addClass('text-right')
-
-                    $('.section-7').removeClass('text-left')
-                    $('.section-7').addClass('text-right')
-
-                    $('.section-8').removeClass('text-left')
-                    $('.section-8').addClass('text-right')
-                    $(".section-8").removeAttr("dir", "ltr");
-                    $(".section-8").attr("dir", "rtl");
-
-                    $('.section-9').removeClass('text-left')
-                    $('.section-9').addClass('text-right')
-                    bool = false;
-                } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
-
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-
-                    $('.section-3').removeClass('text-right')
-                    $('.section-3').addClass('text-left')
-
-                    $('.section-4').removeClass('text-right')
-                    $('.section-4').addClass('text-left')
-
-                    $('.section-5').removeClass('text-right')
-                    $('.section-5').addClass('text-left')
-
-                    $('.section-6').removeClass('text-right')
-                    $('.section-6').addClass('text-left')
-
-                    $('.section-7').removeClass('text-right')
-                    $('.section-7').addClass('text-left')
-
-                    $('.section-8').removeClass('text-right')
-                    $('.section-8').addClass('text-left')
-
-                    $(".section-8").removeAttr("dir");
-                    $(".section-8").attr("dir", "ltr");
-
-                    $('.section-9').removeClass('text-right')
-                    $('.section-9').addClass('text-left')
-                    bool = true;
-                }
-
-            })
-        })
-    </script>
 
 </body>
 

@@ -14,7 +14,8 @@
 
 
     <link rel="stylesheet" href="/scss/researchers.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
     @extends('layouts.head-en')
     <!-- start box icon -->
@@ -36,6 +37,7 @@
 
 
 <body>
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -51,10 +53,30 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
+
                         <ul>
-                            <li><a href="/login"> login</a></li>
-                        </ul>
-                        <ul>
+                            @guest
+
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    </li>
+                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                @endif
+                            @else
+                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
+
+                            @endguest
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -69,6 +91,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -84,12 +108,14 @@
 
 
 
+
+
                             <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
                                         class="bi bi-chevron-down"></i></a>
 
 
                                 <ul>
-                                    @foreach ($Facutlies as $f)
+                                    @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -118,7 +144,7 @@
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
@@ -127,7 +153,6 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
 
     <!-- start light & dark -->

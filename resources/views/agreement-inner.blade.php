@@ -8,6 +8,8 @@
 
     @extends('layouts.head-ar')
     <link rel="stylesheet" href="/scss/agreement-inner.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
 
@@ -23,8 +25,111 @@
 
 
 <body class="text-right" dir="rtl">
+    <!-- start navbar -->
+    <header id="header" dir="rtl" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
+                    class="img-fluid"></a>
+            <!-- Uncomment below if you prefer to use text as a logo -->
+            <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+
+            <nav id="navbar" class="navbar">
+
+                <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
 
+                    @endguest
+                    <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/about">عن الجامعة</a></li>
+                            <li><a href="/leaderuni">رئاسة الجامعة</a></li>
+                            <li><a href="/fees">الرسوم الدراسية </a></li>
+                            <li><a href="/strategy">ستراتيجية الجامعة </a></li>
+                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
+                            <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
+
+                            <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
+                            <li><a href="/facutlylab">المختبرات</a></li>
+                            <li><a href="/facutlyresearch">الانجازات </a></li>
+                            <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
+                            {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/agreements">الية التسجيل</a></li>
+                            <li><a href="/accept">شروط القبول</a></li>
+                            <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
+
+
+                        <ul>
+                            @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
+                                            {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    @endforeach
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/labexamfac"><span>التعليم الالكتروني</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
+                            <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
+                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="nav-link scrollto" href="/magazin">مجلة الجامعة</a></li>
+                    <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
+                    <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
+
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- end navbar -->
 
     <!-- start section 2 -->
 
@@ -81,7 +186,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/dark.js"></script>
     <script src="/js/nav.js"></script>
-    {{--  <script src="/js/dark.js"></script>  --}}
+    {{-- <script src="/js/dark.js"></script> --}}
 
     <script>
         var bool = true;
@@ -117,8 +222,8 @@
             var dark = document.querySelector('.dark-mood > .fas');
 
             var x = 0;
-            dark.on('click' , function(){
-                if(x == 0){
+            dark.on('click', function() {
+                if (x == 0) {
                     $('body').addClass('dark');
 
                 }
@@ -127,7 +232,6 @@
 
 
         })
-
     </script>
 
 </body>

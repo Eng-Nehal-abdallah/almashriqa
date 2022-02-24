@@ -71,7 +71,6 @@
                                 <li><a href="/facutlyen">Doctors </a></li>
                                 <li><a href="/agreementsen">Agreements </a></li>
 
-<<<<<<< HEAD
                     <nav id="navbar" class="navbar">
                         <ul><li><a href="/login"> login</a></li>
                         </ul>
@@ -85,21 +84,6 @@
                                     <li><a href="/strategyen">University strategy </a></li>
                                     <li><a href="/facutlydocen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
-
-                                <li><a href="/leaderworden">University President word</a></li>
-                                <li><a href="/facutlylaben">labs</a></li>
-                                <li><a href="/facutlyresearchen">achievements </a></li>
-                                <li><a href="/compusen">compus </a></li>
-                                {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="/agreementsen">LogIN Machine </a></li>
-                                <li><a href="/accepten">Acceptable Rules </a></li>
-                                <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
->>>>>>> 7e1f622c85fdc243c83f9f0e1a2684a1ba529b28
 
                             </ul>
                         </li>

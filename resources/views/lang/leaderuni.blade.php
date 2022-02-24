@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/scss/doctors.css">
 
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -30,11 +31,12 @@
 </head>
 
 <body>
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -45,9 +47,30 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
-                        </ul>
+
                         <ul>
+                            @guest
+
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    </li>
+                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                @endif
+                            @else
+                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
+
+                            @endguest
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -62,6 +85,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -74,6 +99,7 @@
 
                                 </ul>
                             </li>
+
 
 
 
@@ -100,19 +126,19 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
@@ -122,7 +148,6 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
-
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
@@ -130,82 +155,80 @@
     <!-- start light & dark -->
     <!-- start header -->
 
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
-     <div class="container">
-      <h1 class="text-center my-5">University Presidency </h1>
-      <div class="row text-right">
+        <div class="container">
+            <h1 class="text-center my-5">University Presidency </h1>
+            <div class="row text-right">
 
 
-        @foreach ($doctors as $doct)
-        <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-            <div class="member">
-                <div class="member-img">
-                    <img src="{{ $doct->image }}" class="img-fluid imgs" alt="">
-                    <div class="social">
-                        @foreach ($types as $type)
-                            @foreach ($socials as $social)
-                                @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                    <a href="$social->link">{{ $type->name_ثى }}</a>
-                                @endif
-                            @endforeach
-                        @endforeach
-                    </div>
-                </div>
-                <div class="member-info">
-                    <h4>{{ $doct->name_en }}</h4>
-                    <span>{{ $doct->position_en }}</span>
-                    <a href="#" class="btn btn-dark my-3 ">Visit Profile  </a>
+                @foreach ($doctors as $doct)
+                    <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $doct->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_ثى }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>{{ $doct->name_en }}</h4>
+                                <span>{{ $doct->position_en }}</span>
+                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
 
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-
-
-
-      </div>
-      <h1 class="text-center my-5">Deans of the University </h1>
-
-      <div class="row text-right">
-        @foreach ($leaders as $leader)
-
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                @foreach ($types as $type)
-                                @foreach ($socials as $social)
-                                    @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                        <a href="$social->link">{{ $type->name_en }}</a>
-                                    @endif
-                                @endforeach
-                            @endforeach
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4> {{ $leader->name_en }}   </h4>
-                            <span> {{ $leader->position_en }}  </span>
-                            <a href="#" class="btn btn-dark my-3 ">Visit Profile   </a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
 
 
-      </div>
 
-     </div>
+
+            </div>
+            <h1 class="text-center my-5">Deans of the University </h1>
+
+            <div class="row text-right">
+                @foreach ($leaders as $leader)
+                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_en }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4> {{ $leader->name_en }} </h4>
+                                <span> {{ $leader->position_en }} </span>
+                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div>
+
+        </div>
     </section><!-- End Team Section -->
 
 

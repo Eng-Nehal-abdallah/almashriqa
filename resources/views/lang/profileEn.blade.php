@@ -50,13 +50,11 @@
 <body class="dark">
 
 
-
-    <!-- start navbar -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -67,9 +65,30 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
-                        </ul>
+
                         <ul>
+                            @guest
+
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    </li>
+                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                @endif
+                            @else
+                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
+
+                            @endguest
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -84,6 +103,8 @@
                                     <li><a href="/facutlylaben">labs</a></li>
                                     <li><a href="/facutlyresearchen">achievements </a></li>
                                     <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
+
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
@@ -123,19 +144,19 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
@@ -144,7 +165,6 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
 
     <!-- home section start -->
@@ -224,42 +244,43 @@
                 </div>
 
 
-        <div class="row">
-            <div class="about-tabs">
-                <span class="tab-item outer-shadow active" data-target=".skills"> <a href="/den/{{ $doctor->id }}/research"> تفاصيل الانجازات</a></span>
-
-            </div>
-
-            <div class="skill-item" style="">
-
-            @foreach ($achievementes as $ach)
-                @if ($ach->id_doctor == $doctor->id)
-                    <!-- skills start -->
-                    <div style="bottom: auto;" class="row">
-                        <div class="skills ">
-                            <div class="row">
-                                <!-- skill item start -->
-                                <div class="skill-item">
-                                    <h2 style="text-align: center;font-size:x-large; color: white;">
-                                        {{ $ach->name_en }} {{ $ach->date }}
-                                    </h2>
-                                    <h2 style="text-align: center;font-size:x-large; color: white;">
-                                        {{ $ach->details_en }}
-                                    </h2>
-                                    <div class="progress inner-shadow">
-                                        <div class="progress-bar" style="width: calc(50% - 14px)"></div>
-                                        <a href="{{ $ach->pdf }} ">Download </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- skill item end -->
-                @endif
-            @endforeach
-
-                        </div>
-
+                <div class="row">
+                    <div class="about-tabs">
+                        <span class="tab-item outer-shadow active" data-target=".skills"> <a
+                                href="/den/{{ $doctor->id }}/research"> تفاصيل الانجازات</a></span>
 
                     </div>
+
+                    <div class="skill-item" style="">
+
+                        @foreach ($achievementes as $ach)
+                            @if ($ach->id_doctor == $doctor->id)
+                                <!-- skills start -->
+                                <div style="bottom: auto;" class="row">
+                                    <div class="skills ">
+                                        <div class="row">
+                                            <!-- skill item start -->
+                                            <div class="skill-item">
+                                                <h2 style="text-align: center;font-size:x-large; color: white;">
+                                                    {{ $ach->name_en }} {{ $ach->date }}
+                                                </h2>
+                                                <h2 style="text-align: center;font-size:x-large; color: white;">
+                                                    {{ $ach->details_en }}
+                                                </h2>
+                                                <div class="progress inner-shadow">
+                                                    <div class="progress-bar" style="width: calc(50% - 14px)"></div>
+                                                    <a href="{{ $ach->pdf }} ">Download </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- skill item end -->
+                            @endif
+                        @endforeach
+
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </section>
@@ -267,107 +288,107 @@
 
 
 
-        <!-- contact section start -->
-        <section class="contact-section section" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title">
-                        <h2 data-heading="contact">معلومات التواصل</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- contact item start -->
-
-
-                    <div class="contact-item">
-                        <div class="contact-item-inner outer-shadow">
-                            <i class="fas fa-phone"></i>
-                            <span>رقم التليفون</span>
-                            <p>{{ $doctor->phone }}</p>
-                        </div>
-                    </div>
-                    <!-- contact item end -->
-                    <!-- contact item start -->
-                    <div class="contact-item">
-                        <div class="contact-item-inner outer-shadow">
-                            <i class="fas fa-envelope"></i>
-                            <span>الايميل</span>
-
-
-                            <p>{{ $doctor->email }}</p>
-                        </div>
-                    </div>
-                    <!-- contact item end -->
-                    <!-- contact item start -->
-                    <div class="contact-item">
-                        <div class="contact-item-inner outer-shadow">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>العنوان</span>
-                            <p>{{ $doctor->country }}</p>
-                        </div>
-                    </div>
-                    <!-- contact item end -->
-
-        </section>
-        <!-- contact section end -->
-
-        <!-- portfolio popup start -->
-        <div class="pp portfolio-popup">
-            <div class="pp-details">
-                <div class="pp-details-inner">
-                    <div class="pp-title">
-                        <h2></h2>
-                        <p> <span class="pp-project-category"></span></p>
-                    </div>
-                    <div class="pp-project-details">
-                    </div>
+    <!-- contact section start -->
+    <section class="contact-section section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 data-heading="contact">معلومات التواصل</h2>
                 </div>
             </div>
+            <div class="row">
+                <!-- contact item start -->
 
-            <div class="separator"></div>
 
-            <div class="pp-main">
-                <div class="pp-main-inner">
-                    <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i
-                            class="fas fa-plus"></i>
+                <div class="contact-item">
+                    <div class="contact-item-inner outer-shadow">
+                        <i class="fas fa-phone"></i>
+                        <span>رقم التليفون</span>
+                        <p>{{ $doctor->phone }}</p>
                     </div>
-                    <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
-                    <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow">
-                    <div class="pp-counter"></div>
                 </div>
-                <div class="pp-loader">
-                    <div></div>
+                <!-- contact item end -->
+                <!-- contact item start -->
+                <div class="contact-item">
+                    <div class="contact-item-inner outer-shadow">
+                        <i class="fas fa-envelope"></i>
+                        <span>الايميل</span>
+
+
+                        <p>{{ $doctor->email }}</p>
+                    </div>
                 </div>
-                <!-- pp navigation -->
-                <div class="pp-prev"><i class="fas fa-play"></i></div>
-                <div class="pp-next"><i class="fas fa-play"></i></div>
+                <!-- contact item end -->
+                <!-- contact item start -->
+                <div class="contact-item">
+                    <div class="contact-item-inner outer-shadow">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>العنوان</span>
+                        <p>{{ $doctor->country }}</p>
+                    </div>
+                </div>
+                <!-- contact item end -->
 
-            </div>
-        </div>
-        <!-- portfolio popup end -->
+    </section>
+    <!-- contact section end -->
 
-
-
-        <!-- style switcher start - for demo purposes only -->
-        <div class="style-switcher outer-shadow">
-            <div class="day-night s-icon outer-shadow hover-in-shadow">
-                <i class="fas"></i>ss
+    <!-- portfolio popup start -->
+    <div class="pp portfolio-popup">
+        <div class="pp-details">
+            <div class="pp-details-inner">
+                <div class="pp-title">
+                    <h2></h2>
+                    <p> <span class="pp-project-category"></span></p>
+                </div>
+                <div class="pp-project-details">
+                </div>
             </div>
         </div>
 
+        <div class="separator"></div>
 
+        <div class="pp-main">
+            <div class="pp-main-inner">
+                <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i
+                        class="fas fa-plus"></i>
+                </div>
+                <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
+                <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow">
+                <div class="pp-counter"></div>
+            </div>
+            <div class="pp-loader">
+                <div></div>
+            </div>
+            <!-- pp navigation -->
+            <div class="pp-prev"><i class="fas fa-play"></i></div>
+            <div class="pp-next"><i class="fas fa-play"></i></div>
 
-
-
-        <h4>Theme Colors</h4>
-        <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
         </div>
+    </div>
+    <!-- portfolio popup end -->
+
+
+
+    <!-- style switcher start - for demo purposes only -->
+    <div class="style-switcher outer-shadow">
+        <div class="day-night s-icon outer-shadow hover-in-shadow">
+            <i class="fas"></i>ss
         </div>
+    </div>
+
+
+
+
+
+    <h4>Theme Colors</h4>
+    <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+    </div>
+    </div>
 
     </section>
 </body>

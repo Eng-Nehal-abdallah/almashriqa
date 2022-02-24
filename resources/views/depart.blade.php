@@ -16,13 +16,15 @@
 
 
     <style>
-        body.dark{
+        body.dark {
             background-color: rgb(0, 0, 0);
             color: #fff;
         }
-        img{
+
+        img {
             width: 100%
         }
+
     </style>
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -36,7 +38,7 @@
 
 
     <!-- start navbar -->
-    <header dir="rtl"  id="header" class="fixed-top">
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -45,9 +47,29 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
+
                 <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
@@ -61,6 +83,8 @@
                             <li><a href="/facutlylab">المختبرات</a></li>
                             <li><a href="/facutlyresearch">الانجازات </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
                             {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
                         </ul>
                     </li>
@@ -73,6 +97,7 @@
 
                         </ul>
                     </li>
+
 
 
 
@@ -109,7 +134,7 @@
                     <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
                     <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
 
-                    <li><a class="nav-link scrollto" href="/en">اللغة </a></li>
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
             </nav><!-- .navbar -->
@@ -176,8 +201,9 @@
                                 <div class="member-info">
                                     <h4>ر</h4>
                                     <span>{{ $doctor['details_ar'] }} </span>
-                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زياره الملف الشخصي
-                                        </a>
+                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زياره الملف
+                                        الشخصي
+                                    </a>
 
 
                                 </div>
@@ -232,7 +258,7 @@
                     <div class="count">{{ $activities->count() }}</div>
 
                     <br>
-                    <p> الانشطه  </p>
+                    <p> الانشطه </p>
                 </div>
 
             </div>
@@ -258,27 +284,26 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-@foreach ($activities as $act)
-@if($act->id_faculty==$department->id_facutly)
+                @foreach ($activities as $act)
+                    @if ($act->id_faculty == $department->id_facutly)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $act->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $act->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
+                                <h4>{{ $act->name_ar }}</h4>
+                                @foreach ($doctors as $doc)
+                                    @if ($act->id_doctor == $doc->id)
+                                        <h4>{{ $doc->name_ar }}</h4>
+                                    @endif
+                                @endforeach
 
-                        <h4>{{ $act->name_ar }}</h4>
-@foreach ($doctors as $doc)
-    @if($act->id_doctor==$doc->id)
-    <h4>{{ $doc->name_ar }}</h4>
-    @endif
-@endforeach
-
-                        <p style="font-weight: bold;" class="second">{{$act->detaila_ar}}</p>
-                        <a  class="btn main m-auto "href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
-                    </div>
-                </div>
-                @endif
+                                <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
+                                <a class="btn main m-auto " href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
 
             </div>
@@ -302,23 +327,23 @@
             <hr>
             <h2 class="text-center my-3">الطلاب الاوائل </h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                @foreach($students as $st)
-                @if($st->id_facutly==$department->id_facutly)
-                <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
+                @foreach ($students as $st)
+                    @if ($st->id_facutly == $department->id_facutly)
+                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
 
-                    <div class="member">
-                        <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h1 class="inside">{{ $st->grade_ar }}</h1>
+                            <div class="member">
+                                <img src="/{{ $st->image }}" class="img-fluid" alt="">
+                                <div class="member-content">
+                                    <h1 class="inside">{{ $st->grade_ar }}</h1>
 
-                            <h4>{{ $st->name_ar }}</h4>
-                            <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
+                                    <h4>{{ $st->name_ar }}</h4>
+                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @endif
-@endforeach
+                    @endif
+                @endforeach
 
 
             </div>
@@ -345,25 +370,22 @@
                 </h1>
             </div>
             <div class="center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
-            @foreach($labs as $lab)
-            @if($lab->id_faculty==$department->id_facutly)
+                @foreach ($labs as $lab)
+                    @if ($lab->id_faculty == $department->id_facutly)
+                        <div>
+                            <div class="card ">
+                                <img src="/{{ $lab->image }}" class="card-img" alt="...">
+                            </div>
+                            <div class="card p-3 ">
 
+                                <h4 class="">{{ $lab->name_ar }}</h4>
 
-                <div>
-                    <div class="card ">
-                        <img src="/{{ $lab->image }}" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 ">
-
-                        <h4 class="">{{ $lab->name_ar }}</h4>
-
-                        <p style="font-weight: bold;" class="second ">{{$lab->details_ar}}.</p>
-                        <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
-                    </div>
-                </div>
-
-                @endif
-@endforeach
+                                <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
+                                <a href="/lab/{{ $lab->id }}/show" class="btn main m-auto ">التفاصيل</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
             </div>
 

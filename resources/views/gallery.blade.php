@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
+
+    <link rel="stylesheet" href="/scss/gallery.css">
     @extends('layouts.head-ar')
-    <link rel="stylesheet" href="/scss/Agreements&Memoranda-of-Understanding.css">
 
 
 
     <!-- start wol js -->
-
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
-
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
     <title>Document</title>
+
+
+
+    <link rel="stylesheet" href="/scss/about-us.css">
+
+
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <!-- start wol js -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick-theme.css" />
+
+    <link rel="stylesheet" href=/css/navbar.css">
+
+    <title>Document</title>
 </head>
 
-
-<body class="text-right" dir="rtl">
-
+<body dir="ltr">
+    <!-- start box icon -->
 
     <!-- start navbar -->
-    <header dir="rtl"  id="header" class="fixed-top">
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -35,16 +57,36 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-                <ul><li><a href="/login"> تسجيل الدخول </a></li>
-                </ul>
+
                 <ul>
+                    @guest
+
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
                             <li><a href="/leaderuni">رئاسة الجامعة</a></li>
                             <li><a href="/fees">الرسوم الدراسية </a></li>
                             <li><a href="/strategy">ستراتيجية الجامعة </a></li>
-                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
+                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
                             <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
@@ -65,9 +107,6 @@
 
                         </ul>
                     </li>
-
-                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
-
 
 
 
@@ -114,62 +153,71 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
-    <!-- start section 1 -->
-    <section class="section-1">
+    <sectionl class="section-1">
         <div class="container">
-            <div class="alert text-center alert-light">
-                <h3><i class="fas fa-handshake"></i>  التفاصيل</h3>
-            </div>
             <div class="row justify-content-around">
-                @foreach ($agreements as $ag)
-                    <div class="col-md-5">
-                        <img class="rounded" src="{{ $ag->image }}" alt="">
-                        <i class="fas fa-handshake"></i>
-                        <h2 class="d-inline text-capitalize">{{ $ag->name_ar }}</h2>
-                        <p>{{ $ag->abstract_ar }}</p>
-                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
-                        <a href="/agreements/{{ $ag->id }}/show" class="btn btn-secondary">المزيد</a>
-                    </div>
-                @endforeach
-
-                <div class="col-md-5">
-
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                </div>
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End section 1 -->
+    </sectionl>
 
-
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
-    </div>
-    <!-- start light & dark -->
-    <!-- starting section 1 -->
-
-    <!-- end section 1 -->
 
     <!--start footer -->
 
     @extends('layouts.footer-ar')
-    <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
 
+
+    <!-- start jquery -->
+    <script src=/js/jquery-3.6.0.min.js"></script>
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/slick.min.js"></script>
+    <script src=/js/jquery.slim.min.js"></script>
+    <script src=/js/popper.min.js"></script>
+    <script src=/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=/js/slick.min.js"></script>
 
+    <script src=/js/main.js"></script>
+    <script src=/js/dark.js"></script>
+    <script src=/js/lang.js"></script>
+
+    <script src=" {{ asset('/js/jquery-3.6.0.min.js') }}"></script>
+    <!-- start owl carousel -->
+
+    <!-- start bootstrap -->
+    <script src=" {{ asset('/js/jquery.slim.min.js') }}"></script>
+    <script src=" {{ asset('/js/popper.min.js') }}"></script>
+    <script src=" {{ asset('/js/bootstrap.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('/js/slick.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/nav.js"></script>
-    {{--  <script src="/js/dark.js"></script>  --}}
+    <script src=" {{ asset('/js/main.js') }}"></script>
+    <script src=" {{ asset('/js/dark.js') }}"></script>
+    <script src=" {{ asset('/js/nav.js') }}"></script>
+
+
+
+    <script>
+        $(function() {
+            var header = $(".start-style");
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 10) {
+                    header.removeClass('start-style').addClass("scroll-on");
+                } else {
+                    header.removeClass("scroll-on").addClass('start-style');
+                }
+            });
+        });
+    </script>
 
     <script>
         var bool = true;
@@ -178,46 +226,28 @@
             $('#lang').on('click', function() {
 
                 if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
+                    $("body").removeAttr("dir", "ltr");
+                    $("body").attr("dir", "rtl");
 
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
+                    $('p').removeClass('text-left')
+                    $('p').addClass('text-right')
 
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
                     bool = false;
                 } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
 
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
+                    $("body").removeAttr("dir");
+                    $("body").attr("dir", "ltr");
+
+                    $('p').removeClass('text-right')
+                    $('p').addClass('text-left')
+
+
                     bool = true;
                 }
 
             })
         })
-
-        $(document).ready(function() {
-            var dark = document.querySelector('.dark-mood > .fas');
-
-            var x = 0;
-            dark.on('click' , function(){
-                if(x == 0){
-                    $('body').addClass('dark');
-
-                }
-            })
-
-
-
-        })
-
     </script>
-
 </body>
 
 </html>
