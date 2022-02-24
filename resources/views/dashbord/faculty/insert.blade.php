@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
                 <label for="title">goal_en 	 </label>
-                <input type="text" class="form-control" id="goal_en"	  name="view_ar" />
+                <input type="text" class="form-control" id="goal_en"	  name="goal_en" />
             </div>
 
             <div class="form-group">
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group">
                 <label for="title">message_dean_en	 	 </label>
-                <input type="text" class="form-control" id="message_dean_en	"	 name="view_ar" />
+                <input type="text" class="form-control" id="message_dean_en	"	 name="message_dean_en" />
             </div>
             <div class="form-group">
                 <label for="title">Color</label>

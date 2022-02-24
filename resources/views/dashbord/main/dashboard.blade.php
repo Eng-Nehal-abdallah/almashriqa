@@ -18,7 +18,7 @@
         <div class="bg-white" id="sidebar-wrapper">
 
             <div class="list-group list-group-flush my-3">
-                <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-university  "></i>main paig</a>
                 <a href="/dashboard2"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i

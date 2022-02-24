@@ -17,9 +17,9 @@
   <div class="bg-white" id="sidebar-wrapper">
 
     <div class="list-group list-group-flush my-3">
-        <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a href="/dashboard"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold><i
             class="fas fa-university  "></i>main paig</a>
-        <a href="/dashboard2"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a href="/dashboard2" class="list-group-item list-group-item-action bg-transparent second-text active"><i
           class="fas fa-university  "></i>
          Faculty</a>
          <a href="/dashboard3"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -53,9 +53,25 @@
                 class="fas fa-map-marker-alt me-2"> مركز اللغه الانجليزيه </i></a>
                <a href="/dashboard17" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-map-marker-alt me-2"> مجلة الجامعة</i></a>
-               <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+               <a href="/dashboard18"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold><i
                 class="fas fa-chart-line me-2"> معدل القبول و الاقساط
  </i></a>
+ <a href="/dashboard22"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> وسائط متعددة
+                    </i></a>
+                    <a href="/dashboard25"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  رئيس ومساعدين الجامعة
+                    </i></a>
+                    <a href="/dashboard26"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> عمداء ومعاونين ومقررين الكليات
+                    </i></a>
+                    <a href="/dashboard27"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
+                    </i></a>
 
    </div>
   </div>
@@ -221,7 +237,7 @@
           <td>{{ $facu->about_facutly_en }}</td>
           <td>{{ $facu->message_dean_ar }}</td>
           <td>{{ $facu->message_dean_en	 }}</td>
-          <td>   <img src="/{{ $facu->image }}" width="100" height="100" alt="image"></td>
+          <td>   <img src="{{ $facu->image }}" width="100" height="100" alt="image"></td>
           <td>{{ $facu->color }}</td>
 
           <td><a class="btn shadow-sm btn-dark" href="/facutly/{{ $facu->id }}/edit">edit</a></td>

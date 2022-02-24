@@ -103,8 +103,8 @@ class UniversitiesController extends Controller
 
         // return view('Certifieds');
     }
-    
-    
+
+
 
 
     public function indexdash()
@@ -441,7 +441,7 @@ class UniversitiesController extends Controller
     {
         $Facutly->delete();
 
-        return redirect("/dashboard_Facutly");
+        return redirect("/dashboard2");
     }
 
 

@@ -626,7 +626,7 @@ Route::get('/den/{doctor}/research', [UniversitiesController::class, 'doctoren']
 //edit faculty
 Route::get('/facutly/{facutly}/edit', [UniversitiesController::class, 'edit']);
 //update code after head
-Route::post('/facutly/{facutly}', [UniversitiesController::class, 'update']);
+Route::Put('/facutly/{facutly}', [UniversitiesController::class, 'update']);
 
 //show insert type achieve
 Route::get('insert_type', [TypeahievementController::class, 'insert']);
