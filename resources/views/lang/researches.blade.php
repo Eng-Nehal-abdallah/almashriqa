@@ -36,57 +36,59 @@
 </head>
 
 <body>
+
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
                     class="img-fluid"></a>
 
-            <div class="container d-flex align-items-center justify-content-between">
+            <header id="header" class="fixed-top">
+                <div class="container d-flex align-items-center justify-content-between">
 
-                <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                        class="img-fluid"></a>
-                <!-- Uncomment below if you prefer to use text as a logo -->
-                <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                    <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                            class="img-fluid"></a>
+                    <!-- Uncomment below if you prefer to use text as a logo -->
+                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li><a href="/login"> login</a></li>
-                    </ul>
-                    <ul>
-                        <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="/abouten">About University</a></li>
-                                <li><a href="/leaderunien">University Presidency </a></li>
-                                <li><a href="/feesen">Tuition fees </a></li>
-                                <li><a href="/strategyen">University strategy </a></li>
-                                <li><a href="/facutlyen">Doctors </a></li>
-                                <li><a href="/agreementsen">Agreements </a></li>
+                    <nav id="navbar" class="navbar">
+                        <ul>
+                            <li><a href="/login"> login</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown"><a href="/en"><span>Home</span> <i
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/abouten">About University</a></li>
+                                    <li><a href="/leaderunien">University Presidency </a></li>
+                                    <li><a href="/feesen">Tuition fees </a></li>
+                                    <li><a href="/strategyen">University strategy </a></li>
+                                    <li><a href="/facutlyen">Doctors </a></li>
+                                    <li><a href="/agreementsen">Agreements </a></li>
 
-                                <li><a href="/leaderworden">University President word</a></li>
-                                <li><a href="/facutlylaben">labs</a></li>
-                                <li><a href="/facutlyresearchen">achievements </a></li>
-                                <li><a href="/compusen">compus </a></li>
-                                <li><a href="/chartEn">statistics </a></li>
+                                    <li><a href="/leaderworden">University President word</a></li>
+                                    <li><a href="/facutlylaben">labs</a></li>
+                                    <li><a href="/facutlyresearchen">achievements </a></li>
+                                    <li><a href="/compusen">compus </a></li>
+                                    <li><a href="/chartEn">statistics </a></li>
 
-                                {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="/agreementsen">LogIN Machine </a></li>
-                                <li><a href="/accepten">Acceptable Rules </a></li>
-                                <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
+                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/agreementsen">LogIN Machine </a></li>
+                                    <li><a href="/accepten">Acceptable Rules </a></li>
+                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
-                            </ul>
-                        </li>
-
-                        <<<<<<< HEAD=======<li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a>
+                                </ul>
                             </li>
 
 
-                            >>>>>>> 44a9fa5482fb96565932371a7bab200d2cdbcb0b
+
+
 
                             <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
                                         class="bi bi-chevron-down"></i></a>
@@ -122,16 +124,15 @@
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                </nav><!-- .navbar -->
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+                    </nav><!-- .navbar -->
 
-            </div>
+                </div>
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
     <!-- start light & dark -->
     <div class="dark-mood ">

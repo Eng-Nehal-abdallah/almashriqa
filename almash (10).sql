@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2022 at 10:26 AM
+-- Generation Time: Feb 24, 2022 at 08:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -59,60 +59,62 @@ CREATE TABLE `achievement` (
   `pdf` varchar(255) DEFAULT NULL,
   `id_doctor` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  `image` varchar(255) NOT NULL,
+  `images` varchar(255) NOT NULL,
   `id_facutly` int(11) DEFAULT NULL,
   `id_department` int(11) DEFAULT NULL,
-  `images` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `id_type` int(11) DEFAULT NULL,
   `id_types` int(11) DEFAULT NULL,
-  `date` varchar(255) DEFAULT NULL
+  `date` varchar(255) DEFAULT NULL,
+  `id_leader` int(11) DEFAULT NULL,
+  `id_leaderuni` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `achievement`
 --
 
-INSERT INTO `achievement` (`id`, `name_ar`, `name_en`, `details_en`, `details_ar`, `pdf`, `id_doctor`, `type`, `image`, `id_facutly`, `id_department`, `images`, `id_type`, `id_types`, `date`) VALUES
-(3, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 3, 'بحث', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(4, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 3, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(5, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 3, 'براءه', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(9, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 3, 'شهادة تكريم', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(10, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 636, 'بحث', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(11, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 636, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(12, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 636, 'براءه', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(14, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 3, 'شهادة تكريم', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(15, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 633, 'بحث', 'images/researchlaw1.jpg', 2, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(16, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 620, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 2, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(17, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 633, 'براءه', 'images/researchlaw3.jpg', 2, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(18, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 620, 'شهادة تكريم', 'images/researchlaw3.jpg', 2, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(19, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 633, 'بحث', 'images/researchlaw1.jpg', 2, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(20, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 620, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 2, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(21, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 633, 'براءه', 'images/researchlaw3.jpg', 2, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(22, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 620, 'شهادة تكريم', 'images/researchlaw3.jpg', 2, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(23, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 632, 'بحث', 'images/researchlaw1.jpg', 3, 1, 'images/researchlaw3.jpg', 5, 4, ''),
-(24, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 632, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 3, 1, 'images/researchlaw1.jpg', 4, 5, ''),
-(25, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 632, 'براءه', 'images/researchlaw3.jpg', 3, 1, 'images/researchlaw3.jpg', 3, 3, ''),
-(26, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 3, 5, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(27, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 3, 5, 'images/researchlaw3.jpg', 5, 4, ''),
-(28, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 3, 5, 'images/researchlaw1.jpg', 4, 5, ''),
-(29, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 630, 'براءه', 'images/researchlaw3.jpg', 3, 6, 'images/researchlaw3.jpg', 3, 3, ''),
-(30, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 630, 'شهادة تكريم', 'images/researchlaw3.jpg', 3, 6, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(31, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 3, 5, 'images/researchlaw3.jpg', 5, 4, ''),
-(32, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 3, 5, 'images/researchlaw1.jpg', 4, 5, ''),
-(33, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 1, 'براءه', 'images/researchlaw3.jpg', 38, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(34, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 38, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(35, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 636, 'بحث', 'images/researchlaw1.jpg', 38, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(36, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 636, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 38, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(37, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 636, 'براءه', 'images/researchlaw3.jpg', 38, NULL, 'images/researchlaw3.jpg', 3, 3, ''),
-(38, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 38, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(39, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 38, NULL, 'images/researchlaw3.jpg', 5, 4, ''),
-(40, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 38, NULL, 'images/researchlaw1.jpg', 4, 5, ''),
-(41, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 627, 'براءه', 'images/researchlaw3.jpg', 4, 9, 'images/researchlaw3.jpg', 3, 3, ''),
-(42, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 627, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 9, 'images/researchlaw1.jpg', NULL, 1, NULL),
-(43, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 627, 'بحث', 'images/researchlaw1.jpg', 4, 9, 'images/researchlaw3.jpg', 5, 4, ''),
-(44, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 624, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 4, 10, 'images/researchlaw1.jpg', 4, 5, ''),
-(45, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 624, 'براءه', 'images/researchlaw3.jpg', 4, 10, 'images/researchlaw3.jpg', 3, 3, ''),
-(46, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 624, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 10, 'images/researchlaw1.jpg', NULL, 1, NULL);
+INSERT INTO `achievement` (`id`, `name_ar`, `name_en`, `details_en`, `details_ar`, `pdf`, `id_doctor`, `type`, `images`, `id_facutly`, `id_department`, `image`, `id_type`, `id_types`, `date`, `id_leader`, `id_leaderuni`) VALUES
+(3, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 3, 'بحث', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw3.jpg', 5, 4, '', NULL, NULL),
+(4, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 3, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', 4, 5, '', NULL, NULL),
+(5, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 3, 'براءه', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw3.jpg', 3, 3, '', NULL, NULL),
+(9, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 3, 'شهادة تكريم', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL, NULL, NULL),
+(10, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 636, 'بحث', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw3.jpg', 5, 4, '', NULL, NULL),
+(11, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 636, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 1, NULL, 'images/researchlaw1.jpg', 4, 5, '', NULL, NULL),
+(12, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 636, 'براءه', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw3.jpg', 3, 3, '', NULL, NULL),
+(14, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 3, 'شهادة تكريم', 'images/researchlaw3.jpg', 1, NULL, 'images/researchlaw1.jpg', NULL, 1, NULL, NULL, NULL),
+(15, ' بحث عام في \n   عام الصيدلية ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 633, 'بحث', 'images/researchlaw1.jpg', 2, NULL, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(16, 'التحصيل الدراسي  بحث عام في \n الصيدلية ', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 620, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 2, NULL, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(17, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 633, 'براءه', 'images/researchlaw3.jpg', 2, NULL, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(18, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 620, 'شهادة تكريم', 'images/researchlaw3.jpg', 2, NULL, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(19, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 633, 'بحث', 'images/researchlaw1.jpg', 2, NULL, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(20, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 620, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 2, NULL, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(21, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 633, 'براءه', 'images/researchlaw3.jpg', 2, NULL, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(22, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 620, 'شهادة تكريم', 'images/researchlaw3.jpg', 2, NULL, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(23, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 632, 'بحث', 'images/researchlaw1.jpg', 3, 1, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(24, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 632, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 3, 1, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(25, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 632, 'براءه', 'images/researchlaw3.jpg', 3, 1, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(26, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 3, 5, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(27, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 3, 5, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(28, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 3, 5, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(29, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 630, 'براءه', 'images/researchlaw3.jpg', 3, 6, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(30, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 630, 'شهادة تكريم', 'images/researchlaw3.jpg', 3, 6, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(31, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 3, 5, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(32, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 3, 5, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(33, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 1, 'براءه', 'images/researchlaw3.jpg', 38, NULL, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(34, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 38, NULL, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(35, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 636, 'بحث', 'images/researchlaw1.jpg', 38, NULL, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(36, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 636, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 38, NULL, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(37, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 636, 'براءه', 'images/researchlaw3.jpg', 38, NULL, 'images/images.jpg', 3, 3, '', NULL, NULL),
+(38, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 1, 'شهادة تكريم', 'images/researchlaw3.jpg', 38, NULL, 'images/images.jpg', NULL, 1, NULL, NULL, NULL),
+(39, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 1, 'بحث', 'images/researchlaw1.jpg', 38, NULL, 'images/images.jpg', 5, 4, '', NULL, NULL),
+(40, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 1, 'التحصيل الدراسي', 'images/researchlaw3.jpg', 38, NULL, 'images/images.jpg', 4, 5, '', NULL, NULL),
+(41, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 627, 'براءه', 'images/researchlaw3.jpg', 4, 9, 'images/images (1).jpg', 3, 3, '', NULL, NULL),
+(42, 'شهادة تكريم  القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 627, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 9, 'images/images (1).jpg', NULL, 1, NULL, NULL, NULL),
+(43, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 627, 'بحث', 'images/researchlaw1.jpg', 4, 9, 'images/images (1).jpg', 5, 4, '', NULL, NULL),
+(44, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 624, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 4, 10, 'images/images (1).jpg', 4, 5, '', NULL, NULL),
+(45, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 624, 'براءه', 'images/researchlaw3.jpg', 4, 10, 'images/images (1).jpg', 3, 3, '', NULL, NULL),
+(46, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 624, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 10, 'images/images (1).jpg', NULL, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,16 +183,18 @@ CREATE TABLE `agreement` (
   `details_ar` varchar(255) DEFAULT NULL,
   `details_en` varchar(255) DEFAULT NULL,
   `image` text DEFAULT NULL,
-  `pdf` text DEFAULT NULL
+  `pdf` text DEFAULT NULL,
+  `abstract_ar` text DEFAULT NULL,
+  `abstract_en` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `agreement`
 --
 
-INSERT INTO `agreement` (`id`, `name_ar`, `name_en`, `details_ar`, `details_en`, `image`, `pdf`) VALUES
-(1, 'اتفاقيه', 'agreement', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! Suscipit ipsum الملقب لودانتيوم recusandae ديكتا ullam؟', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero! Suscipit ipsum alias laudantium recusandae dicta ullam?', 'images/leader.jpg', 'download.jpg'),
-(2, 'اتفاقيه', 'agreement', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! Suscipit ipsum الملقب لودانتيوم recusandae ديكتا ullam؟', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero! Suscipit ipsum alias laudantium recusandae dicta ullam?', 'images/leader.jpg', 'download.jpg');
+INSERT INTO `agreement` (`id`, `name_ar`, `name_en`, `details_ar`, `details_en`, `image`, `pdf`, `abstract_ar`, `abstract_en`) VALUES
+(1, 'اتفاقيه', 'agreement', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! Suscipit ipsum الملقب لودانتيوم recusandae ديكتا ullam؟', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero! Suscipit ipsum alias laudantium recusandae dicta ullam?', 'images/leader.jpg', 'download.jpg', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero!'),
+(2, 'اتفاقيه', 'agreement', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! Suscipit ipsum الملقب لودانتيوم recusandae ديكتا ullam؟', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero! Suscipit ipsum alias laudantium recusandae dicta ullam?', 'images/leader.jpg', 'download.jpg', 'لوريم إيبسوم دولور الجلوس amet consectetur الدهون النخبوية. ريروم aperiam voluptatibus ducimus quaerat deleniti exercitationem، voluptatem سابينتي، ناتوس يوري، في سولوتا فوغا فيرو! ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aperiam voluptatibus ducimus quaerat deleniti exercitationem, voluptatem sapiente, natus iure, at soluta fuga vero!');
 
 -- --------------------------------------------------------
 
@@ -212,7 +216,7 @@ CREATE TABLE `center` (
 --
 
 INSERT INTO `center` (`id`, `name_ar`, `name_en`, `details_en`, `details_ar`, `tablecode`) VALUES
-(1, 'مركز اللفة الانجيليزية', 'English language center', '\r\nSince its founding, the University has developed plans that ensure the service of the scientific and educational process in Iraq and constructive interaction with the labor market and civil society organizations and through a precise and correct vision of the data of the Iraqi reality based on its vision and mission, thus achieving important results, including the study of students in the university formations in the first and higher studies of its engineering, medical, administrative and applied arts programs, and the development of scientific sections in accordance with the requirements of the scientific plan and the need of the labor market. And from God, success', '\r\nوضعت الجامعة منذ تأسيسها الخطط التي تضمن خدمة المسيرة العلمية والتربوية في العراق والتفاعل البناء مع سوق العمل ومنظمات المجتمع المدني ومن خلال رؤيا دقيقة وصحيحة لمعطيات الواقع العراقي معتمدة على رؤيتها ورسالتها محققة بذلك نتائج مهمة منها دراسة الطلبة في تشكيلات الجامعة في الدراستين الاولية و العليا لبرامجها الهندسية والطبية والإدارية والفنون التطبيقية، واستحداث الاقسام العلمية وفقا لمتطلبات الخطة العلمية و حاجة سوق العمل . ومن الله التوفيق', ' <table class=\"table\">\r\n     <thead>\r\n      <tr>\r\n       <th scope=\"col\">#</th>\r\n       <th scope=\"col\">First</th>\r\n       <th scope=\"col\">Last</th>\r\n       <th scope=\"col\">Handle</th>\r\n      </tr>\r\n     </thead>\r\n     <tbody>\r\n      <tr>\r\n       <th scope=\"row\">1</th>\r\n       <td>Mark</td>\r\n       <td>Otto</td>\r\n       <td>@mdo</td>\r\n      </tr>\r\n      <tr>\r\n       <th scope=\"row\">2</th>\r\n       <td>Jacob</td>\r\n       <td>Thornton</td>\r\n       <td>@fat</td>\r\n      </tr>\r\n      <tr>\r\n       <th scope=\"row\">3</th>\r\n       <td>Larry</td>\r\n       <td>the Bird</td>\r\n       <td>@twitter</td>\r\n      </tr>\r\n     </tbody>\r\n    </table>');
+(1, 'مركز اللفة الانجيليزية', 'English language center', '\r\nSince its founding, the University has developed plans that ensure the service of the scientific and educational process in Iraq and constructive interaction with the labor market and civil society organizations and through a precise and correct vision of the data of the Iraqi reality based on its vision and mission, thus achieving important results, including the study of students in the university formations in the first and higher studies of its engineering, medical, administrative and applied arts programs, and the development of scientific sections in accordance with the requirements of the scientific plan and the need of the labor market. And from God, success', '\r\nوضعت الجامعة منذ تأسيسها الخطط التي تضمن خدمة المسيرة العلمية والتربوية في العراق والتفاعل البناء مع سوق العمل ومنظمات المجتمع المدني ومن خلال رؤيا دقيقة وصحيحة لمعطيات الواقع العراقي معتمدة على رؤيتها ورسالتها محققة بذلك نتائج مهمة منها دراسة الطلبة في تشكيلات الجامعة في الدراستين الاولية و العليا لبرامجها الهندسية والطبية والإدارية والفنون التطبيقية، واستحداث الاقسام العلمية وفقا لمتطلبات الخطة العلمية و حاجة سوق العمل . ومن الله التوفيق', '\n<table style=\"width:100%\">\n  <tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n</table>');
 
 -- --------------------------------------------------------
 
@@ -474,8 +478,35 @@ INSERT INTO `fees` (`id`, `tablecode`, `tablecode_ar`) VALUES
 
 CREATE TABLE `image` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `image`
+--
+
+INSERT INTO `image` (`id`, `image`) VALUES
+(1, 'images/20220222120534.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `image` text DEFAULT NULL,
+  `id_image` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `image`, `id_image`) VALUES
+(1, 'images/20220222124230.jpg', 1),
+(2, 'images/20220222125236.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -651,7 +682,17 @@ INSERT INTO `leaderuni` (`id`, `name_ar`, `name_en`, `university_certified_en`, 
 (2, 'ا.م.د علي غني عباس', 'A.M.D. Ali Ghani Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'عميد كلية القانون', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Law', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'images/profs.jpg'),
 (3, 'ا.م.د سنان صبحي فرحان', 'A.M.D. Sinan Sobhi Farha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'عميد كلية تقنيات والعلوم الط', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Medical Technologies and Sciences', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, 'images/profs.jpg'),
 (4, 'ا.د رجاء هادي عباس', 'Dr. Raja Hadi Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'عميد كلية طب الاسنان', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Dentistry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 38, NULL, NULL, NULL, 'images/profs.jpg'),
-(5, 'ا.د ليث حمزة سمين ', 'Dr. Laith Hamza Fatin ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' عميد كلية الصيدلة', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Pharmacy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, 'images/profs.jpg');
+(5, 'ا.د ليث حمزة سمين ', 'Dr. Laith Hamza Fatin ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' عميد كلية الصيدلة', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Pharmacy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, 'images/profs.jpg'),
+(6, 'أ.د سالم سليمان محمد', 'Dr. Salem Suleiman Moham', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '  معاون كلية العلوم الادارية', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Administrative Sciences', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, 'images/profs.jpg'),
+(7, 'ا.م.د علي غني عباس', 'A.M.D. Ali Ghani Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'معاون كلية القانون', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Law', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'images/profs.jpg'),
+(8, 'ا.م.د سنان صبحي فرحان', 'A.M.D. Sinan Sobhi Farha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'معاون كلية تقنيات والعلوم ال', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Medical Technologies and Sciences', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, 'images/profs.jpg'),
+(9, 'ا.د رجاء هادي عباس', 'Dr. Raja Hadi Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'معاون كلية طب الاسنان', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Dentistry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 38, NULL, NULL, NULL, 'images/profs.jpg'),
+(10, 'ا.د ليث حمزة سمين ', 'Dr. Laith Hamza Fatin ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' معاون كلية الصيدلة', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Pharmacy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, 'images/profs.jpg'),
+(11, 'أ.د سالم سليمان محمد', 'Dr. Salem Suleiman Moham', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '  مقرر  كلية العلوم الادارية', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Administrative Sciences', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, 'images/profs.jpg'),
+(12, 'ا.م.د علي غني عباس', 'A.M.D. Ali Ghani Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'مقرر كلية القانون', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Law', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'images/profs.jpg'),
+(13, 'ا.م.د سنان صبحي فرحان', 'A.M.D. Sinan Sobhi Farha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'مقرر كلية تقنيات والعلوم الط', NULL, NULL, NULL, NULL, 'Dean of the Faculty of Medical Technologies and Sciences', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, 'images/profs.jpg'),
+(14, 'ا.د رجاء هادي عباس', 'Dr. Raja Hadi Abbas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'مقرر كلية طب الاسنان', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Dentistry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 38, NULL, NULL, NULL, 'images/profs.jpg'),
+(15, 'ا.د ليث حمزة سمين ', 'Dr. Laith Hamza Fatin ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' مقرر كلية الصيدلة', NULL, NULL, NULL, NULL, ' Dean of the Faculty of Pharmacy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, 'images/profs.jpg');
 
 -- --------------------------------------------------------
 
@@ -673,6 +714,32 @@ CREATE TABLE `lecture` (
 
 INSERT INTO `lecture` (`id`, `table`, `day`, `id_facutly`, `id_department`) VALUES
 (3, ' <table class=\"table\">\n       <thead class=\"thead-dark\">\n        <tr>\n         <th scope=\"col\">dssd</th>\n         <th scope=\"col\">dssd</th>\n\n         <th scope=\"col\">dssd</th>\n         <th scope=\"col\">dssd</th>\n         <th scope=\"col\">dssd</th>\n         <th scope=\"col\">dssd</th>\n\n        </tr>\n       </thead>\n       <tbody>\n        <tr>\n         <th scope=\"row\">1</th>\n         <td>Mark</td>\n         <td>Otto</td>\n         <td>@mdo</td>\n        </tr>\n        <tr>\n         <th scope=\"row\">2</th>\n         <td>Jacob</td>\n         <td>Thornton</td>\n         <td>@fat</td>\n        </tr>\n        <tr>\n         <th scope=\"row\">3</th>\n         <td>Larry</td>\n         <td>the Bird</td>\n         <td>@twitter</td>\n        </tr>\n       </tbody>\n      </table>', 'السبت', 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `machine`
+--
+
+CREATE TABLE `machine` (
+  `id` int(11) NOT NULL,
+  `details_ar` text DEFAULT NULL,
+  `details_en` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `machine`
+--
+
+INSERT INTO `machine` (`id`, `details_ar`, `details_en`) VALUES
+(1, 'انشاء حساب شخصي ، حيث ستقوم باختيار اسم مستخدم و كلمة ومرور و تثبت رقم هاتفك الشخصي.', 'Create a personal account, where you will choose a username, word and pass and prove your personal phone number.'),
+(2, 'بعد انشائك للحساب الشخصي ستقوم بتفعيل الخدمات الساندة ضمن الحساب و كما موضح في التعليمات سيرشدك النظام بعد ذلك الى مرحلة ملء البيانات الطلابية حيث ستختار الحالة التي تنطبق عليك ضمن سبعة حالات معدة مسبقا ضمن النظام.', 'After you create your personal account, you will activate the support services within the account and as described in the instructions the system will then guide you to the student data filling stage where you will choose the status that applies to you in seven pre-prepared cases within the system.'),
+(3, 'في حالة احتياجك لعملية التدقيق فسيقوم النظام تلقائيا بتحويلك الى نافذة حجز موعد الكتروني في احد مراكز التدقيق في الجامعات والكليات الاهلية.', 'If you need the audit, the system will automatically transfer you to an electronic appointment booking window at an audit center at universities and community colleges.'),
+(4, 'بعد زيارتك لمركز التدقيق ضمن الموعد المثبت لك سيتم مطابقة صحة بياناتك والمصادقة عليها.', 'After you visit the audit center within the fixed date, your data will be matched and authenticated.'),
+(5, 'في هذه المرحلة سيعرض لك النظام لوحة تحكم الطالب حيث سيصبح بامكانك تفعيل القنوات الخاصة في حالة استيفائك لشروطها (موضحة في دليل الطالب بالتفصيل) علما ان القناة العامة للتقديم في الكليات الاهلية مفعلة لجميع الطلبة.', 'At this stage, the system will show you a student control panel where you will be able to activate private channels if you meet their conditions (explained in the student manual in detail) knowing that the public channel for applying in civil colleges is activated for all students.'),
+(6, 'بامكانك في هذه المرحلة البدء بعملية التقديم الالكتروني على الاقسام و الكليات الاهلية الموجودة في النظام من خلال استمارات التقديم الالكترونية.', 'At this stage, you can start the process of electronic application to the departments and civil colleges in the system through electronic application forms.'),
+(7, 'ستظهر الاستمارات التي قدمتها ضمن صفحة المعاينة لمعرفة تسلسلك من حيث كونك مرشح اصيل او مرشح احتياط ضمن الطلبة المتقدمين', 'The forms you submitted will appear on the preview page to see your sequence in terms of being an original candidate or a reserve candidate among the applicants.'),
+(8, 'تبدا فترة التسجيل بعد انتهاء فترة التقديم حيث يتم تسجيل الطالب بصورة نهائية في القسم الذي ظهر قبوله فيه.', 'The registration period begins after the end of the application period, where the student is permanently registered in the section in which his admission appeared.');
 
 -- --------------------------------------------------------
 
@@ -889,9 +956,13 @@ CREATE TABLE `socialmedia` (
 --
 
 INSERT INTO `socialmedia` (`id`, `name_ar`, `name_en`, `link`, `id_doctor`, `id_type`, `id_leader`, `id_leader_uni`) VALUES
-(3, 'scolor', 'fax', 'https://www.facebook.com/', 3, 4, NULL, NULL),
-(4, 'R', 'R', 'https://www.facebook.com/', 1, 1, NULL, NULL),
-(5, 'name', 'name', 'https://www.facebook.com/', 1, NULL, NULL, NULL);
+(3, 'scolor', 'fax', 'https://www.facebook.com/', 3, 4, 1, 1),
+(4, 'R', 'R', 'https://www.facebook.com/', 1, 1, 2, 2),
+(5, 'name', 'name', 'https://www.facebook.com/', 1, 1, 3, 3),
+(6, 'jabhx', 'sbxhb', 'https://www.facebook.com/', 1, 2, 1, 2),
+(7, 'name', 'name', 'https://www.facebook.com/', 1, 1, 3, 4),
+(8, 'name', 'name', 'https://www.facebook.com/', 1, 3, 2, 3),
+(9, 'name', 'name', 'https://www.facebook.com/', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -939,9 +1010,9 @@ INSERT INTO `studentfirst` (`id`, `name_ar`, `name_en`, `level_ar`, `level_en`, 
 (10, 'امال', 'amal', 'الثاني', 'second', 'الثاني', 'second', 'images/20220125060401.jfif', 2, NULL),
 (11, 'نهال', 'nehal', 'الاول', 'first', 'الاول', 'first', 'images/20220125060401.jfif', 1, NULL),
 (12, 'امال', 'amal', 'الثالث', 'third', 'الثالث', 'third', 'images/20220125060401.jfif', 2, NULL),
-(15, 'aliaaa', 'aliaaaaa', 'الاول', 'الثاني', '1', '1', 'images/20220218194742.jfif', NULL, NULL),
+(15, 'aliaaa', 'aliaaaaa', 'الاول', 'الثاني', '1', '1', 'images/20220218194742.jfif', 38, NULL),
 (16, 'name', 'name', 'الاول', 'second', '12', '12', 'images/20220219010626.jfif', 2, 6),
-(17, 'name', 'name', 'Second', 'second', '12', '12', 'images/20220219010711.jfif', 3, 1),
+(17, 'name', 'name', 'Second', 'second', '12', '12', 'images/20220219010711.jfif', 38, 1),
 (18, 'name', 'name', 'Second', 'second', '12', '12', 'images/20220219011408.jfif', NULL, NULL),
 (19, 'nehal', 'nehal', 'الاول', 'second', '12', '12', 'images/20220219011445.jfif', NULL, NULL),
 (20, 'nehal', 'nehal', 'الاول', 'second', '12', '12', 'images/20220219011602.jfif', NULL, NULL),
@@ -1092,6 +1163,25 @@ INSERT INTO `users` (`id`, `name`, `usertype`, `email`, `email_verified_at`, `pa
 (13, 'name', 'facutly', 'ali88@gmail.com', NULL, '$2y$10$YkNjOyJtpYwBpMEWddU2XuSwG96Wt3EfKnco.DivHtK6vM1XcEfEq', NULL, '2022-02-19 05:48:51', '2022-02-19 05:59:09', 1, NULL, '147852'),
 (14, 'names', 'facutly', 'ali8s8@gmail.com', NULL, '$2y$10$JohIuJclW3xOK1juo0A6ieyEvAcGBzJmNFrOQO7gvHwdtwESbrFsq', NULL, '2022-02-19 05:53:20', '2022-02-19 05:53:20', 1, NULL, '123456789');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `video`
+--
+
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
+  `video` text DEFAULT NULL,
+  `id_image` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `video`
+--
+
+INSERT INTO `video` (`id`, `video`, `id_image`) VALUES
+(1, 'images/20220222130452.mp4', 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -1111,7 +1201,9 @@ ALTER TABLE `achievement`
   ADD KEY `id_facutly` (`id_facutly`),
   ADD KEY `id_doctor` (`id_doctor`),
   ADD KEY `id_type` (`id_type`),
-  ADD KEY `id_types` (`id_types`);
+  ADD KEY `id_types` (`id_types`),
+  ADD KEY `id_leader` (`id_leader`),
+  ADD KEY `id_leaderuni` (`id_leaderuni`);
 
 --
 -- Indexes for table `activities`
@@ -1203,6 +1295,13 @@ ALTER TABLE `image`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_image` (`id_image`);
+
+--
 -- Indexes for table `lab`
 --
 ALTER TABLE `lab`
@@ -1232,6 +1331,12 @@ ALTER TABLE `lecture`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_facutly` (`id_facutly`),
   ADD KEY `id_department` (`id_department`);
+
+--
+-- Indexes for table `machine`
+--
+ALTER TABLE `machine`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `magazin`
@@ -1338,6 +1443,13 @@ ALTER TABLE `users`
   ADD KEY `id_doctor` (`id_doctor`);
 
 --
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_image` (`id_image`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1429,7 +1541,13 @@ ALTER TABLE `fees`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lab`
@@ -1447,13 +1565,19 @@ ALTER TABLE `leader`
 -- AUTO_INCREMENT for table `leaderuni`
 --
 ALTER TABLE `leaderuni`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `machine`
+--
+ALTER TABLE `machine`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `magazin`
@@ -1495,7 +1619,7 @@ ALTER TABLE `requirement`
 -- AUTO_INCREMENT for table `socialmedia`
 --
 ALTER TABLE `socialmedia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `strategy`
@@ -1540,6 +1664,12 @@ ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -1553,7 +1683,9 @@ ALTER TABLE `achievement`
   ADD CONSTRAINT `achievement_ibfk_4` FOREIGN KEY (`id_facutly`) REFERENCES `facutly` (`id`),
   ADD CONSTRAINT `achievement_ibfk_5` FOREIGN KEY (`id_doctor`) REFERENCES `doctors` (`id`),
   ADD CONSTRAINT `achievement_ibfk_6` FOREIGN KEY (`id_type`) REFERENCES `achievement` (`id`),
-  ADD CONSTRAINT `achievement_ibfk_7` FOREIGN KEY (`id_types`) REFERENCES `typeachievement` (`id`);
+  ADD CONSTRAINT `achievement_ibfk_7` FOREIGN KEY (`id_types`) REFERENCES `typeachievement` (`id`),
+  ADD CONSTRAINT `achievement_ibfk_8` FOREIGN KEY (`id_leader`) REFERENCES `leader` (`id`),
+  ADD CONSTRAINT `achievement_ibfk_9` FOREIGN KEY (`id_leaderuni`) REFERENCES `leaderuni` (`id`);
 
 --
 -- Constraints for table `activities`
@@ -1586,6 +1718,12 @@ ALTER TABLE `exam`
   ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`id_department`) REFERENCES `department` (`id`);
 
 --
+-- Constraints for table `images`
+--
+ALTER TABLE `images`
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id`);
+
+--
 -- Constraints for table `leader`
 --
 ALTER TABLE `leader`
@@ -1605,6 +1743,12 @@ ALTER TABLE `leaderuni`
 ALTER TABLE `socialmedia`
   ADD CONSTRAINT `socialmedia_ibfk_1` FOREIGN KEY (`id_leader`) REFERENCES `leader` (`id`),
   ADD CONSTRAINT `socialmedia_ibfk_2` FOREIGN KEY (`id_leader_uni`) REFERENCES `leaderuni` (`id`);
+
+--
+-- Constraints for table `video`
+--
+ALTER TABLE `video`
+  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

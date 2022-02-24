@@ -122,7 +122,7 @@
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
@@ -131,7 +131,6 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
 
     <!-- start light & dark -->

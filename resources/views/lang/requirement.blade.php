@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -70,6 +71,9 @@
                             </li>
 
 
+
+
+
                             <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
                                         class="bi bi-chevron-down"></i></a>
 
@@ -104,7 +108,7 @@
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
                     </nav><!-- .navbar -->
