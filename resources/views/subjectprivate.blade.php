@@ -9,6 +9,8 @@
 
 
     <link rel="stylesheet" href="{{ asset('/scss/universities.css') }}">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-ar')
 
 
@@ -411,84 +413,7 @@
         });
     </script>
 
-    <script>
-        var bool = true;
 
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-
-                    $('.section-3').removeClass('text-left')
-                    $('.section-3').addClass('text-right')
-
-                    $('.section-4').removeClass('text-left')
-                    $('.section-4').addClass('text-right')
-
-                    $('.section-5').removeClass('text-left')
-                    $('.section-5').addClass('text-right')
-
-                    $('.section-6').removeClass('text-left')
-                    $('.section-6').addClass('text-right')
-
-                    $('.section-7').removeClass('text-left')
-                    $('.section-7').addClass('text-right')
-
-                    $('.section-8').removeClass('text-left')
-                    $('.section-8').addClass('text-right')
-                    $(".section-8").removeAttr("dir", "ltr");
-                    $(".section-8").attr("dir", "rtl");
-
-                    $('.section-9').removeClass('text-left')
-                    $('.section-9').addClass('text-right')
-                    bool = false;
-                } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
-
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-
-                    $('.section-3').removeClass('text-right')
-                    $('.section-3').addClass('text-left')
-
-                    $('.section-4').removeClass('text-right')
-                    $('.section-4').addClass('text-left')
-
-                    $('.section-5').removeClass('text-right')
-                    $('.section-5').addClass('text-left')
-
-                    $('.section-6').removeClass('text-right')
-                    $('.section-6').addClass('text-left')
-
-                    $('.section-7').removeClass('text-right')
-                    $('.section-7').addClass('text-left')
-
-                    $('.section-8').removeClass('text-right')
-                    $('.section-8').addClass('text-left')
-
-                    $(".section-8").removeAttr("dir");
-                    $(".section-8").attr("dir", "ltr");
-
-                    $('.section-9').removeClass('text-right')
-                    $('.section-9').addClass('text-left')
-                    bool = true;
-                }
-
-            })
-        })
-    </script>
 
 </body>
 

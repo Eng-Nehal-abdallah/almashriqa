@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/scss/dark&light.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
 

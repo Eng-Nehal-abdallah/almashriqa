@@ -18,7 +18,8 @@
 
     <link rel="stylesheet" href="/scss/Tuition-fees.css">
     @extends('layouts.head-en')
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
 
@@ -177,7 +178,10 @@
         </div>
         @foreach ($fees as $f)
             <div class="container">
-                {!! html_entity_decode($f->tablecode_ar) !!}
+
+                <div class="table-resonsive-lg">
+                    {!! html_entity_decode($f->tablecode_ar) !!}
+                </div>
             </div>
         @endforeach
     </section>

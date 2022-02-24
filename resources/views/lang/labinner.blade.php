@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
     <!-- start wol js -->
@@ -168,7 +169,7 @@
                 {{ $lab->name_en }}
             </div>
             {{ $lab->details_en }}
-            <div class="table-responsive-sm">
+            <div class="table-responsive-lg">
                 <img src="{{ $lab->image }}" />
                 <img src="{{ $lab->images }}" />
             </div>

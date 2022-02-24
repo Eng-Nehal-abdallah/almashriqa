@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="/scss/Campus.css">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
     <!-- start wol js -->

@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/doctors.css') }}">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 </head>

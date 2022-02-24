@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="/scss/Campus.css">
     @extends('layouts.head-ar')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 

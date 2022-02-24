@@ -9,7 +9,8 @@
 
 
     <link rel="stylesheet" href="/scss/university-paper.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-en')
 
 
@@ -166,7 +167,7 @@
                 <div class="alert text-center alert-light" role="alert">
                     Table
                 </div>
-                <div class="table-responsive-sm">
+                <div class="table-responsive-lg">
                     {!! html_entity_decode($magazin->tablecode) !!}
                 </div>
 

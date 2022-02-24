@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/scss/doctors.css">
 
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->

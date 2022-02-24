@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    @extends('layouts.head-en')
     <link rel="stylesheet" href="/scss/patent-inner2.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <!-- start box icon -->
     <link href='/css/boxicons.min.css' rel='stylesheet'>

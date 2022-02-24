@@ -9,6 +9,7 @@
     @extends('layouts.head-ar')
 
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 

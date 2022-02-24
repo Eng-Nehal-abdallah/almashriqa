@@ -15,7 +15,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/patent.css') }}">
     @extends('layouts.head-ar')
-    <link rel="stylesheet" href="./scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
     <title>Document</title>

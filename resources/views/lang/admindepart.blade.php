@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -171,7 +173,7 @@
                 <div class="alert text-center alert-light" role="alert">
                     الاقسام الادارية
                 </div>
-                <div class="table-responsive-sm">
+                <div class="table-responsive-lg">
                     {!! html_entity_decode($admin->tablecode) !!}
                 </div>
             </div>

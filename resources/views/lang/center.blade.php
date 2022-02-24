@@ -9,6 +9,7 @@
     @extends('layouts.head-en')
 
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 
@@ -159,7 +160,7 @@
             <div class="alert text-center alert-light" role="alert">
                 {{ $center->name_en }}
             </div>
-            <div class="table-responsive-sm">
+            <div class="table-responsive-lg">
 
 
                 {!! html_entity_decode($center->tablecode) !!}

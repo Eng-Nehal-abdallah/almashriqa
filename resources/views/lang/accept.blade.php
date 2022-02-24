@@ -15,6 +15,8 @@
     <link href='/css/boxicons.min.css' rel='stylesheet'>
 
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
     <!-- start wol js -->
     <link rel="stylesheet" href="/scss/acception.css">

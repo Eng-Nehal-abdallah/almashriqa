@@ -22,6 +22,7 @@
     <!-- start navbar -->
     @extends('layouts.head-en')
     <!-- End Header -->
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
     <!-- start wol js -->
@@ -201,7 +202,6 @@
 
                                 </ul>
                             </li>
-
                             <li><a class="nav-link scrollto" href="/facutlyresearchen">Achievements</a></li>
 
 

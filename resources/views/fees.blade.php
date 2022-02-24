@@ -21,6 +21,8 @@
 
 
     @extends('layouts.head-ar')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
@@ -168,7 +170,10 @@
         @foreach ($fees as $f)
         @endforeach
         <div class="container">
-            {!! html_entity_decode($f->tablecode) !!}
+            <div class="table-responsive-lg">
+                {!! html_entity_decode($f->tablecode) !!}
+
+            </div>
         </div>
 
     </section>

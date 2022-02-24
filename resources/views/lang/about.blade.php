@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="./scss/about-us.css">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
     <!--start fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"

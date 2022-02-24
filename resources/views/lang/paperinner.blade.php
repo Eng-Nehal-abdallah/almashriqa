@@ -18,7 +18,8 @@
 
 
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-en')
 
 

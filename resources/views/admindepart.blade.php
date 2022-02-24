@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/scss/Scientific-plan-report.css">
 
     @extends('layouts.head-ar')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />

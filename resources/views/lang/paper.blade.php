@@ -9,7 +9,8 @@
 
 
     <link rel="stylesheet" href="/scss/university-paper.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-en')
 
 

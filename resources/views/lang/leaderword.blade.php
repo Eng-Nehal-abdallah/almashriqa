@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="/scss/leaderword.css">
     @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <!-- start wol js -->
 

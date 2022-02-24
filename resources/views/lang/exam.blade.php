@@ -13,7 +13,8 @@
 
 
     <link rel="stylesheet" href="/scss/exam-table.css">
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-en')
 
 

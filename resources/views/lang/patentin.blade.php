@@ -15,7 +15,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/patent-inner.css') }}">
 
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
     @extends('layouts.head-en')
 
 

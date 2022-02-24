@@ -8,6 +8,8 @@
 
     @extends('layouts.head-ar')
     <link rel="stylesheet" href="/scss/agreement-inner.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
 
 

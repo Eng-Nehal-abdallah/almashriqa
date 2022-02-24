@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="/scss/table-test.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('css/patent-inner.css') }}">
     @extends('layouts.head-ar')

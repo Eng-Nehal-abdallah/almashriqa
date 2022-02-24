@@ -1386,3 +1386,8 @@ Route::get('/chartEn' , [UniversitiesController::class , 'charEn']);
 Route::get('/agreenment-inner' , function(){
     return view('agreement-inner');
 });
+
+
+Route::get('/table' , function(){
+    return view('table-test');
+});
