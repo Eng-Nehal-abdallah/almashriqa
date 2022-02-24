@@ -18,11 +18,17 @@ class LeaderuniController extends Controller
     {
         $facutlies = Facutly::all();
         $departments=Department::all();
-        return view('leader.create',compact('facutlies','departments'));
+        return view('leaderuni.create',compact('facutlies','departments'));
     }
-    public function insert_socialmedia(Leaderuni $doctor)
+    public function insert_socialmedia(Leaderuni $leaderuni)
     {$types=Type::all();
-        return view('doctors\social media\create',compact('types'),['doctor' => $doctor]);
+        return view('leaderuni\social media\create',compact('types'),['leaderuni' => $leaderuni]);
+    }
+    public function social(Leaderuni $leaderuni)
+    {      $Facutlies = Facutly::all();
+        $departments = Department::all();
+        $socials = Social::all();
+        return view('leaderuni\social media\dashboard', ['leaderuni' => $leaderuni], compact('socials','Facutlies','departments'));
     }
 
     public function create_social(Request $request)
@@ -34,7 +40,7 @@ class LeaderuniController extends Controller
 
         $data->name_ar = $request->name_ar;
         $data->link = $request->link;
-        $data->id_leader = $request->id_leader;
+        $data->id_leaderuni = $request->id_leaderuni;
         $data->name_en = $request->name_en;
 
 
@@ -42,61 +48,6 @@ class LeaderuniController extends Controller
       return redirect()->back();
     }
     //search live
-
-    Public function search(Request $request)
-{
-if($request->ajax())
-{
-$data = Leaderuni::search($request->get('full_text_search_query'))->get();;
-return response()->json($data);
-}
-}
-
-    function action(Request $request)
-    {
-     if($request->ajax())
-     {
-      $output = '';
-      $query = $request->get('search');
-      if($query != '')
-      {
-       $data =Leaderuni::where('name_ar', 'like', '%'.$query.'%')
-         ->orWhere('name_en', 'like', '%'.$query.'%')
-         ->get();
-
-      }
-      $total_row = $data->count();
-      if($total_row > 0)
-      {
-       foreach($data as $row)
-       {
-        $output .= '
-        <tr>
-         <td>'.$row->name_ar.'</td>
-         <td>'.$row->name_en.'</td>
-         <td>'.$row->country_ar.'</td>
-         <td>'.$row->country_en.'</td>
-
-        </tr>
-        ';
-       }
-      }
-      else
-      {
-       $output = '
-       <tr>
-        <td align="center" colspan="5">No Data Found</td>
-       </tr>
-       ';
-      }
-      $data = array(
-       'table_data'  => $output,
-       'total_data'  => $total_row
-      );
-
-      echo json_encode($data);
-     }
-    }
 
 
     public function create(Request $request)
@@ -206,20 +157,20 @@ return response()->json($data);
         $doctors = Leaderuni::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboard', compact('doctors','facutlies','departments'));
+        return view('leaderuni\dashboard', compact('doctors','facutlies','departments'));
     }
    //start edit
-   public function editdoc(Leaderuni $doctor)
+   public function editdoc(Leaderuni $leaderuni)
    {$facutlies =Facutly::all();
        $departments=Facutly::all();
-       return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+       return view('leaderuni\edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
    }
 
     //start edit
-    public function edit(Leaderuni $doctor)
+    public function edit(Leaderuni $leaderuni)
     {$facutlies =Facutly::all();
         $departments=Facutly::all();
-        return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+        return view('leaderuni\edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
     }
     //start edit
     public function profile(Leaderuni $doctor)
@@ -264,7 +215,7 @@ return response()->json($data);
         $data->grade_en = $request->grade_en;
         $data->	grade_ar = $request->grade_ar;
         $data->details_ar = $request->details_ar;
-        $data->id_facutly = $request->id_facutly;
+
         $data->date_hirement=$request->date_hirement;
         $data->details_en = $request->details_en;
         $data->university_certified_en = $request->	university_certified_en;
@@ -305,7 +256,7 @@ return response()->json($data);
         $data->local = $request->local;
         $data->darcode = $request->darcode;
         $data->mother_name_en = $request->mother_name_en;
-        $data->id_department  = $request->id_department;
+
         $data->notes_en = $request->notes_en;
         $data->details_ar = $request->details_ar;
 
@@ -324,4 +275,63 @@ return response()->json($data);
 
         return redirect("/dashboard26");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function action(Request $request)
+    {
+     if($request->ajax())
+     {
+      $output = '';
+      $query = $request->get('search');
+      if($query != '')
+      {
+       $data =Leaderuni::where('name_ar', 'like', '%'.$query.'%')
+         ->orWhere('name_en', 'like', '%'.$query.'%')
+         ->get();
+
+      }
+      $total_row = $data->count();
+      if($total_row > 0)
+      {
+       foreach($data as $row)
+       {
+        $output .= '
+        <tr>
+         <td>'.$row->name_ar.'</td>
+         <td>'.$row->name_en.'</td>
+         <td>'.$row->country_ar.'</td>
+         <td>'.$row->country_en.'</td>
+
+        </tr>
+        ';
+       }
+      }
+      else
+      {
+       $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+      }
+      $data = array(
+       'table_data'  => $output,
+       'total_data'  => $total_row
+      );
+
+      echo json_encode($data);
+     }
+    }
+
 }

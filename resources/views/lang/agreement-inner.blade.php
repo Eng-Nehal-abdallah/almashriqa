@@ -39,8 +39,8 @@
                 <div class="col-md-5 col-sm-10">
                     <div class="caption">
                         <small>جامعة </small>
-                        <h2>{{ $agreement->name_ar }}</h2>
-                        <p>{{ $agreement->details_ar }}</p>
+                        <h2>{{ $agreement->name_en }}</h2>
+                        <p>{{ $agreement->details_en }}</p>
 
 
                     </div>

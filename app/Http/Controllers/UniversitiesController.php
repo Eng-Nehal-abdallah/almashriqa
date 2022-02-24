@@ -78,6 +78,35 @@ class UniversitiesController extends Controller
 
         // return view('Certifieds');
     }
+
+        public function char()
+    {
+        $faculties = Facutly::all();
+
+
+     $departments=Department::all();
+
+        return view('chart.ChartAr', compact('faculties','departments'));
+
+        // return view('Certifieds');
+    }
+
+
+            public function charEn()
+    {
+        $faculties = Facutly::all();
+
+
+     $departments=Department::all();
+
+        return view('chart.ChartEn', compact('faculties','departments'));
+
+        // return view('Certifieds');
+    }
+    
+    
+
+
     public function indexdash()
     {
         $Facutlies = Facutly::all();

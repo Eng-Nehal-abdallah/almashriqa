@@ -13,17 +13,17 @@
 
     <div class="container">
         <h2>Laravel 8 Country State City Dropdown</h2>
-        <form action="/doctor/{{ $doctor->id }}"  enctype="multipart/form-data" method="POST">
+        <form action="/leaderuni/{{ $leaderuni->id }}"  enctype="multipart/form-data" method="POST">
             @csrf
-            <img src="/{{ $doctor->image }}" width="100" height="100" alt="image">
+            <img src="{{ $leaderuni->image }}" width="100" height="100" alt="image">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">الاسم</label>
-                    <input type="text" accept="image/*" class="form-control" name='name_ar' id='name' value="{{ $doctor->name_ar}}">
+                    <input type="text" accept="image/*" class="form-control" name='name_ar' id='name' value="{{ $leaderuni->name_ar}}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="name">name</label>
-                    <input type="text" class="form-control" name='name_en' id='name' value="{{ $doctor->name_en }}">
+                    <input type="text" class="form-control" name='name_en' id='name' value="{{ $leaderuni->name_en }}">
                 </div>
             </div>
             <div class="form-row">
@@ -39,63 +39,44 @@
                 <div class="form-group col-md-6">
                     <label for="university_certified_ar">الجامعه الحاصل منها علي الشهاده</label>
                     <input type="text" class="form-control" id='university_certified_ar'
-                        name='university_certified_ar' value="{{$doctor->university_certified_ar  }}">
+                        name='university_certified_ar' value="{{$leaderuni->university_certified_ar  }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="university_certified_en">university_certified</label>
                     <input type="text" class="form-control" id='university_certified_en'
-                        name='university_certified_en' value="{{ $doctor->university_certified_en }}">
+                        name='university_certified_en' value="{{ $leaderuni->university_certified_en }}">
                 </div>
 
             </div>
 
             <div class="form-group col-md-6">
                 <label for="facutly_certified_ar">الكلية الحاصل منها علي الشهاده </label>
-                <input type="text" class="form-control" id='facutly_certified_ar' name='facutly_certified_ar' value="{{ $doctor->facutly_certified_ar}}">
+                <input type="text" class="form-control" id='facutly_certified_ar' name='facutly_certified_ar' value="{{ $leaderuni->facutly_certified_ar}}">
             </div>
             <div class="form-group col-md-6">
                 <label for="facutly_certified_en">facutly_certified</label>
-                <input type="text" class="form-control" id='facutly_certified_en' name='facutly_certified_en'  value="{{  $doctor->facutly_certified_en}}">
+                <input type="text" class="form-control" id='facutly_certified_en' name='facutly_certified_en'  value="{{  $leaderuni->facutly_certified_en}}">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="certified_ar">الشهاده</label>
-                <input type="text" class="form-control" id='certified_ar' name='certified_ar'  value="{{$doctor->certified_ar  }}">
+                <input type="text" class="form-control" id='certified_ar' name='certified_ar'  value="{{$leaderuni->certified_ar  }}">
             </div>
             <div class="form-group col-md-6">
                 <label for="certified_">certified</label>
-                <input type="text" class="form-control" id='certified_en' name='certified_en' value="{{$doctor->certified_en  }}">
+                <input type="text" class="form-control" id='certified_en' name='certified_en' value="{{$leaderuni->certified_en  }}">
             </div>
 
-            <div class="form-group">
-                <div class="form-group col-md-6">
-                <select id="country" name="id_facutly" class="form-control">
-                    <option value="">تغيير الكلية</option>
-                    @foreach ($facutlies as $list)
-                        <option value="{{ $list->id }}">{{ $list->name_ar }}</option>
-                    @endforeach
-                </select>
-                </div>
-                <div class="form-group col-md-6">
-                <select id="state" name="id_department" class="form-control">
-                    <option value="">تغييرالقسم</option>
-                </select>
-            </div>
-
-
-
-
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="position_ar">المنصب الحالي</label>
-                    <input type="text" class="form-control" id='position_ar' name='position_ar' value="{{$doctor->position_ar  }}">
+                    <input type="text" class="form-control" id='position_ar' name='position_ar' value="{{$leaderuni->position_ar  }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="posiotion_en">position</label>
-                    <input type="text" class="form-control" id='posiotion_en' name='posiotion_en'  value="{{ $doctor->posiotion_en }}">
+                    <input type="text" class="form-control" id='posiotion_en' name='posiotion_en'  value="{{ $leaderuni->posiotion_en }}">
                 </div>
             </div>
 
@@ -625,64 +606,64 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="public_specific_ar">التخصص العام</label>
-                    <input type="text" class="form-control" id='public_specific_ar' name='public_specific_ar'  value="{{ $doctor->public_specific_ar}}">
+                    <input type="text" class="form-control" id='public_specific_ar' name='public_specific_ar'  value="{{ $leaderuni->public_specific_ar}}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="public_specific_en">public_specific</label>
-                    <input type="text" class="form-control" id='public_specific_en' name='public_specific_en'  value="{{ $doctor->public_specific_en }}">
+                    <input type="text" class="form-control" id='public_specific_en' name='public_specific_en'  value="{{ $leaderuni->public_specific_en }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="private_specific_ar">التخصص الدقيق</label>
-                    <input type="text" class="form-control" id='private_specific_ar' name='private_specific_ar' value="{{$doctor->private_specific_ar }}">
+                    <input type="text" class="form-control" id='private_specific_ar' name='private_specific_ar' value="{{$leaderuni->private_specific_ar }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="private_specific_en">private_specific</label>
-                    <input type="text" class="form-control" id='private_specific_en' name='private_specific_en' value="{{  $doctor->private_specific_en }}">
+                    <input type="text" class="form-control" id='private_specific_en' name='private_specific_en' value="{{  $leaderuni->private_specific_en }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="darcode">darcode</label>
-                    <input type="text" class="form-control" id='darcode' name='darcode' value="{{$doctor->darcode }}">
+                    <input type="text" class="form-control" id='darcode' name='darcode' value="{{$leaderuni->darcode }}">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="phone">رقم التليفون</label>
-                    <input type="text" class="form-control" id='phone' name='phone' value="{{$doctor->phone }}">
+                    <input type="text" class="form-control" id='phone' name='phone' value="{{$leaderuni->phone }}">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="mag_certified_ar">الجامعه الحاصل منها علي المجاستير</label>
-                    <input type="text" class="form-control" id='mag_certified_ar' name='mag_certified_ar'value="{{$doctor->mag_certified_ar }}">
+                    <input type="text" class="form-control" id='mag_certified_ar' name='mag_certified_ar'value="{{$leaderuni->mag_certified_ar }}">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="mag_certified_en">university of mag_certified</label>
-                    <input type="text" class="form-control" id='mag_certified_en' name='mag_certified_en' value="{{$doctor->mag_certified_en }}">
+                    <input type="text" class="form-control" id='mag_certified_en' name='mag_certified_en' value="{{$leaderuni->mag_certified_en }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="bac_certified_ar">الجامعه الحاصل منها علي الدكتوراه</label>
-                    <input type="text" class="form-control" id='bac_certified_ar' name='bac_certified_ar' value="{{$doctor->bac_certified_ar }}">
+                    <input type="text" class="form-control" id='bac_certified_ar' name='bac_certified_ar' value="{{$leaderuni->bac_certified_ar }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="bac_certified_en">university of bac_certified</label>
-                    <input type="text" class="form-control" id='bac_certified_en' name='bac_certified_en' value="{{ $doctor->bac_certified_en }}">
+                    <input type="text" class="form-control" id='bac_certified_en' name='bac_certified_en' value="{{ $leaderuni->bac_certified_en }}">
                 </div>
             </div>
             <div class="form-row">
@@ -1197,64 +1178,64 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="notes_en">ملاحظات</label>
-                <input type="text" class="form-control" id='notes_ar' name='notes_ar' value="{{$doctor->notes_ar }}">
+                <input type="text" class="form-control" id='notes_ar' name='notes_ar' value="{{$leaderuni->notes_ar }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="notes_en">notes</label>
-                <input type="text" class="form-control" id='notes_en' name='notes_en' value="{{$doctor->notes_en }}">
+                <input type="text" class="form-control" id='notes_en' name='notes_en' value="{{$leaderuni->notes_en }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="details_en">التفاصيل</label>
-                <input type="text" class="form-control" id='details_ar' name='details_ar' value="{{$doctor->details_ar }}">
+                <input type="text" class="form-control" id='details_ar' name='details_ar' value="{{$leaderuni->details_ar }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="details_en">details</label>
-                <input type="text" class="form-control" id='details_en' name='details_en' value="{{ $doctor->details_en  }}">
+                <input type="text" class="form-control" id='details_en' name='details_en' value="{{ $leaderuni->details_en  }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="mother_name_ar">اسم الام</label>
-                <input type="text" class="form-control" id='mother_name_ar' name='mother_name_ar' value="{{ $doctor->mother_name_ar }}">
+                <input type="text" class="form-control" id='mother_name_ar' name='mother_name_ar' value="{{ $leaderuni->mother_name_ar }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="mother_name_en">mother_name</label>
-                <input type="text" class="form-control" id='mother_name_en' name='mother_name_en' value="{{ $doctor->mother_name_en }}">
+                <input type="text" class="form-control" id='mother_name_en' name='mother_name_en' value="{{ $leaderuni->mother_name_en }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="type_hirement_ar">نوع التعيين</label>
-                <input type="text" class="form-control" id='type_hirement_ar' name='type_hirement_ar' value= "{{$doctor->type_hirement_ar }}">
+                <input type="text" class="form-control" id='type_hirement_ar' name='type_hirement_ar' value= "{{$leaderuni->type_hirement_ar }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="type_hirement_en">type_hirement</label>
-                <input type="text" class="form-control" id='type_hirement_en' name='type_hirement_en' value="{{ $doctor->type_hirement_en }}">
+                <input type="text" class="form-control" id='type_hirement_en' name='type_hirement_en' value="{{ $leaderuni->type_hirement_en }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="local">الدرجه</label>
-                <input type="text" class="form-control" id='grade_ar' name='grade_ar' value="{{$doctor->grade_ar}}">
+                <input type="text" class="form-control" id='grade_ar' name='grade_ar' value="{{$leaderuni->grade_ar}}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="comrades">Grade</label>
-                <input type="text" class="form-control" id='grade_en' name='grade_en' value="{{ $doctor->grade_en }}">
+                <input type="text" class="form-control" id='grade_en' name='grade_en' value="{{ $leaderuni->grade_en }}">
             </div>
         </div>
 
@@ -1269,14 +1250,14 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="local">local</label>
-                <input type="text" class="form-control" id='local' name='local' value="{{ $doctor->local }}">
+                <input type="text" class="form-control" id='local' name='local' value="{{ $leaderuni->local }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="comrades">comrades</label>
-                <input type="text" class="form-control" id='comrades' name='comrades' value="{{$doctor->comrades}}">
+                <input type="text" class="form-control" id='comrades' name='comrades' value="{{$leaderuni->comrades}}">
             </div>
         </div>
 

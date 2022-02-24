@@ -649,7 +649,8 @@ section.section-5.dark {
 }
 
 @media (max-width: 600px) {
-  section.section-5 .slick-prev:before, section.section-5 .slick-next:before {
+  section.section-5 .slick-prev:before,
+  section.section-5 .slick-next:before {
     font-family: 'slick';
     font-size: 30px;
     line-height: 1;
@@ -1046,6 +1047,17 @@ img {
 .about .icon-boxes .icon-box p {
   font-size: 15px;
   color: #848484;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0 !important;
+  margin-left: -15px;
+  /* display: none; */
 }
 
 @media (max-width: 1200px) {

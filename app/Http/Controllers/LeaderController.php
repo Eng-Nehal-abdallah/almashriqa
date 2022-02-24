@@ -49,11 +49,11 @@ class LeaderController extends Controller
 
         return view('lang.doctors', ['facutly' => $Facutly], compact('doctors','Facutlies','departments'));
     }
-    public function social(Leader $doctor)
+    public function social(Leader $leader)
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $socials = Social::all();
-        return view('leader\social media\dashboard', ['doctor' => $doctor], compact('socials','Facutlies','departments'));
+        return view('leader\social media\dashboard', ['leader' => $leader], compact('socials','Facutlies','departments'));
     }
     public function shD(Department $Department)
     {      $Facutlies = Facutly::all();
@@ -73,9 +73,9 @@ class LeaderController extends Controller
         $departments=Department::all();
         return view('leader.create',compact('facutlies','departments'));
     }
-    public function insert_socialmedia(Leader $doctor)
+    public function insert_socialmedia(Leader $leader)
     {$types=Type::all();
-        return view('doctors\social media\create',compact('types'),['doctor' => $doctor]);
+        return view('leader\social media\create',compact('types'),['leader' => $leader]);
     }
 
     public function create_social(Request $request)
@@ -269,10 +269,10 @@ return response()->json($data);
    }
 
     //start edit
-    public function edit(Leader $doctor)
+    public function edit(Leader $leader)
     {$facutlies =Facutly::all();
         $departments=Facutly::all();
-        return view('leader.edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+        return view('leader.edit' ,compact('facutlies','departments'),['leader' => $leader]);
     }
     //start edit
     public function profile(Leader $doctor)
@@ -317,7 +317,7 @@ return response()->json($data);
         $data->grade_en = $request->grade_en;
         $data->	grade_ar = $request->grade_ar;
         $data->details_ar = $request->details_ar;
-        $data->id_facutly = $request->id_facutly;
+
         $data->date_hirement=$request->date_hirement;
         $data->details_en = $request->details_en;
         $data->university_certified_en = $request->	university_certified_en;
@@ -358,7 +358,7 @@ return response()->json($data);
         $data->local = $request->local;
         $data->darcode = $request->darcode;
         $data->mother_name_en = $request->mother_name_en;
-        $data->id_department  = $request->id_department;
+
         $data->notes_en = $request->notes_en;
         $data->details_ar = $request->details_ar;
 
@@ -375,6 +375,6 @@ return response()->json($data);
     {
         $social->delete();
 
-        return redirect("/dashboard25");
+        return  redirect()->back();
     }
 }

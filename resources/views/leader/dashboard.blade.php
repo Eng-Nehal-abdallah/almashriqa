@@ -311,11 +311,11 @@
 
 
 
-          <td><a class="btn shadow-sm btn-dark" href="/doctor/{{ $data->id }}/edit">edit</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/doctorsocial/{{ $data->id }}/add">Add social media</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/social/{{ $data->id }}/show">show social media</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/achievement/{{ $data->id }}/show">show achievement</a></td>
-<td> <form method="post" action="/doctors/{{ $data->id }}">
+          <td><a class="btn shadow-sm btn-dark" href="/leader/{{ $data->id }}/edit">edit</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/leadersocial/{{ $data->id }}/add">Add social media</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/socialleader/{{ $data->id }}/show">show social media</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/achievementleader/{{ $data->id }}/show">show achievement</a></td>
+<td> <form method="post" action="/leaders/{{ $data->id }}">
     @csrf
     @method('DELETE')
     <input type="submit" class="btn btn-danger m-1" value="delete" />

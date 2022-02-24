@@ -132,7 +132,7 @@
                 <div class="col-md-10">
 
                     {{-- {{ $mash->word_ar }} --}}
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="/{{ $mash->leaderimage}}" alt="">
 
                 </div>
 

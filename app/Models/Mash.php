@@ -21,8 +21,9 @@ class Mash extends Model
 	protected $fillable = [
 		'abstract_title_ar','abstract_title_en','class','abstract_small_ar','abstract_small_en',
         'abstract_details_ar','abstract_details_en','title_image2_en','small_image2_ar','small_image2_en' ,
-        'details_image2_ar' ,'details_image2_en'
-        ,'title_image1_en','small_image1_ar','small_image1_en' ,'details_image1_ar' ,'details_image1_en','strategy_en','strategy_ar','fees_ar','fees_en'
-        ,'room','students'
+        'details_image2_ar' ,'details_image2_en',
+        'title_image1_en','small_image1_ar','small_image1_en' ,'details_image1_ar' ,'details_image1_en',
+        'strategy_en','strategy_ar','fees_ar','fees_en' ,
+        'room','students','leaderimage','pdf',
 	];
 }

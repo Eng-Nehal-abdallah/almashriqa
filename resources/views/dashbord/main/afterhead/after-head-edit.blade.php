@@ -27,10 +27,18 @@
 <body>
 
     <div class="container">
-        <form method="POST" action="/mash/{{ $mash->id }}">
+        <form method="POST" enctype="multipart/form-data" action="/mash/{{ $mash->id }}">
 
             @method('PUT')
             @csrf
+            <div class="form-group">
+                <label for="title">صورة العميد</label>
+                <input type="file" accept="image/*" id="leaderimage" name="leaderimage">
+            </div>
+            <div class="form-group">
+                <label for="title">ملف الاستراتيجيه </label>
+                <input type="file" accept=".bmp,.doc,.docx,.csv,.rtf,.xlsx,.xls,.txt,.pdf,.zip " id="pdf"  name="pdf">
+            </div>
 
             <div class="form-group">
                 <label for="title">abstract_title_ar</label>
@@ -87,23 +95,11 @@
 
             <div class="form-group">
                 <label for="title">عدد الظلاب بالجامعه       </label>
-                <input type="text" class="form-control" id="students" name="students" value="{{  $mash->studentds  }}" />
+                <input type="text" class="form-control" id="students" name="students" value="{{  $mash->students  }}" />
             </div>
             <div class="form-group">
                 <label for="title">	 عدد القاعات التدريسيه</label>
                 <input type="text" class="form-control" id="room" value="{{  $mash->room	}}" name="room" />
-            </div>
-            <div class="form-group">
-                <label for="title">صورة العميد</label>
-
-                <h5>change</h5>
-                <input type="file" accept="image/*" id="image" name="image">
-            </div>
-            <div class="form-group">
-                <label for="title">ملف الاستراتيجيه </label>
-
-                <h5>change</h5>
-                <input type="file" accept=".bmp,.doc,.docx,.csv,.rtf,.xlsx,.xls,.txt,.pdf,.zip"id="pdf" name="pdf">
             </div>
 
             <input type="submit" class="btn btn-primary" value="update"/>

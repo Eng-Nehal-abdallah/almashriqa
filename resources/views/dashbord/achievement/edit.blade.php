@@ -61,11 +61,7 @@
                     <input type="text" class="form-control" id="details_en" value="{{ $achievement->details_en }}"
                         name="details_en" />
                 </div>
-                <div class="form-group">
-                    <label for="title"> Type </label>
-                    <input type="text" class="form-control" id="type" value="{{ $achievement->type }}"
-                        name="details_en" />
-                </div>
+
                 <div class="form-group col-md-6">
                     <label for="input">Type</label>
                     <select name="id_types" id="id_types" class="form-select">

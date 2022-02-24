@@ -16,29 +16,47 @@
   <!-- Sidebar -->
   <div class="bg-white" id="sidebar-wrapper">
 
-   <div class="list-group list-group-flush my-3">
-    <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-tachometer-alt me-2"></i>main paig</a>
-    <a href="/dashboard2" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-university  "></i> Faculty</a>
+    <div class="list-group list-group-flush my-3">
+        <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="fas fa-university  "></i>main paig</a>
+        <a href="/dashboard2"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+          class="fas fa-university  "></i>
+         Faculty</a>
+         <a href="/dashboard3"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="fas fa-tachometer-alt me-2"></i>Department</a>
+        <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+          class="fas fa-chart-line me-2"></i>Doctors</a>
 
-     <a href="/dashboard3" class="list-group-item list-grou
-     p-item-action bg-transparent second-text fw-bold"><i
-        class="fas fa-chart-line me-2"></i>Department</a>
-    <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-      class="fas fa-paperclip me-2"></i>Doctors</a>
-
-      <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-        class="fas fa-shopping-cart me-2"></i>Activities</a>
-
-      <a href="/dashboard6" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-        class="fas fa-gift me-2"></i>انواع انجازات الدكتور</a>
+        <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+          class="fas fa-shopping-cart me-2"></i>Activities</a>
+          <a href="/dashboard6" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="fas fa-gift me-2"></i>انواع انجازات الدكتور</a>
           <a href="/dashboard7" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
             class="fas fa-comment-dots me-2"></i>انواع التواصل</a>
-    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-      class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-    <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-      class="fas fa-power-off me-2"></i>Logout</a>
+            <a href="/dashboard8" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-comment-dots me-2"></i>جدول المحاضرات </a>
+            <a href="/dashboard9" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2"></i>جدول العملي</a>
+                <a href="/dashboard10" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"></i>جدول الامتحانات النهائي</a>
+                    <a href="/dashboard11" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"></i>اداره الاقسام لجامعه</a>
+            <a href="/dashboard13" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2">المعامل</i></a>
+                <a href="/dashboard15" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2">الانفاقيات الجامعيه</i></a>
+       <a href="/dashboard14" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        class="fas fa-map-marker-alt me-2"> الحرم الجامعي</i></a>
+               <a href="/dashboard15"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2">  التقويم الاكاديمي  </i></a>
+               <a href="/dashboard16" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2"> مركز اللغه الانجليزيه </i></a>
+               <a href="/dashboard17" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2"> مجلة الجامعة</i></a>
+               <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-map-marker-alt me-2"> معدل القبول و الاقساط
+ </i></a>
+
    </div>
   </div>
   <!-- /#sidebar-wrapper -->
@@ -141,12 +159,12 @@
      </div>
     </div> --}}
 
-    <td><a class="btn shadow-sm btn-dark" href="/doctorsocial/{{ $doctor->id }}/add">Add social media</a></td>
+    <td><a class="btn shadow-sm btn-dark" href="/leaderunisocial/{{ $leaderuni->id }}/add">Add social media</a></td>
     <!-- start seection 2 -->
     <div class="table-responsive-md">
      <div class="row section-2 my-5">
       <h3 class="text-light">After head</h3>
-      <td><a class="btn shadow-sm btn-dark" href="/doctor/{{ $doctor->id }}/add">Add social media</a></td>
+      <td><a class="btn shadow-sm btn-dark" href="/leaderuni/{{ $leaderuni->id }}/add">Add social media</a></td>
       <div class="col bg-light rounded shadow-sm">
        <table class="table table-light section-2 ">
         <thead>
@@ -164,7 +182,7 @@
 
         <tbody class="text-dark">
             @foreach($socials as$social)
-            @if($social->id_doctor == $doctor->id)
+            @if($social->id_leaderuni == $leaderuni->id)
          <tr>
           <th scope="row">#</th>
 
@@ -172,7 +190,7 @@
           <td>{{ $social->name_ar }}</td>
           <td>{{ $social->name_en }}</td>
           <td>{{ $social->link }}</td>
-          <form method="post" action="/social/{{ $social->id }}/delete">
+          <form method="post" action="/socialleader/{{ $social->id }}/delete">
 
             @csrf
             @method('DELETE')

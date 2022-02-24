@@ -10,4 +10,6 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer-ar.css">
     <link rel="stylesheet" href="/scss/dark&light.css">
+    <link rel="stylesheet" href="/css/footerStyleAr.css">
+
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>

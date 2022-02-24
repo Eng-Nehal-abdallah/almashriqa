@@ -6,6 +6,8 @@ use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Lab;
+use App\Models\Leader;
+use App\Models\Leaderuni;
 use App\Models\Typeachievement;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,22 @@ class AchievementController extends Controller
         $achievements = achievement::all();
         $types = Typeachievement::all();
         return view('dashbord\achievement\dashboarddoc',['doctor'=>$doctor] ,compact('departments', 'facutlies', 'achievements','types'));
+    }
+    public function indexleader(Leader $leader)
+    {
+        $departments = Department::all();
+        $facutlies = Facutly::all();
+        $achievements = achievement::all();
+        $types = Typeachievement::all();
+        return view('dashbord\achievement\dashboardleader',['leader'=>$leader] ,compact('departments', 'facutlies', 'achievements','types'));
+    }
+    public function indexleaderuni(Leaderuni $leaderuni)
+    {
+        $departments = Department::all();
+        $facutlies = Facutly::all();
+        $achievements = achievement::all();
+        $types = Typeachievement::all();
+        return view('dashbord\achievement\dashboardleaderuni',['leaderuni'=>$leaderuni] ,compact('departments', 'facutlies', 'achievements','types'));
     }
     public function facultyen(Facutly $faculty)
     {
@@ -155,7 +173,22 @@ $labs=Lab::all();
         return redirect("/dashboard4");
     }
 
+    public function insertleader(Leader $leader)
+    {
+        $facutlies = Facutly::all();
+        $departments = Department::all();
+        $types = Typeachievement::all();
 
+        return view('dashbord\achievement\createleader', compact('facutlies','departments','types'),['leader'=>$leader]);
+    }
+    public function insertleaderuni(Leaderuni $leaderuni)
+    {
+        $facutlies = Facutly::all();
+        $departments = Department::all();
+        $types = Typeachievement::all();
+
+        return view('dashbord\achievement\createleaderuni', compact('facutlies','departments','types'),['leaderuni'=>$leaderuni]);
+    }
     public function insert(Doctors $doctor)
     {
         $facutlies = Facutly::all();
@@ -202,6 +235,95 @@ $labs=Lab::all();
         $data->details_en = $request->details_en;
 
         $data->id_doctor = $request->id_doctor;
+        $data->id_types = $request->id_types;
+        $data->save();
+        return redirect('/dashboard4');
+    }
+
+    public function createachievement(Request $request)
+    {
+
+
+        $data = new achievement();
+
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+
+            $data['image'] = $destinationPath . "$profileImage";
+        } else {
+            unset($input['image']);
+        }
+
+        if ($pdf = $request->file('pdf')) {
+            $destinationPath = 'file/';
+            $profileImage = date('YmdHis') . "." . $pdf->getClientOriginalExtension();
+            $pdf->move($destinationPath, $profileImage);
+            $input['pdf'] = "$profileImage";
+
+            $data['pdf'] = $destinationPath . "$profileImage";
+        } else {
+            unset($input['pdf']);
+        }
+
+
+        $data->name_ar = $request->name_ar;
+        $data->name_en = $request->name_en;
+        $data->details_ar = $request->details_ar;
+
+        $data->details_en = $request->details_en;
+
+        $data->id_leader = $request->id_leader;
+        $data->id_types = $request->id_types;
+        $data->save();
+        return redirect('/dashboard4');
+    }
+
+
+
+
+    public function createachievementuni(Request $request)
+    {
+
+
+        $data = new achievement();
+
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+
+            $data['image'] = $destinationPath . "$profileImage";
+        } else {
+            unset($input['image']);
+        }
+
+        if ($pdf = $request->file('pdf')) {
+            $destinationPath = 'file/';
+            $profileImage = date('YmdHis') . "." . $pdf->getClientOriginalExtension();
+            $pdf->move($destinationPath, $profileImage);
+            $input['pdf'] = "$profileImage";
+
+            $data['pdf'] = $destinationPath . "$profileImage";
+        } else {
+            unset($input['pdf']);
+        }
+
+
+        $data->name_ar = $request->name_ar;
+        $data->name_en = $request->name_en;
+        $data->details_ar = $request->details_ar;
+
+        $data->details_en = $request->details_en;
+
+        $data->id_leaderuni = $request->id_leaderuni;
         $data->id_types = $request->id_types;
         $data->save();
         return redirect('/dashboard4');

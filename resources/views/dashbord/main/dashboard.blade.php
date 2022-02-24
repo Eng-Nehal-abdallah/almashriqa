@@ -74,6 +74,22 @@
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-map-marker-alt me-2"> معدل القبول و الاقساط
                     </i></a>
+                    <a href="/dashboard22"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> وسائط متعددة
+                    </i></a>
+                    <a href="/dashboard25"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  رئيس ومساعدين الجامعة
+                    </i></a>
+                    <a href="/dashboard26"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> عمداء ومعاونين ومقررين الكليات
+                    </i></a>
+                    <a href="/dashboard27"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
+                    </i></a>
 
             </div>
         </div>
@@ -114,7 +130,7 @@
                     <div class="col-md-4">
                         <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">720</h3>
+                                <h3 class="fs-2">{{ $doctors->count(); }}</h3>
                                 <p class="fs-5">Doctors</p>
                             </div>
                             <i class="fas fa-users fs-1 "></i>
@@ -124,7 +140,7 @@
                     <div class="col-md-4">
                         <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">4920</h3>
+                                <h3 class="fs-2">{{ $mash->students }}</h3>
                                 <p class="fs-5">Students</p>
                             </div>
                             <i class="fas fa-user-graduate fs-1 "></i>
@@ -134,7 +150,7 @@
                     <div class="col-md-4">
                         <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">3899</h3>
+                                <h3 class="fs-2">{{ $f->count(); }}</h3>
                                 <p class="fs-5">Colleage</p>
                             </div>
                             <i class="fas fa-university fs-1 "></i>
@@ -182,22 +198,21 @@
                                         <th scope="row">1</th>
                                         <td>{{ $mash->abstract_title_ar }}</td>
                                         <td>{{ $mash->abstract_title_en }}</td>
-                                        <td>{{ $mash->abstract_small_ar }}</td>
-                                        <td>{{ $mash->abstract_small_en }}</td>
+
                                         <td>{{ $mash->abstract_details_ar }}</td>
                                         <td>{{ $mash->abstract_details_en }}</td>
                                         <td>{{ $mash->strategy_ar }}</td>
                                         <td>{{ $mash->strategy_en }}</td>
                                         <td>{{ $mash->word_ar }}</td>
-                                        <td>{{ $mash->word_en }}</td>
-                                        <td>{{ $mash->strategy_ar }}</td>
-                                        <td>{{ $mash->strategy_en }}</td>
+                                        <td>{{ $mash->word_En }}</td>
+
                                         <td>{{ $mash->fees_ar }}</td>
                                         <td>{{ $mash->fees_en }}</td>
-                                        <td>{{ $mash->room }}</td>
+
                                         <td>{{ $mash->students }}</td>
-                                        <td><img src="/{{ $mash->image }}" width="100" height="100" alt="image"></td>
-                                        <td><a href="{{  $mash->pdf}}"/></td>
+                                        <td>{{ $mash->room }}</td>
+                                        <td><img src="/{{ $mash->leaderimage }}" width="100" height="100" alt="image"></td>
+                                        <td><a href="{{  $mash->pdf}}">download</a></td>
                                         <td><a class="btn shadow-sm btn-dark"
                                                 href="/mashes/{{ $mash->id }}/edit">edit</a></td>
 
@@ -228,10 +243,7 @@
                                         <th scope="col">small_en</th>
                                         <th scope="col">paragraph_ar</th>
                                         <th scope="col">paragraph_en</th>
-                                        <th scope="col">strategy_ar</th>
-                                        <th scope="col">strategy_en</th>
-                                        <th scope="col">word_ar</th>
-                                        <th scope="col">word_en</th>
+
 
 
 

@@ -124,7 +124,7 @@
 
     <!-- start section 1 -->
     <section class="section-1">
-        <div class="container-fluid">
+        <div class="container">
             <div class="head">
                 <h1 class="heading">الكلية</h1>
                 <br>

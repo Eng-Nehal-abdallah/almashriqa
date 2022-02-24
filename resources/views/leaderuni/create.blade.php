@@ -13,7 +13,7 @@
 
     <div class="container">
         <h2>Laravel 8 Country State City Dropdown</h2>
-        <form action="/create_doctor"  enctype="multipart/form-data" method="POST">
+        <form action="/create_leaderuni"  enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-row">
 

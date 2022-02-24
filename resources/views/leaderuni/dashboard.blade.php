@@ -161,7 +161,7 @@
      </div>
     </div> --}}
 
-    <a class="btn shadow-sm btn-dark" href="/insert_doctor">Add</a>
+    <a class="btn shadow-sm btn-dark" href="/insert_leaderuni">Add</a>
 
     <!-- start seection 2 -->
     <div class="table-responsive-xl">
@@ -311,11 +311,11 @@
 
 
 
-          <td><a class="btn shadow-sm btn-dark" href="/doctor/{{ $data->id }}/edit">edit</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/doctorsocial/{{ $data->id }}/add">Add social media</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/social/{{ $data->id }}/show">show social media</a></td>
-          <td><a class="btn shadow-sm btn-dark" href="/achievement/{{ $data->id }}/show">show achievement</a></td>
-<td> <form method="post" action="/doctors/{{ $data->id }}">
+          <td><a class="btn shadow-sm btn-dark" href="/leaderuni/{{ $data->id }}/edit">edit</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/leaderunisocial/{{ $data->id }}/add">Add social media</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/socialleaderuni/{{ $data->id }}/show">show social media</a></td>
+          <td><a class="btn shadow-sm btn-dark" href="/achievementleaderuni/{{ $data->id }}/show">show achievement</a></td>
+<td> <form method="post" action="/leadersunis/{{ $data->id }}">
     @csrf
     @method('DELETE')
     <input type="submit" class="btn btn-danger m-1" value="delete" />
