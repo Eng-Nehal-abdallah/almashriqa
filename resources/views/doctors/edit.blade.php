@@ -32,10 +32,7 @@
                     <input type="file" class="form-control" id='image' name='image'>
                 </div>
 
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id='email' name='email' value="{{ $doctor->email }}">
-                </div>
+
 
             </div>
             <div class="form-row">
@@ -70,25 +67,7 @@
                 <input type="text" class="form-control" id='certified_en' name='certified_en' value="{{$doctor->certified_en  }}">
             </div>
 
-            <div class="form-group">
-                <div class="form-group col-md-6">
-                <select id="country" name="id_facutly" class="form-control">
-                    <option value="">تغيير الكلية</option>
-                    @foreach ($facutlies as $list)
-                        <option value="{{ $list->id }}">{{ $list->name_ar }}</option>
-                    @endforeach
-                </select>
-                </div>
-                <div class="form-group col-md-6">
-                <select id="state" name="id_department" class="form-control">
-                    <option value="">تغييرالقسم</option>
-                </select>
-            </div>
 
-
-
-
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="position_ar">المنصب الحالي</label>
@@ -1267,12 +1246,7 @@
                 <input type="date" class="form-control" id='birthday' name='birthday'>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="password">رقم السري</label>
-                <input type="password" class="form-control" id='password' name='password'>
-            </div>
-        </div>
+
 
         <div class="form-row">
             <div class="form-group col-md-6">

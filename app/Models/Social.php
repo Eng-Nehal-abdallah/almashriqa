@@ -16,6 +16,6 @@ class Social extends Model
 
     */
    protected $fillable = [
-       'name_ar','name_en','link','id_doctor',
+       'name_ar','name_en','link','id_doctor','id_leader','id_leaderuni'
    ];
 }

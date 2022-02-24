@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @extends('layouts.head-en')
+    @extends('layouts.head-ar')
     <link rel="stylesheet" href="/scss/agreement-inner.css">
     <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
@@ -140,16 +140,14 @@
             <div class="row justify-content-around">
 
                 <div class="col-md-5 col-sm-10">
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="/{{$agreement->image}}" alt="">
                 </div>
 
                 <div class="col-md-5 col-sm-10">
                     <div class="caption">
-                        <small>جامعة </small>
-                        <h2>jkhgfdghjkjhgfdsfdghj</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero placeat similique maiores
-                            consequatur velit reprehenderit, nobis aliquid, quia exercitationem sequi molestiae unde
-                            numquam nam, amet laudantium accusamus eaque voluptatibus sapiente?</p>
+
+                        <h2>{{ $agreement->name_en }}</h2>
+                        <p>{{ $agreement->details_en }}</p>
 
 
                     </div>
@@ -158,8 +156,8 @@
         </div>
 
     </section>
-
-    <!-- End section 2 -->
+    <!-- End section 1 -->
+    <!-- End section 1 -->
 
 
     <!-- start light & dark -->
@@ -174,23 +172,24 @@
     <!--start footer -->
 
     @extends('layouts.footer-en')
+
+
     <!-- start jquery -->
     <script src="/js/jquery-3.6.0.min.js"></script>
-
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
     <script src="/js/jquery.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/slick.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
 
-
-    <!-- start section -->
     <script src="/js/main.js"></script>
     <script src="/js/dark.js"></script>
+    <script src="/js/lang.js"></script>
     <script src="/js/nav.js"></script>
-    {{-- <script src="/js/dark.js"></script> --}}
+
+
 
     <script>
         var bool = true;
@@ -199,42 +198,26 @@
             $('#lang').on('click', function() {
 
                 if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-                    $("header").attr("dir", "rtl");
+                    $("body").removeAttr("dir", "ltr");
+                    $("body").attr("dir", "rtl");
 
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
+                    $('p').removeClass('text-left')
+                    $('p').addClass('text-right')
 
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
                     bool = false;
                 } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
 
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
+                    $("body").removeAttr("dir");
+                    $("body").attr("dir", "ltr");
+
+                    $('p').removeClass('text-right')
+                    $('p').addClass('text-left')
+
+
                     bool = true;
                 }
 
             })
-        })
-
-        $(document).ready(function() {
-            var dark = document.querySelector('.dark-mood > .fas');
-
-            var x = 0;
-            dark.on('click', function() {
-                if (x == 0) {
-                    $('body').addClass('dark');
-
-                }
-            })
-
-
-
         })
     </script>
 

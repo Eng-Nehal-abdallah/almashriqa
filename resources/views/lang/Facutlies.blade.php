@@ -84,7 +84,7 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
+                                    <li><a href="/facutlydocen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -187,7 +187,7 @@
                                         <p class="card-text">{{ $Facutly->about_facutly_en }}</p>
                                         <div class="btn-group">
                                             <a class="btn btn-sm" href="Facutly/{{ $Facutly->id }}/show">
-                                                more</a>
+                                                {{ $Facutly->name_en}}</a>
                                             <button type="button"
                                                 class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
                                                 data-toggle="dropdown" aria-expanded="false">

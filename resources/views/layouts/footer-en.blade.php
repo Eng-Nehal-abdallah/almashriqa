@@ -8,9 +8,9 @@
                         <h4> immportant links</h4>
                         <hr class="tet">
                         <p class="first ">
-                            <br><a class=" text-warning" href=" https://uobaghdad.edu.iq/">جامعة بفداد</a>
-                            <br><a class=" text-warning" href=" https://nahrainuniv.edu.iq/">جامعة النهرين</a>
-                            <br><a class=" text-warning" href="https://www.uotechnology.edu.iq/index.php/ar">جامعة التكنولوجية</a>
+                            <br><a class=" text-warning" href=" https://uobaghdad.edu.iq/">Baghdad University </a>
+                            <br><a class=" text-warning" href=" https://nahrainuniv.edu.iq/">Al Nahreen University </a>
+                            <br><a class=" text-warning" href="https://www.uotechnology.edu.iq/index.php/ar">Technology University </a>
                             <br>
 
                         </p>

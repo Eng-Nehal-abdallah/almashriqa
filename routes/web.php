@@ -11,13 +11,18 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\FeesController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\LabExamController;
 use App\Http\Controllers\LeaderController;
+use App\Http\Controllers\LeaderuniController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\MagazinController;
 use App\Http\Controllers\MashController;
+use App\Http\Controllers\MechineController;
 use App\Http\Controllers\PaperController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\StudentfirstController;
@@ -26,11 +31,14 @@ use App\Http\Controllers\TypeahievementController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UniversitiesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 use App\Models\achievement;
 use App\Models\Admindepart;
 use App\Models\Department;
+use App\Models\Leaderuni;
 use App\Models\Type;
 use App\Models\Lecture;
+use App\Models\Mechine;
 use App\Models\Studentfirst;
 use App\Models\University;
 use Illuminate\Support\Facades\Route;
@@ -57,7 +65,19 @@ Route::get('/register', function(){
 });
 
 Auth::routes();
+//show faculty all for doctor
+Route::get('/facutlydocen', [DoctorsController::class, 'indexdocen']);
+//show faculty all for doctor
+Route::get('/facutlydoc', [DoctorsController::class, 'indexdoctor']);
 
+//show faculty all for doctor
+Route::get('/carddoc/{facutly}/show', [DoctorsController::class, 'doctors']);
+//show faculty all for doctor
+Route::get('/carddocen/{facutly}/show', [DoctorsController::class, 'doctorsen']);
+//show faculty all for doctor
+Route::get('/departcarddoc/{department}/show', [DoctorsController::class, 'doctorsdepart']);
+//show faculty all for doctor
+Route::get('/departcarddocen/{department}/show', [DoctorsController::class, 'doctorsendepart']);
 //show page dashboard
 Route::get('/s/{facutly}', [SubjectController::class, 'subject']);
 //show page dashboard
@@ -104,6 +124,16 @@ Route::get('/admindepartmenten', [AdmindepartController::class, 'indexen']);
 //show agreements
 Route::get('/agreements', [AgreementController::class, 'index']);
 //show agreements
+Route::get('/mechine', [MechineController::class, 'index']);
+//show agreements
+Route::get('/mechineen', [MechineController::class, 'indexen']);
+//show agreements
+Route::get('/mechineen', [MechineController::class, 'indexen']);
+//show agreements
+Route::get('/agreements/{agreement}/show', [AgreementController::class, 'details']);
+//show agreements
+//show agreements
+Route::get('/agreementsen/{agreement}/show', [AgreementController::class, 'detailsen']);
 Route::get('/agreementsen', [AgreementController::class, 'indexen']);
 
 //labs
@@ -143,6 +173,9 @@ Route::get('/facutlyresearchen', [UniversitiesController::class, 'showresearchen
 Route::get('/facutlylaben', [UniversitiesController::class, 'showlaben']);
 //show faculty to choose some achievements
 Route::get('/patenten', [UniversitiesController::class, 'index2en']);
+
+
+
 
 
 //paper
@@ -213,18 +246,17 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
     //destroy department
     Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth','admin']);
 
-    //show page lecturre
-    Route::get('insert_doctor', [DoctorsController::class, 'insert'])->middleware(['auth','admin']);
+
     //add doctors
-    Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth','admin']);
+    Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth','admin'],['auth','facutly']);
     //edit department
-    Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth','admin']);
+    Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
     //update code after head
-    Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth','admin']);
+    Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
     //show page create doctor social media
-    Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth','admin']);
+    Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
     //add doctors
-    // Route::post('/create_socialmedia', [DoctorsController::class, 'create_social'])->middleware(['auth','admin'],['auth','doctor']);
+    Route::post('/create_socialmedia', [DoctorsController::class, 'create_social'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
     //show page create doctor agreement
     Route::get('/agreement', [AgreementController::class, 'insert'])->middleware(['auth','admin']);
     //add agreement
@@ -250,16 +282,18 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
     //show page dashboard
     Route::get('/dashboard14', [CompusController::class, 'index2'])->middleware(['auth','admin']);
     //show page create doctor social media
-    Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth','admin']);
+    Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
     //add doctors achievement
-    Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements')->middleware(['auth','admin']);
+    Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements')->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
     //edit department
-    Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth','admin']);
+    Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly',['auth','doctor']]);
 
     //update code after head
-    Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth','admin']);
+    Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth','admin'],['auth','facutly',['auth','doctor']]);
+
     //destroy department
-    Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth','admin']);
+    Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth','admin'],['auth','facutly',['auth','doctor']]);
+
     //show page create doctor social media
     Route::get('/activity', [ActivityController::class, 'insert'])->middleware(['auth','admin']);
     //add doctors achievement
@@ -378,7 +412,7 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
         //show dashboardmain
         Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth','admin']);
         //destroy department
-        Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial'])->middleware(['auth','admin']);
+        Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial'])->middleware(['auth','admin'],['auth','facutly',['auth','doctor']]);
         //show page dashboard
         Route::get('/dashboard18', [FeesController::class, 'index2'])->middleware(['auth','admin']);
 
@@ -456,42 +490,42 @@ Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware([
 
 
 
-//edit department
-Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth', 'doctor']);;
-//update code after head
-Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth', 'doctor']);;
-//destroy department
-Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth', 'doctor']);;
+// //edit department
+// Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth', 'doctor'],['auth','admin']);
+// //update code after head
+// Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);
+// //destroy department
+// Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth', 'doctor'],['auth','admin']);
 //show page create doctor social media
-Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth', 'doctor']);;
+Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth', 'doctor'],['auth','admin']);
 
 //show social  for doctors
-Route::get('/social/{doctor}/show', [DoctorsController::class, 'social'])->middleware(['auth', 'doctor']);;
+Route::get('/social/{doctor}/show', [DoctorsController::class, 'social'])->middleware(['auth', 'doctor'],['auth','admin'],['auth','facutly']);
 
-Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth', 'doctor']);;
+Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth', 'doctor'],['auth','admin'],['auth','facutly']);
 //edit department
-Route::get('/docs/{doctor}/edit', [DoctorsController::class, 'editdoc'])->middleware(['auth', 'doctor']);;
+Route::get('/docs/{doctor}/edit', [DoctorsController::class, 'editdoc'])->middleware(['auth', 'doctor'],['auth','admin']);
 //update code after head
-Route::post('/docs/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'doctor']);;
+Route::post('/docs/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);
 //show ahievement  for doctors
-Route::get('/achievement/{doctor}/show', [AchievementController::class, 'indexdoc'])->middleware(['auth', 'doctor']);;
+Route::get('/achievement/{doctor}/show', [AchievementController::class, 'indexdoc'])->middleware(['auth', 'doctor'],['auth','admin'],['auth','facutly']);
 
 
 
-//add doctors achievement
-Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
+// //add doctors achievement
+// Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
 //show page create doctor agreement
-Route::get('/subject/{doctor}', [SubjectController::class, 'insert'])->middleware(['auth', 'doctor']);
+Route::get('/subject/{doctor}', [SubjectController::class, 'insert'])->middleware(['auth', 'doctor'],['auth','admin']);
 //add agreement
-Route::post('/create_subject', [SubjectController::class, 'create'])->middleware(['auth', 'doctor']);
+Route::post('/create_subject', [SubjectController::class, 'create'])->middleware(['auth', 'doctor'],['auth','admin']);
 //edit agreement
-Route::get('/subject/{subject}/edit', [SubjectController::class, 'edit'])->middleware(['auth', 'doctor']);
+Route::get('/subject/{subject}/edit', [SubjectController::class, 'edit'])->middleware(['auth', 'doctor'],['auth','admin']);
 //update code agreement
-Route::put('/updatesubject/{subject}', [SubjectController::class, 'update'])->middleware(['auth', 'doctor']);
+Route::put('/updatesubject/{subject}', [SubjectController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);
 //destroy agreementagreement
-Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])->middleware(['auth', 'doctor']);
+Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])->middleware(['auth', 'doctor'],['auth','admin']);
 //show page dashboard
-Route::get('/dashboard19/{doctor}', [SubjectController::class, 'index2'])->middleware(['auth', 'doctor']);
+Route::get('/dashboard19/{doctor}', [SubjectController::class, 'index2'])->middleware(['auth', 'doctor'],['auth','admin']);
 
 
 
@@ -568,6 +602,8 @@ Route::get('/doctorsen/{Department}/show', [DoctorsController::class, 'shDen']);
 //show profile
 Route::get('docen/{doctor}/show', [DoctorsController::class, 'profileen']);
 //show department for faculty
+
+
 Route::get('/departmenten/{department}/show', [DepartmentController::class, 'shen']);
 //show requiremeznt of faculty
 Route::get('/requirementen', [RequirementController::class, 'indexen']);
@@ -590,7 +626,7 @@ Route::get('/den/{doctor}/research', [UniversitiesController::class, 'doctoren']
 //edit faculty
 Route::get('/facutly/{facutly}/edit', [UniversitiesController::class, 'edit']);
 //update code after head
-Route::post('/facutly/{facutly}', [UniversitiesController::class, 'update']);
+Route::Put('/facutly/{facutly}', [UniversitiesController::class, 'update']);
 
 //show insert type achieve
 Route::get('insert_type', [TypeahievementController::class, 'insert']);
@@ -709,16 +745,14 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     //destroy department
     Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy']);
 
-    //show page lecturre
-    Route::get('insert_doctor', [DoctorsController::class, 'insert']);
     //add doctors
     Route::post('/create_doctor', [DoctorsController::class, 'create']);
-    //edit department
-    Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit']);
+    // //edit department
+    // Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit']);
     //update code after head
     Route::post('/doctor/{doctor}', [DoctorsController::class, 'update']);
-    //show page create doctor social media
-    Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia']);
+    // //show page create doctor social media
+    // Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia']);
     //add doctors
 
 
@@ -746,17 +780,17 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::delete('/compus/{compus}', [CompusController::class, 'destroy']);
     //show page dashboard
     Route::get('/dashboard14', [CompusController::class, 'index2']);
-    //show page create doctor social media
-    Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert']);
-    //add doctors achievement
-    Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
-    //edit department
-    Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit']);
+    // //show page create doctor social media
+    // Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert']);
+    // //add doctors achievement
+    // Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
+    // //edit department
+    // Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit']);
 
-    //update code after head
-    Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update']);
-    //destroy department
-    Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy']);
+    // //update code after head
+    // Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update']);
+    // //destroy department
+    // Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy']);
     //show page create doctor social media
     Route::get('/activity', [ActivityController::class, 'insert']);
     //add doctors achievement
@@ -873,8 +907,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::PUT('/updateadmin/{admindepart}', [AdmindepartController::class, 'update']);
         //show dashboardmain
         Route::get('/dashboard', [MashController::class, 'index2']);
-        //destroy department
-        Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial']);
+        // //destroy department
+        // Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial']);
         //show page dashboard
         Route::get('/dashboard18', [FeesController::class, 'index2']);
 
@@ -928,15 +962,15 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
     Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth','admin']);
 
     //show page lecturre
-    Route::get('insert_doctor', [DoctorsController::class, 'insert'])->middleware(['auth','admin']);
+    Route::get('insert_doctor', [DoctorsController::class, 'insert'])->middleware(['auth','admin'],['auth','facutly']);
     //add doctors
-    Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth','admin']);
+    Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
     //edit department
-    Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth','admin']);
+    Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
     //update code after head
-    Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth','admin']);
+    Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
     //show page create doctor social media
-    Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth','admin']);
+    Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
     //add doctors
 
     //show page create doctor agreement
@@ -963,17 +997,17 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
     Route::delete('/compus/{compus}', [CompusController::class, 'destroy'])->middleware(['auth','admin']);
     //show page dashboard
     Route::get('/dashboard14', [CompusController::class, 'index2'])->middleware(['auth','admin']);
-    //show page create doctor social media
-    Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth','admin']);
+    // //show page create doctor social media
+    // Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth','admin']);
     //add doctors achievement
-    Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements')->middleware(['auth','admin']);
-    //edit department
-    Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth','admin']);
+    // Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements')->middleware(['auth','admin']);
+    // //edit department
+    // Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth','admin']);
 
-    //update code after head
-    Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth','admin']);
-    //destroy department
-    Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth','admin']);
+    // //update code after head
+    // Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth','admin']);
+    // //destroy department
+    // Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth','admin']);
     //show page create doctor social media
     Route::get('/activity', [ActivityController::class, 'insert'])->middleware(['auth','admin']);
     //add doctors achievement
@@ -1092,7 +1126,7 @@ Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth',
         //show dashboardmain
         Route::get('/dashboard', [MashController::class, 'index2'])->middleware(['auth','admin']);
         //destroy department
-        Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial'])->middleware(['auth','admin']);
+        Route::delete('/social/{social}/delete', [DoctorsController::class, 'destroysocial'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
         //show page dashboard
         Route::get('/dashboard18', [FeesController::class, 'index2'])->middleware(['auth','admin']);
 
@@ -1170,42 +1204,42 @@ Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware([
 
 
 
-//edit department
-Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth', 'doctor']);;
-//update code after head
-Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth', 'doctor']);;
-//destroy department
-Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth', 'doctor']);;
-//show page create doctor social media
-Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth', 'doctor']);;
+// //edit department
+// Route::get('/achievement/{achievement}/edit', [AchievementController::class, 'edit'])->middleware(['auth', 'doctor'],['auth','admin']);;
+// //update code after head
+// Route::put('/updateachievement/{achievement}', [AchievementController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);;
+// //destroy department
+// Route::delete('/achievementss/{achievement}', [AchievementController::class, 'destroy'])->middleware(['auth', 'doctor'],['auth','admin']);;
+// //show page create doctor social media
+// Route::get('/achievement/{doctor}/add', [AchievementController::class, 'insert'])->middleware(['auth', 'doctor'],['auth','admin']);;
 
 //show social  for doctors
-Route::get('/social/{doctor}/show', [DoctorsController::class, 'social'])->middleware(['auth', 'doctor']);;
+Route::get('/social/{doctor}/show', [DoctorsController::class, 'social'])->middleware(['auth', 'doctor'],['auth','admin']);;
 
-Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth', 'doctor']);;
+// Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia'])->middleware(['auth', 'doctor'],['auth','admin']);;
 //edit department
-Route::get('/docs/{doctor}/edit', [DoctorsController::class, 'editdoc'])->middleware(['auth', 'doctor']);;
+Route::get('/docs/{doctor}/edit', [DoctorsController::class, 'editdoc'])->middleware(['auth', 'doctor'],['auth','admin']);;
 //update code after head
-Route::post('/docs/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'doctor']);;
+Route::post('/docs/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);;
 //show ahievement  for doctors
-Route::get('/achievement/{doctor}/show', [AchievementController::class, 'indexdoc'])->middleware(['auth', 'doctor']);;
+Route::get('/achievement/{doctor}/show', [AchievementController::class, 'indexdoc'])->middleware(['auth', 'doctor'],['auth','admin']);;
 
 
 
-//add doctors achievement
-Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
+// //add doctors achievement
+// Route::post('/create_achievement', [AchievementController::class, 'create'])->name('achievements');
 //show page create doctor agreement
-Route::get('/subject/{doctor}', [SubjectController::class, 'insert'])->middleware(['auth', 'doctor']);
+Route::get('/subject/{doctor}', [SubjectController::class, 'insert'])->middleware(['auth', 'doctor'],['auth','admin']);
 //add agreement
-Route::post('/create_subject', [SubjectController::class, 'create'])->middleware(['auth', 'doctor']);
+Route::post('/create_subject', [SubjectController::class, 'create'])->middleware(['auth', 'doctor'],['auth','admin']);
 //edit agreement
-Route::get('/subject/{subject}/edit', [SubjectController::class, 'edit'])->middleware(['auth', 'doctor']);
+Route::get('/subject/{subject}/edit', [SubjectController::class, 'edit'])->middleware(['auth', 'doctor'],['auth','admin']);
 //update code agreement
-Route::put('/updatesubject/{subject}', [SubjectController::class, 'update'])->middleware(['auth', 'doctor']);
+Route::put('/updatesubject/{subject}', [SubjectController::class, 'update'])->middleware(['auth', 'doctor'],['auth','admin']);
 //destroy agreementagreement
-Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])->middleware(['auth', 'doctor']);
+Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])->middleware(['auth', 'doctor'],['auth','admin']);
 //show page dashboard
-Route::get('/dashboard19/{doctor}', [SubjectController::class, 'index2'])->middleware(['auth', 'doctor']);
+Route::get('/dashboard19/{doctor}', [SubjectController::class, 'index2'])->middleware(['auth', 'doctor'],['auth','admin']);
 
 
 
@@ -1227,7 +1261,7 @@ Route::group(['middleware' => ['auth', 'doctor']], function () {
         Route::get('/docs/{doctor}/edit', [DoctorsController::class, 'editdoc']);
         //update code after head
         Route::post('/docs/{doctor}', [DoctorsController::class, 'update']);
-        Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia']);
+        // Route::get('/doctorsocial/{doctor}/add', [DoctorsController::class, 'insert_socialmedia']);
         return view('test-success-doc');
     });
 });
@@ -1243,68 +1277,68 @@ Route::group(['middleware' => ['auth', 'doctor']], function () {
 
 Route::get('/dashboard10/{facutly}', [ExamController::class, 'index'])->middleware(['auth', 'facutly']);
 //show page  exam create
-Route::get('/exam', [ExamController::class, 'insert'])->middleware(['auth', 'facutly']);
+Route::get('/exam', [ExamController::class, 'insert'])->middleware(['auth', 'facutly'],['auth','admin']);
 //add exam
-Route::post('/create_exam', [ExamController::class, 'create'])->name('exam')->middleware(['auth', 'facutly']);
+Route::post('/create_exam', [ExamController::class, 'create'])->name('exam')->middleware(['auth', 'facutly'],['auth','admin']);
 //edit exam
-Route::get('/exam/{exam}/edit', [ExamController::class, 'edit'])->middleware(['auth', 'facutly']);
+Route::get('/exam/{exam}/edit', [ExamController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
 //update exam
-Route::put('/updateexam/{exam}', [ExamController::class, 'update'])->middleware(['auth', 'facutly']);
+Route::put('/updateexam/{exam}', [ExamController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
 //destroy exam
-Route::delete('/exams/{exam}', [ExamController::class, 'destroy'])->middleware(['auth', 'facutly']);
+Route::delete('/exams/{exam}', [ExamController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
          //dashboard lecture
   Route::get('/dashboard8/{facutly}', [LectureController::class, 'indexp']);
-  Route::get('/lecture', [LectureController::class, 'insert'])->middleware(['auth', 'facutly']);
+  Route::get('/lecture', [LectureController::class, 'insert'])->middleware(['auth', 'facutly'],['auth','admin']);
   //add doctors achievement
-  Route::post('/create_lecture', [LectureController::class, 'create'])->name('lecture')->middleware(['auth', 'facutly']);
+  Route::post('/create_lecture', [LectureController::class, 'create'])->name('lecture')->middleware(['auth', 'facutly'],['auth','admin']);
   //edit department
-  Route::get('/lecture/{lecture}/edit', [LectureController::class, 'edit'])->middleware(['auth', 'facutly']);
+  Route::get('/lecture/{lecture}/edit', [LectureController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
   //update code after head
-  Route::put('/updatelecture/{lecture}', [LectureController::class, 'update'])->middleware(['auth', 'facutly']);
+  Route::put('/updatelecture/{lecture}', [LectureController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
   //destroy department
-  Route::delete('/lectures/{lecture}', [LectureController::class, 'destroy'])->middleware(['auth', 'facutly']);
+  Route::delete('/lectures/{lecture}', [LectureController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 //show page create lab exam
-Route::get('/labexam', [LabExamController::class, 'insert'])->middleware(['auth', 'facutly']);
+Route::get('/labexam', [LabExamController::class, 'insert'])->middleware(['auth', 'facutly'],['auth','admin']);
 //add doctors labexam
-Route::post('/create_labexam', [LabExamController::class, 'create'])->name('labexam')->middleware(['auth', 'facutly']);
+Route::post('/create_labexam', [LabExamController::class, 'create'])->name('labexam')->middleware(['auth', 'facutly'],['auth','admin']);
 //edit labexam
-Route::get('/labexam/{labexam}/edit', [LabExamController::class, 'edit'])->middleware(['auth', 'facutly']);
+Route::get('/labexam/{labexam}/edit', [LabExamController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
 //update code lab exam
-Route::put('/updatelabexam/{exam}', [LabExamController::class, 'update'])->middleware(['auth', 'facutly']);
+Route::put('/updatelabexam/{exam}', [LabExamController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
 //destroy lab exam
-Route::delete('/labexams/{exam}', [LabExamController::class, 'destroy'])->middleware(['auth', 'facutly']);
+Route::delete('/labexams/{exam}', [LabExamController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 //dashboard lecture
-Route::get('/dashboard9/{facutly}', [LabExamController::class, 'indexp'])->middleware(['auth', 'facutly']);
+Route::get('/dashboard9/{facutly}', [LabExamController::class, 'indexp'])->middleware(['auth', 'facutly'],['auth','admin']);
 
       //edit faculty
 
 
 //show page create doctor agreement
-Route::get('/studentadd', [StudentfirstController::class, 'insert'])->middleware(['auth', 'facutly']);
+Route::get('/studentadd', [StudentfirstController::class, 'insert'])->middleware(['auth', 'facutly'],['auth','admin']);
 //add agreement
 Route::post('/create_student', [StudentfirstController::class, 'create']);
 //edit agreement
-Route::get('/student/{student}/edit', [StudentfirstController::class, 'edit'])->middleware(['auth', 'facutly']);
+Route::get('/student/{student}/edit', [StudentfirstController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
 //update code agreement
-Route::put('/updatestudent/{student}', [StudentfirstController::class, 'update'])->middleware(['auth', 'facutly']);
+Route::put('/updatestudent/{student}', [StudentfirstController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
 //destroy agreementagreement
-Route::delete('/students/{student}', [StudentfirstController::class, 'destroy'])->middleware(['auth', 'facutly']);
+Route::delete('/students/{student}', [StudentfirstController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 //show page dashboard
-Route::get('/dashboard20/{facutly}', [StudentfirstController::class, 'index'])->middleware(['auth', 'facutly']);
+Route::get('/dashboard20/{facutly}', [StudentfirstController::class, 'index'])->middleware(['auth', 'facutly'],['auth','admin']);
 
 //destroy department
-Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth', 'facutly']);
+Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 
-//show page lecturre
-Route::get('insert_doctor', [DoctorsController::class, 'insert'])->middleware(['auth', 'facutly']);
+
+
 //add doctors
-Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth', 'facutly']);
-//edit department
-Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth', 'facutly']);
+Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth', 'facutly'],['auth','admin']);
+// //edit department
+// Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
 //update code after head
-Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'facutly']);
+Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
 //dashboard doctor
-Route::get('/dashboard4/{facutly}', [DoctorsController::class, 'indexp'])->middleware(['auth', 'facutly']);
+Route::get('/dashboard4/{facutly}', [DoctorsController::class, 'indexp'])->middleware(['auth', 'facutly'],['auth','admin']);
 
 Route::group(['middleware' => ['auth', 'facutly']], function () {
     Route::get('/test-success-facu', function () {
@@ -1388,6 +1422,159 @@ Route::get('/agreenment-inner' , function(){
 });
 
 
-Route::get('/table' , function(){
-    return view('table-test');
-});
+
+
+
+
+    //show page create doctor agreement
+    Route::get('image_insert', [ImageController::class, 'insert'])->middleware(['auth','admin']);
+    //add agreement
+    Route::post('/create_image', [ImageController::class, 'create'])->middleware(['auth','admin']);
+
+    //destroy agreementagreement
+    Route::delete('/image/{image}', [ImageController::class, 'destroy'])->middleware(['auth','admin']);
+    //show page dashboard
+    Route::get('/dashboard22', [ImageController::class, 'index'])->middleware(['auth','admin']);
+
+
+
+
+
+    //show page create doctor agreement
+    Route::get('images_insert/{image}', [ImagesController::class, 'insert'])->middleware(['auth','admin']);
+    //add agreement
+    Route::post('/create_images', [ImagesController::class, 'create'])->middleware(['auth','admin']);
+
+    //destroy agreementagreement
+    Route::delete('/images/{images}', [ImagesController::class, 'destroy'])->middleware(['auth','admin']);
+    //show page dashboard
+    Route::get('/dashboard23/{image}', [ImagesController::class, 'index'])->middleware(['auth','admin']);
+
+
+
+
+
+    //show page create doctor agreement
+    Route::get('video_insert/{image}', [VideoController::class, 'insert'])->middleware(['auth','admin']);
+    //add agreement
+    Route::post('/create_video', [VideoController::class, 'create'])->middleware(['auth','admin']);
+
+    //destroy agreementagreement
+    Route::delete('/video/{video}', [VideoController::class, 'destroy'])->middleware(['auth','admin']);
+    //show page dashboard
+    Route::get('/dashboard24/{image}', [VideoController::class, 'index'])->middleware(['auth','admin']);
+
+
+
+
+    //show page dashboard
+Route::get('/dashboard25', [LeaderController::class, 'index'])->middleware(['auth', 'admin']);
+
+    //show page dashboard
+    Route::get('/dashboard26', [LeaderuniController::class, 'index'])->middleware(['auth', 'admin']);
+
+
+       //destroy department
+       Route::delete('/leaders/{leader}', [LeaderController::class, 'destroy'])->middleware(['auth','admin'])->middleware(['auth','admin'],['auth','facutly']);
+    //show page lecturre
+    Route::get('insert_leader', [LeaderController::class, 'insert'])->middleware(['auth','admin'],['auth','facutly']);
+    //add doctors
+    Route::post('/create_leader', [LeaderController::class, 'create'])->middleware(['auth','admin'],['auth','facutly']);
+    Route::get('/leader/{leader}/edit', [LeaderController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly']);
+    //update code after head
+    Route::post('/leader/{leader}', [LeaderController::class, 'update'])->middleware(['auth','admin'],['auth','facutly']);
+    //show page create doctor social media
+    Route::get('/leadersocial/{leader}/add', [LeaderController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly'],['auth','admin']);
+    //add doctors
+    //show page lecturre
+    Route::get('insert_leader', [LeaderController::class, 'insert'])->middleware(['auth','admin'],['auth','facutly']);
+//    //destroy department
+//    Route::delete('/leader/{leader}', [LeaderController::class, 'destroy'])->middleware(['auth','admin']);
+   Route::get('/leadersocial/{leader}/add', [LeaderController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly']);
+
+    //add doctors
+    Route::post('/create_leader', [LeaderController::class, 'create'])->middleware(['auth','admin']);
+
+      //edit department
+      Route::get('/leader/{leader}/edit', [LeaderController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //update code after head
+      Route::post('/leader/{leader}', [LeaderController::class, 'update'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //show page create doctor social media
+      Route::get('/leadersocial/{leader}/add', [LeaderController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //add doctors
+
+//show social  for doctors
+Route::get('/socialleader/{leader}/show', [LeaderController::class, 'social'])->middleware(['auth','admin'],['auth','facutly'],['auth', 'doctor']);
+    //add doctors
+    Route::post('/create_socialmedialeader', [LeaderController::class, 'create_social'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
+        //destroy department
+        Route::delete('/socialleader/{social}/delete', [LeaderController::class, 'destroysocial'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
+//show ahievement  for doctors
+Route::get('/achievementleader/{leader}/show', [AchievementController::class, 'indexleader'])->middleware(['auth', 'admin'],['auth','doctor'],['auth','facutly']);
+    //show page create doctor social media
+    Route::get('/achievementleader/{leader}/add', [AchievementController::class, 'insertleader'])->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
+   //add doctors achievement
+   Route::post('/create_achievementleader', [AchievementController::class, 'createachievement'])->name('achievementsleader')->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+       //destroy department
+       Route::delete('/leadersunis/{leaderunis}', [LeaderuniController::class, 'destroy'])->middleware(['auth','admin'])->middleware(['auth','admin'],['auth','facutly']);
+    //show page lecturre
+    Route::get('insert_leaderuni', [LeaderuniController::class, 'insert'])->middleware(['auth','admin'],['auth','facutly']);
+    //add doctors
+    Route::post('/create_leaderuni', [LeaderuniController::class, 'create'])->middleware(['auth','admin'],['auth','facutly']);
+    Route::get('/leaderuni/{leaderuni}/edit', [LeaderuniController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+    //update code after head
+    Route::post('/leaderuni/{leaderuni}', [LeaderuniController::class, 'update'])->middleware(['auth','admin'],['auth','facutly']);
+    //show page create doctor social media
+    Route::get('/leaderunisocial/{leaderuni}/add', [LeaderuniController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly'],['auth','admin']);
+    //add doctors
+    //show page lecturre
+    Route::get('insert_leaderuni', [LeaderuniController::class, 'insert'])->middleware(['auth','admin'],['auth','facutly']);
+
+   Route::get('/leadersocial/{leader}/add', [LeaderuniController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly']);
+
+    //add doctors
+    Route::post('/create_leaderuni', [LeaderuniController::class, 'create'])->middleware(['auth','admin']);
+
+      //edit department
+      Route::get('/leaderuni/{leaderuni}/edit', [LeaderuniController::class, 'edit'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //update code after head
+      Route::post('/leaderuni/{leaderuni}', [LeaderuniController::class, 'update'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //show page create doctor social media
+      Route::get('/leaderunisocial/{leaderuni}/add', [LeaderuniController::class, 'insert_socialmedia'])->middleware(['auth','admin'],['auth','facutly'],['auth','doctor']);
+      //add doctors
+
+//show social  for doctors
+Route::get('/socialleaderuni/{leaderuni}/show', [LeaderuniController::class, 'social'])->middleware(['auth','admin'],['auth','facutly'],['auth', 'doctor']);
+    //add doctors
+    Route::post('/create_socialmedialeaderuni', [LeaderuniController::class, 'create_social'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
+        //destroy department
+        Route::delete('/socialleaderuni/{social}/delete', [LeaderuniController::class, 'destroysocial'])->middleware(['auth','admin'],['auth','doctor'],['auth','facutly']);
+//show ahievement  for doctors
+Route::get('/achievementleaderuni/{leaderuni}/show', [AchievementController::class, 'indexleaderuni'])->middleware(['auth', 'admin'],['auth','doctor'],['auth','facutly']);
+    //show page create doctor social media
+    Route::get('/achievementleaderuni/{leaderuni}/add', [AchievementController::class, 'insertleaderuni'])->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
+   //add doctors achievement
+   Route::post('/create_achievementleaderuni', [AchievementController::class, 'createachievementuni'])->name('achievementsleaderuni')->middleware(['auth','admin'],['auth','doctor',['auth','facutly']]);
+//show page create doctor agreement
+Route::get('pdf_insert', [PdfController::class, 'insert'])->middleware(['auth','admin']);
+//add agreement
+Route::post('/create_pdf', [PdfController::class, 'create'])->middleware(['auth','admin']);
+
+//destroy agreementagreement
+Route::delete('/pdf/{pdf}', [PdfController::class, 'destroy'])->middleware(['auth','admin']);
+    //show page dashboard
+    Route::get('/dashboard27', [PdfController::class, 'index'])->middleware(['auth','admin']);
+

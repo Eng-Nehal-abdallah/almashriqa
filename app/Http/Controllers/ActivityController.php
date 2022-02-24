@@ -67,10 +67,10 @@ $activity=Activity::all();
         } else {
             unset($input['image']);
         }
-        if ($video = $request->file('video')) {
+        if ($pdf = $request->file('pdf')) {
             $destinationPath = 'file/';
-            $profileImage = date('YmdHis') . "." . $video->getClientOriginalExtension();
-            $video->move($destinationPath, $profileImage);
+            $profileImage = date('YmdHis') . "." . $pdf->getClientOriginalExtension();
+            $pdf->move($destinationPath, $profileImage);
             $input['pdf'] = "$profileImage";
             $activity->update($input);
             $activity['pdf'] = $destinationPath . "$profileImage";

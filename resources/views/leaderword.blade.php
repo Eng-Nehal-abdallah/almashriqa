@@ -71,7 +71,7 @@
                             <li><a href="/leaderuni">رئاسة الجامعة</a></li>
                             <li><a href="/fees">الرسوم الدراسية </a></li>
                             <li><a href="/strategy">ستراتيجية الجامعة </a></li>
-                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
+                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
                             <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
@@ -158,7 +158,7 @@
                 <div class="col-md-10">
 
                     {{-- {{ $mash->word_ar }} --}}
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="/{{ $mash->leaderimage}}" alt="">
 
                 </div>
 

@@ -69,7 +69,7 @@
                             <li><a href="/leaderuni">رئاسة الجامعة</a></li>
                             <li><a href="/fees">الرسوم الدراسية </a></li>
                             <li><a href="/strategy">ستراتيجية الجامعة </a></li>
-                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
+                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
                             <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
@@ -98,7 +98,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -145,175 +145,81 @@
     <!-- start header -->
 
 
-
+<br>
+<br>
+<br>
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
-        <div class="container">
-            <h1 class="text-center my-5">رئاسة الجامعة</h1>
-            <div class="row text-right">
+     <div class="container">
+      <h1 class="text-center my-5">عميد الكلية  </h1>
+      <div class="row text-right">
+@foreach ($leaders as $leader)
+    @if($leader->id_facutly==$facutly->id)
 
-                <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+       <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
+        <div class="member">
+         <div class="member-img">
+          <img src="/{{ $leader->image }}" class="img-fluid imgs" alt="">
 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>ا.م.د درع احمد سميط</h4>
-                            <span>معاون رئيس الجامعة للشؤون العلمية</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>أ.د سالم سليمان محمد</h4>
-                            <span>معاون رئيس الجامعة للشؤون الادارية</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <h1 class="text-center my-5">عمداء الجامعة</h1>
-
-            <div class="row text-right">
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>ا.د رجاء هادي عباس درويش</h4>
-                            <span>عميد كلية طب الاسنان</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>ا.د ليث حمزة سمين</h4>
-                            <span>عميد كلية الصيدلة</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>أ.م.د علي غني عباس</h4>
-                            <span>عميد كلية القانون</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>أ.م.د طالب عبد صالح ناصر</h4>
-                            <span>عميد كلية العلوم الادارية</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="./imgs/12.jpg" class="img-fluid imgs" alt="">
-                            <div class="social">
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                                <a href="">ss</a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>أ.م.د سنان صبحي فرحان</h4>
-                            <span>عميد كلية تقنيات والعلوم الطبية</span>
-                            <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+          <div class="social">
+            @foreach ($types as $type)
+            @foreach ($socials as $social)
+                @if ($social->id_type == $type->id && $leader->id == $social->id_leader)
+                    <a href="$social->link">{{ $type->name_ar }}</a>
+                @endif
+            @endforeach
+        @endforeach
+          </div>
+         </div>
+         <div class="member-info">
+          <h4>{{ $leader->name_ar }}</h4>
+          <span>{{ $leader->position_ar }}</span>
+          <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
 
         </div>
+       </div>
+       @endif
+       @endforeach
+
+
+      </div>
+      <h1 class="text-center my-5">الكادر التدريسي للكلية   </h1>
+
+      <div class="row text-right">
+
+        @foreach ($doctors as $doc)
+
+@if($doc->id_facutly==$facutly->id)
+       <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+        <div class="member">
+         <div class="member-img">
+          <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
+          <div class="social">
+            @foreach ($types as $type)
+            @foreach ($socials as $social)
+                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                    <a href="$social->link">{{ $type->name_ar }}</a>
+                @endif
+            @endforeach
+        @endforeach
+          </div>
+         </div>
+         <div class="member-info">
+          <h4>{{$doc->name_ar }}</h4>
+          <span>{{$doc->private_specific_ar  }}/{{ $doc->public_specific_ar }}</span>
+          <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+         </div>
+        </div>
+       </div>
+       @endif
+       @endforeach
+
+
+
+      </div>
+
+     </div>
     </section><!-- End Team Section -->
 
 

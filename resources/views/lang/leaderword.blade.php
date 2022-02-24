@@ -47,8 +47,6 @@
 
                     <nav id="navbar" class="navbar">
 
-                        <ul>
-                            @guest
 
                                 @if (Route::has('login'))
                                     <li class="nav-item">
@@ -162,7 +160,7 @@
                 <div class="col-md-10">
 
                     {{-- {{ $mash->word_ar }} --}}
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="/{{ $mash->leaderimage}}" alt="">
 
                 </div>
 
@@ -178,7 +176,7 @@
                 <div class="col-md-10">
 
                     <p>
-                        {{ $mash->word_ar }}
+                        {{ $mash->word_En }}
                     </p>
                 </div>
             </div>

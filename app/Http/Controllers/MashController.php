@@ -68,8 +68,9 @@ class MashController extends Controller
     public function index2()
     {
         $mash = Mash::all()->first();
-
-        return view('dashbord.main.dashboard',  compact('mash'));
+$f=Facutly::all();
+$doctors=Doctors::all();
+        return view('dashbord.main.dashboard',  compact('mash','f','doctors'));
     }
 // edit after hide show
     public function edit(Mash $mash)
@@ -78,30 +79,58 @@ class MashController extends Controller
     }
 
     //update all data after head
-    public function update(Mash $mash)
+    public function update(Request $request,Mash $mash)
     {
-        request()->validate([]);
 
-        $mash->update([
 
-            'abstract_title_ar' => request('abstract_title_ar'),
-            'abstract_title_en' => request('abstract_title_en'),
-            'abstract_small_ar' => request('abstract_small_ar'),
-            'abstract_small_en' => request('abstract_small_en'),
-            'abstract_details_en' => request('abstract_details_en'),
-            'abstract_details_ar' => request('abstract_details_ar'),
-            'strategy_en' => request('strategy_en'),
-            'strategy_ar' => request('strategy_ar'),
-            'fees_en' => request('fees_en'),
-            'fees_ar' => request('fees_ar'),
-            'room' => request('room'),
-            'students' => request('students'),
-            'word_ar'=>request('word_ar'),
-            'word_En'=>request('word_En'),
-            'leaderimage'=>request('leaderimage'),
-            'pdf'=>request('pdf'),
-        ]);
 
+
+
+        $input = $request->all();
+
+        if ($leaderimage = $request->file('leaderimage')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $leaderimage->getClientOriginalExtension();
+            $leaderimage->move($destinationPath, $profileImage);
+            $input['leaderimage'] = "$profileImage";
+            $mash->update($input);
+            $mash['leaderimage']=$destinationPath."$profileImage";
+            $mash->save();
+        }else{
+            unset($input['leaderimage']);
+        }
+
+        if ($pdf = $request->file('pdf')) {
+            $destinationPath = 'file/';
+            $profileImage = date('YmdHis') . "." . $pdf->getClientOriginalExtension();
+            $pdf->move($destinationPath, $profileImage);
+            $input['pdf'] = "$profileImage";
+            $mash->update($input);
+            $mash['pdf']=$destinationPath."$profileImage";
+            $mash->save();
+        }else{
+            unset($input['pdf']);
+        }
+
+        $mash->abstract_title_ar  = $request->abstract_title_ar;
+        $mash->abstract_title_en  = $request->abstract_title_en;
+        $mash->abstract_details_en  = $request->abstract_details_en;
+        $mash->abstract_details_ar  = $request->abstract_details_ar;
+        $mash->strategy_en  = $request->strategy_en;
+        $mash->strategy_ar  = $request->strategy_ar;
+        $mash->fees_en  = $request->fees_en;
+
+        $mash->fees_ar  = $request->fees_ar;
+        $mash->room  = $request->room;
+
+
+
+        $mash->students  = $request->students;
+        $mash->word_ar  = $request->word_ar;
+        $mash->word_En  = $request->word_En;
+
+
+        $mash->save();
         return redirect('/dashboard');
     }
 

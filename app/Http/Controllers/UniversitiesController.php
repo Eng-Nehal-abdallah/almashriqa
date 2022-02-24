@@ -103,17 +103,19 @@ class UniversitiesController extends Controller
 
         // return view('Certifieds');
     }
-    
-    
+
+
 
 
     public function indexdash()
     {
         $Facutlies = Facutly::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
 
-
-        return view('dashbord\faculty\dashboard', compact('Facutlies'));
+        return view('dashbord\faculty\dashboard', compact('Facutlies','mash','f','doctors'));
 
         // return view('Certifieds');
     }
@@ -441,7 +443,7 @@ class UniversitiesController extends Controller
     {
         $Facutly->delete();
 
-        return redirect("/dashboard_Facutly");
+        return redirect("/dashboard2");
     }
 
 

@@ -81,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label for="title">goal_en </label>
-                    <input type="text" class="form-control" id="goal_en" value="{{ $facutly->goal_en }}"
+                    <input type="text" class="form-control" name="goal_en" id="goal_en" value="{{ $facutly->goal_en }}"
                         name="view_ar" />
                 </div>
 
@@ -104,7 +104,7 @@
                 <div class="form-group">
                     <label for="title">message_dean_en </label>
                     <input type="text" class="form-control" id="message_dean_en	"
-                        value="{{ $facutly->message_dean_en }}" name="view_ar" />
+                        value="{{ $facutly->message_dean_en }}" name="message_dean_en" />
                 </div>
                 <div class="form-group">
                     <label for="title">Color</label>
@@ -118,7 +118,7 @@
 
 
 
-            <form method="post" action="/facutly/{{ $facutly->id }}">
+            <form method="post" action="/facutlys/{{ $facutly->id }}">
                 @csrf
                 @method('DELETE')
                 <input type="submit" class="btn btn-danger" value="delete" />

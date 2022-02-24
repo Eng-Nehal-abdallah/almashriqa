@@ -10,79 +10,115 @@
  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
  <title>Elmashriq</title>
 </head>
-
 <body>
- <div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+     <!-- Sidebar -->
+     <div class="list-group list-group-flush my-3">
+       <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-university  "></i>main paig</a>
+       <a href="/dashboard2"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+         class="fas fa-university  "></i>
+        Faculty</a>
+        <a href="/dashboard3"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-tachometer-alt me-2"></i>Department</a>
+       <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+         class="fas fa-chart-line me-2"></i>Doctors</a>
 
-  <!-- /#sidebar-wrapper -->
+       <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+         class="fas fa-shopping-cart me-2"></i>Activities</a>
+         <a href="/dashboard6" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-gift me-2"></i>انواع انجازات الدكتور</a>
+         <a href="/dashboard7" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-comment-dots me-2"></i>انواع التواصل</a>
+           <a href="/dashboard8" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-comment-dots me-2"></i>جدول المحاضرات </a>
+           <a href="/dashboard9" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2"></i>جدول العملي</a>
+               <a href="/dashboard10" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                   class="fas fa-map-marker-alt me-2"></i>جدول الامتحانات النهائي</a>
+                   <a href="/dashboard11" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                       class="fas fa-map-marker-alt me-2"></i>اداره الاقسام لجامعه</a>
+           <a href="/dashboard13" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2">المعامل</i></a>
+               <a href="/dashboard15" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                   class="fas fa-map-marker-alt me-2">الانفاقيات الجامعيه</i></a>
+      <a href="/dashboard14" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+       class="fas fa-map-marker-alt me-2"> الحرم الجامعي</i></a>
+              <a href="/dashboard15"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2">  التقويم الاكاديمي  </i></a>
+              <a href="/dashboard16" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2"> مركز اللغه الانجليزيه </i></a>
+              <a href="/dashboard17" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2"> مجلة الجامعة</i></a>
+              <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               class="fas fa-map-marker-alt me-2"> معدل القبول و الاقساط
+   </i></a>
 
-  <!-- Page Content -->
-  <div id="page-content-wrapper">
-   <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-    <div class="d-flex align-items-center">
-     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-     <h2 class="fs-2 m-0">Elmashriq</h2>
-    </div>
+   </div>
+   </div>
+     <!-- /#sidebar-wrapper -->
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-    </button>
+     <!-- Page Content -->
+     <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+       <div class="d-flex align-items-center">
+        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+        <h2 class="fs-2 m-0">Elmashriq</h2>
+       </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
-        data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-user me-2"></i>person name
-       </a>
-       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
 
-        <li><a class="dropdown-item" href="#">Logout</a></li>
-       </ul>
-      </li>
-     </ul>
-    </div>
-   </nav>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="fas fa-user me-2"></i>person name
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+           <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </nav>
 
-    {{-- </div>
-    <!-- start seection 2 -->
-    <div class="table-responsive-md">
-     <div class="row section-2 my-5">
-      <h3 class="fs-4 main mb-3">Head page</h3>
-      <h3 class="text-light">header</h3>
+      <div class=" container-fluid px-4">
+       <div class="row h1 g-3 my-2">
+        <div class="col-md-4">
+         <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+           <h3 class="fs-2">720</h3>
+           <p class="fs-5">Doctors</p>
+          </div>
+          <i class="fas fa-users fs-1 "></i>
+         </div>
+        </div>
 
-      <div class="col bg-light rounded shadow-sm">
-       <table class="table table-light section-2 ">
-        <thead>
-         <tr>
-          <th scope="col">#</th>
-          <th scope="col">img</th>
-          <th scope="col">head</th>
-          <th scope="col">small</th>
-          <th scope="col">action</th>
+        <div class="col-md-4">
+         <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+           <h3 class="fs-2">4920</h3>
+           <p class="fs-5">Students</p>
+          </div>
+          <i class="fas fa-user-graduate fs-1 "></i>
+         </div>
+        </div>
 
-         </tr>
-        </thead>
-        <tbody class="text-dark">
-         <tr>
-          <th scope="row">1</th>
-          <td><img src="./imgs/header.png" alt=""></td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td><a class="btn shadow-sm btn-dark" href="">edit</a></td>
-
-         </tr>
-
-        </tbody>
-       </table>
-
-      </div>
-     </div>
-    </div> --}}
-
+        <div class="col-md-4">
+         <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+           <h3 class="fs-2">3899</h3>
+           <p class="fs-5">Colleage</p>
+          </div>
+          <i class="fas fa-university fs-1 "></i>
+         </div>
+        </div>
+       </div>
     <a class="btn shadow-sm btn-dark" href="/achievement/{{ $doctor->id }}/add">Add</a>
 
     <!-- start seection 2 -->

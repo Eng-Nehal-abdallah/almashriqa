@@ -26,7 +26,7 @@
 
 
     <!-- start navbar -->
-    <header id="header" dir="rtl" class="fixed-top">
+    <header dir="rtl"  id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
@@ -35,36 +35,16 @@
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
-
+                <ul><li><a href="/login"> تسجيل الدخول </a></li>
+                </ul>
                 <ul>
-                    @guest
-
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
-                            </li>
-                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
-                        @endif
-                    @else
-                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            {{ __('تسجيل الخروج') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-
-
-                    @endguest
                     <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="/about">عن الجامعة</a></li>
                             <li><a href="/leaderuni">رئاسة الجامعة</a></li>
                             <li><a href="/fees">الرسوم الدراسية </a></li>
                             <li><a href="/strategy">ستراتيجية الجامعة </a></li>
-                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
+                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
                             <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
@@ -85,6 +65,9 @@
 
                         </ul>
                     </li>
+
+                    <li><a class="nav-link scrollto" href="/facutlyresearch">البحوث</a></li>
+
 
 
 
@@ -135,34 +118,22 @@
     <section class="section-1">
         <div class="container">
             <div class="alert text-center alert-light">
-                <h5>ملخص طريقة التقديم على جامعة المشرق 2022/2021</h5>
+                <h3><i class="fas fa-handshake"></i>  التفاصيل</h3>
             </div>
             <div class="row justify-content-around">
-                <div class="col-md-12">
-                    <ul>
-                        <li><i class='bx bx-select-multiple'></i>انشاء حساب شخصي ، حيث ستقوم باختيار اسم مستخدم و كلمة
-                            ومرور و تثبت رقم هاتفك الشخصي. </li>
+                @foreach ($agreements as $ag)
+                    <div class="col-md-5">
+                        <img class="rounded" src="{{ $ag->image }}" alt="">
+                        <i class="fas fa-handshake"></i>
+                        <h2 class="d-inline text-capitalize">{{ $ag->name_ar }}</h2>
+                        <p>{{ $ag->abstract_ar }}</p>
+                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
+                        <a href="/agreements/{{ $ag->id }}/show" class="btn btn-secondary">المزيد</a>
+                    </div>
+                @endforeach
 
-                        <li><i class='bx bx-select-multiple'></i>بعد انشائك للحساب الشخصي ستقوم بتفعيل الخدمات الساندة
-                            ضمن الحساب و كما موضح في التعليمات سيرشدك النظام بعد ذلك الى مرحلة ملء البيانات الطلابية حيث
-                            ستختار الحالة التي تنطبق عليك ضمن سبعة حالات معدة مسبقا ضمن النظام. </li>
-                        <li><i class='bx bx-select-multiple'></i>في حالة احتياجك لعملية التدقيق فسيقوم النظام تلقائيا
-                            بتحويلك الى نافذة حجز موعد الكتروني في احد مراكز التدقيق في الجامعات والكليات الاهلية.</li>
-                        <li><i class='bx bx-select-multiple'></i>بعد زيارتك لمركز التدقيق ضمن الموعد المثبت لك سيتم
-                            مطابقة صحة بياناتك والمصادقة عليها.</li>
-                        <li><i class='bx bx-select-multiple'></i>في هذه المرحلة سيعرض لك النظام لوحة تحكم الطالب حيث
-                            سيصبح بامكانك تفعيل القنوات الخاصة في حالة استيفائك لشروطها (موضحة في دليل الطالب بالتفصيل)
-                            علما ان القناة العامة للتقديم في الكليات الاهلية مفعلة لجميع الطلبة.</li>
+                <div class="col-md-5">
 
-                        <li><i class='bx bx-select-multiple'></i>بامكانك في هذه المرحلة البدء بعملية التقديم الالكتروني
-                            على الاقسام و الكليات الاهلية الموجودة في النظام من خلال استمارات التقديم الالكترونية.</li>
-                        <li><i class='bx bx-select-multiple'></i>ستظهر الاستمارات التي قدمتها ضمن صفحة المعاينة لمعرفة
-                            تسلسلك من حيث كونك مرشح اصيل او مرشح احتياط ضمن الطلبة المتقدمين.</li>
-                        <li><i class='bx bx-select-multiple'></i>تبدا فترة التسجيل بعد انتهاء فترة التقديم حيث يتم تسجيل
-                            الطالب بصورة نهائية في القسم الذي ظهر قبوله فيه.</li>
-
-
-                    </ul>
                 </div>
             </div>
         </div>
@@ -198,7 +169,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/dark.js"></script>
     <script src="/js/nav.js"></script>
-    {{-- <script src="/js/dark.js"></script> --}}
+    {{--  <script src="/js/dark.js"></script>  --}}
 
     <script>
         var bool = true;
@@ -234,8 +205,8 @@
             var dark = document.querySelector('.dark-mood > .fas');
 
             var x = 0;
-            dark.on('click', function() {
-                if (x == 0) {
+            dark.on('click' , function(){
+                if(x == 0){
                     $('body').addClass('dark');
 
                 }
@@ -244,6 +215,7 @@
 
 
         })
+
     </script>
 
 </body>

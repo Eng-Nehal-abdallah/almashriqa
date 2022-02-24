@@ -82,7 +82,7 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
+                                    <li><a href="/facutlydocen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -94,10 +94,10 @@
                                     {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                            <li class="dropdown"><a href="#"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/agreementsen">LogIN Machine </a></li>
+                                    <li><a href="/mechineen">LogIN Machine </a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
@@ -113,7 +113,7 @@
 
 
                                 <ul>
-                                    @foreach ($faculties as $f)
+                                    @foreach ($Facutlies as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)

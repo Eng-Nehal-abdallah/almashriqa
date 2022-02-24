@@ -64,7 +64,7 @@
                             <li><a href="/leaderuni">رئاسة الجامعة</a></li>
                             <li><a href="/fees">الرسوم الدراسية </a></li>
                             <li><a href="/strategy">ستراتيجية الجامعة </a></li>
-                            <li><a href="/facutly">االهيئه التدريسيه</a></li>
+                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
                             <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
@@ -93,7 +93,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -152,7 +152,7 @@
                 <br>
             </div>
             <div class="row">
-                @foreach ($faculties as $Facutly)
+                @foreach ($Facutlies as $Facutly)
                     <div class="col-md-6">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
@@ -166,7 +166,7 @@
                                         <h5 class="card-title heading">{{ $Facutly->name_ar }}</h5>
                                         <p class="card-text">{{ $Facutly->about_facutly_ar }}</p>
                                         <div class="btn-group">
-                                            <a class="btn btn-sm" href="Facutly/{{ $Facutly->id }}/show">
+                                            <a class="btn btn-sm" href="/carddoc/{{ $Facutly->id }}/show">
                                                 {{ $Facutly->name_ar }} </a>
                                             <button type="button"
                                                 class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
@@ -178,7 +178,7 @@
                                                 @foreach ($departments as $department)
                                                     @if ($department->id_facutly == $Facutly->id)
                                                         <a class="dropdown-item"
-                                                            href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
+                                                            href="/departcarddoc/{{ $department->id }}/show">{{ $department->name_ar }}</a>
                                                     @endif
                                                 @endforeach
                                             </div>

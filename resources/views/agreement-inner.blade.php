@@ -138,16 +138,14 @@
             <div class="row justify-content-around">
 
                 <div class="col-md-5 col-sm-10">
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="/{{$agreement->image}}" alt="">
                 </div>
 
                 <div class="col-md-5 col-sm-10">
                     <div class="caption">
                         <small>جامعة </small>
-                        <h2>jkhgfdghjkjhgfdsfdghj</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero placeat similique maiores
-                            consequatur velit reprehenderit, nobis aliquid, quia exercitationem sequi molestiae unde
-                            numquam nam, amet laudantium accusamus eaque voluptatibus sapiente?</p>
+                        <h2>{{ $agreement->name_ar }}</h2>
+                        <p>{{ $agreement->details_ar }}</p>
 
 
                     </div>

@@ -68,7 +68,7 @@
                             <li><a href="/leaderunien">University Presidency </a></li>
                             <li><a href="/feesen">Tuition fees </a></li>
                             <li><a href="/strategyen">University strategy </a></li>
-                            <li><a href="/facutlyen">Doctors </a></li>
+                            <li><a href="/facutlydocen">Doctors </a></li>
                             <li><a href="/agreementsen">Agreements </a></li>
 
                             <li><a href="/leaderworden">University President word</a></li>
@@ -89,141 +89,190 @@
 
                         </ul>
                     </li>
+                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                    @endif
+                @else
+                    {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        {{ __('logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
 
 
-
-
-
-                    <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                class="bi bi-chevron-down"></i></a>
-
-
-                        <ul>
-                            @foreach ($faculties as $f)
-                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-                                            <ul>
-                                                <li><a
-                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                </li>
-                                            </ul>
-                                        @endif
-                                    @endforeach
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
-
-                    <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                    <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                    <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
-
-                    <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-        </div>
-    </header><!-- End Header -->
-    <!-- end navbar -->
-
-    <!-- start section 1 -->
-    <!-- start section 1 -->
-    <section class="section-1">
-        <div class="container">
-            <div class="alert text-center alert-light">
-                <h5>ملخص طريقة التقديم على جامعة المشرق 2022/2021</h5>
-            </div>
-            <div class="row justify-content-around">
-                <div class="col-md-12">
+                @endguest
+                <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><i class='bx bx-select-multiple'></i>اCreate a personal account, where you will choose a
-                            username, password, and password and prove your personal phone number. </li>
+                        <li><a href="/abouten">About University</a></li>
+                        <li><a href="/leaderunien">University Presidency </a></li>
+                        <li><a href="/feesen">Tuition fees </a></li>
+                        <li><a href="/strategyen">University strategy </a></li>
+                        <li><a href="/facutlyen">Doctors </a></li>
+                        <li><a href="/agreementsen">Agreements </a></li>
 
-                        <li><i class='bx bx-select-multiple'></i>بعد انشائك للحساب الشخصي ستقوم بتفعيل الخدمات الساندة
-                            ضمن الحساب و كما موضح في التعليمات سيرشدك النظام بعد ذلك الى مرحلة ملء البيانات الطلابية حيث
-                            ستختار الحالة التي تنطبق عليك ضمن سبعة حالات معدة مسبقا ضمن النظام. </li>
+                        <li><a href="/leaderworden">University President word</a></li>
+                        <li><a href="/facutlylaben">labs</a></li>
+                        <li><a href="/facutlyresearchen">achievements </a></li>
+                        <li><a href="/compusen">compus </a></li>
+                        <li><a href="/chartEn">statistics </a></li>
+
+                        {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/agreementsen">LogIN Machine </a></li>
+                        <li><a href="/accepten">Acceptable Rules </a></li>
+                        <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
                     </ul>
+                </li>
+
+
+
+
+
+                <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                            class="bi bi-chevron-down"></i></a>
+
+
+                    <ul>
+                        @foreach ($faculties as $f)
+                            <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                        {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                @foreach ($departments as $depart)
+                                    @if ($depart->id_facutly == $f->id)
+                                        <ul>
+                                            <li><a
+                                                    href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                            </li>
+                                        </ul>
+                                    @endif
+                                @endforeach
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/facutlylecen">Term lecture table</a></li>
+                        <li><a href="/facutlyexamen">Exam Table </a></li>
+                        <li><a href="/labexamfacen">lab Exam Table </a></li>
+                    </ul>
+                </li>
+
+                <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+
+                <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+        </nav><!-- .navbar -->
+
+        <<<<<<< HEAD </div>
+    </div>
+    =======
+    </div>
+    >>>>>>> 71619f216168b45fe605703107751a2d6a23e1f9
+</header><!-- End Header -->
+<!-- end navbar -->
+
+<!-- start section 1 -->
+<!-- start section 1 -->
+<section class="section-1">
+    <div class="container">
+        <div class="alert text-center alert-light">
+            <h3><i class="fas fa-handshake"></i>Details</h3>
+        </div>
+        <div class="row justify-content-around">
+            @foreach ($agreements as $ag)
+                <div class="col-md-5">
+                    <img class="rounded" src="{{ $ag->image }}" alt="">
+                    <i class="fas fa-handshake"></i>
+                    <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
+                    <p>{{ $ag->abstract_en }}</p>
+                    {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
+                    <a href="/agreementsen/{{ $ag->id }}/show" class="btn btn-secondary">More</a>
                 </div>
+            @endforeach
+
+            <div class="col-md-5">
+
             </div>
         </div>
-    </section>
-    <!-- End section 1 -->
-    <!-- End section 1 -->
-
-
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
     </div>
-    <!-- start light & dark -->
-    <!-- starting section 1 -->
+</section>
 
-    <!-- end section 1 -->
-
-    <!--start footer -->
-
-    @extends('layouts.footer-en')
+<!-- End section 1 -->
+<!-- End section 1 -->
 
 
-    <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <!-- start owl carousel -->
+<!-- start light & dark -->
+<div class="dark-mood ">
+    <i class="fas moon"></i>
+</div>
+<!-- start light & dark -->
+<!-- starting section 1 -->
 
-    <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
+<!-- end section 1 -->
 
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/lang.js"></script>
-    <script src="/js/nav.js"></script>
+<!--start footer -->
+
+@extends('layouts.footer-en')
 
 
+<!-- start jquery -->
+<script src="/js/jquery-3.6.0.min.js"></script>
+<!-- start owl carousel -->
 
-    <script>
-        var bool = true;
+<!-- start bootstrap -->
+<script src="/js/jquery.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/slick.min.js"></script>
 
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
-
-                    $('p').removeClass('text-left')
-                    $('p').addClass('text-right')
-
-                    bool = false;
-                } else if (bool == false) {
-
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
-
-                    $('p').removeClass('text-right')
-                    $('p').addClass('text-left')
+<script src="/js/main.js"></script>
+<script src="/js/dark.js"></script>
+<script src="/js/lang.js"></script>
+<script src="/js/nav.js"></script>
 
 
-                    bool = true;
-                }
 
-            })
+<script>
+    var bool = true;
+
+    $(document).ready(function() {
+        $('#lang').on('click', function() {
+
+            if (bool == true) {
+                $("body").removeAttr("dir", "ltr");
+                $("body").attr("dir", "rtl");
+
+                $('p').removeClass('text-left')
+                $('p').addClass('text-right')
+
+                bool = false;
+            } else if (bool == false) {
+
+                $("body").removeAttr("dir");
+                $("body").attr("dir", "ltr");
+
+                $('p').removeClass('text-right')
+                $('p').addClass('text-left')
+
+
+                bool = true;
+            }
+
         })
-    </script>
+    })
+</script>
 
 </body>
 
