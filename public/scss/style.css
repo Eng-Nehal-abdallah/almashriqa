@@ -77,6 +77,13 @@ img {
   /* IE6-9 */
 }
 
+@media (max-width: 500px) {
+  body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+  }
+}
+
 body.dark {
   background-color: #333;
 }
@@ -648,16 +655,9 @@ section.section-5.dark {
   color: #cecece;
 }
 
-@media (max-width: 600px) {
-  section.section-5 .slick-prev:before,
-  section.section-5 .slick-next:before {
-    font-family: 'slick';
-    font-size: 30px;
-    line-height: 1;
-    opacity: .75;
-    color: #F7B231;
-    display: none;
-    -webkit-font-smoothing: antialiased;
+@media (max-width: 400px) {
+  section.section-5 button {
+    display: none !important;
   }
 }
 
@@ -773,6 +773,7 @@ section.section-8 {
   color: #010111;
   padding: 50px;
   width: 100%;
+  background-color: rgba(240, 240, 240, 0.631);
 }
 
 section.section-8 h1 {

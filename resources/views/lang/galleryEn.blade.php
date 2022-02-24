@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- start bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-    <!-- start box icon -->
-    <link href='/css/boxicons.min.css' rel='stylesheet'>
-    <!--start fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="/scss/Tuition-fees.css">
-    @extends('layouts.head-en')
-    <link rel="stylesheet" href="/scss/table-test.css">
 
 
 
+    <link rel="stylesheet" href="/scss/gallery.css">
+    @extends('layouts.head-ar')
+
+
+
+    <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+    <title>Document</title>
 
+
+
+    <link rel="stylesheet" href="/scss/about-us.css">
+
+
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <!-- start wol js -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href=/css/slick-theme.css" />
+
+    <link rel="stylesheet" href=/css/navbar.css">
 
     <title>Document</title>
 </head>
 
-<body>
+<body dir="ltr">
+    <!-- start box icon -->
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -128,116 +143,71 @@
 
 
 
-    <!-- start haeder -->
-    <div class="header">
-        <div class="caption">
-            <h1 class="heading">Acceptance rate and premiums</h1>
-            <!-- <h5>University</h5> -->
-        </div>
-
-        <div class="overlay"></div>
-
-    </div>
-
-    <!-- end header -->
-
-
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
-    </div>
-    <!-- start light & dark -->
-
-    <!-- start section 1 -->
-    <section class="section-1">
-        <div class="head text-center">
-            <h3 class="my-3 p-3 ">Acceptance rate and premiums</h3>
-            <!-- <p>small text</p> -->
-        </div>
-        @foreach ($fees as $f)
-            <div class="container">
-                {!! html_entity_decode($f->tablecode_ar) !!}
-            </div>
-        @endforeach
-    </section>
-    <!-- End section 1 -->
-
-
-    <footer id="footer">
-
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Colleage</h3>
-                        <p>
-                            example <br>
-                            Example<br>
-                            Example <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Vision</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in praesentium deserunt
-                            laborum delectus
-                            iure libero? Officia ducimus eum ea beatae iusto quo ut repudiandae nulla, soluta voluptates
-                            qui perspiciatis
-                            dolores rerum nostrum libero tempora deserunt recusandae odit vitae. Ea?</p>
-                    </div>
-
+    <sectionl class="section-1">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                </div>
+                <div class="col-md-4 rouded">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
                 </div>
             </div>
         </div>
+    </sectionl>
 
 
-    </footer>
+    <!--start footer -->
 
+    @extends('layouts.footer-ar')
 
 
     <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src=/js/jquery-3.6.0.min.js"></script>
     <!-- start owl carousel -->
 
     <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/slick.min.js"></script>
+    <script src=/js/jquery.slim.min.js"></script>
+    <script src=/js/popper.min.js"></script>
+    <script src=/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=/js/slick.min.js"></script>
+
+    <script src=/js/main.js"></script>
+    <script src=/js/dark.js"></script>
+    <script src=/js/lang.js"></script>
+
+    <script src=" {{ asset('/js/jquery-3.6.0.min.js') }}"></script>
+    <!-- start owl carousel -->
+
+    <!-- start bootstrap -->
+    <script src=" {{ asset('/js/jquery.slim.min.js') }}"></script>
+    <script src=" {{ asset('/js/popper.min.js') }}"></script>
+    <script src=" {{ asset('/js/bootstrap.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('/js/slick.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
+    <script src=" {{ asset('/js/main.js') }}"></script>
+    <script src=" {{ asset('/js/dark.js') }}"></script>
+    <script src=" {{ asset('/js/nav.js') }}"></script>
 
 
-    <script src="/js/nav.js"></script>
+
+    <script>
+        $(function() {
+            var header = $(".start-style");
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 10) {
+                    header.removeClass('start-style').addClass("scroll-on");
+                } else {
+                    header.removeClass("scroll-on").addClass('start-style');
+                }
+            });
+        });
+    </script>
 
     <script>
         var bool = true;
@@ -249,20 +219,19 @@
                     $("body").removeAttr("dir", "ltr");
                     $("body").attr("dir", "rtl");
 
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
+                    $('p').removeClass('text-left')
+                    $('p').addClass('text-right')
 
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
                     bool = false;
                 } else if (bool == false) {
+
                     $("body").removeAttr("dir");
                     $("body").attr("dir", "ltr");
 
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
+                    $('p').removeClass('text-right')
+                    $('p').addClass('text-left')
+
+
                     bool = true;
                 }
 

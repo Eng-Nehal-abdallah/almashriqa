@@ -436,35 +436,70 @@
 
 
     <!-- start section 8 -->
-    {{-- <section class="section-8 ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <h1 class="heading">
-                        another option
-                    </h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quisquam animi quam maiores
-                        nesciunt nobis unde
-                        velit ratione iure doloribus!</p>
+    <section class="section-8 ">
+        <div class="container-fluid">
 
-                    <button class="btn btn-light">Browse <i class='bx bx-right-arrow-alt'></i></button>
+            <h2 class="text-center">University Gallery</h2>
+
+
+
+            <div class="center">
+
+                <div class="img-content">
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+
+                </div>
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
                 </div>
 
 
-                <div class="col-md-6">
-                    <h2 class="heading">
-                        another option
-                    </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quisquam animi quam maiores
-                        nesciunt nobis unde
-                        velit ratione iure doloribus!</p>
-                    <button class="btn btn-light">Browse <i class='bx bx-right-arrow-alt'></i></button>
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
                 </div>
+
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+                </div>
+
+                <div class="img-content">
+
+                    <img src="{{ asset('imgs/header.png') }}" alt="">
+
+                    <div class="inner">
+                        <a href="#">visit</a>
+                    </div>
+                </div>
+
 
             </div>
 
+
+
+
         </div>
-    </section> --}}
+    </section>
 
     <!-- end section 8 -->
 
@@ -542,6 +577,42 @@
                 }
             ]
         });
+
+        $('.section-8 .center').slick({
+            centerMode: true,
+            centerPadding: '30px',
+            slidesToShow: 3,
+            autoplay: true,
+            responsive: [{
+                    breakpoint: 1080,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 2
+                    }
+                },
+
+                {
+                    breakpoint: 560,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
     </script>
 
     <script>
@@ -603,10 +674,6 @@
             })
         });
     </script>
-
-
-
-    <script src="{{ asset('/js/nav2.js') }}/js/nav2.js"></script>
 
 
 

@@ -534,7 +534,21 @@ section.section-5 {
   }
 
  }
+
 }
+
+@media (max-width:400px) {
+
+ section.section-3 button,
+ section.section-5 button {
+
+  display: none !important;
+
+
+ }
+
+}
+
 
 // end section 5
 .slick-prev:before,

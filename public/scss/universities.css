@@ -458,6 +458,13 @@ section.section-5.dark {
   color: #fff;
 }
 
+@media (max-width: 400px) {
+  section.section-3 button,
+  section.section-5 button {
+    display: none !important;
+  }
+}
+
 .slick-prev:before,
 .slick-next:before {
   color: #333;

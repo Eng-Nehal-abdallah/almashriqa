@@ -430,7 +430,7 @@
 
 
 
-    {{-- <!-- start section 8 -->
+    <!-- start section 8 -->
     <section class="section-8 ">
         <div class="container-fluid">
 
@@ -496,7 +496,7 @@
         </div>
     </section>
 
-    <!-- end section 8 --> --}}
+    <!-- end section 8 -->
 
 
     <!--start footer -->
@@ -572,11 +572,11 @@
                 },
 
                 {
-                    breakpoint: 480,
+                    breakpoint: 560,
                     settings: {
-                        arrows: true,
+                        arrows: false,
                         centerMode: true,
-                        centerPadding: '0px',
+                        centerPadding: '10px',
                         slidesToShow: 1
                     }
                 }
