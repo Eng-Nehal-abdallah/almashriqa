@@ -31,6 +31,7 @@
 
 
 <body>
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -46,10 +47,30 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
+
                         <ul>
-                            <li><a href="/login"> login</a></li>
-                        </ul>
-                        <ul>
+                            @guest
+
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    </li>
+                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                @endif
+                            @else
+                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
+
+                            @endguest
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -126,7 +147,6 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
     <!-- start light & dark -->
     <div class="dark-mood">
         <i class="fas moon"></i>
@@ -162,7 +182,8 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">
                                 <div class="awesome-img">
-                                    <a href="/lab/{{ $lab->id }}/show"><img src="{{ $lab->image }}" alt="" /></a>
+                                    <a href="/lab/{{ $lab->id }}/show"><img src="{{ $lab->image }}"
+                                            alt="" /></a>
                                     <div class="add-actions text-center">
                                         <div class="project-dec">
                                             <a class="portfolio-lightbox" data-gallery="myGallery"

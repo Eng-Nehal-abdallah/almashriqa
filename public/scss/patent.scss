@@ -177,20 +177,21 @@ section.section-1 {
 }
 
 // end section 1
-@media (max-width:785px){
-    .header{
-        .caption{
+@media (max-width:785px) {
+ .header {
+  .caption {
 
-            h1{
-                font-size: 2.5rem !important;
-            }
-            h5 {
-                color: #e2e2e2;
-                font-size: 2rem;
-               }
+   h1 {
+    font-size: 2.5rem !important;
+   }
 
-        }
-    }
+   h5 {
+    color: #e2e2e2;
+    font-size: 2rem;
+   }
+
+  }
+ }
 }
 
 
@@ -398,4 +399,9 @@ footer {
 
  }
 
+}
+
+
+img {
+ width: 100%;
 }

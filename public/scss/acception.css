@@ -342,6 +342,10 @@ footer .fas {
   margin: 10px;
 }
 
+img {
+  width: 100%;
+}
+
 @media (max-width: 728px) {
   header .caption h1 {
     font-size: 2.5rem;
