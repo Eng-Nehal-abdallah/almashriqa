@@ -177,11 +177,12 @@
 
                                 </div>
                             </div>
+                        </div>
                     @endif
                 @endforeach
 
 
-            </div>
+
             <h1 class="text-center my-5">الكادر التدريسي للكلية </h1>
 
             <div class="row text-right">
