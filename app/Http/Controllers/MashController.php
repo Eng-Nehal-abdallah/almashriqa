@@ -41,7 +41,7 @@ class MashController extends Controller
         $types = Typeachievement::all();
         $departments=Department::all();
         $labs=Lab::all();
-        return view('lang\index',  compact('image','labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
+        return view('lang.index',  compact('image','labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
     }
 
     public function about()
@@ -64,7 +64,7 @@ class MashController extends Controller
         $achievements = achievement::all();
         $doctors = Doctors::all();
         $types = Typeachievement::all();
-        return view('lang\about',  compact('mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
+        return view('lang.about',  compact('mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
     }
 //show all data in dashboard of main page
     public function index2()
@@ -77,7 +77,7 @@ $doctors=Doctors::all();
 // edit after hide show
     public function edit(Mash $mash)
     {
-        return view('dashbord\main\afterhead\after-head-edit', ['mash' => $mash]);
+        return view('dashbord.main.afterhead.after-head-edit', ['mash' => $mash]);
     }
 
     //update all data after head
@@ -139,7 +139,7 @@ $doctors=Doctors::all();
 //show edit section 1
     public function edit_sec1(Mash $mash)
     {
-        return view('dashbord\main\section1\edit', ['mash' => $mash]);
+        return view('dashbord.main.section1.edit', ['mash' => $mash]);
     }
     //update data of section 1
     public function update_sec1(Request $request,Mash $mash)
@@ -174,7 +174,7 @@ $doctors=Doctors::all();
 
     public function edit_sec2(Mash $mash)
     {
-        return view('dashbord\main\section2\edit', ['mash' => $mash]);
+        return view('dashbord.main.section2.edit', ['mash' => $mash]);
     }
     //update section2 data
     public function update_sec2(Request $request,Mash $mash)

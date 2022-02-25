@@ -40,7 +40,7 @@ $activity=Activity::all();
         $Facutlies  = Facutly::all();
         $departments = Department::all();
         $images=Images::all();
-        return view('lang\activityen', compact('activities','Facutlies', 'departments','images'), ['activity' => $activity]);
+        return view('lang.activityen', compact('activities','Facutlies', 'departments','images'), ['activity' => $activity]);
     }
 
     // start edit
@@ -48,7 +48,7 @@ $activity=Activity::all();
     {
         $facutlies = Facutly::all();
         $departments = Department::all();
-        return view('dashbord\activity\edit', compact('facutlies', 'departments'), ['activity' => $activity]);
+        return view('dashbord.activity.edit', compact('facutlies', 'departments'), ['activity' => $activity]);
     }
 
     // start update
@@ -105,7 +105,7 @@ $activity=Activity::all();
     {
         $facutlies = Facutly::all();
         $departments = Department::all();
-        return view('dashbord\activity\create', compact('facutlies','departments'));
+        return view('dashbord.activity.create', compact('facutlies','departments'));
     }
     public function create(Request $request)
     {

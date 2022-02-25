@@ -19,7 +19,7 @@ class StudentfirstController extends Controller
         $departments = Department::all();
         $students = Studentfirst::all();
 
-        return view('student\dashboardp',['facutly'=>$facutly],compact('students','facutlies','departments'));
+        return view('student.dashboardp',['facutly'=>$facutly],compact('students','facutlies','departments'));
     }
 
 
@@ -32,7 +32,7 @@ class StudentfirstController extends Controller
         $departments = Department::all();
         $students = Studentfirst::all();
 
-        return view('student\dashboard',compact('students','facutlies','departments'));
+        return view('student.dashboard',compact('students','facutlies','departments'));
     }
 
 
@@ -41,7 +41,7 @@ class StudentfirstController extends Controller
     {
         $facutlies = Facutly::all();
         $departments = Department::all();
-        return view('student\edit', ['student' => $student], compact('facutlies','departments'));
+        return view('student.edit', ['student' => $student], compact('facutlies','departments'));
     }
 
     // start update
@@ -89,7 +89,7 @@ class StudentfirstController extends Controller
     { $facutlies = Facutly::all();
         $departments = Department::all();
 
-        return view('student\create', compact('facutlies','departments'));
+        return view('student.create', compact('facutlies','departments'));
     }
     public function create(Request $request)
     {

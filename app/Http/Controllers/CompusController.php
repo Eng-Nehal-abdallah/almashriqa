@@ -24,7 +24,7 @@ class CompusController extends Controller
         $departments = Department::all();
         $compus = Compus::all()->first();
 
-        return view('lang\compus', compact('compus','Facutlies','departments'));
+        return view('lang.compus', compact('compus','Facutlies','departments'));
     }
 
     public function index2()
@@ -34,7 +34,7 @@ class CompusController extends Controller
         $doctors=Doctors::all();
 
 $compus=Compus::all();
-        return view('compus\dashboard',compact('compus','mash','f','doctors'));
+        return view('compus.dashboard',compact('compus','mash','f','doctors'));
     }
 
 
@@ -42,7 +42,7 @@ $compus=Compus::all();
     public function edit(Compus $compus)
     {
 
-        return view('compus\edit', ['compus' => $compus]);
+        return view('compus.edit', ['compus' => $compus]);
     }
 
     // start update
@@ -87,7 +87,7 @@ $compus=Compus::all();
     public function insert()
     {
 
-        return view('compus\create');
+        return view('compus.create');
     }
     public function create(Request $request)
     {

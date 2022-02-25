@@ -82,7 +82,7 @@ class DoctorsController extends Controller
         $Facutlies = Facutly::all();
         $types=Type::all();
         $socials=Social::all();
-        return view('lang\doctor-cardde',['department'=>$department] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
+        return view('lang.doctor-cardde',['department'=>$department] ,compact('types','doctors','Facutlies', 'departments','leaders','socials'));
 
         // return view('Certifieds');
     }
@@ -93,7 +93,7 @@ class DoctorsController extends Controller
         $departments = Department::all();
         $doctors = Doctors::all();
 
-        return view('doctors\search', ['facutly' => $Facutly], compact('doctors','Facutlies','departments'));
+        return view('doctors.search', ['facutly' => $Facutly], compact('doctors','Facutlies','departments'));
     }
     public function sh(Facutly $Facutly)
     {      $Facutlies = Facutly::all();
@@ -107,13 +107,13 @@ class DoctorsController extends Controller
         $departments = Department::all();
         $doctors = Doctors::all();
 
-        return view('lang\doctors', ['facutly' => $Facutly], compact('doctors','Facutlies','departments'));
+        return view('lang.doctors', ['facutly' => $Facutly], compact('doctors','Facutlies','departments'));
     }
     public function social(Doctors $doctor)
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $socials = Social::all();
-        return view('doctors\social media\dashboard', ['doctor' => $doctor], compact('socials','Facutlies','departments'));
+        return view('doctors.social media.dashboard', ['doctor' => $doctor], compact('socials','Facutlies','departments'));
     }
     public function shD(Department $Department)
     {      $Facutlies = Facutly::all();
@@ -125,17 +125,17 @@ class DoctorsController extends Controller
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $doctors = Doctors::all();
-        return view('lang\doctor', ['Department' => $Department], compact('doctors','Facutlies','departments'));
+        return view('lang.doctor', ['Department' => $Department], compact('doctors','Facutlies','departments'));
     }
     public function insert()
     {
         $facutlies = Facutly::all();
         $departments=Department::all();
-        return view('doctors\create',compact('facutlies','departments'));
+        return view('doctors.create',compact('facutlies','departments'));
     }
     public function insert_socialmedia(Doctors $doctor)
     {$types=Type::all();
-        return view('doctors\social media\create',compact('types'),['doctor' => $doctor]);
+        return view('doctors.social media.create',compact('types'),['doctor' => $doctor]);
     }
 
     public function create_social(Request $request)
@@ -312,7 +312,7 @@ return response()->json($data);
         $doctors = Doctors::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
+        return view('doctors.dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
     }
     public function index()
     {
@@ -324,20 +324,20 @@ return response()->json($data);
         $f=Facutly::all();
 
 
-        return view('doctors\dashboard', compact('doctors','facutlies','departments','mash','f'));
+        return view('doctors.dashboard', compact('doctors','facutlies','departments','mash','f'));
     }
    //start edit
    public function editdoc(Doctors $doctor)
    {$facutlies =Facutly::all();
        $departments=Facutly::all();
-       return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+       return view('doctors.edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
    }
 
     //start edit
     public function edit(Doctors $doctor)
     {$facutlies =Facutly::all();
         $departments=Facutly::all();
-        return view('doctors\edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
+        return view('doctors.edit' ,compact('facutlies','departments'),['doctor' => $doctor]);
     }
     //start edit
     public function profile(Doctors $doctor)
@@ -356,7 +356,7 @@ return response()->json($data);
         $socials=Social::all();
         $types=Typeachievement::all();
         $typs=Type::all();
-        return view('lang\profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
+        return view('lang.profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
     }
     // start update
     public function update(Request $request,Doctors $dat)

@@ -21,7 +21,7 @@ class UniversitiesController extends Controller
     public function insert()
     {
 
-        return view('dashbord\faculty\insert');
+        return view('dashbord.faculty.insert');
     }
     public function create(Request $request)
     {
@@ -191,7 +191,7 @@ class UniversitiesController extends Controller
         $socials=Social::all();
         $activities=Activity::All();
         $departments = Department::all();
-        return view('lang\researchfac', compact('faculties','departments','socials','activities','doctors'));
+        return view('lang.researchfac', compact('faculties','departments','socials','activities','doctors'));
     }
     public function showlab()
     { $faculties = Facutly::all();
@@ -221,7 +221,7 @@ class UniversitiesController extends Controller
         $activities=Activity::All();
         $departments = Department::all();
 
-        return view('lang\lecfac', compact('faculties','departments','socials','activities','doctors'));
+        return view('lang.lecfac', compact('faculties','departments','socials','activities','doctors'));
     }
 
 
@@ -246,7 +246,7 @@ class UniversitiesController extends Controller
         $activities=Activity::All();
         $departments = Department::all();
 
-        return view('lang\examfac', compact('faculties','departments','socials','activities','doctors'));
+        return view('lang.examfac', compact('faculties','departments','socials','activities','doctors'));
     }
 
     public function showlecturetable()
@@ -267,7 +267,7 @@ class UniversitiesController extends Controller
         $departments = Department::all();
 
 
-        return view('lang\labfac', compact('Facutlies','departments'));
+        return view('lang.labfac', compact('Facutlies','departments'));
     }
 
 
@@ -283,7 +283,7 @@ class UniversitiesController extends Controller
         $departments = Department::all();
 
 
-        return view('lang\examfac', compact('faculties','departments'));
+        return view('lang.examfac', compact('faculties','departments'));
     }
     public function showleadw()
     {$faculties=Facutly::all();
@@ -297,7 +297,7 @@ class UniversitiesController extends Controller
         $departments = Department::all();
         $university = University::all();
         $mash=Mash::all()->first();
-        return view('lang\leaderword',  compact('mash','university','faculties','departments'));
+        return view('lang.leaderword',  compact('mash','university','faculties','departments'));
     }
     public function showlead()
     { $faculties  = Facutly::all();
@@ -309,7 +309,7 @@ class UniversitiesController extends Controller
     { $faculties  = Facutly::all();
         $departments = Department::all();
         $university = University::all();
-        return view('lang\leaderuni',  compact('university','faculties','departments'));
+        return view('lang.leaderuni',  compact('university','faculties','departments'));
     }
 
 
@@ -321,7 +321,7 @@ class UniversitiesController extends Controller
     public function showsen(University $university)
     {
         $university = University::all();
-        return view('lang\requirement',  compact('university'));
+        return view('lang.requirement',  compact('university'));
     }
     public function index2()
     {
@@ -335,7 +335,7 @@ class UniversitiesController extends Controller
     {
         $departments = Department::all();
         $faculties = Facutly::all();
-        return view('lang\patent', compact('faculties', 'departments'));
+        return view('lang.patent', compact('faculties', 'departments'));
 
         // return view('Certifieds');
     }
@@ -351,7 +351,7 @@ class UniversitiesController extends Controller
     {
         $departments = Department::all();
         $faculties = Facutly::all();
-        return view('lang\labexamfac', compact('faculties', 'departments'));
+        return view('lang.labexamfac', compact('faculties', 'departments'));
 
         // return view('Certifieds');
     }
@@ -368,7 +368,7 @@ class UniversitiesController extends Controller
     {
         $departments = Department::all();
         $faculties = Facutly::all();
-        return view('lang\facutlies', compact('faculties', 'departments'));
+        return view('lang.facutlies', compact('faculties', 'departments'));
 
         // return view('Certifieds');
     }
@@ -390,7 +390,7 @@ class UniversitiesController extends Controller
     // start edit
     public function edit(Facutly $facutly)
     {
-        return view('dashbord\faculty\edit', ['facutly' => $facutly]);
+        return view('dashbord.faculty.edit', ['facutly' => $facutly]);
     }
     public function showrallesearch(Facutly $facutly)
     { $achievements=achievement::all();
@@ -413,14 +413,14 @@ class UniversitiesController extends Controller
         $types = Typeachievement::all();
         $faculties =Facutly::all();
         $departments=Department::all();
-        return view('lang\researches', ['facutly' => $facutly],compact('achievements','types','faculties','departments'));
+        return view('lang.researches', ['facutly' => $facutly],compact('achievements','types','faculties','departments'));
     }
     public function showallresearchen(Department $department)
     { $achievements=achievement::all();
         $types = Typeachievement::all();
         $faculties =Facutly::all();
         $departments=Department::all();
-        return view('lang\researchess', ['department' => $department],compact('achievements','types','faculties','departments'));
+        return view('lang.researchess', ['department' => $department],compact('achievements','types','faculties','departments'));
     }
 
 
@@ -494,7 +494,7 @@ class UniversitiesController extends Controller
         $types = Typeachievement::all();
         $faculties =Facutly::all();
         $departments=Department::all();
-        return view('lang\researchesdocen', ['doctor' => $doctor],compact('achievements','types','faculties','departments'));
+        return view('lang.researchesdocen', ['doctor' => $doctor],compact('achievements','types','faculties','departments'));
     }
 
 }

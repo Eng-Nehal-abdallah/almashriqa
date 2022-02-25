@@ -55,7 +55,7 @@ class LeaderController extends Controller
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $socials = Social::all();
-        return view('leader\social media\dashboard', ['leader' => $leader], compact('socials','Facutlies','departments'));
+        return view('leader.social media.dashboard', ['leader' => $leader], compact('socials','Facutlies','departments'));
     }
     public function shD(Department $Department)
     {      $Facutlies = Facutly::all();
@@ -67,7 +67,7 @@ class LeaderController extends Controller
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $doctors = Leader::all();
-        return view('lang\doctor', ['Department' => $Department], compact('doctors','Facutlies','departments'));
+        return view('lang.doctor', ['Department' => $Department], compact('doctors','Facutlies','departments'));
     }
     public function insert()
     {
@@ -77,7 +77,7 @@ class LeaderController extends Controller
     }
     public function insert_socialmedia(Leader $leader)
     {$types=Type::all();
-        return view('leader\social media\create',compact('types'),['leader' => $leader]);
+        return view('leader.social media.create',compact('types'),['leader' => $leader]);
     }
 
     public function create_social(Request $request)
@@ -297,7 +297,7 @@ return response()->json($data);
         $socials=Social::all();
         $types=Typeachievement::all();
         $typs=Type::all();
-        return view('lang\profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
+        return view('lang.profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
     }
     // start update
     public function update(Request $request, Leader $data)

@@ -21,7 +21,7 @@ class CenterController extends Controller
     {
         $faculties  = Facutly::all();
         $departments = Department::all();
-        return view('lang\magazin',compact('faculties','departments'));
+        return view('lang.magazin',compact('faculties','departments'));
     }
     public function fees()
     {      $mash=Mash::all()->first();
@@ -35,7 +35,7 @@ class CenterController extends Controller
          $faculties  = Facutly::all();
         $departments = Department::all();
 
-        return view('lang\fees',compact('mash','faculties','departments'));
+        return view('lang.fees',compact('mash','faculties','departments'));
     }
     public function strategy()
     {    $faculties  = Facutly::all();
@@ -48,7 +48,7 @@ class CenterController extends Controller
         $departments = Department::all();
         $mash=Mash::all()->first();
 
-        return view('lang\strategy',compact('mash','faculties','departments'));
+        return view('lang.strategy',compact('mash','faculties','departments'));
     }
     public function index2()
     {
@@ -57,7 +57,7 @@ class CenterController extends Controller
         $f=Facutly::all();
         $doctors=Doctors::all();
 
-        return view('center\dashboard', compact('centers','mash','f','doctors'));
+        return view('center.dashboard', compact('centers','mash','f','doctors'));
     }
     public function index()
     {
@@ -72,7 +72,7 @@ $faculties  = Facutly::all();
         $center = Center::all()->first();
 $faculties  = Facutly::all();
         $departments = Department::all();
-        return view('lang\center', compact('center','faculties','departments'));
+        return view('lang.center', compact('center','faculties','departments'));
     }
     // start destroy
     public function destroy(Center $center)
@@ -87,7 +87,7 @@ $faculties  = Facutly::all();
     public function insert()
     {
 
-        return view('center\create');
+        return view('center.create');
     }
     public function create(Request $request)
     {
@@ -111,7 +111,7 @@ $faculties  = Facutly::all();
     // start edit
     public function edit(Center $center)
     {
-        return view('center\edit', ['center' => $center]);
+        return view('center.edit', ['center' => $center]);
     }
 
     // start update

@@ -12,21 +12,21 @@ class ResearchController extends Controller
     { $Facutlies = Facutly::all();
         $departments = Department::all();
     $reseachments = Research::all();
-        return view('lang\patentinner', ['facutly' => $Facutly],  compact('reseachments','Facutlies','departments'));
+        return view('lang.patentinner', ['facutly' => $Facutly],  compact('reseachments','Facutlies','departments'));
     }
 
     public function index2en(Department $department)
     { $Facutlies = Facutly::all();
         $departments = Department::all();
     $reseachments = Research::all();
-        return view('lang\patentin', ['department' => $department],  compact('reseachments','Facutlies','departments'));
+        return view('lang.patentin', ['department' => $department],  compact('reseachments','Facutlies','departments'));
     }
     public function showen(Research $research)
 
     {   $Facutlies = Facutly::all();
         $departments = Department::all();
          $reseachments = Research::all();
-        return view('lang\patent2', ['research' => $research],  compact('reseachments','Facutlies','departments'));
+        return view('lang.patent2', ['research' => $research],  compact('reseachments','Facutlies','departments'));
     }
     public function index(Facutly $Facutly)
     {

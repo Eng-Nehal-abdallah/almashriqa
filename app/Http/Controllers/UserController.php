@@ -19,7 +19,7 @@ class UserController extends Controller
     {
 
 $users=User::all();
-        return view('user/users/dashboard',compact('users'));
+        return view('user.users.dashboard',compact('users'));
     }
 
 
@@ -27,7 +27,7 @@ $users=User::all();
     public function edit(User $user)
     {
 $facutlies =Facutly::all();
-        return view('user\users\edit', ['user' => $user],compact('facutlies'));
+        return view('user.users.edit', ['user' => $user],compact('facutlies'));
     }
 
     // start update

@@ -16,7 +16,7 @@ class TypeController extends Controller
         $f=Facutly::all();
         $doctors=Doctors::all();
 
-        return view('doctors\social media\Type\dashboard',compact('types','mash','f','doctors'));
+        return view('doctors.social media.Type.dashboard',compact('types','mash','f','doctors'));
     }
 
 
@@ -33,7 +33,7 @@ class TypeController extends Controller
     public function insert()
     {
 
-        return view('doctors\social media\Type\create');
+        return view('doctors.social media.Type.create');
     }
     public function create(Request $request)
     {

@@ -76,7 +76,7 @@ class SubjectController extends Controller
         $subjects = Subject::all();
 
 
-        return view('lang\subjectfac', compact('subjects','Facutlies','departments'));
+        return view('lang.subjectfac', compact('subjects','Facutlies','departments'));
     }
 
     public function index2(Doctors $doctor)
@@ -85,7 +85,7 @@ class SubjectController extends Controller
         $departments = Department::all();
         $subjects = Subject::all();
 
-        return view('subject\dashboard',['doctor'=>$doctor],compact('subjects','facutlies','departments'));
+        return view('subject.dashboard',['doctor'=>$doctor],compact('subjects','facutlies','departments'));
     }
 
 
@@ -141,7 +141,7 @@ class SubjectController extends Controller
     { $facutlies = Facutly::all();
         $departments = Department::all();
 
-        return view('subject\create',['doctor'=>$doctor], compact('facutlies','departments'));
+        return view('subject.create',['doctor'=>$doctor], compact('facutlies','departments'));
     }
     public function create(Request $request)
     {

@@ -19,7 +19,7 @@ class PaperController extends Controller
         $f=Facutly::all();
         $doctors=Doctors::all();
 
-        return view('paper\dashboard', compact('paper','faculties','departments','mash','f','doctors'));
+        return view('paper.dashboard', compact('paper','faculties','departments','mash','f','doctors'));
     }
     public function index()
     { $Facutlies   = Facutly::all();
@@ -33,7 +33,7 @@ class PaperController extends Controller
         $departments = Department::all();
         $paper = Paper::all();
 
-        return view('lang\paper', compact('paper','faculties','departments'));
+        return view('lang.paper', compact('paper','faculties','departments'));
     }
 
 
@@ -50,7 +50,7 @@ class PaperController extends Controller
     public function insert()
     {
 
-        return view('paper\create');
+        return view('paper.create');
     }
     public function create(Request $request)
     {
@@ -74,7 +74,7 @@ class PaperController extends Controller
     // start edit
     public function edit(Paper $paper)
     {
-        return view('paper\edit', ['paper' => $paper]);
+        return view('paper.edit', ['paper' => $paper]);
     }
     public function paperinner(Paper $paper)
     {$faculties  = Facutly::all();
@@ -85,7 +85,7 @@ class PaperController extends Controller
     public function paperinneren(Paper $paper)
     {$faculties  = Facutly::all();
         $departments = Department::all();
-        return view('lang\paperinner', ['paper' => $paper],compact('faculties','departments'));
+        return view('lang.paperinner', ['paper' => $paper],compact('faculties','departments'));
     }
     // start update
     public function update( Paper $paper)
