@@ -7,20 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- start bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-    <!-- start box icon -->
-    <link href='/scss/UniLeader.css' rel='stylesheet'>
-    <!--start fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    @extends('layouts.head-ar')
 
 
     <link rel="stylesheet" href="/scss/doctors.css">
 
-    @extends('layouts.head-en')
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/scss/dark&light.css">
     <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
+
+
+
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -164,47 +161,14 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
         <div class="container">
-            <h1 class="text-center my-5">University Presidency </h1>
+            <h1 class="text-center my-5">رئاسة الجامعة</h1>
             <div class="row text-right">
-
 
                 @foreach ($doctors as $doct)
                     <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
                         <div class="member">
                             <div class="member-img">
                                 <img src="{{ $doct->image }}" class="img-fluid imgs" alt="">
-                                <div class="social">
-                                    @foreach ($types as $type)
-                                        @foreach ($socials as $social)
-                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                                <a href="$social->link">{{ $type->name_ثى }}</a>
-                                            @endif
-                                        @endforeach
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>{{ $doct->name_en }}</h4>
-                                <span>{{ $doct->position_en }}</span>
-                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
-
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-
-
-
-            </div>
-            <h1 class="text-center my-5">Deans of the University </h1>
-
-            <div class="row text-right">
-                @foreach ($leaders as $leader)
-                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                        <div class="member">
-                            <div class="member-img">
-                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
                                 <div class="social">
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
@@ -216,9 +180,10 @@
                                 </div>
                             </div>
                             <div class="member-info">
-                                <h4> {{ $leader->name_en }} </h4>
-                                <span> {{ $leader->position_en }} </span>
-                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
+                                <h4>{{ $doct->name_en }}</h4>
+                                <span>{{ $doct->position_en }}</span>
+                                <a href="#" class="btn btn-dark my-3 ">visit profile</a>
+
                             </div>
                         </div>
                     </div>
@@ -226,9 +191,36 @@
 
 
             </div>
+            <h1 class="text-center my-5">عمداء الجامعة</h1>
 
+            <div class="row text-right">
+                @foreach ($leaders as $leader)
+                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                <div class="social">
+                                    @foreach ($types as $type)
+                                        @foreach ($socials as $social)
+                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                                <a href="$social->link">{{ $type->name_ar }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4> {{ $leader->name_en }} </h4>
+                                <span> {{ $leader->position_en }} </span>
+                                <a href="#" class="btn btn-dark my-3 "> visit profile </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </section><!-- End Team Section -->
+
 
 
 
