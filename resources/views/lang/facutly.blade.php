@@ -50,54 +50,50 @@
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                            class="img-fluid"></a>
-                    <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
+            <!-- Uncomment below if you prefer to use text as a logo -->
+            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
-                    <nav id="navbar" class="navbar">
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="/login"> login</a></li>
+                </ul>
+                <ul>
+                    <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/login"> login</a></li>
+                            <li><a href="/abouten">About University</a></li>
+                            <li><a href="/leaderunien">University Presidency </a></li>
+                            <li><a href="/feesen">Tuition fees </a></li>
+                            <li><a href="/strategyen">University strategy </a></li>
+                            <li><a href="/facutlydocen">Doctors </a></li>
+                            <li><a href="/agreementsen">Agreements </a></li>
+
+                            <li><a href="/leaderworden">University President word</a></li>
+                            <li><a href="/facutlylaben">labs</a></li>
+                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/compusen">compus </a></li>
+                            {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                         </ul>
+                    </li>
+                    <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/abouten">About University</a></li>
-                                    <li><a href="/leaderunien">University Presidency </a></li>
-                                    <li><a href="/feesen">Tuition fees </a></li>
-                                    <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
-                                    <li><a href="/agreementsen">Agreements </a></li>
+                            <li><a href="/agreementsen">Registration mechanism </a></li>
+                            <li><a href="/accepten">Acceptable Rules </a></li>
+                            <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
-                                    <li><a href="/leaderworden">University President word</a></li>
-                                    <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
-                                    <li><a href="/compusen">compus </a></li>
-                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/agreementsen">Registration mechanism </a></li>
-                                    <li><a href="/accepten">Acceptable Rules </a></li>
-                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
-
-                                </ul>
-                            </li>
+                        </ul>
+                    </li>
 
 
 
 
 
-                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                        class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                class="bi bi-chevron-down"></i></a>
 
 
+<<<<<<< HEAD
                                 <ul>
                                     @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
@@ -112,42 +108,62 @@
                                                 @endif
                                             @endforeach
                                         </li>
+=======
+                        <ul>
+                            @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                                     @endforeach
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/facutlylecen">Term lecture table</a></li>
-                                    <li><a href="/facutlyexamen">Exam Table </a></li>
-
-                                </ul>
-                            </li>
-
-                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
-
-                            <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                                </li>
+                            @endforeach
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                    </li>
+                    <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylecen">Term lecture table</a></li>
+                            <li><a href="/facutlyexamen">Exam Table </a></li>
 
-                </div>
+                        </ul>
+                    </li>
+
+                    <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                    <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                    <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+
+                    <li><a id="lang" class="nav-link scrollto" href="/">en </a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+            </nav><!-- .navbar -->
+
+        </div>
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
 
 
 
+<<<<<<< HEAD
     <ul class="nav justify-content-center child">
+=======
+
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
 
 
     <div class="header">
         <div class="content">
             <div class="row justify-content-around">
                 <div class="col-md-5 text-left">
-                    <h1 class="heading mt-4">{{ $facutly['name_en'] }} </h1>
+                    <h1 class="heading color mt-4">{{ $facutly['name_en'] }} </h1>
                     <!-- <span class="btn">descover</span> -->
                 </div>
                 <div class="col-md-5">
@@ -162,7 +178,6 @@
 
     <!-- end header -->
 
-
     <!-- start light & dark -->
     <div class="dark-mood ">
         <i class="fas moon"></i>
@@ -173,14 +188,14 @@
     <section class="section-6 my-4 " dir="rtl">
         <div class="container">
             <div class="alert text-center alert-light">
-                <h5>Leader of university </h5>
+                <h5>college leader</h5>
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-5">
                     <img src="/{{ $facutly['images'] }}" alt="">
                 </div>
                 <div class="col-md-5 ">
-                    <h2>WORD of Persidents </h2>
+                    <h2 class="color">Leader word</h2>
                     <p> {{ $facutly['message_dean_en'] }} </p>
 
                 </div>
@@ -198,7 +213,7 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-9 section-bg">
         <div class="container mt-3">
-            <div class="row ">
+            <div class="row justify-content-center">
                 @foreach ($doctors as $doctor)
                     @if ($doctor->id_facutly == $facutly->id)
                         <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
@@ -209,21 +224,23 @@
                                     <div class="social">
                                         @foreach ($socials as $social)
                                             @if ($social->id_doctor == $doctor->id)
-                                                <a href="{{ $social['link'] }}">{{ $social['name_en'] }}</a>
+                                                <a href="{{ $social['link'] }}">{{ $social['name_ar'] }}</a>
                                             @endif
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h4>{{ $doctor['name_en'] }} </h4>
-                                    <span>{{ $doctor->public_specific_en}}/{{ $doctor->private_specific_en }}
+                                    <h4>{{ $doctor['name_ar'] }} </h4>
+                                    <span>{{ $doctor->private_specific_en }}/{{ $doctor['public_specific_ar'] }}
                                     </span>
                                     <br><br>
-                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">visit profile
-                                        </a>
-
-
+                                    <a class="btn bg-color shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">
+                                        visit profile
+                                    </a>
                                 </div>
+                                <style>
+
+                                </style>
                             </div>
                         </div>
                     @endif
@@ -238,52 +255,52 @@
         </div>
     </section><!-- End Team Section -->
 
-    <!-- start  section 2 -->
-    <section class="section-2 ">
+    <!-- start section 5 -->
+    <section class="section-5 text-right" dir="rtl">
         <div class="container">
-            <div class="head text-center">
-                <!-- <small>this is small</small> -->
+            <div class="row ">
+
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4 color">Vision</h2>
+                        <hr>
+                    </div>
+                    <p>
+                        {{ $facutly['view_en'] }}</p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4 color">message </h2>
+                        <hr>
+                    </div>
+                    <p> {{ $facutly['message_en'] }}</p>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex text-center">
+                        <i class='bx bx-radio-circle-marked'></i>
+                        <h2 class="my-4 color">Objectives</h2>
+                        <hr>
+                    </div>
+                    <ul>
+                        <li> {{ $facutly['goal_en'] }}</li>
+                    </ul>
+
+                </div>
+
             </div>
-            <div class="row">
+            <hr>
 
-                <div class="col-md-3">
 
-                    <div class="count">{{ $l->count() }}</div>
-                    <br>
-                    <p>number of labs </p>
-                </div>
-
-                <div class="col-md-3">
-
-                    <div class="count">{{ $doc->count() }}</div>
-
-                    <br>
-                    <p>number of Professors </p>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="count">{{ $ach->count() }}</div>
-
-                    <br>
-                    <p>num of Researches </p>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="count">{{ $act->count() }}</div>
-
-                    <br>
-                    <p> عدد الانشطه </p>
-                </div>
-
-            </div>
         </div>
     </section>
-
     <!-- end section 5 -->
 
 
-
-    {{-- start abojut secction --}}
     <!-- start section 6 -->
     <section class="section-6  text-center">
 
@@ -311,19 +328,18 @@
     <section class="section-3 my-5 py-4  bg-light">
         <div class="container">
             <div class="caption ">
-                <h1 class="text-center">
+                <h1 class="text-center  color">
                     Activities
                 </h1>
             </div>
             <div class="responsive">
                 @foreach ($activities as $act)
                     @if ($act->id_faculty == $facutly->id)
-                        <div>
+                        <div class="m-1">
                             <div class="card ">
                                 <img src="/{{ $act->image }}" class="card-img" alt="...">
                             </div>
                             <div class="card p-3 ">
-
                                 <h4>{{ $act->name_en }}</h4>
                                 @foreach ($doctors as $doc)
                                     @if ($act->id_doctor == $doc->id)
@@ -332,7 +348,7 @@
                                 @endforeach
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_en }}</p>
-                                <a class="btn btn-block btn-warning main m-auto "
+                                <a class="btn bg-color btn-block  main m-auto "
                                     href="/Faculty/{{ $act->id }}/research">Details</a>
                             </div>
                         </div>
@@ -360,19 +376,20 @@
     <section id="trainers" class="trainers ">
         <div class="container" data-aos="fade-up">
             <hr>
-            <h2 class="text-center my-3">الطلبة الاوائل</h2>
+            <h2 class="text-center color my-3">First Student</h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 @foreach ($students as $st)
                     @if ($st->id_facutly == $facutly->id)
-                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
+                        <div class="col-lg-4  m-1 col-md-6 d-flex align-items-stretch">
 
                             <div class="member">
                                 <img src="/{{ $st->image }}" class="img-fluid" alt="">
                                 <div class="member-content">
-                                    <h1 class="inside">{{ $st->grade_en}}</h1>
+                                    <h1 class="inside bg-color">{{ $st->grade_en }}</h1>
 
-                                    <h4>{{ $st->name_en}}</h4>
-                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
+                                    <h4>{{ $st->name_en }}</h4>
+                                    <span
+                                        class="badge bg-color d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
 
                                 </div>
                             </div>
@@ -393,7 +410,7 @@
         <div class="container">
             <div class="caption ">
                 <h1 class="text-center my-3">
-                    المختبرات
+                    LABS
                 </h1>
             </div>
             <div class="center">
@@ -409,7 +426,7 @@
 
                                 <p style="font-weight: bold;" class="second ">{{ $lab->details_en }}.</p>
                                 <a href="/lab/{{ $lab->id }}/show"
-                                    class="btn btn-block btn-warning main m-auto ">Details</a>
+                                    class="btn bg-color btn-block main m-auto ">Details</a>
                             </div>
                         </div>
                     @endif
@@ -423,7 +440,7 @@
     <!-- end section 3 -->
 
     <!-- start  section 2 -->
-    <section class="section-2 ">
+    <section class="section-2 bg-color">
         <div class="container">
             <div class="head text-center">
                 <!-- <small>this is small</small> -->
@@ -456,7 +473,7 @@
                     <div class="count">{{ $act->count() }}</div>
 
                     <br>
-                    <p> Activities  </p>
+                    <p> Activities </p>
                 </div>
 
             </div>
@@ -465,38 +482,38 @@
 
 
 
-    @if($d->count()>0)
-    <section class="section-7  py-4">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-md-5 ">
-                    <h2>Departments </h2>
-                    <p>
-                        {{ $facutly->details_en }}
-                    </p>
-                    <div class="dropdown float-right">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            @foreach ($departments as $department)
-                                @if ($department->id_facutly == $facutly->id)
-                                    <a class="dropdown-item"
-                                        href="/department/{{ $department->id }}/show">{{ $department->name_en }}</a>
-                                @endif
-                            @endforeach
+    @if ($d->count() > 0)
+        <section class="section-7  py-4">
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="col-md-5 ">
+                        <h2>Departments </h2>
+                        <p>
+                            {{ $facutly->details_en }}
+                        </p>
+                        <div class="dropdown bg-color float-right">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @foreach ($departments as $department)
+                                    @if ($department->id_facutly == $facutly->id)
+                                        <a class="dropdown-item"
+                                            href="/department/{{ $department->id }}/show">{{ $department->name_en }}</a>
+                                    @endif
+                                @endforeach
+
+                            </div>
 
                         </div>
-
+                    </div>
+                    <div class="col-md-5">
+                        <img class="main" src="/{{ $facutly->image }}" alt="">
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <img class="main" src="/{{ $facutly->image }}" alt="">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
     <!-- start seection 6 -->
 
@@ -627,6 +644,10 @@
 
             })
         });
+
+        $('.color').css('color', '{{ $facutly->color }}');
+        $('.bg-color').css('background-color', '{{ $facutly->color }}');
+        $('.slick-next').css('color', '{{ $facutly->color }}');
     </script>
 
 

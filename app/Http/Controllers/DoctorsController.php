@@ -6,6 +6,7 @@ use App\Models\achievement;
 use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Leader;
 use App\Models\Leaderuni;
 use App\Models\Mash;
 use App\Models\Social;
@@ -358,6 +359,64 @@ return response()->json($data);
         $typs=Type::all();
         return view('lang.profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
     }
+
+
+
+
+    public function profileleader(Leader $leader)
+    {$faculties =Facutly::all();
+        $departments=Facutly::all();
+        $achievementes=achievement::all();
+        $socials=Social::all();
+        $types=Typeachievement::all();
+        $typs=Type::all();
+        return view('profileleader' ,compact('faculties','departments','achievementes','socials','types','typs'),['leader' => $leader]);
+    }
+      public function profileenleader(Leader $leader)
+    {$faculties =Facutly::all();
+        $departments=Department::all();
+        $achievementes=achievement::all();
+        $socials=Social::all();
+        $types=Typeachievement::all();
+        $typs=Type::all();
+        return view('lang.profileleader' ,compact('faculties','departments','achievementes','socials','types','typs'),['leader' => $leader]);
+    }
+
+
+
+
+    public function profileleaderuni(Leaderuni $leaderuni)
+    {$faculties =Facutly::all();
+        $departments=Facutly::all();
+        $achievementes=achievement::all();
+        $socials=Social::all();
+        $types=Typeachievement::all();
+        $typs=Type::all();
+        return view('profileleaderuni' ,compact('faculties','departments','achievementes','socials','types','typs'),['leaderuni' => $leaderuni]);
+    }
+      public function profileenleaderuni(Leaderuni $leaderuni)
+    {$faculties =Facutly::all();
+        $departments=Department::all();
+        $achievementes=achievement::all();
+        $socials=Social::all();
+        $types=Typeachievement::all();
+        $typs=Type::all();
+        return view('lang.profileleaderuni' ,compact('faculties','departments','achievementes','socials','types','typs'),['leaderuni' => $leaderuni]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // start update
     public function update(Request $request,Doctors $dat)
     {

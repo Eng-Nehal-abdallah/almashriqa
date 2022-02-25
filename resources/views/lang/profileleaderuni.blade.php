@@ -188,13 +188,13 @@
             <div class="row full-screen align-items-center">
                 <div class="home-text">
 
-                    <h2>{{ $doctor->name_en }} </h2>
-                    <h1> {{ $doctor->private_specific_en }}/{{ $doctor->public_specific_en }}</h1>
+                    <h2>{{ $leaderuni->name_en }} </h2>
+                    <h1> {{ $leaderuni->private_specific_en }}/{{ $leaderuni->public_specific_en }}</h1>
 
                 </div>
                 <div class="home-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="pic">
+                        <img src="/{{ $leaderuni->image }}" class="outer-shadow" alt="pic">
                     </div>
                 </div>
             </div>
@@ -207,20 +207,20 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="information">Information</h2>
+                    <h2 data-heading="information">information</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="about-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="pic">
+                        <img src="/{{ $leaderuni->image }}" class="outer-shadow" alt="pic">
                     </div>
                     <!-- social links start -->
                     <!-- social links start -->
                     <div class="social-links">
                         @foreach ($typs as $ty)
                             @foreach ($socials as $s)
-                                @if ($s->id_type == $ty->id && $s->id_doctor == $doctor->id)
+                                @if ($s->id_type == $ty->id && $s->id_leaderuni == $leaderuni->id)
                                     <a href="{{ $s->link }}" class="outer-shadow hover-in-shadow"
                                         target="_blank"><i class="fab fa-">{{ $ty->name_en }}</i></a>
                                 @endif
@@ -235,25 +235,25 @@
 
                 <div class="about-info">
                     <h1 style="color: azure; text-align: center;">
-                        {{ $doctor->details_en }}
+                        {{ $leaderuni->details_en }}
 
                     </h1>
-                    <a href="{{ $doctor->pdf }}" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
-                    <a href="/d/{{ $doctor->id }}/research" class="btn-1 outer-shadow hover-in-shadow">Show Researches</a>
+                    <a href="{{ $leaderuni->pdf }}" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
+
                 </div>
 
 
                 <div class="row">
                     <div class="about-tabs">
-                        <span class="tab-item outer-shadow active" data-target=".skills">
-                            <a href="/den/{{ $doctor->id }}/research"> Details Researches </a></span>
+                        <span class="tab-item outer-shadow active" data-target=".skills"> <a
+                                href="/leaderunien/{{ $leaderuni->id }}/research">Details researches</a></span>
 
                     </div>
 
-                    {{--  <div class="skill-item" style="">  --}}
+                    {{--  <div class="skill-item" style="">
 
-                        {{--  @foreach ($achievementes as $ach)
-                            @if ($ach->id_doctor == $doctor->id)
+                        @foreach ($achievementes as $ach)
+                            @if ($ach->id_leaderuni == $leaderuni->id)
                                 <!-- skills start -->
                                 <div style="bottom: auto;" class="row">
                                     <div class="skills ">
@@ -274,9 +274,9 @@
                                         </div>
                                         <!-- skill item end -->
                             @endif
-                        @endforeach  --}}
+                        @endforeach
 
-                    {{--  </div>
+                    </div>
 
 
                 </div>
@@ -292,7 +292,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="contact">Contact us </h2>
+                    <h2 data-heading="contact"> Contact</h2>
                 </div>
             </div>
             <div class="row">
@@ -303,7 +303,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-phone"></i>
                         <span>Phone </span>
-                        <p>{{ $doctor->phone }}</p>
+                        <p>{{ $leaderuni->phone }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -314,7 +314,7 @@
                         <span>Email</span>
 
 
-                        <p>{{ $doctor->email }}</p>
+                        <p>{{ $leaderuni->email }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -323,7 +323,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Address</span>
-                        <p>{{ $doctor->country }}</p>
+                        <p>{{ $leaderuni->country }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->

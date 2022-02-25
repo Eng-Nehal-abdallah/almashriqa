@@ -82,7 +82,7 @@
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
                             <li><a href="/facutlylab">المختبرات</a></li>
-                            <li><a href="/facutlyresearch">الانجازات </a></li>
+                            <li><a href="/facutlyresearch">الابحاث </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
                             <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
 
@@ -209,15 +209,15 @@
             <div class="row full-screen align-items-center">
                 <div class="home-text">
 
-                    <h2>{{ $doctor->name_ar }}
-                    </h2>{{ $doctor->position_ar }}/{{ $doctor->public_specific_ar }}
+                    <h2>{{ $leaderuni->name_ar }}
+                    </h2>{{ $leaderuni->position_ar }}/{{ $leaderuni->public_specific_ar }}
                     <h1>
                     </h1>
                     <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">المزيد من التفاصيل</a>
                 </div>
                 <div class="home-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
+                        <img src="/{{ $leaderuni->image }}" class="outer-shadow" alt="profile-pic">
                     </div>
                 </div>
             </div>
@@ -236,15 +236,15 @@
             <div class="row">
                 <div class="about-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
+                        <img src="/{{ $leaderuni->image }}" class="outer-shadow" alt="profile-pic">
                     </div>
                     <!-- social links start -->
                     <div class="social-links">
                         @foreach ($typs as $ty)
                             @foreach ($socials as $s)
-                                @if ($s->id_type == $ty->id && $s->id_doctor == $doctor->id)
+                                @if ($s->id_type == $ty->id && $s->id_leaderuni == $leadeeruni->id)
                                     <a href="{{ $s->link }}" class="outer-shadow hover-in-shadow"
-                                        target="_blank"><i class="fab fa-">{{ $ty->name_ar }}</i></a>
+                                        target="_blank"><i class="fab fa-">{{ $ty->name_ar}}</i></a>
                                 @endif
                             @endforeach
                         @endforeach
@@ -255,12 +255,12 @@
                 </div>
                 <div class="about-info">
                     <h1 style="color: azure; text-align: center;">
-                        {{ $doctor->details_ar }}
+                        {{ $leaderuni->details_ar }}
 
                     </h1>
-                    <a href="{{ $doctor->pdf }}" class="btn-1 outer-shadow hover-in-shadow"> تنزيل السيرة الذاتية</a>
-                    <a href="/d/{{ $doctor->id }}/research" class="btn-1 outer-shadow hover-in-shadow"> تفاصيل
-                        الانجازات</a>
+                    <a href="{{ $leaderuni->pdf }}" class="btn-1 outer-shadow hover-in-shadow"> تنزيل السيرة الذاتية</a>
+                    <a href="/leaderuni/{{ $leaderuni->id }}/research" class="btn-1 outer-shadow hover-in-shadow"> تفاصيل
+                        الابحاث</a>
 
                 </div>
 
@@ -326,7 +326,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-phone"></i>
                         <span> رقم الهاتف</span>
-                        <p>{{ $doctor->phone }}</p>
+                        <p>{{ $leaderuni->phone }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -335,7 +335,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-envelope"></i>
                         <span>الايميل</span>
-                        <p>{{ $doctor->email }}
+                        <p>{{ $leaderuni->email }}
 
                         </p>
                     </div>
@@ -346,7 +346,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>العنوان</span>
-                        <p>{{ $doctor->country_ar }}</p>
+                        <p>{{ $leaderuni->country_ar }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->

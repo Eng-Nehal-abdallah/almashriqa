@@ -580,6 +580,12 @@ section.section-5 {
   opacity: 0;
 }
 
+section.section-5 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-5 .caption h1.heading {
   font-size: 3rem;
 }
@@ -715,6 +721,12 @@ section.section-7 {
   color: #010111;
 }
 
+section.section-7 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-7 .slick-dots li button:before {
   font-family: 'slick';
   font-size: 6px;
@@ -778,6 +790,12 @@ section.section-8 {
 
 section.section-8 h1 {
   text-transform: capitalize;
+}
+
+section.section-8 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 section.section-8 .img-content {

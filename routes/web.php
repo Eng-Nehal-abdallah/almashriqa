@@ -609,8 +609,15 @@ Route::get('/doctorsen/{Department}/show', [DoctorsController::class, 'shDen']);
 //show profile
 Route::get('docen/{doctor}/show', [DoctorsController::class, 'profileen']);
 //show department for faculty
+//show profile
+Route::get('leader/{leader}/show', [DoctorsController::class, 'profileleader']);
+//show profile
+Route::get('leaderen/{leader}/show', [DoctorsController::class, 'profileenleader']);
 
-
+//show profile
+Route::get('leaderuni/{leaderuni}/show', [DoctorsController::class, 'profileleaderuni']);
+//show profile
+Route::get('leaderunien/{leader}/show', [DoctorsController::class, 'profileenleaderuni']);
 Route::get('/departmenten/{department}/show', [DepartmentController::class, 'shen']);
 //show requiremeznt of faculty
 Route::get('/requirementen', [RequirementController::class, 'indexen']);
@@ -630,6 +637,25 @@ Route::get('/departmentten/{department}/research', [UniversitiesController::clas
 Route::get('/d/{doctor}/research', [UniversitiesController::class, 'doctor']);
 //show all achievement for faculty
 Route::get('/den/{doctor}/research', [UniversitiesController::class, 'doctoren']);
+
+
+
+//show all achievement for faculty
+Route::get('/leader/{leader}/research', [UniversitiesController::class, 'leader']);
+//show all achievement for faculty
+Route::get('/leaderen/{leader}/research', [UniversitiesController::class, 'leaderen']);
+
+
+//show all achievement for faculty
+Route::get('/leaderuni/{leaderuni}/research', [UniversitiesController::class, 'leaderuni']);
+//show all achievement for faculty
+Route::get('/leaderunien/{leaderuni}/research', [UniversitiesController::class, 'leaderunien']);
+
+
+
+
+
+
 //edit faculty
 Route::get('/facutly/{facutly}/edit', [UniversitiesController::class, 'edit']);
 //update code after head

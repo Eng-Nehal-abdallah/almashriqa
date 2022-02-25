@@ -25,10 +25,11 @@ small {
  color: #a3a3a3;
 }
 
-img {
- width: 100%;
-
-}
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
 
 /* #Navigation
 ================================================== */

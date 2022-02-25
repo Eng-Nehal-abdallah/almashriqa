@@ -35,39 +35,54 @@
 
 
 
-<body class="light">
+<body class="light text-left">
 
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                            class="img-fluid"></a>
-                    <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
+            <nav id="navbar" class="navbar">
 
-                    <nav id="navbar" class="navbar">
+                <ul>
+                    @guest
 
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
+                    <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            @guest
+                            <li><a href="/abouten">About University</a></li>
+                            <li><a href="/leaderunien">University Presidency </a></li>
+                            <li><a href="/feesen">Tuition fees </a></li>
+                            <li><a href="/strategyen">University strategy </a></li>
+                            <li><a href="/facutlydocen">Doctors </a></li>
+                            <li><a href="/agreementsen">Agreements </a></li>
 
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
-                                    </li>
-                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
-                                @endif
-                            @else
-                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    {{ __('logout') }}
-                                </a>
+                            <li><a href="/leaderworden">University President word</a></li>
+                            <li><a href="/facutlylaben">labs</a></li>
+                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/compusen">compus </a></li>
+                            <li><a href="/chartEn">statistics </a></li>
 
+<<<<<<< HEAD
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     class="d-none">
                                     @csrf
@@ -143,11 +158,63 @@
                             <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
 
                             <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+=======
+                            {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                    </li>
+                    <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/agreementsen">Registration mechanism</a></li>
+                            <li><a href="/accepten">Acceptable Rules </a></li>
+                            <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
-                </div>
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            @foreach ($Facutlies as $f)
+                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    @endforeach
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylecen">Term lecture table</a></li>
+                            <li><a href="/facutlyexamen">Exam Table </a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                    <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                    <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+
+                    <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+            </nav><!-- .navbar -->
+
+        </div>
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
@@ -159,13 +226,31 @@
     </div>
     <!-- start light & dark -->
 
+    <br><br><br>
 
 
+    <style>
+        .col-md-5 {
+            max-width: 90%;
+            height: auto;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+
+    </style>
     <!-- start section 1 -->
 
     <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
+<<<<<<< HEAD
 
             <div class="row">
                 <div class="col-md-5">
@@ -196,7 +281,31 @@
 
                     </div>
                 </div>
+=======
+            <div class="alert  alert-light" role="alert">
+                {{ $lab->name_en }}
             </div>
+            <div class="table-responsive-lg">
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
+            </div>
+
+
+            <div class="row justify-content-around">
+                <div class="col-md-5 my-1">
+                    <img class="rounded" src="/{{ $lab->image }}" />
+
+                </div>
+                <div class="col-md-5 my-1">
+                    <img class="rounded" src="/{{ $lab->images }}" />
+                </div>
+                <div class="col-md-10 text-left">
+                    <p class="my-3">
+                        {{ $lab->details_en }}
+
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 

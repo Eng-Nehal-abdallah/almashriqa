@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2022 at 08:51 AM
+-- Generation Time: Feb 25, 2022 at 11:39 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -59,7 +59,7 @@ CREATE TABLE `achievement` (
   `pdf` varchar(255) DEFAULT NULL,
   `id_doctor` int(11) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
-  `images` varchar(255) NOT NULL,
+  `images` varchar(255) DEFAULT NULL,
   `id_facutly` int(11) DEFAULT NULL,
   `id_department` int(11) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -114,7 +114,10 @@ INSERT INTO `achievement` (`id`, `name_ar`, `name_en`, `details_en`, `details_ar
 (43, ' بحث عام في \n القانون العام ', 'Research of Law', 'details about Research of Law', 'تفاصيل عن بحث في القانون', 'download.pdf', 627, 'بحث', 'images/researchlaw1.jpg', 4, 9, 'images/images (1).jpg', 5, 4, '', NULL, NULL),
 (44, 'التحصيل الدراسي القانوني', 'Law study', 'Details about Law study', 'تفاصيل عن التحصيل الدراسي', 'download.pdf', 624, 'التحصيل الدراسي', 'images/researchlaw1.jpg', 4, 10, 'images/images (1).jpg', 4, 5, '', NULL, NULL),
 (45, 'كتاب عام في  القانون العام ', 'Public Law Book', 'Details about Public Law Book', 'تفاصيل عن كتاب القانون العام ', 'download.pdf', 624, 'براءه', 'images/researchlaw3.jpg', 4, 10, 'images/images (1).jpg', 3, 3, '', NULL, NULL),
-(46, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 624, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 10, 'images/images (1).jpg', NULL, 1, NULL, NULL, NULL);
+(46, 'شهادة تكريم في القانون العام', 'Public Law Certified', 'Details about Public Law Certified', 'التفاصيل عن شهادة تكريم في القانون العام', 'download.pdf', 624, 'شهادة تكريم', 'images/researchlaw3.jpg', 4, 10, 'images/images (1).jpg', NULL, 1, NULL, NULL, NULL),
+(47, 'name', 'name', 'jdvnjvnxj n', 'التفاصيل', 'file/20220224083911.pdf', NULL, NULL, NULL, NULL, NULL, 'images/20220224083911.jpg', NULL, 2, NULL, 1, 1),
+(48, 'ss', 'ss', 'details', 'b n cn', 'file/20220224084052.pdf', NULL, NULL, NULL, NULL, NULL, 'images/20220224084052.jpg', NULL, 1, NULL, 1, 1),
+(52, 'name', 'name', 'details', 'b n cn', 'file/20220224195916.pdf', NULL, NULL, NULL, NULL, NULL, 'images/20220224195916.jpg', NULL, 2, NULL, NULL, 15);
 
 -- --------------------------------------------------------
 
@@ -140,13 +143,27 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`id`, `name_ar`, `name_en`, `details_ar`, `details_en`, `image`, `id_faculty`, `id_department`, `video`, `id_doctor`) VALUES
-(1, 'نشاط اول', 'Activity', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/imgs/header.png', 3, 1, '', 3),
-(2, 'انجاز الثاني', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'activity details', 'images/imgs/header.png', 1, 5, '', 3),
-(3, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'activity details', 'images/imgs/header.png', 2, 1, '', 1),
-(4, 'براءه', 'secondachieve', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'براءه', 'images/imgs/header.png', 3, NULL, '', 1),
-(6, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'activity details', 'images/imgs/header.png', 2, NULL, '', 3),
-(8, 'انجاز الخامس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'activity details', 'images/imgs/header.png', 4, NULL, '', 1),
-(9, 'انجاز السادس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'activity details', 'images/imgs/header.png', 4, NULL, '', 3);
+(1, 'نشاط اول', 'Activity', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 1, '', 3),
+(2, 'انجاز الثاني', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 5, '', 3),
+(3, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 5, '', 1),
+(4, ' انجاز الرابع', 'secondachieve', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 1, '', 1),
+(6, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 5, '', 3),
+(8, 'انجاز الخامس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 1, '', 1),
+(9, 'انجاز السادس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 6, '', 3),
+(13, 'نشاط اول', 'Activity', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 6, '', 3),
+(14, 'انجاز الثاني', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 3, 6, '', 3),
+(15, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 4, 9, '', 1),
+(16, ' انجاز الرابع', 'secondachieve', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 4, 10, '', 1),
+(17, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 4, 9, '', 3),
+(18, 'انجاز الخامس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 2, NULL, '', 1),
+(19, 'انجاز السادس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 2, NULL, '', 3),
+(20, 'نشاط اول', 'Activity', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 2, NULL, '', 3),
+(21, 'انجاز الثاني', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 1, NULL, '', 3),
+(22, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 1, NULL, '', 1),
+(23, ' انجاز الرابع', 'secondachieve', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 1, 1, '', 1),
+(24, 'انجاز الثالث', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 38, NULL, '', 3),
+(25, 'انجاز الخامس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 38, NULL, '', 1),
+(26, 'انجاز السادس', 'achievement first', '\r\n       اختيار أ. م.د ميساء علي عبد الخالق مستشار رئيس جامعة المشرق عضواً في تأليف وتحرير كتاب (دليل الادويه 2021 ) و تمت\r\n       موافقه\r\n       معالي وزير الصحه والبيئة الدكتور هاني موسى بدر العقابي ونقيب صيادلة العراق الدكتور مصطفى الهيتي ، ويعتبر هذا\r', 'details about activitiessssssssssssssssssss', 'images/lb.png', 38, NULL, '', 1);
 
 -- --------------------------------------------------------
 
@@ -216,7 +233,7 @@ CREATE TABLE `center` (
 --
 
 INSERT INTO `center` (`id`, `name_ar`, `name_en`, `details_en`, `details_ar`, `tablecode`) VALUES
-(1, 'مركز اللفة الانجيليزية', 'English language center', '\r\nSince its founding, the University has developed plans that ensure the service of the scientific and educational process in Iraq and constructive interaction with the labor market and civil society organizations and through a precise and correct vision of the data of the Iraqi reality based on its vision and mission, thus achieving important results, including the study of students in the university formations in the first and higher studies of its engineering, medical, administrative and applied arts programs, and the development of scientific sections in accordance with the requirements of the scientific plan and the need of the labor market. And from God, success', '\r\nوضعت الجامعة منذ تأسيسها الخطط التي تضمن خدمة المسيرة العلمية والتربوية في العراق والتفاعل البناء مع سوق العمل ومنظمات المجتمع المدني ومن خلال رؤيا دقيقة وصحيحة لمعطيات الواقع العراقي معتمدة على رؤيتها ورسالتها محققة بذلك نتائج مهمة منها دراسة الطلبة في تشكيلات الجامعة في الدراستين الاولية و العليا لبرامجها الهندسية والطبية والإدارية والفنون التطبيقية، واستحداث الاقسام العلمية وفقا لمتطلبات الخطة العلمية و حاجة سوق العمل . ومن الله التوفيق', '\n<table style=\"width:100%\">\n  <tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n</table>');
+(1, 'مركز اللفة الانجيليزية', 'English language center', '\r\nSince its founding, the University has developed plans that ensure the service of the scientific and educational process in Iraq and constructive interaction with the labor market and civil society organizations and through a precise and correct vision of the data of the Iraqi reality based on its vision and mission, thus achieving important results, including the study of students in the university formations in the first and higher studies of its engineering, medical, administrative and applied arts programs, and the development of scientific sections in accordance with the requirements of the scientific plan and the need of the labor market. And from God, success', '\r\nوضعت الجامعة منذ تأسيسها الخطط التي تضمن خدمة المسيرة العلمية والتربوية في العراق والتفاعل البناء مع سوق العمل ومنظمات المجتمع المدني ومن خلال رؤيا دقيقة وصحيحة لمعطيات الواقع العراقي معتمدة على رؤيتها ورسالتها محققة بذلك نتائج مهمة منها دراسة الطلبة في تشكيلات الجامعة في الدراستين الاولية و العليا لبرامجها الهندسية والطبية والإدارية والفنون التطبيقية، واستحداث الاقسام العلمية وفقا لمتطلبات الخطة العلمية و حاجة سوق العمل . ومن الله التوفيق', '\n<table class=\"table\" style=\"width:100%\">\n  <tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n</table>');
 
 -- --------------------------------------------------------
 
@@ -262,7 +279,7 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`id`, `name_ar`, `name_en`, `details_ar`, `details_en`, `image`, `id_facutly`, `color`) VALUES
-(1, 'قسم الفيزياء الطبية', 'Department of Medical Physics', 'التفاصيل عن قسم الفيزياء الطبية ', 'details about Department of Medical Physics', 'images/MedicalPhysics.png', 3, ''),
+(1, 'قسم الفيزياء الطبية', 'Department of Medical Physics', 'التفاصيل عن قسم الفيزياء الطبية ', 'details about Department of Medical Physics', 'images/Medical Physics.png', 3, ''),
 (5, 'قسم المختبرات الطبية', 'Department of Medical Physics', 'تفاصيل عن قسم المختبرات الطبية', 'details about Department of Medical Physics', 'images/medecin.jpeg', 3, ''),
 (6, 'قسم التخدير', 'Medical Analytics Department', 'تفاصيل عن قسم التخدير', 'Details about Medical Analytics Department', 'images/taghder.jpeg', 3, '#d53f3f'),
 (9, 'قسم علوم المالية و الصرفية', 'Department of Financial and Exchange Sciences', 'تفاصيل عن قسم علوم المالية و الصرفية', 'Details about Department of Financial and Exchange Sciences', 'images/money.jpeg', 4, '#d53f3f'),
@@ -421,19 +438,20 @@ CREATE TABLE `facutly` (
   `about_facutly_en` text DEFAULT NULL,
   `message_dean_ar` text DEFAULT NULL,
   `message_dean_en` text DEFAULT NULL,
-  `color` varchar(255) NOT NULL
+  `color` varchar(255) NOT NULL,
+  `images` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `facutly`
 --
 
-INSERT INTO `facutly` (`id`, `name_ar`, `name_en`, `message_ar`, `message_en`, `view_ar`, `view_en`, `image`, `goal_ar`, `goal_en`, `about_facutly_ar`, `about_facutly_en`, `message_dean_ar`, `message_dean_en`, `color`) VALUES
-(1, 'كلية القانون', 'low', 'الرساله', 'message of Faculty of law', 'رويه', 'view of Faculty of law', '/coll-icon/القانون.jpg', 'الهدف', 'goal of Faculty of law', 'كليه القانون من اعظم الكليات في الجامعه', 'about faculty', 'رساله', 'message of dean of Faculty of Pharmacy', '#b12020'),
-(2, 'الصيدليه', 'Pharmacy', 'رساله', 'message of Faculty of pharmacy', 'الرويه', 'view of Faculty of pharmacy', '/coll-icon/الصيدلة.jpeg', 'الهدف', 'goal of Faculty of pharmacy', 'كليه الصيدليه من اعرق الكليات في الجامعات', NULL, 'رساله العميد', 'message of dean of Faculty of Pharmacy', '#b12020'),
-(3, 'كلية التقنيات الطبية والعلوم', 'medecin', 'الرساله', 'message of Faculty of science medecin', 'الرؤيه', 'view of Faculty of science medecin', '/coll-icon/تقنيات العلوم الطبية قسم التخدير.jpeg', 'الهدف', 'goal of Faculty of medecin and science', 'كلية التقنيات الطبية والعلوم من افضل الكليات في الجامعات', NULL, 'رساله العميد', 'message of dean of medecin', '#b12020'),
-(4, 'كلية العلوم الادارية', 'management', 'الرساله', 'messageof Faculty of  management science', 'الرؤيه', 'view of Faculty of  management science', '/coll-icon/كلية العلوم الادارية.jpeg', 'الهدف', 'goal of Faculty of  management and scienec', 'كلية كلية العلوم الادارية من افضل الكليات في الجامعات', NULL, 'رساله العميد', 'message of dean of Faculty of management ', '#b12020'),
-(38, 'كلية طب اسنان ', 'Faculty of Dentistry ', 'رسالة كليه طب اسنان', 'message of Faculty of Dentistry ', 'رؤية', 'view of Faculty of Dentistry ', 'images/denst.jpeg', 'هدف كلية طب اسنان', 'goal of Faculty of Dentistry \r\n', 'تفاصيل عن كلية طب اسنان', 'About Faculty of Dentistry ', 'رساله عميد الكلية', 'message of dean of Faculty of Dentistry ', '');
+INSERT INTO `facutly` (`id`, `name_ar`, `name_en`, `message_ar`, `message_en`, `view_ar`, `view_en`, `image`, `goal_ar`, `goal_en`, `about_facutly_ar`, `about_facutly_en`, `message_dean_ar`, `message_dean_en`, `color`, `images`) VALUES
+(1, 'كلية القانون', 'low', ' \nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of Faculty of law', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'view of Faculty of law', '/coll-icon/القانون.jpg', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'goal of Faculty of law', 'كليه القانون من اعظم الكليات في الجامعه', '         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora\n                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium\n                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate\n                        alias, blanditiis ut veniam?', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of dean of Faculty of Pharmacy', '#b12020', 'images/prof.png'),
+(2, 'الصيدليه', 'Pharmacy', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of Faculty of pharmacy', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'view of Faculty of pharmacy', '/coll-icon/الصيدلة.jpeg', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'goal of Faculty of pharmacy', 'كليه الصيدليه من اعرق الكليات في الجامعات', '         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora\n                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium\n                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate\n                        alias, blanditiis ut veniam?', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of dean of Faculty of Pharmacy', '#b12020', 'images/prof.png'),
+(3, 'كلية التقنيات الطبية والعلوم', 'medecin', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of Faculty of science medecin', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'view of Faculty of science medecin', '/coll-icon/تقنيات العلوم الطبية قسم التخدير.jpeg', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'goal of Faculty of medecin and science', 'كلية التقنيات الطبية والعلوم من افضل الكليات في الجامعات', '         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora\n                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium\n                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate\n                        alias, blanditiis ut veniam?', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of dean of medecin', '#b12020', 'images/prof.png'),
+(4, 'كلية العلوم الادارية', 'management', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'messageof Faculty of  management science', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'view of Faculty of  management science', '/coll-icon/كلية العلوم الادارية.jpeg', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'goal of Faculty of  management and scienec', 'كلية كلية العلوم الادارية من افضل الكليات في الجامعات', '         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora\n                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium\n                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate\n                        alias, blanditiis ut veniam?', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of dean of Faculty of management ', '#b12020', 'images/prof.png'),
+(38, 'كلية طب اسنان ', 'Faculty of Dentistry ', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of Faculty of Dentistry ', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'view of Faculty of Dentistry ', 'images/denst.jpeg', '\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'goal of Faculty of Dentistry \r\n', 'تفاصيل عن كلية طب اسنان', '         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora\n                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium\n                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate\n                        alias, blanditiis ut veniam?', 'كلمة العميد\nيشرفني ويسرني بكل تواضع، وأيضا بكل الفخر بتاريخنا وإرثنا، أن أقبل منصب العميدً المؤقتً لجامعة جورجتاون في قطر. فبصفتي أستاذًا درّس في جورجتاون لنحو 35 عامًا، أؤكد بكل ثقة على التزامنا تجاه طلابنا وأعضاء هيئة التدريس والعاملين، وعلى تقديرنا لأفراد المجتمع والأطراف المؤثرة الذين يدعمون مهمتنا. لقد انضممت إلى جامعة جورجتاون بسبب تميزها الأكاديمي والبحثي، وقد أتيت لأشارك في بناء الحرم الجامعي في قطر عندما أتيحت لي فرصة المشاركة مع مجموعة متنوعة من الطلاب في مناخ ثري ضمن حاضنة جامعية تشمل عدة جامعات ذات تخصصات متنوعة.', 'message of dean of Faculty of Dentistry ', '', 'images/prof.png');
 
 -- --------------------------------------------------------
 
@@ -486,7 +504,12 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `image`) VALUES
-(1, 'images/20220222120534.jpg');
+(1, 'images/20220222120534.jpg'),
+(2, 'images/20220222120534.jpg'),
+(3, 'images/20220222120534.jpg'),
+(4, 'images/20220222120534.jpg'),
+(5, 'images/20220222120534.jpg'),
+(6, 'images/20220222120534.jpg');
 
 -- --------------------------------------------------------
 
@@ -497,16 +520,25 @@ INSERT INTO `image` (`id`, `image`) VALUES
 CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `image` text DEFAULT NULL,
-  `id_image` int(11) DEFAULT NULL
+  `id_image` int(11) DEFAULT NULL,
+  `id_activity` int(11) DEFAULT NULL,
+  `id_achievement` int(11) DEFAULT NULL,
+  `id_lab` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `images`
 --
 
-INSERT INTO `images` (`id`, `image`, `id_image`) VALUES
-(1, 'images/20220222124230.jpg', 1),
-(2, 'images/20220222125236.jpg', 1);
+INSERT INTO `images` (`id`, `image`, `id_image`, `id_activity`, `id_achievement`, `id_lab`) VALUES
+(1, 'images/laab.jpeg', 1, 1, 3, 1),
+(2, 'images/laab.jpeg', 2, 2, 4, 2),
+(4, 'images/laab.jpeg', 3, 3, 5, 3),
+(5, 'images/laab.jpeg', 1, 4, 9, 4),
+(6, 'images/laab.jpeg', 1, 1, 3, 1),
+(7, 'images/laab.jpeg', 1, 2, 4, 2),
+(8, 'images/laab.jpeg', 3, 3, 5, 3),
+(9, 'images/laab.jpeg', 4, 4, 9, 4);
 
 -- --------------------------------------------------------
 
@@ -836,7 +868,7 @@ CREATE TABLE `mash` (
 --
 
 INSERT INTO `mash` (`id`, `image`, `image1`, `image2`, `abstract_title_ar`, `abstract_small_ar`, `abstract_details_ar`, `option1_title_ar`, `option2_title_ar`, `option3_title_ar`, `option4_title_ar`, `option1_details_ar`, `option2_details_ar`, `option3_details_ar`, `option4_details_ar`, `option5_title_ar`, `option5_details_ar`, `details_image1_ar`, `details_image2_ar`, `title_image1_ar`, `title_image2_ar`, `title_image_ar`, `vision_ar`, `abstract_title_en`, `abstract_details_en`, `option1_title_en`, `option2_title_en`, `option3_title_en`, `option4_title_en`, `option1_details_en`, `option2_details_en`, `option3_details_en`, `option4_details_en`, `option5_title_en`, `option5_details_en`, `details_image1_en`, `details_image2_en`, `title_image1_en`, `title_image2_en`, `title_image_en`, `vision_en`, `abstract_small_en`, `small_image2_ar`, `small_image1_ar`, `link_image2_ar`, `link_image1_ar`, `small_image2_en`, `small_image1_en`, `about_ar`, `about_en`, `strategy_en`, `strategy_ar`, `fees_ar`, `fees_en`, `tablecode`, `word_ar`, `word_En`, `room`, `students`, `leaderimage`, `pdf`) VALUES
-(1, 'images/imgs/header.png', 'images/20220125060401.jfif', 'images/imgs/header.png', 'المشرق', 'نص مصغر', 'من افضل الجامعات في العراق جامعه المشرق من افضل الجامعات', 'كلية طب الاسنان', 'Option', 'Option', 'Another Option', '\r\n         تسعى الكلية طب الاسنان ان تحتل المراكز والمواقع المتميزة على الصعيد العلمي والعملي من خلال تفوقها في تقديم\r\n      الخدمات\r\n      الطبية والاستشارية والعلمية والبحثية للمجتمع ومواكبة لتطورات العلمية والتقنية والبحثية في العالم في مجال طب\r\n      الاسنان على\r\n      المستوى العالمي\r\n     </p>\r\n     <p>الريادة والتميز في جودة التعليم والبحث العلمي في طب الأسنان بما يخدم المجتمع. وتتمثل رؤيتنا في التميز في نشر\r\n      الثقافة\r\n      والبحث العلمي والخدمة في مجال طب الأسنان، من خلال تحسين صحة وعافية مجتمعاتنا، وتقديم رعاية مثالية لمرضانا، وتعزيز\r\n      المعرفة للقيام بذلك.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Another Option', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'تعد جامعة المشرق صرح علمي متطور تتمتع باحدث الطرق العلمية الحديثة والعملية لتمكن الطالب من اكتساب المعلومات الكافية للانخراط في سوق العمل حيث ان الجامعة هدفها الارتقاء بمستوى الطالب والجامعة الى افضل المراتب', 'رؤية الجامعة هي التركيز في القيم الجوهرية، والأغراض الجوهرية. إذ تتمثل القيم الجوهرية بجودة تعليمية عالية في المجالات المعرفية للجامعة مزودة بالإلهام، والإبداع، والمسؤولية، الاجتماعية على الصعيد الوطني والعالمي', 'المشرق اكثر من مجرد جامعة', 'رؤية الجامعة', NULL, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in praesentium deserunt laborum delectus iure libero? Officia ducimus eum ea beatae iusto quo ut repudiandae nulla, soluta voluptates qui perspiciatis dolores rerum nostrum libero tempora deserunt recusandae odit vitae. Ea?', 'AlMashriq', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, illo laboriosam? Recusandae itaque voluptate', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Almashriq Is Not Just Education', 'Almashriq Is Not Just Education', NULL, NULL, 'small', 'جدا نص صغير', 'نص صغير', 'download.pdf', 'download.pdf', 'small text 2', 'small text', 'مؤسسة أكاديمية اهلية ذات نفع عام. تأسست في بغداد تتألف الجامعة من خمس كليات ( طب الاسنان, الصيدلة.تقنيات العلوم الطبية . القانون . العلوم الادارية ) تسعى جامعة المشرق الى الإفادة من احدث المناهج التعليمية والتكنولوجية الحديثة وطرق التدريس الفاعلة والمختبرات المؤهلة بإحدث التقنيات وتوفير بيئة جامعية متكاملة من حيث البنى التحتية والحدائق والملاعب من اجل تقديم الأفضل لطلبتنا الأعزاء . تتواصل الجامعة بشكل دائم مع المجتمع ايماناً منها بان الهدف الاسمى للجامعة هو خدمة المجتمع من خلال خريجيها المميزيين والقيام بالبحوث العلمية الرصينة التي تعالج مشاكل مجتمعنا العراقي وتعد كلية الطب في جامعتنا الأولى والرائدة على مستوى الجامعات الاهلية , تسعى الجامعة الى تهيئة الأفضل من الأساتذة التدريسيين والى تطوير هذه الكفاءات من خلال التعامل مع بعض الجامعات العالمية الرصينة', 'A private academic institution of public benefit. Founded in Baghdad, the university scattered from five colleges (Dentistry, Pharmacy, Medical Science Techniques) and Law. To provide the best for our students. The university communicates permanently with the community, believing that the ultimate goal of the university is to serve the community through its distinguished graduates and solid scientific research that addresses the problems of our Iraqi society. While dealing with some reputable international universities', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Lorem Ipsum هو ببساطة نص وهمي لصناعة الطباعة والتنضيد. كان Lorem Ipsum النص الوهمي القياسي في هذه الصناعة منذ القرن التاسع عشر ، عندما أخذت طابعة غير معروفة جاليLorem Ipsum هو ببساطة نص وهمي الالا لصناعة الطباعة والتنضيد. كان Lorem Ipsum النص الوهمي القياسي في هذه الصناعة منذ القرن التاسع عشر ، عندما أخذت طابعة غير معروفة جالي', ' <table class=\"table\">                 <thead class=\"thead-dark text-center\">                     <tr>                         <th scope=\"col\"> الكلية / القسم </th>                         <th scope=\"col\">معدل القبول الصباحي </th>                         <th scope=\"col\">معدل القبول المسائي</th>                         <th scope=\"col\">القسط الدراسي</th>                      </tr>                 </thead>                 <tbody style=\"font-weight: bold;\" class=\"text-center\">                     <tr>                         <td>طب الاسنان</td>                         <td>80</td>                         <td>لا يوجد</td>                         <td>8.950.000</td>                      </tr>                     <tr>                         <td> الصيدلة</td>                         <td>80</td>                         <td>لا يوجد</td>                         <td>7.950.000</td>                     </tr>                     <tr>                         <td>تقنيات التخدير</td>                         <td>69.5 </td>                         <td>64.5</td>                         <td>3.950.000</td>                      </tr>                     <tr>                         <td>تقنيات التحليلات</td>                         <td>69.5 </td>                         <td>64.5</td>                         <td>3.450.000</td>                     </tr>                     <tr>                         <td>الفيزياء الطبية</td>                         <td>56.5 </td>                         <td>54.5</td>                         <td>3.750.000</td>                     </tr>                     <tr>                         <td> القانون</td>                         <td>56.5 </td>                         <td>54.5</td>                         <td>2.000.000</td>                     </tr>                     <tr>                         <td> ادارة الاعمال</td>                         <td>50 </td>                         <td>50</td>                         <td>2.000.000</td>                     </tr>                     <tr>                         <td> علوم المالية و المصرفية </td>                         <td>50 </td>                         <td>50</td>                         <td>2.000.000</td>                     </tr>                 </tbody>             </table>', ' <table class=\"table\">        <thead class=\"thead-dark\">         <tr>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>           <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          </tr>        </thead>        <tbody>         <tr>          <th scope=\"row\">1</th>          <td>Mark</td>          <td>Otto</td>          <td>@mdo</td>         </tr>         <tr>          <th scope=\"row\">2</th>          <td>Jacob</td>          <td>Thornton</td>          <td>@fat</td>         </tr>         <tr>          <th scope=\"row\">3</th>          <td>Larry</td>          <td>the Bird</td>          <td>@twitter</td>         </tr>        </tbody>       </table>', '', 'Quisquam velut sint cum eos hic dolores aperiam. Sed deserunt et. اخترع وآخرون ما يترتب على ذلك من حواجز شفطية وآخرون. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المقدر للهوية 7\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المعجل للمؤسسة\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المعجل للمؤسسة', 'Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.7\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.\n\n\nQuisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.7\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.\n\n\n\n', 144, 4000, '', '');
+(1, 'images/imgs/header.png', 'images/20220224114935.jpg', 'images/imgs/header.png', 'المشرق', 'نص مصغر', 'من افضل الجامعات في العراق جامعه المشرق من افضل الجامعات', 'كلية طب الاسنان', 'Option', 'Option', 'Another Option', '\r\n         تسعى الكلية طب الاسنان ان تحتل المراكز والمواقع المتميزة على الصعيد العلمي والعملي من خلال تفوقها في تقديم\r\n      الخدمات\r\n      الطبية والاستشارية والعلمية والبحثية للمجتمع ومواكبة لتطورات العلمية والتقنية والبحثية في العالم في مجال طب\r\n      الاسنان على\r\n      المستوى العالمي\r\n     </p>\r\n     <p>الريادة والتميز في جودة التعليم والبحث العلمي في طب الأسنان بما يخدم المجتمع. وتتمثل رؤيتنا في التميز في نشر\r\n      الثقافة\r\n      والبحث العلمي والخدمة في مجال طب الأسنان، من خلال تحسين صحة وعافية مجتمعاتنا، وتقديم رعاية مثالية لمرضانا، وتعزيز\r\n      المعرفة للقيام بذلك.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'Another Option', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard', 'تعد جامعة المشرق صرح علمي متطور تتمتع باحدث الطرق العلمية الحديثة والعملية لتمكن الطالب من اكتساب المعلومات الكافية للانخراط في سوق العمل حيث ان الجامعة هدفها الارتقاء بمستوى الطالب والجامعة الى افضل المراتب', 'رؤية الجامعة هي التركيز في القيم الجوهرية، والأغراض الجوهرية. إذ تتمثل القيم الجوهرية بجودة تعليمية عالية في المجالات المعرفية للجامعة مزودة بالإلهام، والإبداع، والمسؤولية، الاجتماعية على الصعيد الوطني والعالمي', 'المشرق اكثر من مجرد جامعة', 'رؤية الجامعة', NULL, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in praesentium deserunt laborum delectus iure libero? Officia ducimus eum ea beatae iusto quo ut repudiandae nulla, soluta voluptates qui perspiciatis dolores rerum nostrum libero tempora deserunt recusandae odit vitae. Ea?', 'AlMashriq', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, illo laboriosam? Recusandae itaque voluptate', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Almashriq Is Not Just Education', 'Almashriq Is Not Just Education', NULL, NULL, 'small', 'جدا نص صغير', 'نص صغير', 'download.pdf', 'download.pdf', 'small text 2', 'small text', 'مؤسسة أكاديمية اهلية ذات نفع عام. تأسست في بغداد تتألف الجامعة من خمس كليات ( طب الاسنان, الصيدلة.تقنيات العلوم الطبية . القانون . العلوم الادارية ) تسعى جامعة المشرق الى الإفادة من احدث المناهج التعليمية والتكنولوجية الحديثة وطرق التدريس الفاعلة والمختبرات المؤهلة بإحدث التقنيات وتوفير بيئة جامعية متكاملة من حيث البنى التحتية والحدائق والملاعب من اجل تقديم الأفضل لطلبتنا الأعزاء . تتواصل الجامعة بشكل دائم مع المجتمع ايماناً منها بان الهدف الاسمى للجامعة هو خدمة المجتمع من خلال خريجيها المميزيين والقيام بالبحوث العلمية الرصينة التي تعالج مشاكل مجتمعنا العراقي وتعد كلية الطب في جامعتنا الأولى والرائدة على مستوى الجامعات الاهلية , تسعى الجامعة الى تهيئة الأفضل من الأساتذة التدريسيين والى تطوير هذه الكفاءات من خلال التعامل مع بعض الجامعات العالمية الرصينة', 'A private academic institution of public benefit. Founded in Baghdad, the university scattered from five colleges (Dentistry, Pharmacy, Medical Science Techniques) and Law. To provide the best for our students. The university communicates permanently with the community, believing that the ultimate goal of the university is to serve the community through its distinguished graduates and solid scientific research that addresses the problems of our Iraqi society. While dealing with some reputable international universities', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galle', 'Lorem Ipsum هو ببساطة نص وهمي لصناعة الطباعة والتنضيد. كان Lorem Ipsum النص الوهمي القياسي في هذه الصناعة منذ القرن التاسع عشر ، عندما أخذت طابعة غير معروفة جاليLorem Ipsum هو ببساطة نص وهمي الالا لصناعة الطباعة والتنضيد. كان Lorem Ipsum النص الوهمي القياسي في هذه الصناعة منذ القرن التاسع عشر ، عندما أخذت طابعة غير معروفة جالي', '<table class=\"table\">                 <thead class=\"thead-dark text-center\">                     <tr>                         <th scope=\"col\"> الكلية / القسم </th>                         <th scope=\"col\">معدل القبول الصباحي </th>                         <th scope=\"col\">معدل القبول المسائي</th>                         <th scope=\"col\">القسط الدراسي</th>                      </tr>                 </thead>                 <tbody style=\"font-weight: bold;\" class=\"text-center\">                     <tr>                         <td>طب الاسنان</td>                         <td>80</td>                         <td>لا يوجد</td>                         <td>8.950.000</td>                      </tr>                     <tr>                         <td> الصيدلة</td>                         <td>80</td>                         <td>لا يوجد</td>                         <td>7.950.000</td>                     </tr>                     <tr>                         <td>تقنيات التخدير</td>                         <td>69.5 </td>                         <td>64.5</td>                         <td>3.950.000</td>                      </tr>                     <tr>                         <td>تقنيات التحليلات</td>                         <td>69.5 </td>                         <td>64.5</td>                         <td>3.450.000</td>                     </tr>                     <tr>                         <td>الفيزياء الطبية</td>                         <td>56.5 </td>                         <td>54.5</td>                         <td>3.750.000</td>                     </tr>                     <tr>                         <td> القانون</td>                         <td>56.5 </td>                         <td>54.5</td>                         <td>2.000.000</td>                     </tr>                     <tr>                         <td> ادارة الاعمال</td>                         <td>50 </td>                         <td>50</td>                         <td>2.000.000</td>                     </tr>                     <tr>                         <td> علوم المالية و المصرفية </td>                         <td>50 </td>                         <td>50</td>                         <td>2.000.000</td>                     </tr>                 </tbody>             </table>', '<table class=\"table\">        <thead class=\"thead-dark\">         <tr>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>           <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          <th scope=\"col\">dssd</th>          </tr>        </thead>        <tbody>         <tr>          <th scope=\"row\">1</th>          <td>Mark</td>          <td>Otto</td>          <td>@mdo</td>         </tr>         <tr>          <th scope=\"row\">2</th>          <td>Jacob</td>          <td>Thornton</td>          <td>@fat</td>         </tr>         <tr>          <th scope=\"row\">3</th>          <td>Larry</td>          <td>the Bird</td>          <td>@twitter</td>         </tr>        </tbody>       </table>', '', 'Quisquam velut sint cum eos hic dolores aperiam. Sed deserunt et. اخترع وآخرون ما يترتب على ذلك من حواجز شفطية وآخرون. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المقدر للهوية 7Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المعجل للمؤسسةLorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo، accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure المفترض tempore perferendis؟ Earum blanditiis ، تمرين عدم التمكن من ممارسة التمارين الرياضية! Incidunt corrupti، ea recusandae non sapiente delectus. Culpa iusto totam افتراضات مؤقتة لممارسة الرياضة! الحد الأدنى المعجل للمؤسسة', 'Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.7Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsu m tenetur suscipit voluptatum nam et est corrupti.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.7Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo, accusantium quas nulla dolorum aspernatur voluptates ea mollitia dolor earum reiciendis minima suscipit ratione placeat iure assumenda tempore perferendis? Earum blanditiis, illum reprehenderit aperiam laudantium dolore odio maxime exercitationem nulla! Incidunt corrupti, ea recusandae non sapiente delectus. Culpa iusto totam assumenda tempore nostrum quis exercitationem! Minima expedita quaerat id est.', 144, 4000, 'images/20220224121732.jpg', 'file/20220224121600.pdf');
 
 -- --------------------------------------------------------
 
@@ -898,6 +930,19 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pdf`
+--
+
+CREATE TABLE `pdf` (
+  `id` int(11) NOT NULL,
+  `name_ar` text DEFAULT NULL,
+  `name_en` text DEFAULT NULL,
+  `pdf` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `personal_access_tokens`
 --
 
@@ -948,21 +993,24 @@ CREATE TABLE `socialmedia` (
   `id_doctor` int(11) DEFAULT NULL,
   `id_type` int(11) DEFAULT NULL,
   `id_leader` int(11) DEFAULT NULL,
-  `id_leader_uni` int(11) DEFAULT NULL
+  `id_leaderuni` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `socialmedia`
 --
 
-INSERT INTO `socialmedia` (`id`, `name_ar`, `name_en`, `link`, `id_doctor`, `id_type`, `id_leader`, `id_leader_uni`) VALUES
+INSERT INTO `socialmedia` (`id`, `name_ar`, `name_en`, `link`, `id_doctor`, `id_type`, `id_leader`, `id_leaderuni`) VALUES
 (3, 'scolor', 'fax', 'https://www.facebook.com/', 3, 4, 1, 1),
 (4, 'R', 'R', 'https://www.facebook.com/', 1, 1, 2, 2),
 (5, 'name', 'name', 'https://www.facebook.com/', 1, 1, 3, 3),
 (6, 'jabhx', 'sbxhb', 'https://www.facebook.com/', 1, 2, 1, 2),
 (7, 'name', 'name', 'https://www.facebook.com/', 1, 1, 3, 4),
 (8, 'name', 'name', 'https://www.facebook.com/', 1, 3, 2, 3),
-(9, 'name', 'name', 'https://www.facebook.com/', NULL, NULL, NULL, NULL);
+(9, 'name', 'name', 'https://www.facebook.com/', NULL, NULL, NULL, NULL),
+(11, 'name', 'name', 'https://www.facebook.com/', NULL, NULL, NULL, 1),
+(14, 'name', 'name', 'https://www.facebook.com/', 646, NULL, NULL, NULL),
+(15, 'name', 'name', 'https://www.facebook.com/', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1010,15 +1058,7 @@ INSERT INTO `studentfirst` (`id`, `name_ar`, `name_en`, `level_ar`, `level_en`, 
 (10, 'امال', 'amal', 'الثاني', 'second', 'الثاني', 'second', 'images/20220125060401.jfif', 2, NULL),
 (11, 'نهال', 'nehal', 'الاول', 'first', 'الاول', 'first', 'images/20220125060401.jfif', 1, NULL),
 (12, 'امال', 'amal', 'الثالث', 'third', 'الثالث', 'third', 'images/20220125060401.jfif', 2, NULL),
-(15, 'aliaaa', 'aliaaaaa', 'الاول', 'الثاني', '1', '1', 'images/20220218194742.jfif', 38, NULL),
-(16, 'name', 'name', 'الاول', 'second', '12', '12', 'images/20220219010626.jfif', 2, 6),
-(17, 'name', 'name', 'Second', 'second', '12', '12', 'images/20220219010711.jfif', 38, 1),
-(18, 'name', 'name', 'Second', 'second', '12', '12', 'images/20220219011408.jfif', NULL, NULL),
-(19, 'nehal', 'nehal', 'الاول', 'second', '12', '12', 'images/20220219011445.jfif', NULL, NULL),
-(20, 'nehal', 'nehal', 'الاول', 'second', '12', '12', 'images/20220219011602.jfif', NULL, NULL),
-(21, 'nehal', 'nehal', 'الاول', 'second', '12', 'fhth', 'images/20220219011753.jfif', NULL, NULL),
-(22, 'name', 'name', 'الاول', 'second', 'الدرجه', '12', 'images/20220219011352.jfif', 2, 6),
-(23, 'name', 'name', 'Second', 'الثاني', '12', 'Grade', 'images/20220219011837.jpg', 2, 6);
+(15, 'aliaaa', 'aliaaaaa', 'الاول', 'الثاني', '1', '1', 'images/20220218194742.jfif', 38, NULL);
 
 -- --------------------------------------------------------
 
@@ -1074,8 +1114,7 @@ INSERT INTO `type` (`id`, `name_ar`, `name_en`) VALUES
 (2, 'OR', 'OR'),
 (3, 'P', 'P'),
 (4, 'SCO', 'SCO'),
-(5, 'GS', 'GS'),
-(7, 'name', 'name');
+(5, 'GS', 'GS');
 
 -- --------------------------------------------------------
 
@@ -1161,7 +1200,9 @@ INSERT INTO `users` (`id`, `name`, `usertype`, `email`, `email_verified_at`, `pa
 (9, 'ali', 'student', 'ali3@gmail.com', NULL, '$2y$10$.FRbNaSGb0fkA00Env5U8Ot6W.eGcfnAvmJ4ZQtA8DQOeMI/dMhFG', NULL, '2022-02-14 18:44:25', '2022-02-14 18:44:25', 3, NULL, '11111111'),
 (10, 'ali', 'xteam', 'ali5@gmail.com', NULL, '$2y$10$y1UPZ/c/KLO.OF84z62D1O1OjgUUWT/GrIxQlNBGIiPbRi.a6Q6au', NULL, '2022-02-14 19:08:26', '2022-02-14 19:08:26', NULL, NULL, '11111111'),
 (13, 'name', 'facutly', 'ali88@gmail.com', NULL, '$2y$10$YkNjOyJtpYwBpMEWddU2XuSwG96Wt3EfKnco.DivHtK6vM1XcEfEq', NULL, '2022-02-19 05:48:51', '2022-02-19 05:59:09', 1, NULL, '147852'),
-(14, 'names', 'facutly', 'ali8s8@gmail.com', NULL, '$2y$10$JohIuJclW3xOK1juo0A6ieyEvAcGBzJmNFrOQO7gvHwdtwESbrFsq', NULL, '2022-02-19 05:53:20', '2022-02-19 05:53:20', 1, NULL, '123456789');
+(14, 'names', 'facutly', 'ali8s8@gmail.com', NULL, '$2y$10$JohIuJclW3xOK1juo0A6ieyEvAcGBzJmNFrOQO7gvHwdtwESbrFsq', NULL, '2022-02-19 05:53:20', '2022-02-19 05:53:20', 1, NULL, '123456789'),
+(16, 'name', 'doctor', 'ali88add@gmail.com', NULL, '$2y$10$dLox/syB2UzZJPZt5gmwI.BQEAliFWX4jTMxlyqb5x9se9OxJ8Dpq', NULL, '2022-02-24 22:21:36', '2022-02-24 22:21:36', NULL, NULL, NULL),
+(17, 'nehal11', 'doctor', 'nehal11@gmail.com', NULL, '$2y$10$sOSdVCx5RuxhEIPFHWo3ve.4mHJVjH99u/bZyUgmyV4r8I6Hwi9cW', NULL, '2022-02-24 22:55:19', '2022-02-24 22:55:19', 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1299,7 +1340,10 @@ ALTER TABLE `image`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_image` (`id_image`);
+  ADD KEY `id_image` (`id_image`),
+  ADD KEY `id_activity` (`id_activity`),
+  ADD KEY `id_achievement` (`id_achievement`),
+  ADD KEY `id_lab` (`id_lab`);
 
 --
 -- Indexes for table `lab`
@@ -1369,6 +1413,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `pdf`
+--
+ALTER TABLE `pdf`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -1390,7 +1440,7 @@ ALTER TABLE `socialmedia`
   ADD KEY `id_doctor` (`id_doctor`),
   ADD KEY `id_type` (`id_type`),
   ADD KEY `id_leader` (`id_leader`),
-  ADD KEY `id_leader_uni` (`id_leader_uni`);
+  ADD KEY `id_leader_uni` (`id_leaderuni`);
 
 --
 -- Indexes for table `strategy`
@@ -1463,13 +1513,13 @@ ALTER TABLE `accept`
 -- AUTO_INCREMENT for table `achievement`
 --
 ALTER TABLE `achievement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `admindepart`
@@ -1493,19 +1543,19 @@ ALTER TABLE `center`
 -- AUTO_INCREMENT for table `compus`
 --
 ALTER TABLE `compus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=637;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=666;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -1523,7 +1573,7 @@ ALTER TABLE `examlab`
 -- AUTO_INCREMENT for table `facutly`
 --
 ALTER TABLE `facutly`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1541,13 +1591,13 @@ ALTER TABLE `fees`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `lab`
@@ -1559,7 +1609,7 @@ ALTER TABLE `lab`
 -- AUTO_INCREMENT for table `leader`
 --
 ALTER TABLE `leader`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `leaderuni`
@@ -1577,7 +1627,7 @@ ALTER TABLE `lecture`
 -- AUTO_INCREMENT for table `machine`
 --
 ALTER TABLE `machine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `magazin`
@@ -1604,6 +1654,12 @@ ALTER TABLE `paper`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `pdf`
+--
+ALTER TABLE `pdf`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -1619,7 +1675,7 @@ ALTER TABLE `requirement`
 -- AUTO_INCREMENT for table `socialmedia`
 --
 ALTER TABLE `socialmedia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `strategy`
@@ -1643,13 +1699,13 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `typeachievement`
 --
 ALTER TABLE `typeachievement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `university`
@@ -1661,7 +1717,7 @@ ALTER TABLE `university`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `video`
@@ -1721,7 +1777,10 @@ ALTER TABLE `exam`
 -- Constraints for table `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id`);
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_image`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `images_ibfk_2` FOREIGN KEY (`id_activity`) REFERENCES `activities` (`id`),
+  ADD CONSTRAINT `images_ibfk_3` FOREIGN KEY (`id_achievement`) REFERENCES `achievement` (`id`),
+  ADD CONSTRAINT `images_ibfk_4` FOREIGN KEY (`id_lab`) REFERENCES `lab` (`id`);
 
 --
 -- Constraints for table `leader`
@@ -1742,7 +1801,7 @@ ALTER TABLE `leaderuni`
 --
 ALTER TABLE `socialmedia`
   ADD CONSTRAINT `socialmedia_ibfk_1` FOREIGN KEY (`id_leader`) REFERENCES `leader` (`id`),
-  ADD CONSTRAINT `socialmedia_ibfk_2` FOREIGN KEY (`id_leader_uni`) REFERENCES `leaderuni` (`id`);
+  ADD CONSTRAINT `socialmedia_ibfk_2` FOREIGN KEY (`id_leaderuni`) REFERENCES `leaderuni` (`id`);
 
 --
 -- Constraints for table `video`

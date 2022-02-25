@@ -176,7 +176,7 @@
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
                                             @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                                <a href="$social->link">{{ $type->name_ثى }}</a>
+                                                <a href="$social->link">{{ $type->name_en}}</a>
                                             @endif
                                         @endforeach
                                     @endforeach
@@ -185,7 +185,7 @@
                             <div class="member-info">
                                 <h4>{{ $doct->name_en }}</h4>
                                 <span>{{ $doct->position_en }}</span>
-                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
+                                <a href="/leaderen/{{ $doct->id }}/show" class="btn btn-dark my-3 ">Visit Profile </a>
 
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                 <div class="social">
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
-                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                            @if ($social->id_type == $type->id && $leader->id == $social->id_leaderuni)
                                                 <a href="$social->link">{{ $type->name_en }}</a>
                                             @endif
                                         @endforeach
@@ -217,7 +217,7 @@
                             <div class="member-info">
                                 <h4> {{ $leader->name_en }} </h4>
                                 <span> {{ $leader->position_en }} </span>
-                                <a href="#" class="btn btn-dark my-3 ">Visit Profile </a>
+                                <a href="/leaderunien/{{ $leader->id }}/show" class="btn btn-dark my-3 ">Visit Profile </a>
                             </div>
                         </div>
                     </div>

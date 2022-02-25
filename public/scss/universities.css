@@ -36,6 +36,12 @@ body.dark {
   transition: all 0.3s ease-out;
 }
 
+img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 ul.child {
   position: absolute;
   top: 80px;

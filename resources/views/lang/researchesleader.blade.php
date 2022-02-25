@@ -173,14 +173,14 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="head ">
                         <h2 class="heading">All Researches</h2>
-                        <small>{{ $doctor->name_en }}</small>
+                        <small>{{ $leader->name_en }}</small>
 
                     </div>
                 </div>
             </div>
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $ach)
-                    @if ($ach->id_doctor == $doctor->id)
+                    @if ($ach->id_leader == $leader->id)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">

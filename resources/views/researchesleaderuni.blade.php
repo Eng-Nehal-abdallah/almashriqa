@@ -14,8 +14,7 @@
 
 
     <link rel="stylesheet" href="/scss/researchers-inner.css">
-    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
-
+    <link rel="stylesheet" href="/scss/table-test.css">
     @extends('layouts.head-en')
 
 
@@ -38,121 +37,110 @@
 
 <body>
 
-    <header id="header" class="fixed-top">
+    <!-- start navbar -->
+    <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
+            <!-- Uncomment below if you prefer to use text as a logo -->
+            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center justify-content-between">
+            <nav id="navbar" class="navbar">
 
-                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                            class="img-fluid"></a>
-                    <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                <ul>
+                    @guest
 
-                    <nav id="navbar" class="navbar">
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('تسجيل الخروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
+                    <li class="dropdown"><a href="/"><span>الرئيسية</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/about">عن الجامعة</a></li>
+                            <li><a href="/leaderuni">رئاسة الجامعة</a></li>
+                            <li><a href="/fees">الرسوم الدراسية </a></li>
+                            <li><a href="/strategy">ستراتيجية الجامعة </a></li>
+                            <li><a href="/facutlydoc">االهيئه التدريسيه</a></li>
+                            <li><a href="/agreements">الاتفاقيات ومذكرات التفاهم</a></li>
+
+                            <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
+                            <li><a href="/facutlylab">المختبرات</a></li>
+                            <li><a href="/facutlyresearch">الانجازات </a></li>
+                            <li><a href="/compuss">الحرم الجامعي</a></li>
+                            <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
+
+                            {{-- <li><a href="/papers">االتقويم الجامعي</a></li> --}}
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/mechine">الية التسجيل</a></li>
+                            <li><a href="/accept">شروط القبول</a></li>
+                            <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="dropdown"><a href="#"><span>كليات</span> <i class="bi bi-chevron-down"></i></a>
+
 
                         <ul>
-                            @guest
-
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
-                                    </li>
-                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
-                                @endif
-                            @else
-                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    {{ __('logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-
-
-                            @endguest
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/abouten">About University</a></li>
-                                    <li><a href="/leaderunien">University Presidency </a></li>
-                                    <li><a href="/feesen">Tuition fees </a></li>
-                                    <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
-                                    <li><a href="/agreementsen">Agreements </a></li>
-
-                                    <li><a href="/leaderworden">University President word</a></li>
-                                    <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
-                                    <li><a href="/compusen">compus </a></li>
-                                    <li><a href="/chartEn">statistics </a></li>
-
-                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/agreementsen">Registration mechanism </a></li>
-                                    <li><a href="/accepten">Acceptable Rules </a></li>
-                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
-
-                                </ul>
-                            </li>
-
-
-
-
-
-                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-
-
-                                <ul>
-                                    @foreach ($faculties as $f)
-                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-                                                    <ul>
-                                                        <li><a
-                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                        </li>
-                                                    </ul>
-                                                @endif
-                                            @endforeach
-                                        </li>
+                            @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
+                                            {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
                                     @endforeach
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/facutlylecen">Term lecture table</a></li>
-                                    <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
-                                </ul>
-                            </li>
-
-                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
-
-                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+                                </li>
+                            @endforeach
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                    </li>
+                    <li class="dropdown"><a href="/labexamfac"><span>التعليم الالكتروني</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
+                            <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
 
-                </div>
+                        </ul>
+                    </li>
+
+                    <li><a class="nav-link scrollto" href="/magazin">مجلة الجامعة</a></li>
+                    <li><a class="nav-link scrollto" href="/papers">التقويم الاكاديمي </a></li>
+                    <li><a class="nav-link scrollto" href="/centers">مركز اللغة الانجليزية</a></li>
+
+                    <li><a class="nav-link scrollto" href="/en">EN </a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+            </nav><!-- .navbar -->
+
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
 
     <!-- start light & dark -->
     <div class="dark-mood ">
@@ -172,7 +160,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="head ">
-                        <h2 class="heading">All Researches</h2>
+                        <h2 class="heading">All achievement</h2>
                         <small>{{ $doctor->name_en }}</small>
 
                     </div>
@@ -180,7 +168,7 @@
             </div>
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $ach)
-                    @if ($ach->id_doctor == $doctor->id)
+                    @if ($ach->id_leaderuni== $leaderuni->id)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">
@@ -309,6 +297,7 @@
     <!-- start section -->
     <script src="/js/main.js"></script>
     <script src="/js/dark.js"></script>
+
 
 
     <script src="/js/nav.js"></script>

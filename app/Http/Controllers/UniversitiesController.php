@@ -8,6 +8,8 @@ use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Lab;
+use App\Models\Leader;
+use App\Models\Leaderuni;
 use App\Models\Mash;
 use App\Models\Social;
 use App\Models\Studentfirst;
@@ -496,6 +498,56 @@ class UniversitiesController extends Controller
         $departments=Department::all();
         return view('lang.researchesdocen', ['doctor' => $doctor],compact('achievements','types','faculties','departments'));
     }
+
+
+
+
+
+
+
+
+    public function leader(Leader $leader)
+    { $achievements=achievement::all();
+        $types = Typeachievement::all();
+        $faculties =Facutly::all();
+        $departments=Department::all();
+        return view('researchesleader', ['leader' => $leader],compact('achievements','types','faculties','departments'));
+    }
+
+
+
+    public function leaderen(Leader $leader)
+    { $achievements=achievement::all();
+        $types = Typeachievement::all();
+        $faculties =Facutly::all();
+        $departments=Department::all();
+        return view('lang.researchesleader', ['leader' => $leader],compact('achievements','types','faculties','departments'));
+    }
+
+
+
+    public function leaderuni(Leaderuni $leaderuni)
+    { $achievements=achievement::all();
+        $types = Typeachievement::all();
+        $faculties =Facutly::all();
+        $departments=Department::all();
+        return view('researchesleaderuni', ['leaderuni' => $leaderuni],compact('achievements','types','faculties','departments'));
+    }
+
+
+
+    public function leaderunien(Leaderuni $leaderuni)
+    { $achievements=achievement::all();
+        $types = Typeachievement::all();
+        $faculties =Facutly::all();
+        $departments=Department::all();
+        return view('lang.researchesleaderuni', ['leaderuni' => $leaderuni],compact('achievements','types','faculties','departments'));
+    }
+
+
+
+
+
 
 }
 

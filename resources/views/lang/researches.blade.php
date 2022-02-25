@@ -17,14 +17,6 @@
     <link rel="stylesheet" href="/scss/table-test.css">
     @extends('layouts.head-en')
 
-
-    <!-- start box icon -->
-    <link href='/css/boxicons.min.css' rel='stylesheet'>
-    <!--start fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/navbar.css">
-
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
@@ -37,10 +29,13 @@
 
 <body>
 
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
+            <!-- Uncomment below if you prefer to use text as a logo -->
+            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
 
@@ -72,7 +67,11 @@
                             <li><a href="/leaderunien">University Presidency </a></li>
                             <li><a href="/feesen">Tuition fees </a></li>
                             <li><a href="/strategyen">University strategy </a></li>
+<<<<<<< HEAD
                             <li><a href="/facutlyen">Doctors </a></li>
+=======
+                            <li><a href="/facutlydocen">Doctors </a></li>
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                             <li><a href="/agreementsen">Agreements </a></li>
 
                             <li><a href="/leaderworden">University President word</a></li>
@@ -140,7 +139,6 @@
         </div>
         </div>
     </header><!-- End Header -->
-    <!-- end navbar -->
 
     <!-- start light & dark -->
     <div class="dark-mood ">

@@ -697,6 +697,12 @@ section.section-5 {
     transition: 1s;
     opacity: 0;
 
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+    }
+
     .caption {
         h1.heading {
             font-size: 3rem;
@@ -849,6 +855,12 @@ section.section-6 {
 section.section-7 {
     color: #010111;
 
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+    }
+
     .slick-dots li button:before {
         font-family: 'slick';
         font-size: 6px;
@@ -929,6 +941,12 @@ section.section-8 {
 
     h1 {
         text-transform: capitalize;
+    }
+
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
     }
 
 
