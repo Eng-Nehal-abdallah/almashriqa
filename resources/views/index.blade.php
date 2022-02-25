@@ -489,10 +489,10 @@
 
                 <div class="img-content">
 
-                    <img src="{{$im->image }}" alt="">
+                    <img src="/{{$im->image }}" alt="">
 
                     <div class="inner">
-                        <a href="/g/{{ $im->id }}/show">visit</a>
+                        <a href="/g/{{ $im->id }}/show">زيارة</a>
                     </div>
                 </div>
 

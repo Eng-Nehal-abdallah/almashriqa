@@ -25,27 +25,27 @@ $doctors=Doctors::all();
 
         return view('image.dashboard',compact('image','mash','f','doctors'));
     }
-    public function indexshow()
+    public function indexshow(Image $image)
     {
 
 $images=Images::all();
 
-$videos = Video::all()->first();
+$videos = Video::all();
 $faculties=Facutly::all();
 $departments=Department::all();
 
-        return view('gallery',compact('images','videoes','faculties','departments'));
+        return view('gallery',['image'=>$image],compact('images','videos','faculties','departments'));
     }
-    public function indexshowen()
+    public function indexshowen(Image $image)
     {
 
 $images=Images::all();
 
-$videos = Video::all()->first();
+$videos = Video::all();
 $faculties=Facutly::all();
 $departments=Department::all();
 
-        return view('lang.galleryEn',compact('images','videoes','faculties','departments'));
+        return view('lang.galleryEn',['image'=>$image],compact('images','videos','faculties','departments'));
     }
     // start destroy
     public function destroy(Image $image)

@@ -164,39 +164,37 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
-
     <sectionl class="section-1">
         <div class="container">
             <div class="row justify-content-around">
-                @foreach ($images as $image)
-
-
-                <div class="col-md-4 rouded">
-                    <img src="{{$image->image }}" alt="">
-                </div>
+                @foreach ($images as $imag)
+                    @if ($imag->id_image == $image->id)
+                        <div class="col-md-4 rouded">
+                            <img src="/{{ $imag->image }}" alt="">
+                        </div>
+                    @endif
                 @endforeach
             </div>
         </div>
     </sectionl>
-
+    <br>
     <sectionl class="section-1">
         <div class="container">
             <div class="row justify-content-around">
-                @foreach ($video as $video)
-
-
-                <div class="col-md-4 rouded">
-                    <video width="320" height="240" controls>
-                        <source src="{{ $video->video }}" type="video/mp4">
-                        <source src="{{ $video->video }}" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-                </div>
+                @foreach ($videos as $video)
+                @if ($video->id_image == $image->id)
+                    <div class="col-md-4 rouded">
+                        <video width="320" height="240" controls>
+                            <source src="{{ $video->video }}" type="video/mp4">
+                            <source src="{{ $video->video }}" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    @endif
                 @endforeach
             </div>
         </div>
     </sectionl>
-
     <!--start footer -->
 
     @extends('layouts.footer-ar')

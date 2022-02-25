@@ -472,7 +472,7 @@
                     <img src="{{ $im->image }}" alt="">
 
                     <div class="inner">
-                        <a href="/g/{{ $im->id }}/show">visit</a>
+                        <a href="/gen/{{ $im->id }}/show">visit</a>
                     </div>
 
                 </div>
