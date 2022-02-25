@@ -85,7 +85,8 @@
                             <li><a href="/compusen">compus </a></li>
                             <li><a href="/chartEn">statistics </a></li>
 
-                            {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+
+
                         </ul>
                     </li>
                     <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i

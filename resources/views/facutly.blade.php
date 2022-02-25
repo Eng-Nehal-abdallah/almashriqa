@@ -129,14 +129,11 @@
     <!-- end navbar -->
 
 
-
-
-
     <div class="header">
         <div class="content">
-            <div class="row justify-content-around">
+            <div class="row justify-content-around justify-content-sm-center">
                 <div class="col-md-5 text-left">
-                    <h1 class="heading mt-4">{{ $facutly['name_ar'] }} </h1>
+                    <h1 class="heading mt-4 color">{{ $facutly['name_ar'] }} </h1>
                     <!-- <span class="btn">descover</span> -->
                 </div>
                 <div class="col-md-5">
@@ -169,7 +166,7 @@
                     <img src="/{{ $facutly['images'] }}" alt="">
                 </div>
                 <div class="col-md-5 ">
-                    <h2>كلمة العميد</h2>
+                    <h2 class="color">كلمة العميد</h2>
                     <p> {{ $facutly['message_dean_ar'] }} </p>
 
                 </div>
@@ -187,7 +184,7 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-9 section-bg">
         <div class="container mt-3">
-            <div class="row ">
+            <div class="row justify-content-center">
                 @foreach ($doctors as $doctor)
                     @if ($doctor->id_facutly == $facutly->id)
                         <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
@@ -208,11 +205,13 @@
                                     <span>{{ $doctor->private_specific_ar }}/{{ $doctor['public_specific_ar'] }}
                                     </span>
                                     <br><br>
-                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زيارة الملف
+                                    <a class="btn bg-color shadow-sm btn-dark"
+                                        href="/doc/{{ $doctor->id }}/show">زيارة الملف
                                         الشخصي</a>
-
-
                                 </div>
+                                <style>
+
+                                </style>
                             </div>
                         </div>
                     @endif
@@ -236,7 +235,7 @@
                 <div class="col-md-4">
                     <div class="d-flex text-center">
                         <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرؤية</h2>
+                        <h2 class="my-4 color">الرؤية</h2>
                         <hr>
                     </div>
                     <p>
@@ -247,7 +246,7 @@
                 <div class="col-md-4">
                     <div class="d-flex text-center">
                         <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرسالة </h2>
+                        <h2 class="my-4 color">الرسالة </h2>
                         <hr>
                     </div>
                     <p> {{ $facutly['message_ar'] }}</p>
@@ -256,7 +255,7 @@
                 <div class="col-md-4">
                     <div class="d-flex text-center">
                         <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الاهداف</h2>
+                        <h2 class="my-4 color">الاهداف</h2>
                         <hr>
                     </div>
                     <ul>
@@ -300,17 +299,17 @@
     {{-- end about seection --}}
 
     <!-- start section 3 -->
-    <section class="section-3 my-5 py-4  bg-light">
+    <section class="section-3  my-5 py-4  bg-light">
         <div class="container">
             <div class="caption ">
-                <h1 class="text-center">
+                <h1 class="text-center color">
                     نشاطات الكلية
                 </h1>
             </div>
             <div class="responsive">
                 @foreach ($activities as $act)
                     @if ($act->id_faculty == $facutly->id)
-                        <div>
+                        <div class="m-1 ">
                             <div class="card ">
                                 <img src="/{{ $act->image }}" class="card-img" alt="...">
                             </div>
@@ -324,8 +323,8 @@
                                 @endforeach
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
-                                <a class="btn btn-block btn-warning main m-auto "
-                                    href="/act/{{ $act->id }}/show">التفاصيل</a>
+                                <a class="btn bg-color btn-block main m-auto "
+                                    href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
                             </div>
                         </div>
                     @endif
@@ -352,7 +351,7 @@
     <section id="trainers" class="trainers ">
         <div class="container" data-aos="fade-up">
             <hr>
-            <h2 class="text-center my-3">الطلبة الاوائل</h2>
+            <h2 class="text-center color my-3">الطلبة الاوائل</h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 @foreach ($students as $st)
                     @if ($st->id_facutly == $facutly->id)
@@ -360,10 +359,10 @@
 
                             <div class="member">
                                 <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                                <div class="member-content">
-                                    <h1 class="inside">{{ $st->grade_ar }}</h1>
+                                <div class="member-content ">
+                                    <h1 class="inside bg-color">{{ $st->grade_ar }}</h1>
 
-                                    <h4>{{ $st->name_ar }}</h4>
+                                    <h4 class=""> {{ $st->name_ar }}</h4>
                                     <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
 
                                 </div>
@@ -401,7 +400,7 @@
 
                                 <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
                                 <a href="/lab/{{ $lab->id }}/show"
-                                    class="btn btn-block btn-warning main m-auto ">التفاصيل</a>
+                                    class="btn bg-color btn-block main m-auto ">التفاصيل</a>
                             </div>
                         </div>
                     @endif
@@ -415,7 +414,7 @@
     <!-- end section 3 -->
 
     <!-- start  section 2 -->
-    <section class="section-2 ">
+    <section class="section-2  bg-color">
         <div class="container">
             <div class="head text-center">
                 <!-- <small>this is small</small> -->
@@ -464,31 +463,12 @@
             <div class="container">
                 <div class="row justify-content-around">
 
-<<<<<<< HEAD
-                <div class="col-md-5 ">
-                    <h2>اقسام الكلية</h2>
-                    <p>
-                        {{ $facutly->about_facutly_ar }}
-                    </p>
-                    <div class="dropdown float-right">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            @foreach ($departments as $department)
-                                @if ($department->id_facutly == $facutly->id)
-                                    <a class="dropdown-item"
-                                        href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
-                                @endif
-                            @endforeach
-=======
                     <div class="col-md-5 ">
                         <h2>اقسام الكلية</h2>
                         <p>
                             {{ $facutly->details_ar }}
                         </p>
-                        <div class="dropdown float-right">
+                        <div class="dropdown bg-color float-right">
                             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-expanded="false">
                                 Dropdown button
@@ -502,7 +482,6 @@
                                 @endforeach
 
                             </div>
->>>>>>> 315b0b68e2fa3ec9fd9a41b42e286875993f36f3
 
                         </div>
                     </div>
@@ -572,6 +551,8 @@
             speed: 300,
             slidesToShow: 3,
             slidesToScroll: 3,
+            centerPadding: '30px',
+
             margin: '30px',
             responsive: [{
                     breakpoint: 1024,
@@ -644,6 +625,10 @@
 
             })
         });
+
+        $('.color').css('color', '{{ $facutly->color }}');
+        $('.bg-color').css('background-color', '{{ $facutly->color }}');
+        $('.slick-next').css('color', '{{ $facutly->color }}');
     </script>
 
 </body>

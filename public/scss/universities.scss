@@ -222,10 +222,21 @@ section.section-1 {
 
 
 
+
+
+section.section-5 .slick-prev:before,
+section.section-5 .slick-next:before {
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 1;
+    opacity: .75;
+    color: #383838 !important;
+    -webkit-font-smoothing: antialiased;
+}
+
 // Start section 2
 section.section-2 {
     margin: 30px 0 100px 0;
-    background-color: #002101;
     padding: 30px 0px;
     border: 1px solid #ffffff;
 
@@ -246,7 +257,7 @@ section.section-2 {
         align-items: center;
         line-height: 90px;
         margin: auto;
-        box-shadow: 0px 0px 10px #379639;
+
 
     }
 
@@ -537,6 +548,9 @@ section.section-5 {
 
 }
 
+
+
+
 @media (max-width:400px) {
 
     section.section-3 button,
@@ -680,7 +694,7 @@ section.section-6 {
         overflow: hidden;
         border-radius: 5px;
         background: #fff;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+
 
         .member-img {
             position: relative;
@@ -823,6 +837,42 @@ section.section-7 {
 
 // ENd section 7
 
+
+
+
+@media (max-width:500px) {
+    section.section-8 {
+        padding: 0px !important;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        display: none;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        cursor: pointer;
+        color: transparent;
+        border: none;
+        outline: none;
+        background: #af000000;
+    }
+
+
+    button:not(:disabled) {
+        cursor: pointer;
+        display: none !important;
+    }
+
+
+}
 
 
 // start section 6
