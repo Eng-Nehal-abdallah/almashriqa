@@ -136,7 +136,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -187,7 +187,7 @@
                                         <p class="card-text">{{ $Facutly->about_facutly_en }}</p>
                                         <div class="btn-group">
                                             <a class="btn btn-sm" href="Facutly/{{ $Facutly->id }}/show">
-                                                {{ $Facutly->name_en}}</a>
+                                                {{ $Facutly->name_en }}</a>
                                             <button type="button"
                                                 class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
                                                 data-toggle="dropdown" aria-expanded="false">

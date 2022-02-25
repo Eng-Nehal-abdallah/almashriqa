@@ -35,7 +35,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+                    class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
@@ -46,7 +46,8 @@
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -102,13 +103,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -133,83 +134,81 @@
     <!-- start header -->
 
 
-<br>
-<br>
+    <br>
+    <br>
 
     <!-- ======= Team Section ======= -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
-     <div class="container">
-      <h1 class="text-center my-5">University Presidency  </h1>
-      <div class="row text-right">
-@foreach ($leaders as $leader)
-    @if($leader->id_facutly==$department->id_facutly)
+        <div class="container">
+            <h1 class="text-center my-5">University Presidency </h1>
+            <div class="row text-right">
+                @foreach ($leaders as $leader)
+                    @if ($leader->id_facutly == $department->id_facutly)
+                        <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="/{{ $leader->image }}" class="img-fluid imgs" alt="">
 
-       <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
-        <div class="member">
-         <div class="member-img">
-          <img src="/{{ $leader->image }}" class="img-fluid imgs" alt="">
+                                    <div class="social">
+                                        @foreach ($types as $type)
+                                            @foreach ($socials as $social)
+                                                @if ($social->id_type == $type->id && $leader->id == $social->id_leader)
+                                                    <a href="$social->link">{{ $type->name_en }}</a>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>{{ $leader->name_en }}</h4>
+                                    <span>{{ $leader->position_en }}</span>
+                                    <a href="#" class="btn btn-dark my-3 ">visit profile</a>
 
-          <div class="social">
-            @foreach ($types as $type)
-            @foreach ($socials as $social)
-                @if ($social->id_type == $type->id && $leader->id == $social->id_leader)
-                    <a href="$social->link">{{ $type->name_en}}</a>
-                @endif
-            @endforeach
-        @endforeach
-          </div>
-         </div>
-         <div class="member-info">
-          <h4>{{ $leader->name_en}}</h4>
-          <span>{{ $leader->position_en }}</span>
-          <a href="#" class="btn btn-dark my-3 ">visit profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
-         </div>
+
+            </div>
+            <h1 class="text-center my-5">Professors OF University </h1>
+
+            <div class="row text-right">
+
+                @foreach ($doctors as $doc)
+                    @if ($doc->id_department == $department->id)
+                        <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
+                                    <div class="social">
+                                        @foreach ($types as $type)
+                                            @foreach ($socials as $social)
+                                                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                                                    <a href="$social->link">{{ $type->name_en }}</a>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>{{ $doc->name_en }}</h4>
+                                    <span>{{ $doc->private_specific_en }}/{{ $doc->public_specific_en }}</span>
+                                    <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+
+
+            </div>
+
         </div>
-       </div>
-       @endif
-       @endforeach
-
-
-      </div>
-      <h1 class="text-center my-5">Professors OF University   </h1>
-
-      <div class="row text-right">
-
-        @foreach ($doctors as $doc)
-
-@if($doc->id_department==$department->id)
-       <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-        <div class="member">
-         <div class="member-img">
-          <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
-          <div class="social">
-            @foreach ($types as $type)
-            @foreach ($socials as $social)
-                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
-                    <a href="$social->link">{{ $type->name_en }}</a>
-                @endif
-            @endforeach
-        @endforeach
-          </div>
-         </div>
-         <div class="member-info">
-          <h4>{{$doc->name_en }}</h4>
-          <span>{{$doc->private_specific_en  }}/{{ $doc->public_specific_en }}</span>
-          <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-         </div>
-        </div>
-       </div>
-       @endif
-       @endforeach
-
-
-
-      </div>
-
-     </div>
 
     </section><!-- End Team Section -->
 
@@ -275,5 +274,3 @@
 
 
 </body>
-
-

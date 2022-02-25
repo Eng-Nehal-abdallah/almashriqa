@@ -117,7 +117,6 @@
                         <ul>
                             <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
                             <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
                         </ul>
                     </li>
 

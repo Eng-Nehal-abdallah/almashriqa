@@ -121,7 +121,7 @@
                         <ul>
                             <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
                             <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
+
                         </ul>
                     </li>
 
@@ -158,7 +158,7 @@
                 <div class="col-md-10">
 
                     {{-- {{ $mash->word_ar }} --}}
-                    <img src="/{{ $mash->leaderimage}}" alt="">
+                    <img src="/{{ $mash->leaderimage }}" alt="">
 
                 </div>
 

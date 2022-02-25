@@ -130,7 +130,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 

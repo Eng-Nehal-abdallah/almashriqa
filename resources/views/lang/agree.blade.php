@@ -101,7 +101,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -130,12 +130,13 @@
             <div class="row justify-content-around">
                 <div class="col-md-12">
                     <ul>
-                        @foreach($agreements as $m)
-                        <li>
+                        @foreach ($agreements as $m)
+                            <li>
 
 
-                            <i class='bx bx-select-multiple'></i>{{$m->details_en}} </li>
-@endforeach
+                                <i class='bx bx-select-multiple'></i>{{ $m->details_en }}
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>

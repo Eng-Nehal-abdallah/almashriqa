@@ -125,7 +125,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -141,56 +141,59 @@
                 </div>
 
 
-    </header><!-- End Header -->
-    <!-- end navbar -->
+            </header><!-- End Header -->
+            <!-- end navbar -->
 
 
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
-    </div>
-    <!-- start light & dark -->
+            <!-- start light & dark -->
+            <div class="dark-mood ">
+                <i class="fas moon"></i>
+            </div>
+            <!-- start light & dark -->
 
-    <section class="section-title">
-        <div class="container">
-            <h2 class="heading">Doctors</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur
-                velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste
-                officiis
-                commodi quidem hic quas.</p>
-        </div>
+            <section class="section-title">
+                <div class="container">
+                    <h2 class="heading">Doctors</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur
+                        velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+                        in iste
+                        officiis
+                        commodi quidem hic quas.</p>
+                </div>
 
 
-    </section>
+            </section>
 
-    <!-- start section 1 -->
-    <section id="testimonials" class="section-1  section-bg">
-        <div class="container-fluid" data-aos="fade-up">
+            <!-- start section 1 -->
+            <section id="testimonials" class="section-1  section-bg">
+                <div class="container-fluid" data-aos="fade-up">
 
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="row justify-content-around">
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row justify-content-around">
 
-                    @foreach ($doctors as $doctor)
-                        @if ($doctor->id_department == $Department->id)
-                            <div class="col-md-4">
-                                <div class="testimonial-item">
-                                    <img src="/imgs/header.png" class="testimonial-img" alt="">
-                                    <h3>{{ $doctor->name_en }}</h3>
-                                    <h4>Ceo &amp; Founder</h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
-                                        suscipit rhoncus. Accusantium quam,
-                                        ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                    <button class="btn btn-dark">go</button>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                    {{-- <div class="col-md-4">
+                            @foreach ($doctors as $doctor)
+                                @if ($doctor->id_department == $Department->id)
+                                    <div class="col-md-4">
+                                        <div class="testimonial-item">
+                                            <img src="/imgs/header.png" class="testimonial-img" alt="">
+                                            <h3>{{ $doctor->name_en }}</h3>
+                                            <h4>Ceo &amp; Founder</h4>
+                                            <p>
+                                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
+                                                suscipit rhoncus. Accusantium quam,
+                                                ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at
+                                                semper.
+                                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                            </p>
+                                            <button class="btn btn-dark">go</button>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                            {{-- <div class="col-md-4">
       <div class="testimonial-item">
        <img src="/imgs/header.png" class="testimonial-img" alt="">
        <h3>Saul Goodman</h3>
@@ -282,40 +285,40 @@
 
 
 
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
+            </section><!-- End Testimonials Section -->
 
-        </div>
-    </section><!-- End Testimonials Section -->
+            <!-- end section 1 -->
 
-    <!-- end section 1 -->
-
-    <!-- End section 1 -->
+            <!-- End section 1 -->
 
 
-    <!-- start footer -->
-    @extends('layouts.footer-en')
+            <!-- start footer -->
+            @extends('layouts.footer-en')
 
-    <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <!-- start owl carousel -->
+            <!-- start jquery -->
+            <script src="/js/jquery-3.6.0.min.js"></script>
+            <!-- start owl carousel -->
 
-    <!-- start bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <!-- start bootstrap -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+                        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+            </script>
+            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/nav.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/dark.js"></script>
+            <script src="/js/nav.js"></script>
 
 
 </body>

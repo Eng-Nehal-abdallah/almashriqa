@@ -114,7 +114,6 @@
                         <ul>
                             <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
                             <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
                         </ul>
                     </li>
 
@@ -138,7 +137,7 @@
             <div class="row justify-content-around">
 
                 <div class="col-md-5 col-sm-10">
-                    <img src="/{{$agreement->image}}" alt="">
+                    <img src="/{{ $agreement->image }}" alt="">
                 </div>
 
                 <div class="col-md-5 col-sm-10">

@@ -51,55 +51,52 @@
                     <!-- Uncomment below if you prefer to use text as a logo -->
                     <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
-<<<<<<< HEAD
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li><a href="/login"> login</a></li>
-                    </ul>
-                    <ul>
-                        <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="/abouten">About University</a></li>
-                                <li><a href="/leaderunien">University Presidency </a></li>
-                                <li><a href="/feesen">Tuition fees </a></li>
-                                <li><a href="/strategyen">University strategy </a></li>
-                                <li><a href="/facutlydocen">Doctors </a></li>
-                                <li><a href="/agreementsen">Agreements </a></li>
-=======
-                    <nav id="navbar" class="navbar">
->>>>>>> 96496abc2267b3279c06846c395ae0da3a76f060
-
+                    <<<<<<< HEAD <nav id="navbar" class="navbar">
                         <ul>
-                            @guest
+                            <li><a href="/login"> login</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown"><a href="/en"><span>Home</span> <i
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/abouten">About University</a></li>
+                                    <li><a href="/leaderunien">University Presidency </a></li>
+                                    <li><a href="/feesen">Tuition fees </a></li>
+                                    <li><a href="/strategyen">University strategy </a></li>
+                                    <li><a href="/facutlydocen">Doctors </a></li>
+                                    <li><a href="/agreementsen">Agreements </a></li>
+                                    =======
+                                    <nav id="navbar" class="navbar">
+                                        >>>>>>> 96496abc2267b3279c06846c395ae0da3a76f060
 
-<<<<<<< HEAD
-                            </ul>
-                        </li>
+                                        <ul>
+                                            @guest
 
-                        <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-<<<
+                                                <<<<<<< HEAD </ul>
+                                </li>
 
-                            <ul>
-                                @foreach ($faculties as $f)
-                                    <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                        @foreach ($departments as $depart)
-                                            @if ($depart->id_facutly == $f->id)
-                                                <ul>
-                                                    <li><a
-                                                            href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                    </li>
-                                                </ul>
-                                            @endif
-                                        @endforeach
-=======
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
->>>>>>> 96496abc2267b3279c06846c395ae0da3a76f060
-                                    </li>
-                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                                <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                            class="bi bi-chevron-down"></i></a>
+                                    <<< <ul>
+                                        @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    @endforeach
+                                    =======
+                                    @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                                    >>>>>>> 96496abc2267b3279c06846c395ae0da3a76f060
+                                </li>
+                                {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
                                 @endif
                             @else
                                 {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
@@ -174,7 +171,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -185,7 +182,7 @@
                             <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                        </nav><!-- .navbar -->
 
                 </div>
         </div>

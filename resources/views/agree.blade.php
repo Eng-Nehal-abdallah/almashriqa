@@ -91,7 +91,6 @@
                         <ul>
                             <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
                             <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
                         </ul>
                     </li>
 
@@ -117,11 +116,8 @@
             <div class="row justify-content-around">
                 <div class="col-md-12">
                     <ul>
-                        @foreach ($agreements as $m )
-
-
-                        <li><i class='bx bx-select-multiple'></i>{{$m->details_ar}} </li>
-
+                        @foreach ($agreements as $m)
+                            <li><i class='bx bx-select-multiple'></i>{{ $m->details_ar }} </li>
                         @endforeach
 
                     </ul>

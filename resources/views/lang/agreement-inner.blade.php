@@ -114,7 +114,7 @@
                         <ul>
                             <li><a href="/facutlylecen">Term lecture table</a></li>
                             <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                         </ul>
                     </li>
 
@@ -140,7 +140,7 @@
             <div class="row justify-content-around">
 
                 <div class="col-md-5 col-sm-10">
-                    <img src="/{{$agreement->image}}" alt="">
+                    <img src="/{{ $agreement->image }}" alt="">
                 </div>
 
                 <div class="col-md-5 col-sm-10">
