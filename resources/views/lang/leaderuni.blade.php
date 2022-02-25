@@ -63,21 +63,19 @@
                                     {{ __('logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
 
 
                             @endguest
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
+                            <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="/abouten">About University</a></li>
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
+                                    <li><a href="/facutlyen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -143,8 +141,9 @@
                     </nav><!-- .navbar -->
 
                 </div>
-        </div>
-    </header><!-- End Header -->
+                </div>
+            </header><!-- End Header -->
+            <!-- end navbar -->
     <!-- end navbar -->
 
     <!-- start light & dark -->

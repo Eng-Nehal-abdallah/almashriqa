@@ -113,7 +113,7 @@
 
 
                                 <ul>
-                                    @foreach ($faculties as $f)
+                                    @foreach ($Facutlies as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -162,18 +162,44 @@
 
 
     <!-- start section 1 -->
+
+    <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
-            <div class="alert text-center alert-light" role="alert">
-                {{ $lab->name_en }}
-            </div>
-            {{ $lab->details_en }}
-            <div class="table-responsive-lg">
-                <img src="{{ $lab->image }}" />
-                <img src="{{ $lab->images }}" />
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+
+                    <div class="alert text-center alert-light" role="alert">
+                        {{ $lab->name_en }}
+                        <br>
+                        {{ $lab->details_en }}
+                        <div class="table-responsive-lg">
+                            <img src="/{{ $lab->image }}" />
+                            <img src="/{{ $lab->images }}" />
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
 
 

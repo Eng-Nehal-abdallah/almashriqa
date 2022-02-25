@@ -284,7 +284,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        {{ $facutly['details_ar'] }}
+                        {{ $facutly['about_facutly_ar'] }}
 
                     </p>
 

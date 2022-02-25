@@ -94,7 +94,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -147,12 +147,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/{{ $lab->image }}" class="d-block w-100" alt="...">
-                            </div>
 
-                        </div>
                         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
                             data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -171,7 +166,10 @@
                         {{ $lab->name_ar }}
                         <br>
                         {{ $lab->details_ar }}
-
+                        <div class="table-responsive-lg">
+                            <img src="/{{ $lab->image }}" />
+                            <img src="/{{ $lab->images }}" />
+                        </div>
 
                     </div>
                 </div>

@@ -99,7 +99,7 @@
 
 
                                 <ul>
-                                    @foreach ($Facutlies as $f)
+                                    @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -139,11 +139,8 @@
     <!-- end navbar -->
 
 
-<<<<<<< HEAD
-=======
 
     <ul class="nav justify-content-center child">
->>>>>>> 315b0b68e2fa3ec9fd9a41b42e286875993f36f3
 
 
     <div class="header">
