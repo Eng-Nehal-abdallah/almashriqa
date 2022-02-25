@@ -56,6 +56,27 @@
                <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-chart-line me-2"> معدل القبول و الاقساط
  </i></a>
+ <a href="/dashboard22"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> وسائط متعددة
+                    </i></a>
+                    <a href="/dashboard25"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  رئيس ومساعدين الجامعة
+                    </i></a>
+                    <a href="/dashboard26"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> عمداء ومعاونين ومقررين الكليات
+                    </i></a>
+                    <a href="/dashboard27"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
+                    </i></a>
+
+      <a href="/dashboard28"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  الاليات التسجيل
+                    </i></a>
 
    </div>
   </div>

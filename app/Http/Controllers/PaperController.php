@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Mash;
 use App\Models\Paper;
 use Illuminate\Http\Request;
 
@@ -13,8 +15,11 @@ class PaperController extends Controller
     { $faculties  = Facutly::all();
         $departments = Department::all();
         $paper = Paper::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
-        return view('paper\dashboard', compact('paper','faculties','departments'));
+        return view('paper\dashboard', compact('paper','faculties','departments','mash','f','doctors'));
     }
     public function index()
     { $Facutlies   = Facutly::all();

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -12,10 +14,14 @@ class ActivityController extends Controller
 
     public function index()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
+
         $departments = Department::all();
         $facutlies = Facutly::all();
 $activity=Activity::all();
-        return view('dashbord\activity\dashboard',compact('activity','departments', 'facutlies'));
+        return view('dashbord\activity\dashboard',compact('activity','departments', 'facutlies','mash','f','doctors'));
     }
    // start edit
     public function activity(Activity $activity)
@@ -116,11 +122,11 @@ $activity=Activity::all();
             unset($input['image']);
         }
 
-        if ($video = $request->file('pdf')) {
+        if ($video = $request->file('video')) {
             $destinationPath = 'file/';
             $profileImage = date('YmdHis') . "." . $video->getClientOriginalExtension();
             $video->move($destinationPath, $profileImage);
-            $input['pdf'] = "$profileImage";
+            $input['video'] = "$profileImage";
 
             $data['video'] = $destinationPath . "$profileImage";
         } else {

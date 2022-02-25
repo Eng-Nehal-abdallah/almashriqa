@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Lab;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class LabController extends Controller
@@ -57,9 +59,12 @@ $Facutlies = Facutly::all();
     // start destroy
     public function index2()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
 $labs=Lab::all();
-        return view('lab\dashboard',compact('labs'));
+        return view('lab\dashboard',compact('labs','mash','f','doctors'));
     }
 
 

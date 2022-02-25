@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Image;
+use App\Models\Images;
+use App\Models\Mash;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -14,7 +18,34 @@ class ImageController extends Controller
     {
 
 $image=Image::all();
-        return view('image.dashboard',compact('image'));
+
+$mash = Mash::all()->first();
+$f=Facutly::all();
+$doctors=Doctors::all();
+
+        return view('image.dashboard',compact('image','mash','f','doctors'));
+    }
+    public function indexshow()
+    {
+
+$images=Images::all();
+
+$videos = Video::all()->first();
+$faculties=Facutly::all();
+$departments=Department::all();
+
+        return view('gallery',compact('images','videoes','faculties','departments'));
+    }
+    public function indexshowen()
+    {
+
+$images=Images::all();
+
+$videos = Video::all()->first();
+$faculties=Facutly::all();
+$departments=Department::all();
+
+        return view('lang.galleryEn',compact('images','videoes','faculties','departments'));
     }
     // start destroy
     public function destroy(Image $image)

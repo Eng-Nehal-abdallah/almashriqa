@@ -177,7 +177,7 @@
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-5">
-                    <img src="/imgs/header.png" alt="">
+                    <img src="/{{ $facutly['images'] }}" alt="">
                 </div>
                 <div class="col-md-5 ">
                     <h2>كلمة العميد</h2>

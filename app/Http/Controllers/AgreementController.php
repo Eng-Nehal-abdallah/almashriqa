@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Agreement;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class AgreementController extends Controller
@@ -47,8 +49,12 @@ class AgreementController extends Controller
     public function index2()
     {
 
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
+
 $agreement=Agreement::all();
-        return view('agreement.dashboard',compact('agreement'));
+        return view('agreement.dashboard',compact('agreement','mash','f','doctors'));
     }
     public function indexag()
     {    $faculties = Facutly::all();

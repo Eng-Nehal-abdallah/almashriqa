@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Compus;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class CompusController extends Controller
@@ -27,9 +29,12 @@ class CompusController extends Controller
 
     public function index2()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
 $compus=Compus::all();
-        return view('compus\dashboard',compact('compus'));
+        return view('compus\dashboard',compact('compus','mash','f','doctors'));
     }
 
 

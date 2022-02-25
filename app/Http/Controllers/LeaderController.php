@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\achievement;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Leader;
 use App\Models\Leaderuni;
+use App\Models\Mash;
 use App\Models\Social;
 use App\Models\Type;
 use App\Models\Typeachievement;
@@ -256,10 +258,14 @@ return response()->json($data);
     }
     public function index()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $d=Doctors::all();
+
         $doctors = Leader::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('leader.dashboard', compact('doctors','facutlies','departments'));
+        return view('leader.dashboard', compact('doctors','facutlies','departments','mash','f','d'));
     }
    //start edit
    public function editdoc(Leader $doctor)
@@ -365,9 +371,9 @@ return response()->json($data);
         $data->save();
         return redirect('/dashboard25');
     }
-    public function destroy(Leader $doctor)
+    public function destroy(Leader $leader)
     {
-        $doctor->delete();
+        $leader->delete();
 
         return redirect("/dashboard25");
     }

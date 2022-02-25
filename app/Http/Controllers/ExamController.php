@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Exam;
 use App\Models\Facutly;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class ExamController extends Controller
@@ -55,8 +57,11 @@ class ExamController extends Controller
     public function index()
     {
         $exams = Exam::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
-        return view('exams\exam\dashboard', compact('exams'));
+        return view('exams\exam\dashboard', compact('exams','mash','f','doctors'));
     }
 
 

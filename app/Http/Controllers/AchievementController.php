@@ -163,7 +163,8 @@ $labs=Lab::all();
 
 
         $achievement->save();
-        return redirect('/dashboard4');
+        return redirect()->back();
+
     }
     // start destroy
     public function destroy(achievement $achievement)
@@ -237,7 +238,7 @@ $labs=Lab::all();
         $data->id_doctor = $request->id_doctor;
         $data->id_types = $request->id_types;
         $data->save();
-        return redirect('/dashboard4');
+        return redirect()->back();
     }
 
     public function createachievement(Request $request)
@@ -280,7 +281,7 @@ $labs=Lab::all();
         $data->id_leader = $request->id_leader;
         $data->id_types = $request->id_types;
         $data->save();
-        return redirect('/dashboard4');
+        return redirect('/dashboard25');
     }
 
 
@@ -326,6 +327,6 @@ $labs=Lab::all();
         $data->id_leaderuni = $request->id_leaderuni;
         $data->id_types = $request->id_types;
         $data->save();
-        return redirect('/dashboard4');
+        return redirect('/dashboard25');
     }
 }

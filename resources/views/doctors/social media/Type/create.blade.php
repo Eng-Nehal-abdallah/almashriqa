@@ -28,14 +28,6 @@
             <input type="text" class="form-control" id='name_en' name='name_en'>
           </div>
         </div>
-        <div class="form-group col-md-6">
-            <select name="id_type" id="id_facutly" class="form-select">
-              <option value="">Select type</option>
-              @foreach ($types  as $type )
-              <option value="{{$type['id']}}">{{$type['name_ar']}}</option>
-              @endforeach
-            </select>
-          </div>
 
         <button type="submit" class="btn btn-primary">Sign Up</button>
       </form>

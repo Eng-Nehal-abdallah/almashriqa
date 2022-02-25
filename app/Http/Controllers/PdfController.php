@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Doctors;
+use App\Models\Facutly;
+use App\Models\Mash;
 use App\Models\Pdf;
 use Illuminate\Http\Request;
 
 class PdfController extends Controller
 {
     public function index()
-    {
+    {$mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
+
+
+
         $pdf = Pdf::all();
-        return view('pdf.dashboard', compact('pdf'));
+        return view('pdf.dashboard', compact('pdf','mash','f','doctors'));
     }
     // start destroy
     public function destroy(Pdf $pdf)
@@ -22,10 +30,10 @@ class PdfController extends Controller
     }
 
 
-    public function insert(Pdf $pdf)
+    public function insert()
     {
 
-        return view('pdf.insert', ['pdf' => $pdf]);
+        return view('pdf.create');
     }
     public function create(Request $request)
     {

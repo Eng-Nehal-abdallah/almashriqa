@@ -172,7 +172,7 @@
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-5">
-                    <img src="/imgs/header.png" alt="">
+                    <img src="/{{ $facutly['images'] }}" alt="">
                 </div>
                 <div class="col-md-5 ">
                     <h2>كلمة العميد</h2>
@@ -433,28 +433,28 @@
 
                 <div class="col-md-3">
 
-                    <div class="count">{{ $labs->count() }}</div>
+                    <div class="count">{{ $l->count() }}</div>
                     <br>
                     <p>عدد المختبرات</p>
                 </div>
 
                 <div class="col-md-3">
 
-                    <div class="count">{{ $doctors->count() }}</div>
+                    <div class="count">{{ $doc->count() }}</div>
 
                     <br>
                     <p> الكادر التدريسي</p>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="count">{{ $achieve->count() }}</div>
+                    <div class="count">{{ $ach->count() }}</div>
 
                     <br>
                     <p>عدد الانجازات</p>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="count">{{ $activities->count() }}</div>
+                    <div class="count">{{ $act->count() }}</div>
 
                     <br>
                     <p> عدد الانشطه </p>
@@ -468,9 +468,11 @@
     <!-- End  section 2 -->
 
     <!-- start sectoin 7 -->
+    @if($d->count()>0)
     <section class="section-7 py-4 ">
         <div class="container">
             <div class="row justify-content-around">
+
                 <div class="col-md-5 ">
                     <h2>اقسام الكلية</h2>
                     <p>
@@ -493,15 +495,15 @@
 
                     </div>
                 </div>
+
                 <div class="col-md-5">
-                    <img class="main" src="/{{ $facutly->image }}" alt="">
+                    <img class="main" src="{{ $facutly->image }}" alt="">
                 </div>
             </div>
         </div>
     </section>
     <!-- start seection 6 -->
-
-
+@endif
     <!-- start footer -->
     @extends('layouts.footer-ar')
 

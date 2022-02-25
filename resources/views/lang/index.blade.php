@@ -467,53 +467,16 @@
 
 
             <div class="center">
-
+@foreach($image as $im)
                 <div class="img-content">
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="{{ $im->image }}" alt="">
 
                     <div class="inner">
-                        <a href="#">visit</a>
+                        <a href="/g/{{ $im->id }}/show">visit</a>
                     </div>
 
                 </div>
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
-
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
-
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
+@endforeach
 
 
             </div>

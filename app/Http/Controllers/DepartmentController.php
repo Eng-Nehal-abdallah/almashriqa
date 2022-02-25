@@ -8,6 +8,7 @@ use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Lab;
+use App\Models\Mash;
 use App\Models\Social;
 use App\Models\Studentfirst;
 use Illuminate\Http\Request;
@@ -39,10 +40,15 @@ $departments = Department::all();
     }
     public function index()
     {
-        ;
+
+$mash = Mash::all()->first();
+$f=Facutly::all();
+$doctors=Doctors::all();
+
+
         $departments = Department::all();
         $facutlies = Facutly::all();
-        return view('department/dashboard', compact('departments', 'facutlies'));
+        return view('department.dashboard', compact('departments', 'facutlies','mash','f','doctors'));
     }
 
 

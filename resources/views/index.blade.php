@@ -111,7 +111,7 @@
                         <ul>
                             <li><a href="/facutlylec">جدول المحاضرات الحضورية</a></li>
                             <li><a href="/facutlyexam">جدول الامتحانات الالكترونية</a></li>
-                            <li><a href="/labexamfac">جدول الامتحانات العملي الالكترونية</a></li>
+
                         </ul>
                     </li>
 
@@ -481,52 +481,22 @@
 
             <div class="center">
 
-                <div class="img-content">
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
 
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
 
-                </div>
 
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
+@foreach ($image as $im )
 
 
                 <div class="img-content">
 
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
+                    <img src="{{$im->image }}" alt="">
 
                     <div class="inner">
-                        <a href="#">visit</a>
+                        <a href="/g/{{ $im->id }}/show">visit</a>
                     </div>
                 </div>
 
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
-
-                <div class="img-content">
-
-                    <img src="{{ asset('imgs/header.png') }}" alt="">
-
-                    <div class="inner">
-                        <a href="#">visit</a>
-                    </div>
-                </div>
+                @endforeach
 
 
             </div>

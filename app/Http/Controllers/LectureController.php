@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Lecture;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class LectureController extends Controller
@@ -30,7 +32,11 @@ class LectureController extends Controller
         $lectures = Lecture::all();
 $Facutlies =Facutly::all();
 $departments=Department::all();
-        return view('lecture\dashboard', compact('departments','Facutlies','lectures'));
+$mash = Mash::all()->first();
+$f=Facutly::all();
+$doctors=Doctors::all();
+
+        return view('lecture\dashboard', compact('departments','Facutlies','lectures','mash','f','doctors'));
     }
 
     public function indexp(Facutly $facutly)

@@ -49,13 +49,34 @@
         class="fas fa-map-marker-alt me-2"> الحرم الجامعي</i></a>
                <a href="/dashboard15"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-map-marker-alt me-2">  التقويم الاكاديمي  </i></a>
-               <a href="/dashboard16" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+               <a href="/dashboard16" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-map-marker-alt me-2"> مركز اللغه الانجليزيه </i></a>
                <a href="/dashboard17" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-map-marker-alt me-2"> مجلة الجامعة</i></a>
-               <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+               <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-chart-line me-2"> معدل القبول و الاقساط
  </i></a>
+
+ <a href="/dashboard22"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> وسائط متعددة
+                    </i></a>
+                    <a href="/dashboard25"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  رئيس ومساعدين الجامعة
+                    </i></a>
+                    <a href="/dashboard26"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> عمداء ومعاونين ومقررين الكليات
+                    </i></a>
+                    <a href="/dashboard27"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
+                    </i></a>
+                    <a href="/dashboard28"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  الاليات التسجيل
+                    </i></a>
 
    </div>
   </div>
@@ -83,45 +104,70 @@
        </a>
        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-        <li><a class="dropdown-item" href="#">Logout</a></li>
-       </ul>
-      </li>
-     </ul>
-    </div>
-   </nav>
 
-   <div class=" container-fluid px-4">
-    <div class="row h1 g-3 my-2">
-     <div class="col-md-4">
-      <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
+
+
+   @guest
+
+   @if (Route::has('login'))
+       <li class="nav-item">
+           <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+       </li>
+       {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+   @endif
+@else
+   {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+   <a class="dropdown-item" href="{{ route('logout') }}"
+       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+       {{ __('تسجيل الخروج') }}
+   </a>
+
+   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+       @csrf
+   </form>
+
+
+@endguest
+</ul>
+   </li>
+</ul>
+</div>
+</nav>
+
+<div class=" container-fluid px-4">
+<div class="row h1 g-3 my-2">
+<div class="col-md-4">
+   <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
        <div>
-        <h3 class="fs-2">126</h3>
-        <p class="fs-5">Doctors</p>
+           <h3 class="fs-2">{{ $doctors->count(); }}</h3>
+           <p class="fs-5">Doctors</p>
        </div>
        <i class="fas fa-users fs-1 "></i>
-      </div>
-     </div>
+   </div>
+</div>
 
-     <div class="col-md-4">
-      <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
+<div class="col-md-4">
+   <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
        <div>
-        <h3 class="fs-2">4920</h3>
-        <p class="fs-5">Students</p>
+           <h3 class="fs-2">{{ $mash->students }}</h3>
+           <p class="fs-5">Students</p>
        </div>
        <i class="fas fa-user-graduate fs-1 "></i>
-      </div>
-     </div>
+   </div>
+</div>
 
-     <div class="col-md-4">
-      <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
+<div class="col-md-4">
+   <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
        <div>
-        <h3 class="fs-2">3899</h3>
-        <p class="fs-5">Colleage</p>
+           <h3 class="fs-2">{{ $f->count(); }}</h3>
+           <p class="fs-5">Colleage</p>
        </div>
        <i class="fas fa-university fs-1 "></i>
-      </div>
-     </div>
-    </div>
+   </div>
+</div>
+
+
+</div>
 
     {{-- </div>
     <!-- start seection 2 -->
@@ -171,7 +217,7 @@
         <thead>
          <tr>
           <th scope="col">#</th>
-          <th scope="col">Image</th>
+
 
           <th scope="col">Name ar</th>
           <th scope="col">Name en</th>
@@ -185,7 +231,7 @@
             @foreach ($centers as $data )
          <tr>
           <th scope="row">#</th>
-          <td><img src="{{ $data->image }}" width="100" height="100" alt="image"></td>
+
 
           <td>{{$data->name_ar }}</td>
           <td>{{$data->name_en }}</td>

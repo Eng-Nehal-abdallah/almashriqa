@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Leaderuni;
+use App\Models\Mash;
 use App\Models\Social;
 use App\Models\Type;
 use App\Models\Typeachievement;
@@ -318,7 +319,12 @@ return response()->json($data);
         $doctors = Doctors::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboard', compact('doctors','facutlies','departments'));
+
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+
+
+        return view('doctors\dashboard', compact('doctors','facutlies','departments','mash','f'));
     }
    //start edit
    public function editdoc(Doctors $doctor)
@@ -353,75 +359,61 @@ return response()->json($data);
         return view('lang\profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
     }
     // start update
-    public function update(Request $request, Doctors $data)
+    public function update(Request $request,Doctors $dat)
     {
-        $input = $request->all();
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-            $data->update($input);
-            $data['image'] = $destinationPath . "$profileImage";
-            $data->save();
-        } else {
-            unset($input['image']);
-        }
 
-        $data->name_ar = $request->name_ar;
-        $data->phone = $request->phone;
+        $dat->name_ar = $request->name_ar;
+        $dat->phone = $request->phone;
 
-        $data->name_en = $request->name_en;
-        $data->grade_en = $request->grade_en;
-        $data->	grade_ar = $request->grade_ar;
-        $data->details_ar = $request->details_ar;
+        $dat->name_en = $request->name_en;
+        $dat->grade_en = $request->grade_en;
+        $dat->	grade_ar = $request->grade_ar;
+        $dat->details_ar = $request->details_ar;
 
-        $data->date_hirement=$request->date_hirement;
-        $data->details_en = $request->details_en;
-        $data->university_certified_en = $request->	university_certified_en;
-        $data->birthday = $request->birthday;
-        $data->university_certified_ar = $request->university_certified_ar;
-        $data->facutly_certified_ar = $request->facutly_certified_ar;
-        $data->facutly_certified_en = $request->facutly_certified_en;
-        $data->certified_en = $request->certified_en;
-        $data->certified_ar = $request->certified_ar;
-        $data->gender_en = $request->gender_en;
-        $data->gender_ar  = $request->gender_ar;
-        $data->position_ar = $request->position_ar;
-        $data->posiotion_en = $request->posiotion_en;
-        $data->email = $request->email;
-        $data->details_en = $request->details_en;
-        $data->notes_ar = $request->notes_ar;
-        $data->country_certified_ar = $request->country_certified_ar;
-        $data->date_certified  = $request->date_certified;
-        $data->mag_certified_en = $request->mag_certified_en;
-        $data->mag_certified_ar = $request->mag_certified_ar;
-        $data->bac_certified_en = $request->bac_certified_en;
-        $data->bac_certified_ar = $request->bac_certified_ar;
-        $data->country_certified_en = $request->country_certified_en;
-        $data->public_specific_ar = $request->public_specific_ar;
-        $data->public_specific_en = $request->public_specific_en;
-        $data->private_specific_ar  = $request->private_specific_ar;
-        $data->private_specific_en = $request->private_specific_en;
-        $data->type_hirement_ar = $request->type_hirement_ar;
-        $data->type_hirement_en = $request->type_hirement_en;
-        $data->shift_ar = $request->shift_ar;
-        $data->shift_en = $request->shift_en;
-        $data->Nationality_ar = $request->Nationality_ar;
-        $data->	Nationality_en  = $request->Nationality_en;
-        $data->country_ar = $request->country_ar;
-        $data->country_en = $request->country_en;
-        $data->comrades = $request->comrades;
-        $data->mother_name_ar = $request->mother_name_ar;
-        $data->local = $request->local;
-        $data->darcode = $request->darcode;
-        $data->mother_name_en = $request->mother_name_en;
+        $dat->date_hirement=$request->date_hirement;
+        $dat->details_en = $request->details_en;
+        $dat->university_certified_en = $request->	university_certified_en;
+        $dat->birthday = $request->birthday;
+        $dat->university_certified_ar = $request->university_certified_ar;
+        $dat->facutly_certified_ar = $request->facutly_certified_ar;
+        $dat->facutly_certified_en = $request->facutly_certified_en;
+        $dat->certified_en = $request->certified_en;
+        $dat->certified_ar = $request->certified_ar;
 
-        $data->notes_en = $request->notes_en;
-        $data->details_ar = $request->details_ar;
+        $dat->position_ar = $request->position_ar;
+        $dat->posiotion_en = $request->posiotion_en;
+        $dat->email = $request->email;
+        $dat->details_en = $request->details_en;
+        $dat->notes_ar = $request->notes_ar;
+        $dat->country_certified_ar = $request->country_certified_ar;
+        $dat->date_certified  = $request->date_certified;
+        $dat->mag_certified_en = $request->mag_certified_en;
+        $dat->mag_certified_ar = $request->mag_certified_ar;
+        $dat->bac_certified_en = $request->bac_certified_en;
+        $dat->bac_certified_ar = $request->bac_certified_ar;
+        $dat->country_certified_en = $request->country_certified_en;
+        $dat->public_specific_ar = $request->public_specific_ar;
+        $dat->public_specific_en = $request->public_specific_en;
+        $dat->private_specific_ar  = $request->private_specific_ar;
+        $dat->private_specific_en = $request->private_specific_en;
+        $dat->type_hirement_ar = $request->type_hirement_ar;
+        $dat->type_hirement_en = $request->type_hirement_en;
+        $dat->shift_ar = $request->shift_ar;
+        $dat->shift_en = $request->shift_en;
 
-        $data->save();
+        $dat->country_ar = $request->country_ar;
+        $dat->country_en = $request->country_en;
+        $dat->comrades = $request->comrades;
+        $dat->mother_name_ar = $request->mother_name_ar;
+        $dat->local = $request->local;
+        $dat->darcode = $request->darcode;
+        $dat->mother_name_en = $request->mother_name_en;
+
+        $dat->notes_en = $request->notes_en;
+        $dat->details_ar = $request->details_ar;
+
+        $dat->update();
         return redirect('/dashboard4');
     }
     public function destroy(Doctors $doctor)

@@ -15,8 +15,9 @@
         <div class="row justify-content-around">
     <form action="/create_socialmedialeader"  enctype="multipart/form-data"  method="POST" >
         @csrf
-        <input type="text"  class="form-control" name='id_leader' id='id_leader' value=" {{ $leader->id  }}">
+
         <div class="form-row">
+            <input type="text"  class="form-control" hidden name='id_leader' id='id_leader' value=" {{ $leader->id  }}">
           <div class="form-group col-md-6">
             <label for="inputEmail4">name_ar</label>
             <input type="text" class="form-control" name='name_ar' id='name_ar' >

@@ -12,10 +12,10 @@
 <body>
 
     <div class="container">
-        <h2>Laravel 8 Country State City Dropdown</h2>
-        <form action="/doctor/{{ $doctor->id }}"  enctype="multipart/form-data" method="POST">
+        <h2>Add doctors</h2>
+        <form action="/updatedoctor/{{ $doctor->id }}"  enctype="multipart/form-data" method="POST">
             @csrf
-            <img src="/{{ $doctor->image }}" width="100" height="100" alt="image">
+            @method('PUT')
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">الاسم</label>
@@ -26,15 +26,13 @@
                     <input type="text" class="form-control" name='name_en' id='name' value="{{ $doctor->name_en }}">
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control" id='image' name='image'>
-                </div>
 
-
-
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id='email' name='email' value="{{ $doctor->email }}">
             </div>
+
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="university_certified_ar">الجامعه الحاصل منها علي الشهاده</label>
@@ -1263,8 +1261,30 @@
         </div>
 
 
+        <div class="form-group col-md-6">
+            <label for="shift_ar">الفترة</label>
+            <select name="shift_ar" id="shift_ar" class="form-select">
+                <option value="0">Select shift_ar</option>
 
-            <input style="float: left;"  type="submit" class="btn m-1 btn-primary"  />
+
+                <option value="صباحي">صباحي</option>
+                <option value="مسائي">مسائي</option>
+
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="shift_en">Shift en</label>
+            <select name="shift_en" id="shift_en" class="form-select">
+                <option value="">Select shift_en</option>
+
+
+                <option value="morning">Morning</option>
+                <option value="night">Night</option>
+
+            </select>
+        </div>
+
+            <input style="float: left;"  type="submit" value="update" class="btn m-1 btn-primary"  />
      </form>
 
 

@@ -73,6 +73,11 @@
                         class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
                     </i></a>
 
+                    <a href="/dashboard28"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-map-marker-alt me-2">  الاليات التسجيل
+                    </i></a>
+
 
    </div>
   </div>

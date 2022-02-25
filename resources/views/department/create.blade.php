@@ -43,6 +43,7 @@
             <input type="color"  name='color'  id='color'>
         </div>
         <div class="form-group col-md-6">
+            <label for="link">faculty</label>
             <select name="id_facutly" id="id_facutly" class="form-select">
               <option value="">Select University</option>
               @foreach ($facutlies  as $fac )

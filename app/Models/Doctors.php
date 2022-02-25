@@ -24,6 +24,6 @@ class Doctors extends Model
        'type_hirement_en','type_hirement_ar','private_specific_en','private_specific_ar','public_specific_en','public_specific_ar',
        'country_certified_en','bac_certified_ar','bac_certified_en','mag_certified_ar','mag_certified_en','date_certified','country_certified_ar',
        'notes_ar','details_en','email','posiotion_en','position_ar','gender_ar','gender_en','certified_ar','certified_en','facutly_certified_en',
-       'facutly_certified_ar','university_certified_ar','birthday','university_certified_en','details_en','id_facutly','details_ar','date_hirement',
+       'facutly_certified_ar','university_certified_ar','birthday','university_certified_en','details_en','id_facutly','details_ar','date_hirement','grade_en'
    ];
 }

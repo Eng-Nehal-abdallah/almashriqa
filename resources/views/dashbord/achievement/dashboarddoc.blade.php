@@ -141,6 +141,7 @@
           <th scope="col">image</th>
           <th scope="col">Type</th>
           <th scope="col">Edit</th>
+          <th scope="col">Add image</th>
           <th scope="col">Delete</th>
 
          </tr>
@@ -171,7 +172,7 @@
 
           <td><a class="btn shadow-sm btn-dark" href="/achievement/{{ $data->id }}/edit">edit</a></td>
 
-
+          <td><a class="btn shadow-sm btn-dark" href="/dashboard29/{{ $data->id }}">add image</a></td>
          <br>
 
 <td>

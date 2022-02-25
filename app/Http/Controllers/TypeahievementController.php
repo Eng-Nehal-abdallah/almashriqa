@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctors;
+use App\Models\Facutly;
+use App\Models\Mash;
 use App\Models\Typeachievement;
 use Illuminate\Http\Request;
 
@@ -10,7 +13,10 @@ class TypeahievementController extends Controller
     public function index()
     {$types = Typeachievement::all();
 
-        return view('achievement\Type\dashboard',compact('types'));
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
+        return view('achievement\Type\dashboard',compact('types','mash','f','doctors'));
     }
 
 

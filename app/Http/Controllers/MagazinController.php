@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Magazin;
+use App\Models\Mash;
+use App\Models\Pdf;
 use Illuminate\Http\Request;
 
 class MagazinController extends Controller
@@ -12,23 +15,26 @@ class MagazinController extends Controller
     public function index2()
     {
         $magazins = Magazin::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
-        return view('magazin\dashboard', compact('magazins'));
+        return view('magazin\dashboard', compact('magazins','mash','f','doctors'));
     }
     public function index()
-    {
+    {$pdf=Pdf::all();
         $magazins = Magazin::all();
   $faculties  = Facutly::all();
         $departments = Department::all();
-        return view('magazin', compact('magazins','faculties','departments'));
+        return view('magazin', compact('magazins','faculties','departments','pdf'));
     }
 
     public function indexen()
     { $faculties = Facutly::all();
         $departments = Department::all();
         $magazins = Magazin::all();
-
-        return view('lang\magazin', compact('magazins','faculties','departments'));
+        $pdf=Pdf::all();
+        return view('lang\magazin', compact('magazins','faculties','departments','pdf'));
     }
     // start destroy
     public function destroy(Magazin $magazin)

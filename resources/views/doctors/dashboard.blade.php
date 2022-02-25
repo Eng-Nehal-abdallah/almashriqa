@@ -25,7 +25,7 @@
                Faculty</a>
                <a href="/dashboard3"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                   class="fas fa-tachometer-alt me-2"></i>Department</a>
-              <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              <a href="/dashboard4" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-chart-line me-2"></i>Doctors</a>
 
               <a href="/dashboard5" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -57,6 +57,27 @@
                      <a href="/dashboard18" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                       class="fas fa-map-marker-alt me-2"> معدل القبول و الاقساط
        </i></a>
+       <a href="/dashboard22"
+       class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-map-marker-alt me-2"> وسائط متعددة
+       </i></a>
+       <a href="/dashboard25"
+       class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-map-marker-alt me-2">  رئيس ومساعدين الجامعة
+       </i></a>
+       <a href="/dashboard26"
+       class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-map-marker-alt me-2"> عمداء ومعاونين ومقررين الكليات
+       </i></a>
+       <a href="/dashboard27"
+       class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-map-marker-alt me-2"> ملفات للمجله pdf
+       </i></a>
+
+       <a href="/dashboard28"
+       class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+           class="fas fa-map-marker-alt me-2">  الاليات التسجيل
+       </i></a>
 
          </div>
         </div>
@@ -85,46 +106,68 @@
        </a>
        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-        <li><a class="dropdown-item" href="#">Logout</a></li>
-       </ul>
-      </li>
-     </ul>
+
+        @guest
+
+        @if (Route::has('login'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+            </li>
+            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+        @endif
+    @else
+        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+        <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            {{ __('تسجيل الخروج') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+
+
+    @endguest
+</ul>
+        </li>
+    </ul>
+</div>
+</nav>
+
+<div class=" container-fluid px-4">
+<div class="row h1 g-3 my-2">
+    <div class="col-md-4">
+        <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
+            <div>
+                <h3 class="fs-2">{{ $doctors->count(); }}</h3>
+                <p class="fs-5">Doctors</p>
+            </div>
+            <i class="fas fa-users fs-1 "></i>
+        </div>
     </div>
-   </nav>
 
-   <div class=" container-fluid px-4">
-    <div class="row h1 g-3 my-2">
-     <div class="col-md-4">
-      <div class="p-3 inner   shadow-sm d-flex justify-content-around align-items-center rounded">
-       <div>
-        <h3 class="fs-2">{{ $doctors->count() }}</h3>
-        <p class="fs-5">Doctors</p>
-       </div>
-       <i class="fas fa-users fs-1 "></i>
-      </div>
-     </div>
-
-     <div class="col-md-4">
-      <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
-       <div>
-        <h3 class="fs-2">4920</h3>
-        <p class="fs-5">Students</p>
-       </div>
-       <i class="fas fa-user-graduate fs-1 "></i>
-      </div>
-     </div>
-
-     <div class="col-md-4">
-      <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
-       <div>
-        <h3 class="fs-2">3899</h3>
-        <p class="fs-5">Colleage</p>
-       </div>
-       <i class="fas fa-university fs-1 "></i>
-      </div>
-     </div>
+    <div class="col-md-4">
+        <div class="p-3 inner2  shadow-sm d-flex justify-content-around align-items-center rounded">
+            <div>
+                <h3 class="fs-2">{{ $mash->students }}</h3>
+                <p class="fs-5">Students</p>
+            </div>
+            <i class="fas fa-user-graduate fs-1 "></i>
+        </div>
     </div>
 
+    <div class="col-md-4">
+        <div class="p-3 inner3  shadow-sm d-flex justify-content-around align-items-center rounded">
+            <div>
+                <h3 class="fs-2">{{ $f->count(); }}</h3>
+                <p class="fs-5">Colleage</p>
+            </div>
+            <i class="fas fa-university fs-1 "></i>
+        </div>
+    </div>
+
+
+</div>
     {{-- </div>
     <!-- start seection 2 -->
     <div class="table-responsive-md">
@@ -240,14 +283,17 @@
          <tr>
           <th scope="row">#</th>
           <td><img src="{{ $data->image }}" width="100" height="100" alt="image"></td>
+          <td>{{$data->name_ar }}</td>
           <td>{{$data->name_en }}</td>
+
           <td>{{$data->phone }}</td>
           <td>{{$data->password}}</td>
           <td>{{ $data->grade_en }}</td>
           <td>{{$data->grade_ar }}</td>
           <td>{{$data->details_ar }}</td>
-          <td>{{$data->date_hirement}}</td>
           <td>{{$data->details_en }}</td>
+          <td>{{$data->date_hirement}}</td>
+
           <td>{{$data->university_certified_en}}</td>
           <td>{{ $data->birthday }}</td>
           <td>{{$data->university_certified_ar}}</td>

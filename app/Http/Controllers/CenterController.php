@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Center;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Mash;
 use Illuminate\Http\Request;
@@ -52,8 +53,11 @@ class CenterController extends Controller
     public function index2()
     {
         $centers = Center::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
-        return view('center\dashboard', compact('centers'));
+        return view('center\dashboard', compact('centers','mash','f','doctors'));
     }
     public function index()
     {

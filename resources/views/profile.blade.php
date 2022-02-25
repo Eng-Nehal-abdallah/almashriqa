@@ -218,7 +218,7 @@
                 </div>
                 <div class="home-img">
                     <div class="img-box inner-shadow">
-                        <img src="{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
+                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
                     </div>
                 </div>
             </div>
@@ -237,7 +237,7 @@
             <div class="row">
                 <div class="about-img">
                     <div class="img-box inner-shadow">
-                        <img src="{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
+                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="profile-pic">
                     </div>
                     <!-- social links start -->
                     <div class="social-links">

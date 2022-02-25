@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\achievement;
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Leaderuni;
+use App\Models\Mash;
 use App\Models\Social;
 use App\Models\Type;
 use App\Models\Typeachievement;
@@ -154,10 +156,14 @@ class LeaderuniController extends Controller
     }
     public function index()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $d=Doctors::all();
+
         $doctors = Leaderuni::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('leaderuni\dashboard', compact('doctors','facutlies','departments'));
+        return view('leaderuni\dashboard', compact('doctors','facutlies','departments','mash','f','d'));
     }
    //start edit
    public function editdoc(Leaderuni $leaderuni)

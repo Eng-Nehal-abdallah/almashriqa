@@ -7,6 +7,7 @@ use App\Models\Activity;
 use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Image;
 use App\Models\Lab;
 use App\Models\Mash;
 use App\Models\Typeachievement;
@@ -25,11 +26,12 @@ class MashController extends Controller
         $types = Typeachievement::all();
         $departments=Department::all();
         $labs=Lab::all();
-        return view('index',  compact('labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
+        $image=Image::all();
+        return view('index',  compact('image','labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
     }
 
     public function indexen()
-    {
+    {$image=Image::all();
         $mash = Mash::all()->first();
         $faculties = Facutly::all();
         $fs = Facutly::all()->random(3);
@@ -39,7 +41,7 @@ class MashController extends Controller
         $types = Typeachievement::all();
         $departments=Department::all();
         $labs=Lab::all();
-        return view('lang\index',  compact('labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
+        return view('lang\index',  compact('image','labs','mash', 'faculties', 'activities','fs','doctors','achievements','types','departments'));
     }
 
     public function about()

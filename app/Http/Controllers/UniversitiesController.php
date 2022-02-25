@@ -43,7 +43,17 @@ class UniversitiesController extends Controller
             unset($input['image']);
         }
 
-
+        if ($images = $request->file('images')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $images->getClientOriginalExtension();
+            $images->move($destinationPath, $profileImage);
+            $input['images'] = "$profileImage";
+            $data->update($input);
+            $data['images']=$destinationPath."$profileImage";
+            $data->save();
+        }else{
+            unset($input['images']);
+        }
         $data->name_ar = $request->name_ar;
         $data->name_en = $request->name_en;
         $data->about_facutly_ar = $request->about_facutly_ar;
@@ -115,7 +125,7 @@ class UniversitiesController extends Controller
         $doctors=Doctors::all();
 
 
-        return view('dashbord\faculty\dashboard', compact('Facutlies','mash','f','doctors'));
+        return view('dashbord.faculty.dashboard', compact('Facutlies','mash','f','doctors'));
 
         // return view('Certifieds');
     }
@@ -141,7 +151,12 @@ class UniversitiesController extends Controller
          $students=Studentfirst::all();
          $achieve=achievement::all();
          $labs=Lab::all();
-        return view('facutly', ['facutly' => $Facutly], compact('labs','students','achieve','faculties','departments','socials','activities','doctors'));
+         $doc = Doctors::all()->where('id_facutly','=',$Facutly->id);
+         $act=Activity::All()->where('id_faculty','=',$Facutly->id);
+         $ach=achievement::all()->where('id_facutly','=',$Facutly->id);
+         $l=Lab::all()->where('id_faculty','=',$Facutly->id);
+         $d = Department::all()->where('id_facutly','=',$Facutly->id);
+        return view('facutly', ['facutly' => $Facutly], compact('doc','act','ach','l','d','labs','students','achieve','faculties','departments','socials','activities','doctors'));
     }
     public function shst(Facutly $Facutly)
     { $doctors = Doctors::all();
@@ -421,6 +436,17 @@ class UniversitiesController extends Controller
             unset($input['image']);
         }
 
+        if ($images = $request->file('images')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $images->getClientOriginalExtension();
+            $images->move($destinationPath, $profileImage);
+            $input['images'] = "$profileImage";
+            $Facutly->update($input);
+            $Facutly['images']=$destinationPath."$profileImage";
+            $Facutly->save();
+        }else{
+            unset($input['images']);
+        }
 
         $Facutly->update([
             'name_ar' => request('name_ar'),

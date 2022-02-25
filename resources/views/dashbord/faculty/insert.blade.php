@@ -39,6 +39,11 @@
                 <input type="file"  accept="image/*" class="custom-file-input" id="image" name="image">
             </div>
             <div class="form-group">
+                <label for="title">صورة العميد</label>
+
+                <input type="file"  accept="image/*" class="custom-file-input" id="images" name="images">
+            </div>
+            <div class="form-group">
                 <label for="title">name_ar</label>
                 <input type="text" class="form-control" id="name_ar" name="name_ar"  />
             </div>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctors;
+use App\Models\Facutly;
+use App\Models\Mash;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -9,8 +12,11 @@ class TypeController extends Controller
 {
     public function index()
     {$types = Type::all();
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
 
-        return view('doctors\social media\Type\dashboard',compact('types'));
+        return view('doctors\social media\Type\dashboard',compact('types','mash','f','doctors'));
     }
 
 
@@ -35,8 +41,6 @@ class TypeController extends Controller
 
 
         $data = new Type();
-
-        $input = $request->all();
 
 
 

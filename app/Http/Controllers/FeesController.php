@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctors;
 use App\Models\Facutly;
 use App\Models\Fees;
+use App\Models\Mash;
 use Illuminate\Http\Request;
 
 class FeesController extends Controller
 {
     public function index2()
     {
+        $mash = Mash::all()->first();
+        $f=Facutly::all();
+        $doctors=Doctors::all();
+
         $fees = Fees::all();
 
-        return view('fees\dashboard', compact('fees'));
+        return view('fees\dashboard', compact('fees','mash','f','doctors'));
     }
     public function index()
     {
