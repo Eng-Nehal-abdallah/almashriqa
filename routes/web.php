@@ -41,6 +41,7 @@ use App\Models\Lecture;
 use App\Models\Mechine;
 use App\Models\Studentfirst;
 use App\Models\University;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Whoops\Run;
 
@@ -1577,4 +1578,11 @@ Route::post('/create_pdf', [PdfController::class, 'create'])->middleware(['auth'
 Route::delete('/pdf/{pdf}', [PdfController::class, 'destroy'])->middleware(['auth','admin']);
     //show page dashboard
     Route::get('/dashboard27', [PdfController::class, 'index'])->middleware(['auth','admin']);
+
+
+
+// auth register
+Route::get('/register' , function(){
+    return redirect()->back();
+});
 

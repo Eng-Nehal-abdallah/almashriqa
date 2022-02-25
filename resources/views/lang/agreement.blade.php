@@ -175,15 +175,14 @@
             <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
         </nav><!-- .navbar -->
 
-        <<<<<<< HEAD </div>
     </div>
-    =======
     </div>
-    >>>>>>> 71619f216168b45fe605703107751a2d6a23e1f9
+
+    </div>
+
 </header><!-- End Header -->
 <!-- end navbar -->
 
-<!-- start section 1 -->
 <!-- start section 1 -->
 <section class="section-1">
     <div class="container">
@@ -209,7 +208,7 @@
     </div>
 </section>
 
-<!-- End section 1 -->
+
 <!-- End section 1 -->
 
 
@@ -244,35 +243,7 @@
 
 
 
-<script>
-    var bool = true;
 
-    $(document).ready(function() {
-        $('#lang').on('click', function() {
-
-            if (bool == true) {
-                $("body").removeAttr("dir", "ltr");
-                $("body").attr("dir", "rtl");
-
-                $('p').removeClass('text-left')
-                $('p').addClass('text-right')
-
-                bool = false;
-            } else if (bool == false) {
-
-                $("body").removeAttr("dir");
-                $("body").attr("dir", "ltr");
-
-                $('p').removeClass('text-right')
-                $('p').addClass('text-left')
-
-
-                bool = true;
-            }
-
-        })
-    })
-</script>
 
 </body>
 
