@@ -131,7 +131,7 @@ class UniversitiesController extends Controller
     }
 
     public function shen(Facutly $Facutly)
-    { $doctors = Doctors::all();
+    { $doctors = Doctors::all()->where('id_facutly',$Facutly->id)->take(3);
         $socials=Social::all();
         $activities=Activity::All();
         $departments = Department::all();
@@ -148,7 +148,7 @@ class UniversitiesController extends Controller
         return view('lang\facutly', ['facutly' => $Facutly], compact('doc','act','ach','l','d','labs','students','achievements','faculties','departments','socials','activities','doctors'));
     }
     public function sh(Facutly $Facutly)
-    { $doctors = Doctors::all();
+    { $doctors = Doctors::all()->where('id_facutly',$Facutly->id)->take(3);
         $socials=Social::all();
         $activities=Activity::All();
         $departments = Department::all();
