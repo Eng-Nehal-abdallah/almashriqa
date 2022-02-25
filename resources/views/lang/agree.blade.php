@@ -30,16 +30,15 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                    class="img-fluid"></a>
+            <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
                             class="img-fluid"></a>
                     <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
                         <ul>
@@ -101,7 +100,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -130,12 +129,13 @@
             <div class="row justify-content-around">
                 <div class="col-md-12">
                     <ul>
-                        @foreach($agreements as $m)
-                        <li>
+                        @foreach ($agreements as $m)
+                            <li>
 
 
-                            <i class='bx bx-select-multiple'></i>{{$m->details_en}} </li>
-@endforeach
+                                <i class='bx bx-select-multiple'></i>{{ $m->details_en }}
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>

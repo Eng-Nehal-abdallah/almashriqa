@@ -40,16 +40,15 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                    class="img-fluid"></a>
+            <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
                             class="img-fluid"></a>
                     <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
 
@@ -135,7 +134,7 @@
                                 <ul>
                                     <li><a href="/facutlylecen">Term lecture table</a></li>
                                     <li><a href="/facutlyexamen">Exam Table </a></li>
-                                    <li><a href="/labexamfacen">lab Exam Table </a></li>
+
                                 </ul>
                             </li>
 
@@ -150,103 +149,103 @@
 
                 </div>
             </header>
-     <!-- End Header -->
-    <!-- end navbar -->
+            <!-- End Header -->
+            <!-- end navbar -->
 
 
-    <!-- start light & dark -->
-    <div class="dark-mood ">
-        <i class="fas moon"></i>
-    </div>
-    <!-- start light & dark -->
-
-
-
-    <!-- start section 1 -->
-    <section class="section-1 text-left">
-        @foreach ($admins as $admin)
-            <div class="container">
-                <h2>{{ $admin->en }}</h2>
-                <hr>
-                <p>{{ $admin->details_en }}
-                </p>
-                <div class="alert text-center alert-light" role="alert">
-                    الاقسام الادارية
-                </div>
-                <div class="table-responsive-lg">
-                    {!! html_entity_decode($admin->tablecode) !!}
-                </div>
+            <!-- start light & dark -->
+            <div class="dark-mood ">
+                <i class="fas moon"></i>
             </div>
-        @endforeach
-
-    </section>
+            <!-- start light & dark -->
 
 
 
-    <!-- end section 1 -->
+            <!-- start section 1 -->
+            <section class="section-1 text-left">
+                @foreach ($admins as $admin)
+                    <div class="container">
+                        <h2>{{ $admin->en }}</h2>
+                        <hr>
+                        <p>{{ $admin->details_en }}
+                        </p>
+                        <div class="alert text-center alert-light" role="alert">
+                            الاقسام الادارية
+                        </div>
+                        <div class="table-responsive-lg">
+                            {!! html_entity_decode($admin->tablecode) !!}
+                        </div>
+                    </div>
+                @endforeach
+
+            </section>
+
+
+
+            <!-- end section 1 -->
 
 
 
 
 
-    <!--start footer -->
-    @extends('layouts.footer-en')
+            <!--start footer -->
+            @extends('layouts.footer-en')
 
 
-    <!-- start jquery -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <!-- start owl carousel -->
+            <!-- start jquery -->
+            <script src="/js/jquery-3.6.0.min.js"></script>
+            <!-- start owl carousel -->
 
-    <!-- start bootstrap -->
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
-
-
-
-    <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark.js"></script>
-    <script src="/js/nav.js"></script>
+            <!-- start bootstrap -->
+            <script src="/js/jquery.slim.min.js"></script>
+            <script src="/js/popper.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/js/slick.min.js"></script>
 
 
-    <script>
-        var bool = true;
 
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
-
-                    $('p').removeClass('text-left')
-                    $('p').addClass('text-right')
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
+            <!-- start section -->
+            <script src="/js/main.js"></script>
+            <script src="/js/dark.js"></script>
+            <script src="/js/nav.js"></script>
 
 
-                    bool = false;
-                } else if (bool == false) {
+            <script>
+                var bool = true;
 
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
+                $(document).ready(function() {
+                    $('#lang').on('click', function() {
 
-                    $('p').removeClass('text-right')
-                    $('p').addClass('text-left')
+                        if (bool == true) {
+                            $("body").removeAttr("dir", "ltr");
+                            $("body").attr("dir", "rtl");
 
-                    $('.section-1').removeClass('text-right')
-                    $('.section-1').addClass('text-left')
+                            $('p').removeClass('text-left')
+                            $('p').addClass('text-right')
+
+                            $('.section-1').removeClass('text-left')
+                            $('.section-1').addClass('text-right')
 
 
-                    bool = true;
-                }
+                            bool = false;
+                        } else if (bool == false) {
 
-            })
-        })
-    </script>
+                            $("body").removeAttr("dir");
+                            $("body").attr("dir", "ltr");
+
+                            $('p').removeClass('text-right')
+                            $('p').addClass('text-left')
+
+                            $('.section-1').removeClass('text-right')
+                            $('.section-1').addClass('text-left')
+
+
+                            bool = true;
+                        }
+
+                    })
+                })
+            </script>
 
 
 </body>

@@ -41,6 +41,7 @@ use App\Models\Lecture;
 use App\Models\Mechine;
 use App\Models\Studentfirst;
 use App\Models\University;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Whoops\Run;
 
@@ -1586,6 +1587,7 @@ Route::delete('/pdf/{pdf}', [PdfController::class, 'destroy'])->middleware(['aut
     //show page dashboard
     Route::get('/dashboard27', [PdfController::class, 'index'])->middleware(['auth','admin']);
 
+<<<<<<< HEAD
 //show page create doctor agreement
 Route::get('mechineinsert', [MechineController::class, 'insert'])->middleware(['auth','admin']);
 //add agreement
@@ -1624,3 +1626,12 @@ Route::delete('/mechine/{mechine}', [MechineController::class, 'destroy'])->midd
 
       //destroy agreementagreement
       Route::delete('/achievement1/{achievement}', [ImagesController::class, 'destroy'])->middleware(['auth','admin']);
+=======
+
+
+// auth register
+Route::get('/register' , function(){
+    return redirect()->back();
+});
+
+>>>>>>> refs/remotes/origin/master

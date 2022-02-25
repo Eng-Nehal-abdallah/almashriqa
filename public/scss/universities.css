@@ -87,7 +87,7 @@ img {
           transform: translateY(-50%);
   text-align: center;
   color: azure;
-  z-index: 100;
+  z-index: 1;
 }
 
 .header .content h1 {
@@ -462,6 +462,25 @@ section.section-5.dark {
   section.section-3 button,
   section.section-5 button {
     display: none !important;
+  }
+  .slick-prev,
+  .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    display: none;
   }
 }
 

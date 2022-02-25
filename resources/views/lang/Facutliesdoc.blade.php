@@ -39,19 +39,19 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                class="img-fluid"></a>
+            <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center justify-content-between">
 
-                    <a href="index.html" class="logo"><img src="./icons/Untitled-1.png" alt=""
+                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
                             class="img-fluid"></a>
                     <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
                     <nav id="navbar" class="navbar">
-                        <ul><li><a href="/login"> login</a></li>
+                        <ul>
+                            <li><a href="/login"> login</a></li>
                         </ul>
                         <ul>
                             <li class="dropdown"><a href="/en"><span>Home</span> <i
@@ -107,13 +107,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="/facutlylecen">Term lecture table</a></li>
-                            <li><a href="/facutlyexamen">Exam Table </a></li>
-                            <li><a href="/labexamfacen">lab Exam Table </a></li>
-                        </ul>
-                    </li>
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/facutlylecen">Term lecture table</a></li>
+                                    <li><a href="/facutlyexamen">Exam Table </a></li>
+
+                                </ul>
+                            </li>
 
                             <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                             <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
@@ -148,9 +148,7 @@
             </div>
             <div class="row">
                 @foreach ($Facutlies as $Facutly)
-
-
-                    <div class="col-md-6 col-sm-6 col-11" >
+                    <div class="col-md-6 col-sm-6 col-11">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4 img-content">
@@ -172,22 +170,22 @@
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
 
-                                                    <div class="dropdown-menu">
-                                                        @foreach ($departments as $department)
-                                                        @if ($department->id_facutly == $Facutly->id)
+                                            <div class="dropdown-menu">
+                                                @foreach ($departments as $department)
+                                                    @if ($department->id_facutly == $Facutly->id)
                                                         <a class="dropdown-item"
                                                             href="/departcarddocen/{{ $department->id }}/show">{{ $department->name_en }}</a>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </section>

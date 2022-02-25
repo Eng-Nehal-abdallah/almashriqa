@@ -26,10 +26,9 @@
     <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                    class="img-fluid"></a>
+            <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
             <!-- Uncomment below if you prefer to use text as a logo -->
-            <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
 
@@ -76,7 +75,7 @@
                     <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/agreements">الية التسجيل</a></li>
+                            <li><a href="/machiene">الية التسجيل</a></li>
                             <li><a href="/accept">شروط القبول</a></li>
                             <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
 
@@ -159,27 +158,7 @@
     </div>
 
     <!-- end after head -->
-    @guest
 
-        @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-        @endif
-    @else
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
-                {{ Auth::user()->id }}
-            </a>
-
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-            </div>
-        </li>
-
-    @endguest
 
     <!-- start light & dark -->
     <div class="dark-mood ">
