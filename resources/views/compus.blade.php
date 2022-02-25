@@ -31,8 +31,7 @@
     <header id="header" dir="rtl" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo"><img src="/icons/Untitled-1.png" alt=""
-                    class="img-fluid"></a>
+            <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
             <!-- Uncomment below if you prefer to use text as a logo -->
             <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
