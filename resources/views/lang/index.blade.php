@@ -86,7 +86,7 @@
                             <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/agreementsen">LogIN Machine </a></li>
+                                    <li><a href="/agreementsen">Registration mechanism</a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
@@ -466,16 +466,16 @@
 
 
             <div class="center">
-@foreach($image as $im)
-                <div class="img-content">
-                    <img src="{{ $im->image }}" alt="">
+                @foreach ($image as $im)
+                    <div class="img-content">
+                        <img src="{{ $im->image }}" alt="">
 
-                    <div class="inner">
-                        <a href="/gen/{{ $im->id }}/show">visit</a>
+                        <div class="inner">
+                            <a href="/gen/{{ $im->id }}/show">visit</a>
+                        </div>
+
                     </div>
-
-                </div>
-@endforeach
+                @endforeach
 
 
             </div>

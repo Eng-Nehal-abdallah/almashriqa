@@ -89,7 +89,7 @@
                             <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/agreementsen">LogIN Machine </a></li>
+                                    <li><a href="/agreementsen">Registration mechanism </a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
@@ -172,22 +172,22 @@
 
             </div>
 
-        </div>
+            </div>
         </section>
     @endforeach
     @foreach ($pdf as $pdf)
-    <!-- start section 1 -->
-    <section class="section-1">
-        <div class="container">
-            <h2>مجلة الجامعة</h2>
-            <hr>
+        <!-- start section 1 -->
+        <section class="section-1">
+            <div class="container">
+                <h2>مجلة الجامعة</h2>
+                <hr>
 
-            <a href="{{ $pdf->pdf }}">{{ $pdf->name_en }}</a>
+                <a href="{{ $pdf->pdf }}">{{ $pdf->name_en }}</a>
 
 
-        </div>
-    </section>
-@endforeach
+            </div>
+        </section>
+    @endforeach
     <!-- end section 1 -->
 
 

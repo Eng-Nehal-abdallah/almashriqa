@@ -95,7 +95,7 @@
                             <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/agreementsen">LogIN Machine </a></li>
+                                    <li><a href="/agreementsen">Registration mechanism</a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
@@ -155,11 +155,9 @@
         <div class="container">
             <div class="row justify-content-around">
                 @foreach ($images as $image)
-
-
-                <div class="col-md-4 rouded">
-                    <img src="{{$image->image }}" alt="">
-                </div>
+                    <div class="col-md-4 rouded">
+                        <img src="{{ $image->image }}" alt="">
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -169,15 +167,13 @@
         <div class="container">
             <div class="row justify-content-around">
                 @foreach ($video as $video)
-
-
-                <div class="col-md-4 rouded">
-                    <video width="320" height="240" controls>
-                        <source src="{{ $video->video }}" type="video/mp4">
-                        <source src="{{ $video->video }}" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-                </div>
+                    <div class="col-md-4 rouded">
+                        <video width="320" height="240" controls>
+                            <source src="{{ $video->video }}" type="video/mp4">
+                            <source src="{{ $video->video }}" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 @endforeach
             </div>
         </div>

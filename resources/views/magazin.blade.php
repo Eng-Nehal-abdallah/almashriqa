@@ -82,7 +82,7 @@
                     <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/agreements">الية التسجيل</a></li>
+                            <li><a href="/mechine">الية التسجيل</a></li>
                             <li><a href="/accept">شروط القبول</a></li>
                             <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
 
@@ -163,18 +163,18 @@
     @endforeach
 
     @foreach ($pdf as $pdf)
-    <!-- start section 1 -->
-    <section class="section-1">
-        <div class="container">
-            <h2>مجلة الجامعة</h2>
-            <hr>
+        <!-- start section 1 -->
+        <section class="section-1">
+            <div class="container">
+                <h2>مجلة الجامعة</h2>
+                <hr>
 
-            <a href="{{ $pdf->pdf }}">{{ $pdf->name_ar }}</a>
+                <a href="{{ $pdf->pdf }}">{{ $pdf->name_ar }}</a>
 
 
-        </div>
-    </section>
-@endforeach
+            </div>
+        </section>
+    @endforeach
 
 
     <!-- end section 1 -->
