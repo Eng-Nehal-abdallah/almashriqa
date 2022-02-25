@@ -152,7 +152,10 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-2">
         <div class="container">
-            <h1 class="text-center my-5">عميد الكلية </h1>
+            <div class="alert alert-light">
+                <h1 class="text-center">عميد الكلية </h1>
+
+            </div>
             <div class="row text-right">
                 @foreach ($leaders as $leader)
                     @if ($leader->id_facutly == $facutly->id)
@@ -182,6 +185,28 @@
                     @endif
                 @endforeach
 
+<<<<<<< HEAD
+                <div class="alert alert-light">
+                    <h2 class="text-center my-5">الكادر التدريسي للكلية </h2>
+
+                </div>
+
+                <div class="row text-right">
+
+                    @foreach ($doctors as $doc)
+                        @if ($doc->id_facutly == $facutly->id)
+                            <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
+                                        <div class="social">
+                                            @foreach ($types as $type)
+                                                @foreach ($socials as $social)
+                                                    @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                                                        <a href="$social->link">{{ $type->name_ar }}</a>
+                                                    @endif
+                                                @endforeach
+=======
 
 
             <h1 class="text-center my-5">الكادر التدريسي للكلية </h1>
@@ -200,25 +225,25 @@
                                                 @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
                                                     <a href="$social->link">{{ $type->name_ar }}</a>
                                                 @endif
+>>>>>>> 14d1b433ccbf7f075057e0e26507f577c894e96f
                                             @endforeach
-                                        @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>{{ $doc->name_ar }}</h4>
+                                        <span>{{ $doc->private_specific_ar }}/{{ $doc->public_specific_ar }}</span>
+                                        <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
                                     </div>
                                 </div>
-                                <div class="member-info">
-                                    <h4>{{ $doc->name_ar }}</h4>
-                                    <span>{{ $doc->private_specific_ar }}/{{ $doc->public_specific_ar }}</span>
-                                    <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                                </div>
                             </div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
 
 
+
+                </div>
 
             </div>
-
-        </div>
     </section><!-- End Team Section -->
 
 

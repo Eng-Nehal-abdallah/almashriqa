@@ -6,6 +6,8 @@ $(document).ready(function () {
         $('body').toggleClass('dark');
         $('.section-1').toggleClass('dark');
         $('.section-2').toggleClass('dark');
+        $('table').toggleClass('dark');
+
 
         $('.section-3').toggleClass('dark');
         $('.section-4').toggleClass('dark');

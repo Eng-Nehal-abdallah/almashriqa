@@ -1360,18 +1360,7 @@ Route::delete('/students/{student}', [StudentfirstController::class, 'destroy'])
 //show page dashboard
 Route::get('/dashboard20/{facutly}', [StudentfirstController::class, 'index'])->middleware(['auth', 'facutly'],['auth','admin']);
 
-// //destroy department
-// Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 
-
-
-// //add doctors
-// Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth', 'facutly'],['auth','admin']);
-// //edit department
-// Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
-// //update code after head
-// Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
-//dashboard doctor
 Route::get('/dashboard4/{facutly}', [DoctorsController::class, 'indexp'])->middleware(['auth', 'facutly'],['auth','admin']);
 
 Route::group(['middleware' => ['auth', 'facutly']], function () {
@@ -1504,9 +1493,6 @@ Route::get('/gen/{image}/show', [ImageController::class, 'indexshowen']);
     Route::delete('/video/{video}', [VideoController::class, 'destroy'])->middleware(['auth','admin']);
     //show page dashboard
     Route::get('/dashboard24/{image}', [VideoController::class, 'index'])->middleware(['auth','admin']);
-
-
-
 
     //show page dashboard
 Route::get('/dashboard25', [LeaderController::class, 'index'])->middleware(['auth', 'admin'],['auth','doctor']);

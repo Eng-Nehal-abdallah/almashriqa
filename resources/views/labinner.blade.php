@@ -140,15 +140,47 @@
     <!-- start light & dark -->
 
 
+    <style>
+        img {
+            width: 100%;
+            height: 300px !important;
+        }
+
+    </style>
 
     <!-- start section 1 -->
-    <section class="section-1">
+    <section class="section-1 text-right">
         <div class="container">
 
             <div class="row">
-                <div class="col-md-5">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
+                <div class="col-md-5">
+
+                    <div class="alert text-center alert-light" role="alert">
+                        {{ $lab->name_ar }}
+                        <br>
+                    </div>
+
+
+                    {{ $lab->details_ar }}
+
+
+                </div>
+
+                <div class="col-md-5">
+
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/{{ $lab->image }}" />
+
+                            </div>
+                            <div class="carousel-item">
+
+                                <img src="/{{ $lab->images }}" />
+                            </div>
+
+                        </div>
                         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
                             data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -160,25 +192,11 @@
                             <span class="sr-only">Next</span>
                         </button>
                     </div>
-                </div>
-                <div class="col-md-5">
 
-                    <div class="alert text-center alert-light" role="alert">
-                        {{ $lab->name_ar }}
-                        <br>
-                        {{ $lab->details_ar }}
-                        <div class="table-responsive-lg">
-                            <img src="/{{ $lab->image }}" />
-                            <img src="/{{ $lab->images }}" />
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- end section 1 -->
 

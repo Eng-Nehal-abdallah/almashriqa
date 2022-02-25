@@ -148,8 +148,7 @@
     <!-- start haeder -->
     <div class="header">
         <div class="caption">
-            <h1 class="heading">جامعة المشرق   </h1>
-            <!-- <h5>University</h5> -->
+            <h1 class="heading">ستراتيجية الجامعة</h1>
         </div>
 
         <div class="overlay"></div>
@@ -161,7 +160,7 @@
 
 
     <!-- start section 1 -->
-    <section class="section-1 text-right" dir="rtl">
+    <section class="section-1 text-right my-5" dir="rtl">
 
         <div class="container">
             <div class="head">
@@ -170,16 +169,16 @@
             </div>
             <div class="row justify-content-around">
 
-
-
-                <div class="col-md-12">
+                <div class="col-md-12 my-5">
                     <div class="caption">
-
-                        <h1 class="heading">    استراتيجه جامعة المشرق   </h1>
-                        <p>{{$mash->strategy_ar}}</p>
+                        <div class="alert alert-light">
+                            <h1> استراتيجه جامعة المشرق </h1>
+                        </div>
+                        <p>{{ $mash->strategy_ar }}</p>
 
                     </div>
                 </div>
+
             </div>
         </div>
 

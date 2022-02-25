@@ -160,7 +160,7 @@
     <!-- start haeder -->
     <div class="header ">
         <div class="caption">
-            <h1 class="heading">AlMashriq University  </h1>
+            <h1 class="heading"> University Strategy</h1>
             <!-- <h5>University</h5> -->
         </div>
 
@@ -181,16 +181,15 @@
 
             </div>
             <div class="row justify-content-around">
-                <!--
-    <div class="col-md-5">
-     <img src="/imgs/header.png" alt="">
-    </div> -->
 
                 <div class="col-md-12">
                     <div class="caption">
 
-                        <h1 class="heading">Almashriq University strategy</h1>
-                        <p>{{$mash->strategy_en}}</p>
+
+                        <div class="alert alert-light">
+                            <h1 class="heading">Almashriq University strategy</h1>
+                        </div>
+                        <p>{{ $mash->strategy_en }}</p>
 
                     </div>
                 </div>

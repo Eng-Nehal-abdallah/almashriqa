@@ -33,10 +33,6 @@
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
-
-            <!-- Uncomment below if you prefer to use text as a logo -->
-            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
-
             <nav id="navbar" class="navbar">
 
                 <ul>
@@ -138,65 +134,65 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-<!-- end navbar -->
+    <!-- end navbar -->
 
-<!-- start section 1 -->
-<section class="section-1">
-    <div class="container">
-        <br>
-      <h1 style="text-align: center">Agreements</h1>
-      <br>
-        <div class="row justify-content-around">
-            @foreach ($agreements as $ag)
+    <!-- start section 1 -->
+    <section class="section-1">
+        <div class="container">
+            <div class="alert text-center alert-light">
+                <h3><i class="fas fa-handshake"></i>Agreenments</h3>
+            </div>
+            <div class="row justify-content-around">
+                @foreach ($agreements as $ag)
+                    <div class="col-md-5">
+                        <img class="rounded" src="{{ $ag->image }}" alt="">
+                        <i class="fas fa-handshake"></i>
+                        <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
+                        <p>{{ $ag->abstract_en }}</p>
+                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
+                        <a href="/agreementsen/{{ $ag->id }}/show" class="btn btn-secondary">More</a>
+                    </div>
+                @endforeach
+
                 <div class="col-md-5">
-                    <img class="rounded" src="{{ $ag->image }}" alt="">
-                    <i class="fas fa-handshake"></i>
-                    <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
-                    <p>{{ $ag->abstract_en }}</p>
-                    {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
-                    <a href="/agreementsen/{{ $ag->id }}/show" class="btn btn-secondary">More</a>
+
                 </div>
-            @endforeach
-
-            <div class="col-md-5">
-
             </div>
         </div>
+    </section>
+
+
+    <!-- End section 1 -->
+
+
+    <!-- start light & dark -->
+    <div class="dark-mood ">
+        <i class="fas moon"></i>
     </div>
-</section>
+    <!-- start light & dark -->
+    <!-- starting section 1 -->
+
+    <!-- end section 1 -->
+
+    <!--start footer -->
+
+    @extends('layouts.footer-en')
 
 
-<!-- End section 1 -->
+    <!-- start jquery -->
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <!-- start owl carousel -->
 
+    <!-- start bootstrap -->
+    <script src="/js/jquery.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
 
-<!-- start light & dark -->
-<div class="dark-mood ">
-    <i class="fas moon"></i>
-</div>
-<!-- start light & dark -->
-<!-- starting section 1 -->
-
-<!-- end section 1 -->
-
-<!--start footer -->
-
-@extends('layouts.footer-en')
-
-
-<!-- start jquery -->
-<script src="/js/jquery-3.6.0.min.js"></script>
-<!-- start owl carousel -->
-
-<!-- start bootstrap -->
-<script src="/js/jquery.slim.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/slick.min.js"></script>
-
-<script src="/js/main.js"></script>
-<script src="/js/dark.js"></script>
-<script src="/js/lang.js"></script>
-<script src="/js/nav.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dark.js"></script>
+    <script src="/js/lang.js"></script>
+    <script src="/js/nav.js"></script>
 
 
 
