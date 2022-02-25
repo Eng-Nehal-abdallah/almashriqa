@@ -87,7 +87,7 @@
 
                                     <li><a href="/leaderworden">University President word</a></li>
                                     <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">Reseaches </a></li>
+                                    <li><a href="/facutlyresearchen">Researches </a></li>
                                     <li><a href="/compusen">compus </a></li>
                                     <li><a href="/chartEn">statistics </a></li>
 

@@ -138,11 +138,6 @@
 
 
 
-<<<<<<< HEAD
-    <ul class="nav justify-content-center child">
-=======
-
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
 
 
     <div class="header">
@@ -335,7 +330,7 @@
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_en }}</p>
                                 <a class="btn bg-color btn-block  main m-auto "
-                                    href="/Faculty/{{ $act->id }}/research">Details</a>
+                                    href="/acten/{{ $act->id }}/show">Details</a>
                             </div>
                         </div>
                     @endif

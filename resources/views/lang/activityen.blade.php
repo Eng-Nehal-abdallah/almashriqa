@@ -21,7 +21,7 @@
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href=./css/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
+
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
 
 
@@ -109,17 +109,15 @@
                                     @foreach ($Facutlies as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                                    <ul>
-                                                        @foreach ($departments as $depart)
+                                            @foreach ($departments as $depart)
                                                 @if ($depart->id_facutly == $f->id)
-
+                                                    <ul>
                                                         <li><a
                                                                 href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                         </li>
-
+                                                    </ul>
                                                 @endif
                                             @endforeach
-                                        </ul>
                                         </li>
                                     @endforeach
                                 </ul>
