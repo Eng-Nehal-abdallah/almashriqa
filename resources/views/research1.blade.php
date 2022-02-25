@@ -104,7 +104,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -162,9 +162,14 @@
                             <div class="carousel-item active">
                                 <img src="/{{ $achievement->image }}" class="d-block w-100" alt="...">
                             </div>
+                            @foreach($images as $image)
+                            @if($image->id_achievement ==$achievement->id)
                             <div class="carousel-item">
-                                <img src="/{{ $achievement->image }}" class="d-block w-100" alt="...">
+                                <img src="/{{ $image->image }}" class="d-block w-100" alt="...">
                             </div>
+                            @endif
+@endforeach
+
 
                         </div>
                         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
@@ -199,7 +204,7 @@
 
 
             <div class="card border-light mb-3">
-                <h5 class="card-header text-center">كل الانجازات</h5>
+                <h5 class="card-header text-center">كل الابحاث</h5>
                 <div class="card-body">
                     <div class="row awesome-project-content portfolio-container">
                         @foreach ($achievements as $lab)
@@ -208,7 +213,8 @@
                                 <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item filter-app portfolio-item">
                                     <div class="single-awesome-project">
                                         <div class="awesome-img">
-                                            <a href="/ach/{{ $lab->id }}/show"><img src="/{{ $lab->image }}"
+                                            <a href="/ach/{{ $lab->id }}/show">
+                                                <img src="/{{ $lab->image }}"
                                                     alt="" /></a>
                                             <div class="add-actions text-center">
                                                 <div class="project-dec">

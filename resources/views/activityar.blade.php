@@ -99,7 +99,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -156,11 +156,15 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ $activity->image }}" class="d-block w-100" alt="...">
+                                <img src="/{{ $activity->image }}" class="d-block w-100" alt="...">
                             </div>
+                            @foreach($images as $imag)
+                            @if($imag->id_activity==$activity->id)
                             <div class="carousel-item">
-                                <img src="{{ $activity->image }}" class="d-block w-100" alt="...">
+                                <img src="/{{ $imag->image }}" class="d-block w-100" alt="...">
                             </div>
+                            @endif
+@endforeach
 
                         </div>
                         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
@@ -196,8 +200,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="head ">
-                        <h2 class="heading"> the last</h2>
-                        <small> all achievement</small>
+                        <h2 class="heading">  كل الانجازات</h2>
+                        <small>للكلية </small>
 
                     </div>
                 </div>
@@ -207,17 +211,17 @@
 
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($activities as $act)
-                    @if ($act->id_facutly == $activity->id_facutly)
+                    @if ($act->id_faculty == $activity->id_faculty)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">
                                 <div class="awesome-img">
-                                    <a href="/achen/{{ $act->id }}/show"><img src="{{ $act->image }}"
+                                    <a href="/activityen/{{ $act->id }}/show"><img src="/{{ $act->image }}"
                                             alt="" /></a>
                                     <div class="add-actions text-center">
                                         <div class="project-dec">
                                             <a class="portfolio-lightbox" data-gallery="myGallery"
-                                                href="/activityar/{{ $act->id }}/show">
+                                                href="/acten/{{ $act->id }}/show">
                                                 <h4>{{ $act->name_ar }}</h4>
                                                 <span>{{ $act->details_ar }}</span>
                                             </a>

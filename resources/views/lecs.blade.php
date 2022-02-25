@@ -161,7 +161,7 @@
 
         <div class="container">
             <div class="alert text-center alert-light" role="alert">
-                جدول الامتحانات
+                جدول المحاضرات
             </div>
 
             @foreach ($lectures as $lab)

@@ -137,18 +137,13 @@
     <!-- end navbar -->
 
 
-    <ul class="nav justify-content-center child">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/s/{{ $facutly['id'] }}">المحاضرات</a>
-        </li>
-    </ul>
 
     <div class="header">
         <div class="content">
             <div class="row justify-content-around">
                 <div class="col-md-5 text-left">
-                    <h1 class="heading mt-4">{{ $facutly['name_ar'] }} </h1>
+                    <h1 class="heading mt-4">{{ $facutly['name_en'] }} </h1>
                     <!-- <span class="btn">descover</span> -->
                 </div>
                 <div class="col-md-5">
@@ -174,15 +169,15 @@
     <section class="section-6 my-4 " dir="rtl">
         <div class="container">
             <div class="alert text-center alert-light">
-                <h5>عميد الكلية</h5>
+                <h5>Leader of university </h5>
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-5">
                     <img src="/{{ $facutly['images'] }}" alt="">
                 </div>
                 <div class="col-md-5 ">
-                    <h2>كلمة العميد</h2>
-                    <p> {{ $facutly['message_dean_ar'] }} </p>
+                    <h2>WORD of Persidents </h2>
+                    <p> {{ $facutly['message_dean_en'] }} </p>
 
                 </div>
             </div>
@@ -210,18 +205,18 @@
                                     <div class="social">
                                         @foreach ($socials as $social)
                                             @if ($social->id_doctor == $doctor->id)
-                                                <a href="{{ $social['link'] }}">{{ $social['name_ar'] }}</a>
+                                                <a href="{{ $social['link'] }}">{{ $social['name_en'] }}</a>
                                             @endif
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h4>{{ $doctor['name_ar'] }} </h4>
-                                    <span>{{ $doctor->private_specific_ar }}/{{ $doctor['public_specific_ar'] }}
+                                    <h4>{{ $doctor['name_en'] }} </h4>
+                                    <span>{{ $doctor->public_specific_en}}/{{ $doctor->private_specific_en }}
                                     </span>
                                     <br><br>
-                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زيارة الملف
-                                        الشخصي</a>
+                                    <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">visit profile
+                                        </a>
 
 
                                 </div>
@@ -239,50 +234,47 @@
         </div>
     </section><!-- End Team Section -->
 
-
-    <!-- start section 5 -->
-    <section class="section-5 text-right" dir="rtl">
+    <!-- start  section 2 -->
+    <section class="section-2 ">
         <div class="container">
-            <div class="row ">
+            <div class="head text-center">
+                <!-- <small>this is small</small> -->
+            </div>
+            <div class="row">
 
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرؤية</h2>
-                        <hr>
-                    </div>
-                    <p>
-                        {{ $facutly['view_ar'] }}</p>
+                <div class="col-md-3">
 
+                    <div class="count">{{ $l->count() }}</div>
+                    <br>
+                    <p>number of labs </p>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الرسالة </h2>
-                        <hr>
-                    </div>
-                    <p> {{ $facutly['message_ar'] }}</p>
+                <div class="col-md-3">
 
+                    <div class="count">{{ $doc->count() }}</div>
+
+                    <br>
+                    <p>number of Professors </p>
                 </div>
-                <div class="col-md-4">
-                    <div class="d-flex text-center">
-                        <i class='bx bx-radio-circle-marked'></i>
-                        <h2 class="my-4">الاهداف</h2>
-                        <hr>
-                    </div>
-                    <ul>
-                        <li> {{ $facutly['goal_ar'] }}</li>
-                    </ul>
 
+                <div class="col-md-3">
+                    <div class="count">{{ $ach->count() }}</div>
+
+                    <br>
+                    <p>num of Researches </p>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="count">{{ $act->count() }}</div>
+
+                    <br>
+                    <p> عدد الانشطه </p>
                 </div>
 
             </div>
-            <hr>
-
-
         </div>
     </section>
+
     <!-- end section 5 -->
 
 
@@ -292,15 +284,12 @@
     <section class="section-6  text-center">
 
         <div class="container">
-            <h1 class="heading"> عن الجامعة</h1>
+            <h1 class="heading"> About University </h1>
 
             <div class="row">
                 <div class="col-md-12">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora
-                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium
-                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate
-                        alias, blanditiis ut veniam?
+                    <p>{{ $facutly['about_facutly_en'] }}
+
 
                     </p>
 
@@ -319,7 +308,7 @@
         <div class="container">
             <div class="caption ">
                 <h1 class="text-center">
-                    نشاطات الكلية
+                    Activities
                 </h1>
             </div>
             <div class="responsive">
@@ -331,16 +320,16 @@
                             </div>
                             <div class="card p-3 ">
 
-                                <h4>{{ $act->name_ar }}</h4>
+                                <h4>{{ $act->name_en }}</h4>
                                 @foreach ($doctors as $doc)
                                     @if ($act->id_doctor == $doc->id)
-                                        <h4>{{ $doc->name_ar }}</h4>
+                                        <h4>{{ $doc->name_en }}</h4>
                                     @endif
                                 @endforeach
 
-                                <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
+                                <p style="font-weight: bold;" class="second">{{ $act->detaila_en }}</p>
                                 <a class="btn btn-block btn-warning main m-auto "
-                                    href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                                    href="/Faculty/{{ $act->id }}/research">Details</a>
                             </div>
                         </div>
                     @endif
@@ -376,10 +365,10 @@
                             <div class="member">
                                 <img src="/{{ $st->image }}" class="img-fluid" alt="">
                                 <div class="member-content">
-                                    <h1 class="inside">{{ $st->grade_ar }}</h1>
+                                    <h1 class="inside">{{ $st->grade_en}}</h1>
 
-                                    <h4>{{ $st->name_ar }}</h4>
-                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
+                                    <h4>{{ $st->name_en}}</h4>
+                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
 
                                 </div>
                             </div>
@@ -412,11 +401,11 @@
                             </div>
                             <div class="card p-3 ">
 
-                                <h4 class="">{{ $lab->name_ar }}</h4>
+                                <h4 class="">{{ $lab->name_en }}</h4>
 
-                                <p style="font-weight: bold;" class="second ">{{ $lab->details_ar }}.</p>
+                                <p style="font-weight: bold;" class="second ">{{ $lab->details_en }}.</p>
                                 <a href="/lab/{{ $lab->id }}/show"
-                                    class="btn btn-block btn-warning main m-auto ">التفاصيل</a>
+                                    class="btn btn-block btn-warning main m-auto ">Details</a>
                             </div>
                         </div>
                     @endif
@@ -439,31 +428,31 @@
 
                 <div class="col-md-3">
 
-                    <div class="count">{{ $labs->count() }}</div>
+                    <div class="count">{{ $l->count() }}</div>
                     <br>
-                    <p>عدد المختبرات</p>
+                    <p>Num of Labs </p>
                 </div>
 
                 <div class="col-md-3">
 
-                    <div class="count">{{ $doctors->count() }}</div>
+                    <div class="count">{{ $doc->count() }}</div>
 
                     <br>
-                    <p> الكادر التدريسي</p>
+                    <p> Professors </p>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="count">{{ $achieve->count() }}</div>
+                    <div class="count">{{ $ach->count() }}</div>
 
                     <br>
-                    <p>عدد الانجازات</p>
+                    <p>Researches </p>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="count">{{ $activities->count() }}</div>
+                    <div class="count">{{ $act->count() }}</div>
 
                     <br>
-                    <p> عدد الانشطه </p>
+                    <p> Activities  </p>
                 </div>
 
             </div>
@@ -471,16 +460,15 @@
     </section>
 
 
-    <!-- End  section 2 -->
 
-    <!-- start sectoin 7 -->
+    @if($d->count()>0)
     <section class="section-7  py-4">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-md-5 ">
-                    <h2>اقسام الكلية</h2>
+                    <h2>Departments </h2>
                     <p>
-                        {{ $facutly->details_ar }}
+                        {{ $facutly->details_en }}
                     </p>
                     <div class="dropdown float-right">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -491,7 +479,7 @@
                             @foreach ($departments as $department)
                                 @if ($department->id_facutly == $facutly->id)
                                     <a class="dropdown-item"
-                                        href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
+                                        href="/department/{{ $department->id }}/show">{{ $department->name_en }}</a>
                                 @endif
                             @endforeach
 
@@ -505,6 +493,7 @@
             </div>
         </div>
     </section>
+    @endif
     <!-- start seection 6 -->
 
     @extends('layouts.footer-en')

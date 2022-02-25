@@ -372,7 +372,7 @@
                                 {{ $act->details_en }}
                                 <br>
                             </p>
-                            <a href="/activityen/{{ $act->id }}/show" class="btn btn-warning main">Details</a>
+                            <a href="/act/{{ $act->id }}/show" class="btn btn-warning main">Details</a>
 
                             <!-- <div class="d-flex">
              <img class="second pr-1" src="/person/Ellipse 38.png" alt="">

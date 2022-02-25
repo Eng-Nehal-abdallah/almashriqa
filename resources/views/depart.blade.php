@@ -142,14 +142,14 @@
     </header><!-- End Header -->
     <!-- end navbar -->
 
-    <center>
+    {{--  <center>
         <ul class="nav justify-content-center child">
 
             <li class="nav-item">
                 <a class="nav-link" href="/d/{{ $department['id'] }}">المحاضرات</a>
             </li>
         </ul>
-    </center>
+    </center>  --}}
 
     <div class="header">
         <div class="content">
@@ -198,7 +198,7 @@
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h4>ر</h4>
+                                    <h4>{{ $doctor['name_ar'] }}</h4>
                                     <span>{{ $doctor['details_ar'] }} </span>
                                     <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">زياره الملف
                                         الشخصي

@@ -16,7 +16,7 @@ class Images extends Model
 	 * @var array
 
 	 */
-	protected $fillable = ['id','image','id_image'
+	protected $fillable = ['id','image','id_image','id_achievement','id_activity',
 ];
 }
 

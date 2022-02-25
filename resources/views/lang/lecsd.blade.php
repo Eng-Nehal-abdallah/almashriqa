@@ -11,27 +11,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <!-- start box icon -->
-
-
-    <link rel="stylesheet" href="/scss/researchers-inner2.css">
-    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
-
-    @extends('layouts.head-en')
-
-    <!-- start box icon -->
-    <link href='/css/boxicons.min.css' rel='stylesheet'>
+    <link href='/scss/UniLeader.css' rel='stylesheet'>
     <!--start fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/navbar.css">
+
+
+    <link rel="stylesheet" href="/scss/doctors.css">
+
+    @extends('layouts.head-en')
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href=./css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
-
-
     <title>Document</title>
 </head>
 
@@ -113,7 +108,7 @@
 
 
                                 <ul>
-                                    @foreach ($Facutlies as $f)
+                                    @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -151,6 +146,9 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
+    <!-- end navbar -->
+
+    <!-- start navbar -->
 
 
     <!-- start light & dark -->
@@ -159,108 +157,44 @@
     </div>
     <!-- start light & dark -->
 
+
     <!-- start section 1 -->
     <section class="section-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="heading">{{ $achievement->name_en }}</h2>
-                    <p>{{ $achievement->details_en }}</p>
-                </div>
-                <div class="col-md-6">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
 
-                            <div class="carousel-item active">
-                                <img src="/{{ $achievement->image }}" class="d-block w-100" alt="...">
-                            </div>
-                            @foreach($images as $image)
-                            @if($image->id_achievement ==$achievement->id)
-                            <div class="carousel-item">
-                                <img src="/{{ $image->image }}" class="d-block w-100" alt="...">
-                            </div>
+
+        <div class="container">
+            <div class="alert text-center alert-light" role="alert">
+                جدول المحاضرات
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+
+
+                    <div class="table-responsive-lg">
+
+                        @foreach ($lectures as $lab)
+                            @if ($lab->id_department == $department->id)
+                                <div id="state" name="lecture" class="form-group col-md-6">
+
+
+                                    {!! html_entity_decode($lab->table) !!}
+                                </div>
                             @endif
-@endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </button>
+                        @endforeach
+
+
                     </div>
                 </div>
-
             </div>
-            <hr>
-
         </div>
-
     </section>
 
 
 
-    <!-- End section 1 -->
-
-
-
-    <!-- start section-2 -->
-    <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="section-2 portfolio-area area-padding fix">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="head ">
-                        <h2 class="heading"> the last</h2>
-                        <small> all Researches</small>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row awesome-project-content portfolio-container">
-                @foreach ($achievements as $lab)
-                    @if ($lab->id_doctor == $achievement->id_doctor)
-                        <!-- portfolio-item start -->
-                        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item filter-app portfolio-item">
-                            <div class="single-awesome-project">
-                                <div class="awesome-img">
-                                    <a href="/achen/{{ $lab->id }}/show"><img src="/{{ $lab->image }}"
-                                            alt="" /></a>
-                                    <div class="add-actions text-center">
-                                        <div class="project-dec">
-                                            <a class="portfolio-lightbox" data-gallery="myGallery"
-                                                href="/achen/{{ $lab->id }}/show">
-                                                <h4>{{ $lab->name_en }}</h4>
-                                                <span>{{ $lab->details_en }}</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-                <!-- portfolio-item start -->
-
-                <!-- End section-2 -->
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- start footer -->
     @extends('layouts.footer-en')
-
-
-
-
-
 
 
     <!-- start jquery -->
@@ -279,6 +213,7 @@
 
 
     <script src="/js/nav.js"></script>
+
     <script>
         var bool = true;
 
@@ -309,9 +244,6 @@
             })
         })
     </script>
-
-
-
 </body>
 
 </html>

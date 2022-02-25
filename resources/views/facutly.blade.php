@@ -130,12 +130,7 @@
 
 
 
-    <ul class="nav justify-content-center child">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/s/{{ $facutly['id'] }}">المحاضرات</a>
-        </li>
-    </ul>
 
     <div class="header">
         <div class="content">
@@ -290,10 +285,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem cum dolor. Tempora
-                        aliquam non placeat pariatur mollitia repellat? Esse obcaecati sapiente animi praesentium
-                        tempore corrupti mollitia! Incidunt quod numquam quo fugit nisi amet laudantium, cupiditate
-                        alias, blanditiis ut veniam?
+                        {{ $facutly['details_ar'] }}
 
                     </p>
 
@@ -333,7 +325,7 @@
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
                                 <a class="btn btn-block btn-warning main m-auto "
-                                    href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                                    href="/act/{{ $act->id }}/show">التفاصيل</a>
                             </div>
                         </div>
                     @endif
@@ -449,7 +441,7 @@
                     <div class="count">{{ $ach->count() }}</div>
 
                     <br>
-                    <p>عدد الانجازات</p>
+                    <p>عدد الابحاث</p>
                 </div>
 
                 <div class="col-md-3">
@@ -475,7 +467,7 @@
                 <div class="col-md-5 ">
                     <h2>اقسام الكلية</h2>
                     <p>
-                        {{ $facutly->details_ar }}
+                        {{ $facutly->about_facutly_ar }}
                     </p>
                     <div class="dropdown float-right">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"

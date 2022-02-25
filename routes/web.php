@@ -33,6 +33,7 @@ use App\Http\Controllers\UniversitiesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Models\achievement;
+use App\Models\Activity;
 use App\Models\Admindepart;
 use App\Models\Department;
 use App\Models\Leaderuni;
@@ -87,6 +88,11 @@ Route::get('/d/{department}', [SubjectController::class, 'department']);
 Route::get('/ach/{achievement}/show', [AchievementController::class, 'achievement']);
 //show main page
 Route::get('/achen/{achievement}/show', [AchievementController::class, 'achievementen']);
+
+//show main page
+Route::get('/act/{activity}/show', [ActivityController::class, 'activity']);
+//show main page
+Route::get('/acten/{activity}/show', [ActivityController::class, 'activityen']);
 //show main page
 Route::get('/', [MashController::class, 'index']);
 //show main about
@@ -650,15 +656,15 @@ Route::delete('/instype/{type}', [TypeController::class, 'destroy']);
 Route::get('/labexam/{faculty}/show', [LabExamController::class, 'indexfac']);
 
 Route::get('/e/{faculty}/show', [ExamController::class, 'indexfac']);
-Route::get('/l/{faculty}/show', [LectureController::class, 'indexfac']);
-
+Route::get('/l/{faculty}/show', [LectureController::class, 'indexfac'])->middleware('auth','admin');
+Route::get('/len/{faculty}/show', [LectureController::class, 'indexfacen'])->middleware('auth','admin');
 
 Route::get('/labexamd/{department}/show', [LabExamController::class, 'indexfacd']);
 
 Route::get('/examsd/{department}/show', [ExamController::class, 'indexfacd']);
-Route::get('/ld/{department}/show', [LectureController::class, 'indexfacd']);
+Route::get('/ld/{department}/show', [LectureController::class, 'indexfacd'])->middleware('auth','admin');
 
-
+Route::get('/lden/{department}/show', [LectureController::class, 'indexfacden'])->middleware('auth','admin');
 
 Route::get('/labexamfacen', [UniversitiesController::class, 'indexlabexamen']);
 
@@ -1587,7 +1593,6 @@ Route::delete('/pdf/{pdf}', [PdfController::class, 'destroy'])->middleware(['aut
     //show page dashboard
     Route::get('/dashboard27', [PdfController::class, 'index'])->middleware(['auth','admin']);
 
-<<<<<<< HEAD
 //show page create doctor agreement
 Route::get('mechineinsert', [MechineController::class, 'insert'])->middleware(['auth','admin']);
 //add agreement
@@ -1626,12 +1631,3 @@ Route::delete('/mechine/{mechine}', [MechineController::class, 'destroy'])->midd
 
       //destroy agreementagreement
       Route::delete('/achievement1/{achievement}', [ImagesController::class, 'destroy'])->middleware(['auth','admin']);
-=======
-
-
-// auth register
-Route::get('/register' , function(){
-    return redirect()->back();
-});
-
->>>>>>> refs/remotes/origin/master

@@ -5,11 +5,13 @@ use App\Models\achievement;
 use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Images;
 use App\Models\Lab;
 use App\Models\Leader;
 use App\Models\Leaderuni;
 use App\Models\Typeachievement;
 use Illuminate\Http\Request;
+
 
 class AchievementController extends Controller
 {
@@ -67,17 +69,19 @@ class AchievementController extends Controller
     {    $Facutlies = Facutly::all();
         $departments = Department::all();
 $labs=Lab::all();
+$images=Images::all();
+
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('research1',['achievement'=>$achievement] ,compact('labs','achievements','types','Facutlies','departments'));
+        return view('research1',['achievement'=>$achievement] ,compact('labs','achievements','types','Facutlies','departments','images'));
     }
  public function achievementen(achievement $achievement)
     {    $Facutlies = Facutly::all();
         $departments = Department::all();
-
+$images=Images::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('lang\research1',['achievement'=>$achievement] ,compact('achievements','types','Facutlies','departments'));
+        return view('lang\research1',['achievement'=>$achievement] ,compact('achievements','types','Facutlies','departments','images'));
     }
 
     public function faculty(Facutly $faculty)

@@ -140,7 +140,12 @@ class UniversitiesController extends Controller
 
         $achievements=achievement::all();
         $labs=Lab::all();
-        return view('lang\facutly', ['facutly' => $Facutly], compact('labs','students','achievements','faculties','departments','socials','activities','doctors'));
+        $doc = Doctors::all()->where('id_facutly','=',$Facutly->id);
+        $act=Activity::All()->where('id_faculty','=',$Facutly->id);
+        $ach=achievement::all()->where('id_facutly','=',$Facutly->id);
+        $l=Lab::all()->where('id_faculty','=',$Facutly->id);
+        $d = Department::all()->where('id_facutly','=',$Facutly->id);
+        return view('lang\facutly', ['facutly' => $Facutly], compact('doc','act','ach','l','d','labs','students','achievements','faculties','departments','socials','activities','doctors'));
     }
     public function sh(Facutly $Facutly)
     { $doctors = Doctors::all();

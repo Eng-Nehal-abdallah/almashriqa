@@ -27,6 +27,22 @@ class LectureController extends Controller
         return view('lecsd',compact('lectures','faculties','departments'),['department'=>$department]);
     }
 
+    public function indexfacen(Facutly $faculty)
+    {
+
+        $lectures = Lecture::all();
+        $faculties = Facutly::all();
+        $departments = Department::all();
+        return view('lang.lecs',compact('lectures','faculties','departments'),['faculty'=>$faculty]);
+    }
+
+    public function indexfacden(Department $department)
+    {$lectures = Lecture::all();
+        $faculties = Facutly::all();
+        $departments = Department::all();
+        return view('lang.lecsd',compact('lectures','faculties','departments'),['department'=>$department]);
+    }
+
     public function index()
     {
         $lectures = Lecture::all();

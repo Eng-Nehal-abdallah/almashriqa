@@ -178,7 +178,7 @@
                                             <h5 class="card-title heading">{{ $Facutly->name_en }}</h5>
                                             <p class="card-text">{{ $Facutly->about_facutly_en }}</p>
                                             <div class="btn-group">
-                                                <a class="btn btn-sm" href="/l/{{ $Facutly->id }}/show">
+                                                <a class="btn btn-sm" href="/len/{{ $Facutly->id }}/show">
                                                     {{ $Facutly->name_en }} </a>
                                                 <button type="button"
                                                     class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
@@ -191,7 +191,7 @@
                                                         <div class="dropdown-menu">
 
                                                             <a class="dropdown-item"
-                                                                href="/ld/{{ $department->id }}/show">{{ $department->name_en }}</a>
+                                                                href="/lden/{{ $department->id }}/show">{{ $department->name_en }}</a>
                                                     @endif
                                                 @endforeach
                                             </div>

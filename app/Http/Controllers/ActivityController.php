@@ -6,6 +6,8 @@ use App\Models\Activity;
 use App\Models\Department;
 use App\Models\Doctors;
 use App\Models\Facutly;
+use App\Models\Image;
+use App\Models\Images;
 use App\Models\Mash;
 use Illuminate\Http\Request;
 
@@ -28,15 +30,17 @@ $activity=Activity::all();
     {$activities=Activity::all();
         $Facutlies = Facutly::all();
         $departments = Department::all();
-
-        return view('activity1', compact('activities','Facutlies', 'departments'), ['activity' => $activity]);
+        $Facutlies  = Facutly::all();
+        $images=Images::all();
+        return view('activityar', compact('activities','Facutlies', 'departments','images'), ['activity' => $activity]);
     }
 
   public function activityen(Activity $activity)
-    {$activitIES=Activity::all();
+    {$activities=Activity::all();
         $Facutlies  = Facutly::all();
         $departments = Department::all();
-        return view('lang\activityen', compact('activitIES','Facutlies ', 'departments'), ['activity' => $activity]);
+        $images=Images::all();
+        return view('lang\activityen', compact('activities','Facutlies', 'departments','images'), ['activity' => $activity]);
     }
 
     // start edit

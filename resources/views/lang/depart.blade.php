@@ -215,7 +215,7 @@
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h4>ر</h4>
+                                    <h4>{{ $doctor['name_en'] }}</h4>
                                     <span>{{ $doctor['details_en'] }} </span>
                                     <a class="btn shadow-sm btn-dark" href="/doc/{{ $doctor->id }}/show">Visit
                                     </a>
