@@ -67,16 +67,12 @@
                             <li><a href="/leaderunien">University Presidency </a></li>
                             <li><a href="/feesen">Tuition fees </a></li>
                             <li><a href="/strategyen">University strategy </a></li>
-<<<<<<< HEAD
-                            <li><a href="/facutlyen">Doctors </a></li>
-=======
                             <li><a href="/facutlydocen">Doctors </a></li>
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                             <li><a href="/agreementsen">Agreements </a></li>
 
                             <li><a href="/leaderworden">University President word</a></li>
                             <li><a href="/facutlylaben">labs</a></li>
-                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/facutlyresearchen">Researches </a></li>
                             <li><a href="/compusen">compus </a></li>
                             <li><a href="/chartEn">statistics </a></li>
 
@@ -105,15 +101,17 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                             {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
                                             <ul>
+                                                @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+
                                                 <li><a
                                                         href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                 </li>
-                                            </ul>
+
                                         @endif
                                     @endforeach
+                                </ul>
                                 </li>
                             @endforeach
                         </ul>

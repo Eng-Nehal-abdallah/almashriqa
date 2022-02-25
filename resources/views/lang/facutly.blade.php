@@ -93,36 +93,22 @@
                                 class="bi bi-chevron-down"></i></a>
 
 
-<<<<<<< HEAD
                                 <ul>
                                     @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
                                                     <ul>
+                                                        @foreach ($departments as $depart)
+                                                @if ($depart->id_facutly == $f->id)
+
                                                         <li><a
                                                                 href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                         </li>
-                                                    </ul>
+
                                                 @endif
                                             @endforeach
-                                        </li>
-=======
-                        <ul>
-                            @foreach ($faculties as $f)
-                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-                                            <ul>
-                                                <li><a
-                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                </li>
-                                            </ul>
-                                        @endif
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
-                                    @endforeach
+                                        </ul>
+
                                 </li>
                             @endforeach
                         </ul>

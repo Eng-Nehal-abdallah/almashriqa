@@ -78,89 +78,11 @@
 
                             <li><a href="/leaderworden">University President word</a></li>
                             <li><a href="/facutlylaben">labs</a></li>
-                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/facutlyresearchen">Researches </a></li>
                             <li><a href="/compusen">compus </a></li>
                             <li><a href="/chartEn">statistics </a></li>
 
-<<<<<<< HEAD
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-
-
-                            @endguest
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/abouten">About University</a></li>
-                                    <li><a href="/leaderunien">University Presidency </a></li>
-                                    <li><a href="/feesen">Tuition fees </a></li>
-                                    <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
-                                    <li><a href="/agreementsen">Agreements </a></li>
-
-                                    <li><a href="/leaderworden">University President word</a></li>
-                                    <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
-                                    <li><a href="/compusen">compus </a></li>
-                                    <li><a href="/chartEn">statistics </a></li>
-
-                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/agreementsen">Registration mechanism</a></li>
-                                    <li><a href="/accepten">Acceptable Rules </a></li>
-                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
-
-                                </ul>
-                            </li>
-
-
-
-
-
-                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-
-
-                                <ul>
-                                    @foreach ($Facutlies as $f)
-                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-                                                    <ul>
-                                                        <li><a
-                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                        </li>
-                                                    </ul>
-                                                @endif
-                                            @endforeach
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/facutlylecen">Term lecture table</a></li>
-                                    <li><a href="/facutlyexamen">Exam Table </a></li>
-
-                                </ul>
-                            </li>
-
-                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
-
-                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
-=======
                             {{-- <li><a href="/papersen">Cellender term </a></li> --}}
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                         </ul>
                     </li>
                     <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
@@ -183,15 +105,17 @@
                             @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                             {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
                                             <ul>
+                                                @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+
                                                 <li><a
                                                         href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                 </li>
-                                            </ul>
+
                                         @endif
                                     @endforeach
+                                </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -250,43 +174,10 @@
     <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
-<<<<<<< HEAD
-
-            <div class="row">
-                <div class="col-md-5">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-
-                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-5">
-
-                    <div class="alert text-center alert-light" role="alert">
-                        {{ $lab->name_en }}
-                        <br>
-                        {{ $lab->details_en }}
-                        <div class="table-responsive-lg">
-                            <img src="/{{ $lab->image }}" />
-                            <img src="/{{ $lab->images }}" />
-                        </div>
-
-                    </div>
-                </div>
-=======
             <div class="alert  alert-light" role="alert">
                 {{ $lab->name_en }}
             </div>
             <div class="table-responsive-lg">
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
             </div>
 
 
