@@ -11,10 +11,10 @@
 
 
     <link rel="stylesheet" href="/scss/doctors.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/scss/dark&light.css">
-    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 
@@ -108,17 +108,15 @@
                                     @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                                    <ul>
-                                                        @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
+                                            <ul>
+                                                @foreach ($departments as $depart)
+                                                    @if ($depart->id_facutly == $f->id)
                                                         <li><a
                                                                 href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                         </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -145,6 +143,8 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
+    </header><!-- End Header -->
+    <!-- end navbar -->
     <!-- end navbar -->
 
     <!-- start light & dark -->
@@ -159,6 +159,17 @@
     <br>
     <br>
 
+    <style>
+        img {
+            height: 250px !important;
+        }
+
+        .col-lg-4 {
+            max-width: 300px !important;
+        }
+
+    </style>
+
 
 
     <!-- ======= Team Section ======= -->
@@ -166,7 +177,6 @@
         <div class="container">
             <h1 class="text-center my-5">رئاسة الجامعة</h1>
             <div class="row text-right">
-
                 @foreach ($doctors as $doct)
                     <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
                         <div class="member">
@@ -187,7 +197,6 @@
                             <div class="member-info">
                                 <h4>{{ $doct->name_en }}</h4>
                                 <span>{{ $doct->position_en }}</span>
-                                <a href="#" class="btn btn-dark my-3 ">visit profile</a>
 
                                 <a href="/leaderen/{{ $doct->id }}/show" class="btn btn-dark my-3 ">Visit
                                     Profile </a>
@@ -204,7 +213,7 @@
 
             <div class="row text-right">
                 @foreach ($leaders as $leader)
-                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
                         <div class="member">
                             <div class="member-img">
                                 <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
@@ -230,9 +239,6 @@
             </div>
         </div>
     </section><!-- End Team Section -->
-
-
-
 
 
     <!--start footer -->

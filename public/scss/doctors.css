@@ -17,12 +17,6 @@ small {
   color: #a3a3a3;
 }
 
-img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
 /* #Navigation
 ================================================== */
 /*--------------------------------------------------------------
@@ -62,10 +56,6 @@ body {
   color: #444444;
 }
 
-body.dark {
-  background-color: #090909;
-}
-
 a {
   text-decoration: none;
   color: #49b5e7;
@@ -96,6 +86,12 @@ h6 {
 
 #hero .container {
   padding-top: 84px;
+}
+
+#hero img {
+  width: 300px !important;
+  height: 250px !important;
+  display: block;
 }
 
 #hero h1 {
@@ -192,6 +188,7 @@ h6 {
   background: #fff;
   -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
 }
 
 .team .member .member-img {
