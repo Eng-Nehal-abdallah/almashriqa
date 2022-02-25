@@ -131,7 +131,7 @@
 
     <div class="header">
         <div class="content">
-            <div class="row justify-content-around justify-content-sm-center">
+            <div class="row justify-content-around ">
                 <div class="col-md-5 text-left">
                     <h1 class="heading mt-4 color">{{ $facutly['name_ar'] }} </h1>
                     <!-- <span class="btn">descover</span> -->
@@ -284,7 +284,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        {{ $facutly['details_ar'] }}
+                        {{ $facutly['about_facutly_ar'] }}
 
                     </p>
 
@@ -363,7 +363,8 @@
                                     <h1 class="inside bg-color">{{ $st->grade_ar }}</h1>
 
                                     <h4 class=""> {{ $st->name_ar }}</h4>
-                                    <span class="badge d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
+                                    <span
+                                        class="badge bg-color d-inline-block badge-secondary p-3">{{ $st->level_ar }}</span>
 
                                 </div>
                             </div>

@@ -1628,8 +1628,6 @@ Route::delete('/mechine/{mechine}', [MechineController::class, 'destroy'])->midd
 
       //destroy agreementagreement
       Route::delete('/achievement1/{achievement}', [ImagesController::class, 'destroy'])->middleware(['auth','admin']);
-<<<<<<< HEAD
-=======
 
 
 // auth register
@@ -1637,4 +1635,3 @@ Route::get('/register' , function(){
     return redirect()->back();
 });
 
->>>>>>> 315b0b68e2fa3ec9fd9a41b42e286875993f36f3
