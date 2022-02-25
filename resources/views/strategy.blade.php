@@ -147,7 +147,7 @@
     <!-- start haeder -->
     <div class="header">
         <div class="caption">
-            <h1 class="heading">معدل القبول و الاقساط</h1>
+            <h1 class="heading">جامعة المشرق   </h1>
             <!-- <h5>University</h5> -->
         </div>
 
@@ -164,18 +164,16 @@
 
         <div class="container">
             <div class="head">
-                <h1 class="heading">strategy</h1>
-                <small>this is small </small>
+                <h1 class="heading"></h1>
+
             </div>
             <div class="row justify-content-around">
-                <!--
-    <div class="col-md-5">
-     <img src="/imgs/header.png" alt="">
-    </div> -->
+
+
 
                 <div class="col-md-12">
                     <div class="caption">
-                        <small>thats is</small>
+
                         <h1 class="heading">    استراتيجه جامعة المشرق   </h1>
                         <p>{{$mash->strategy_ar}}</p>
 

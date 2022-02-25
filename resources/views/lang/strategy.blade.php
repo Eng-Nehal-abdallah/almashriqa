@@ -158,7 +158,7 @@
     <!-- start haeder -->
     <div class="header ">
         <div class="caption">
-            <h1 class="heading">UNIVersity Strategy</h1>
+            <h1 class="heading">AlMashriq University  </h1>
             <!-- <h5>University</h5> -->
         </div>
 
@@ -175,8 +175,8 @@
 
         <div class="container">
             <div class="head">
-                <h1 class="heading">strategy</h1>
-                <small>this is small </small>
+
+
             </div>
             <div class="row justify-content-around">
                 <!--
@@ -186,9 +186,9 @@
 
                 <div class="col-md-12">
                     <div class="caption">
-                        <small>thats is</small>
+
                         <h1 class="heading">Almashriq University strategy</h1>
-                        <p>{{$mash->strategy_ar}}</p>
+                        <p>{{$mash->strategy_en}}</p>
 
                     </div>
                 </div>
