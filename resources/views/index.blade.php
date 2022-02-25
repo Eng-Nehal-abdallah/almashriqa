@@ -638,66 +638,6 @@
     </script>
 
 
-    <script>
-        var bool = true;
-
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("header").removeAttr("dir", "ltr");
-
-
-
-
-                    $('.section-1').removeClass('text-left')
-                    $('.section-1').addClass('text-right')
-
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-
-                    $('.section-4').removeClass('text-left')
-                    $('.section-4').addClass('text-right')
-
-                    $('.section-5').removeClass('text-left')
-                    $('.section-5').addClass('text-right')
-
-
-                    $('.section-7').removeClass('text-left')
-                    $('.section-7').addClass('text-right')
-
-                    $('footer').removeClass('text-left')
-                    $('footer').addClass('text-right')
-
-                    bool = false;
-                } else if (bool == false) {
-                    $("header").removeAttr("dir");
-                    $("header").attr("dir", "ltr");
-
-
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-
-                    $('.section-4').removeClass('text-right')
-                    $('.section-4').addClass('text-left')
-
-                    $('.section-5').removeClass('text-right')
-                    $('.section-5').addClass('text-left')
-
-
-                    $('.section-7').removeClass('text-right')
-                    $('.section-7').addClass('text-left')
-
-                    $('footer').removeClass('text-right')
-                    $('footer').addClass('text-left')
-                    bool = true;
-                }
-
-            })
-        })
-    </script>
-    {{-- <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script> --}}
 
 
 </body>
