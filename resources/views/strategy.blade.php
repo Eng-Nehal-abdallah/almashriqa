@@ -176,15 +176,8 @@
                 <div class="col-md-12">
                     <div class="caption">
                         <small>thats is</small>
-                        <h1 class="heading">head title of strategy</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's
-                            standard
-                            dummy text ever since the 1500s, when an unknown printer took a galle</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's
-                            standard
-                            dummy text ever since the 1500s, when an unknown printer took a galle</p>
+                        <h1 class="heading">    استراتيجه جامعة المشرق   </h1>
+                        <p>{{$mash->strategy_ar}}</p>
 
                     </div>
                 </div>
