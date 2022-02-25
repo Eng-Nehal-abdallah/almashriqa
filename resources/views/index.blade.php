@@ -75,7 +75,7 @@
                     <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/machiene">الية التسجيل</a></li>
+                            <li><a href="/mechine">الية التسجيل</a></li>
                             <li><a href="/accept">شروط القبول</a></li>
                             <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
 
@@ -463,18 +463,15 @@
 
 
 
-@foreach ($image as $im )
+                @foreach ($image as $im)
+                    <div class="img-content">
 
+                        <img src="/{{ $im->image }}" alt="">
 
-                <div class="img-content">
-
-                    <img src="/{{$im->image }}" alt="">
-
-                    <div class="inner">
-                        <a href="/g/{{ $im->id }}/show">زيارة</a>
+                        <div class="inner">
+                            <a href="/g/{{ $im->id }}/show">زيارة</a>
+                        </div>
                     </div>
-                </div>
-
                 @endforeach
 
 

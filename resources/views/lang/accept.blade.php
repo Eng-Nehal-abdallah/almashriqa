@@ -96,7 +96,7 @@
                             <li class="dropdown"><a href="#"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/mechineen">LogIN Machine </a></li>
+                                    <li><a href="/mechineen">Registration mechanism </a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 

@@ -76,7 +76,7 @@
                     <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/agreements">الية التسجيل</a></li>
+                            <li><a href="/mechine">الية التسجيل</a></li>
                             <li><a href="/accept">شروط القبول</a></li>
                             <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
 
@@ -467,42 +467,42 @@
     <!-- End  section 2 -->
 
     <!-- start sectoin 7 -->
-    @if($d->count()>0)
-    <section class="section-7 py-4 ">
-        <div class="container">
-            <div class="row justify-content-around">
+    @if ($d->count() > 0)
+        <section class="section-7 py-4 ">
+            <div class="container">
+                <div class="row justify-content-around">
 
-                <div class="col-md-5 ">
-                    <h2>اقسام الكلية</h2>
-                    <p>
-                        {{ $facutly->details_ar }}
-                    </p>
-                    <div class="dropdown float-right">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            @foreach ($departments as $department)
-                                @if ($department->id_facutly == $facutly->id)
-                                    <a class="dropdown-item"
-                                        href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
-                                @endif
-                            @endforeach
+                    <div class="col-md-5 ">
+                        <h2>اقسام الكلية</h2>
+                        <p>
+                            {{ $facutly->details_ar }}
+                        </p>
+                        <div class="dropdown float-right">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @foreach ($departments as $department)
+                                    @if ($department->id_facutly == $facutly->id)
+                                        <a class="dropdown-item"
+                                            href="/department/{{ $department->id }}/show">{{ $department->name_ar }}</a>
+                                    @endif
+                                @endforeach
+
+                            </div>
 
                         </div>
+                    </div>
 
+                    <div class="col-md-5">
+                        <img class="main" src="{{ $facutly->image }}" alt="">
                     </div>
                 </div>
-
-                <div class="col-md-5">
-                    <img class="main" src="{{ $facutly->image }}" alt="">
-                </div>
             </div>
-        </div>
-    </section>
-    <!-- start seection 6 -->
-@endif
+        </section>
+        <!-- start seection 6 -->
+    @endif
     <!-- start footer -->
     @extends('layouts.footer-ar')
 

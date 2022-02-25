@@ -94,7 +94,7 @@
                     <li class="dropdown"><a href="/agreements"><span>الية التسجيل و القبول</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="/agreements">الية التسجيل</a></li>
+                            <li><a href="/mechine">الية التسجيل</a></li>
                             <li><a href="/accept">شروط القبول</a></li>
                             <li><a target="_blank" href="https://www.pe-gate.org/">استمارة التسجيل</a></li>
 
