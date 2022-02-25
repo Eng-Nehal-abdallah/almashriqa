@@ -56,7 +56,6 @@ img {
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 28px;
-  border-radius: 3px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-top: 25px;
@@ -118,7 +117,7 @@ img {
    # Team
    --------------------------------------------------------------*/
 .team {
-  margin-top: 90px;
+  margin-top: 100px !important;
 }
 
 .team .member {
@@ -212,10 +211,6 @@ img {
 .team .member:hover .social {
   opacity: 1;
   bottom: 15px;
-}
-
-.team.dark h1 {
-  color: #fff;
 }
 
 .imgs {

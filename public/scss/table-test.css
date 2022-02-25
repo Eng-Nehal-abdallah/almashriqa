@@ -79,9 +79,6 @@ table.dark {
 table.dark tbody tr:nth-child(even) {
     background-color: #323232;
 }
-body {
-    background-color: rgb(14, 14, 14);
-}
 
 table button,
 table a {

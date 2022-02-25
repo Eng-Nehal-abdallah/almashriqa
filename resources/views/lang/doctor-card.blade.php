@@ -10,19 +10,11 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <!-- start box icon -->
-    <link href='/scss/UniLeader.css' rel='stylesheet'>
-    <!--start fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    @extends('layouts.head-en')
 
 
     <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <link rel="stylesheet" href="/scss/doctor-card.css">
-    <link rel="stylesheet" href="/scss/style.css">
-
     @extends('layouts.head-en')
 
     <!-- start wol js -->
@@ -153,10 +145,19 @@
 
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-2">
+    <section id="team" class="team  my-4 section-2">
         <div class="container">
-            <h1 class="text-center my-5">University Presidency </h1>
-            <div class="row text-right">
+
+
+            <div class="container">
+                <div class="alert alert-light">
+                    <h1 class="text-center">University Presidency </h1>
+
+                </div>
+            </div>
+            <div class="row justify-content-center text-right">
+
+
                 @foreach ($leaders as $leader)
                     @if ($leader->id_facutly == $facutly->id)
                         <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
@@ -181,13 +182,22 @@
 
                                 </div>
                             </div>
+                        </div>
                     @endif
                 @endforeach
 
-
             </div>
-            <h1 class="text-center my-5">Professors OF University </h1>
 
+
+
+        </div>
+
+        <div class="container">
+            <div class="alert alert-light">
+                <h1 class="text-center ">Professors OF University </h1>
+            </div>
+        </div>
+        <div class="container">
             <div class="row text-right">
 
                 @foreach ($doctors as $doc)
@@ -209,7 +219,7 @@
                                 <div class="member-info">
                                     <h4>{{ $doc->name_en }}</h4>
                                     <span>{{ $doc->private_specific_en }}/{{ $doc->public_specific_en }}</span>
-                                    <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+                                    <a href="#" class="btn btn-dark my-3 "> visit profile </a>
                                 </div>
                             </div>
                         </div>
@@ -221,6 +231,7 @@
             </div>
 
         </div>
+
 
     </section><!-- End Team Section -->
 

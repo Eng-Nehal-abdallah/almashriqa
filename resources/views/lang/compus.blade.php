@@ -106,7 +106,7 @@
 
 
                                 <ul>
-                                    @foreach ($faculties as $f)
+                                    @foreach ($Facutlies as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
                                             @foreach ($departments as $depart)
@@ -150,7 +150,7 @@
         <i class="fas moon"></i>
     </div>
     <!-- start light & dark -->
-
+    <br><br>
     <!-- start seection 2 -->
     <section class="section-2">
         <div class="row justify-content-around">
@@ -193,38 +193,9 @@
 
 
 
-    <!-- start section -->
-    <script src="/js/main.js"></script>
-    <script>
-        var bool = true;
-
-        $(document).ready(function() {
-            $('#lang').on('click', function() {
-
-                if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
+    <script src="/js/dark.js"></script>
 
 
-
-                    $('.section-2').removeClass('text-left')
-                    $('.section-2').addClass('text-right')
-
-                    bool = false;
-                } else if (bool == false) {
-
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
-
-                    $('.section-2').removeClass('text-right')
-                    $('.section-2').addClass('text-left')
-
-
-                    bool = true;
-                }
-
-            })
-        })
-    </script>
+    <script src="/js/nav.js"></script>
 
 </body>
