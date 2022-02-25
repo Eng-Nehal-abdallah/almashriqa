@@ -35,7 +35,7 @@
 
 
 
-<body class="light">
+<body class="light text-left">
 
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
@@ -148,19 +148,51 @@
     </div>
     <!-- start light & dark -->
 
+    <br><br><br>
 
 
+    <style>
+        .col-md-5 {
+            max-width: 90%;
+            height: auto;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+
+    </style>
     <!-- start section 1 -->
     <section class="section-1">
         <div class="container">
-            <div class="alert text-center alert-light" role="alert">
+            <div class="alert  alert-light" role="alert">
                 {{ $lab->name_en }}
             </div>
-            {{ $lab->details_en }}
             <div class="table-responsive-lg">
-                <img src="{{ $lab->image }}" />
-                <img src="{{ $lab->images }}" />
             </div>
+
+
+            <div class="row justify-content-around">
+                <div class="col-md-5 my-1">
+                    <img class="rounded" src="/{{ $lab->image }}" />
+
+                </div>
+                <div class="col-md-5 my-1">
+                    <img class="rounded" src="/{{ $lab->images }}" />
+                </div>
+                <div class="col-md-10 text-left">
+                    <p class="my-3">
+                        {{ $lab->details_en }}
+
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 

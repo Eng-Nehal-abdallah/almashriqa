@@ -77,6 +77,12 @@ img {
   /* IE6-9 */
 }
 
+img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .head {
   text-align: center;
 }

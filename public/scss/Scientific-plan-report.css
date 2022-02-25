@@ -33,6 +33,12 @@ section.section-1.dark table {
   color: #fff;
 }
 
+img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 @media (max-width: 785px) {
   .header .caption h1 {
     font-size: 2.5rem !important;

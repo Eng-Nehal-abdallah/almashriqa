@@ -40,6 +40,12 @@ h1.heading {
   src: url(../font/Rockwell-Font/ROCK.TTF);
 }
 
+img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .overlay {
   position: absolute;
   top: 0;
