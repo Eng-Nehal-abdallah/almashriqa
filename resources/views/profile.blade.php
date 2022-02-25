@@ -317,7 +317,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="contact">Get In Touch</h2>
+                    <h2 data-heading="contact">التواصل</h2>
                 </div>
             </div>
             <div class="row">

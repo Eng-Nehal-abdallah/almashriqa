@@ -152,8 +152,8 @@
     <!-- start header -->
     <div class="header">
         <div class="caption">
-            <h1 class="heading">ABOUT US</h1>
-            <h5>University</h5>
+            <h1 class="heading">AlMashriq University  </h1>
+
 
         </div>
 

@@ -101,7 +101,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)
@@ -143,7 +143,7 @@
     <!-- start haeder -->
     <div class="header">
         <div class="caption">
-            <h1 class="heading">معدل القبول و الاقساط</h1>
+            <h1 class="heading"> جامعة المشرق </h1>
             <!-- <h5>University</h5> -->
         </div>
 

@@ -203,7 +203,7 @@
                                 <div class="social">
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
-                                            @if ($social->id_type == $type->id && $leaderuni->id == $social->id_leaderuni)
+                                            @if ($social->id_type == $type->id && $leader->id == $social->id_leaderuni)
                                                 <a href="$social->link">{{ $type->name_ar }}</a>
                                             @endif
                                         @endforeach

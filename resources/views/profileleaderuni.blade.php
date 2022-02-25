@@ -242,7 +242,7 @@
                     <div class="social-links">
                         @foreach ($typs as $ty)
                             @foreach ($socials as $s)
-                                @if ($s->id_type == $ty->id && $s->id_leaderuni == $leadeeruni->id)
+                                @if ($s->id_type == $ty->id && $s->id_leaderuni == $leaderuni->id)
                                     <a href="{{ $s->link }}" class="outer-shadow hover-in-shadow"
                                         target="_blank"><i class="fab fa-">{{ $ty->name_ar}}</i></a>
                                 @endif
@@ -317,7 +317,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="contact">Get In Touch</h2>
+                    <h2 data-heading="contact">التواصل</h2>
                 </div>
             </div>
             <div class="row">
