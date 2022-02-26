@@ -14,7 +14,7 @@ class AcceptController extends Controller
         $departments = Department::all();
         $accepts = Accept::all();
 
-        return view('accept\dashboard', compact('accepts','Facutlies','departments'));
+        return view('accept.dashboard', compact('accepts','Facutlies','departments'));
     }
     public function index()
     {$Facutlies = Facutly::all();
@@ -28,7 +28,7 @@ class AcceptController extends Controller
         $departments = Department::all();
         $accepts = Accept::all();
 
-        return view('lang\accept2', compact('accepts','Facutlies','departments'));
+        return view('lang.accept2', compact('accepts','Facutlies','departments'));
     }
 
     public function indexen()
@@ -36,7 +36,7 @@ class AcceptController extends Controller
         $departments = Department::all();
         $accepts = Accept::all();
 
-        return view('lang\accept', compact('accepts','Facutlies','departments'));
+        return view('lang.accept', compact('accepts','Facutlies','departments'));
     }
 
 
@@ -53,7 +53,7 @@ class AcceptController extends Controller
     public function insert()
     {
 
-        return view('accept\create');
+        return view('accept.create');
     }
     public function create(Request $request)
     {
@@ -77,7 +77,7 @@ class AcceptController extends Controller
     // start edit
     public function edit(Accept $accept)
     {
-        return view('accept\edit', ['accept' => $accept]);
+        return view('accept.edit', ['accept' => $accept]);
     }
 
     // start update

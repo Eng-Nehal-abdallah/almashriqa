@@ -67,7 +67,11 @@
                             <li><a href="/leaderunien">University Presidency </a></li>
                             <li><a href="/feesen">Tuition fees </a></li>
                             <li><a href="/strategyen">University strategy </a></li>
+<<<<<<< HEAD
+                            <li><a href="/facutlyen">Doctors </a></li>
+=======
                             <li><a href="/facutlydocen">Doctors </a></li>
+>>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
                             <li><a href="/agreementsen">Agreements </a></li>
 
                             <li><a href="/leaderworden">University President word</a></li>

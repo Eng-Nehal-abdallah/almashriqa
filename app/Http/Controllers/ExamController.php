@@ -44,13 +44,13 @@ class ExamController extends Controller
     {
         $exam = exam::all();
 
-        return view('lang\exam2', compact('exam'),['department'=>$department]);
+        return view('lang.exam2', compact('exam'),['department'=>$department]);
     }
     public function index2en(Facutly $facutly)
     {
         $exam = exam::all();
 
-        return view('lang\exam', compact('exam'),['facutly'=>$facutly]);
+        return view('lang.exam', compact('exam'),['facutly'=>$facutly]);
     }
 
 

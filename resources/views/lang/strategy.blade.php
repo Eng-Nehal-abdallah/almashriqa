@@ -158,7 +158,7 @@
     <!-- start haeder -->
     <div class="header ">
         <div class="caption">
-            <h1 class="heading">UNIVersity Strategy</h1>
+            <h1 class="heading"> University Strategy</h1>
             <!-- <h5>University</h5> -->
         </div>
 
@@ -175,27 +175,19 @@
 
         <div class="container">
             <div class="head">
-                <h1 class="heading">strategy</h1>
-                <small>this is small </small>
+
+
             </div>
             <div class="row justify-content-around">
-                <!--
-    <div class="col-md-5">
-     <img src="/imgs/header.png" alt="">
-    </div> -->
 
                 <div class="col-md-12">
                     <div class="caption">
-                        <small>thats is</small>
-                        <h1 class="heading">head title of strategy</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's
-                            standard
-                            dummy text ever since the 1500s, when an unknown printer took a galle</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's
-                            standard
-                            dummy text ever since the 1500s, when an unknown printer took a galle</p>
+
+
+                        <div class="alert alert-light">
+                            <h1 class="heading">Almashriq University strategy</h1>
+                        </div>
+                        <p>{{ $mash->strategy_en }}</p>
 
                     </div>
                 </div>

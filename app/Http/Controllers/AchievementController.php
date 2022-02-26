@@ -21,7 +21,7 @@ class AchievementController extends Controller
         $facutlies = Facutly::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('dashbord\achievement\dashboard',['doctor'=>$doctor] ,compact('departments', 'facutlies', 'achievements','types'));
+        return view('dashbord.achievement.dashboard',['doctor'=>$doctor] ,compact('departments', 'facutlies', 'achievements','types'));
     }
     public function indexdoc(Doctors $doctor)
     {
@@ -29,7 +29,7 @@ class AchievementController extends Controller
         $facutlies = Facutly::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('dashbord\achievement\dashboarddoc',['doctor'=>$doctor] ,compact('departments', 'facutlies', 'achievements','types'));
+        return view('dashbord.achievement.dashboarddoc',['doctor'=>$doctor] ,compact('departments', 'facutlies', 'achievements','types'));
     }
     public function indexleader(Leader $leader)
     {
@@ -37,7 +37,7 @@ class AchievementController extends Controller
         $facutlies = Facutly::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('dashbord\achievement\dashboardleader',['leader'=>$leader] ,compact('departments', 'facutlies', 'achievements','types'));
+        return view('dashbord.achievement.dashboardleader',['leader'=>$leader] ,compact('departments', 'facutlies', 'achievements','types'));
     }
     public function indexleaderuni(Leaderuni $leaderuni)
     {
@@ -45,7 +45,7 @@ class AchievementController extends Controller
         $facutlies = Facutly::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('dashbord\achievement\dashboardleaderuni',['leaderuni'=>$leaderuni] ,compact('departments', 'facutlies', 'achievements','types'));
+        return view('dashbord.achievement.dashboardleaderuni',['leaderuni'=>$leaderuni] ,compact('departments', 'facutlies', 'achievements','types'));
     }
     public function facultyen(Facutly $faculty)
     {
@@ -53,7 +53,7 @@ class AchievementController extends Controller
         $departments = Department::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('lang\patentinner',['Facutly'=>$faculty] ,compact('achievements','types','Facutlies','departments'));
+        return view('lang.patentinner',['Facutly'=>$faculty] ,compact('achievements','types','Facutlies','departments'));
     }
 
 
@@ -63,7 +63,7 @@ class AchievementController extends Controller
         $departments = Department::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('lang\patentin',['Department'=>$department] ,compact('achievements','types','Facutlies','departments'));
+        return view('lang.patentin',['Department'=>$department] ,compact('achievements','types','Facutlies','departments'));
     }
  public function achievement(achievement $achievement)
     {    $Facutlies = Facutly::all();
@@ -81,7 +81,7 @@ $images=Images::all();
 $images=Images::all();
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('lang\research1',['achievement'=>$achievement] ,compact('achievements','types','Facutlies','departments','images'));
+        return view('lang.research1',['achievement'=>$achievement] ,compact('achievements','types','Facutlies','departments','images'));
     }
 
     public function faculty(Facutly $faculty)
@@ -107,7 +107,7 @@ $images=Images::all();
 
         $achievements = achievement::all();
         $types = Typeachievement::all();
-        return view('lang\researchinner',['doctor'=>$doctor] ,compact('achievements','types','Facutlies','departments'));
+        return view('lang.researchinner',['doctor'=>$doctor] ,compact('achievements','types','Facutlies','departments'));
     }
 
 
@@ -127,7 +127,7 @@ $images=Images::all();
         $facutlies = Facutly::all();
         $departments = Department::all();
         $types = Typeachievement::all();
-        return view('dashbord\achievement\edit', compact('facutlies', 'departments','types'), ['achievement' => $achievement]);
+        return view('dashbord.achievement.edit', compact('facutlies', 'departments','types'), ['achievement' => $achievement]);
     }
 
     // start update
@@ -184,7 +184,7 @@ $images=Images::all();
         $departments = Department::all();
         $types = Typeachievement::all();
 
-        return view('dashbord\achievement\createleader', compact('facutlies','departments','types'),['leader'=>$leader]);
+        return view('dashbord.achievement.createleader', compact('facutlies','departments','types'),['leader'=>$leader]);
     }
     public function insertleaderuni(Leaderuni $leaderuni)
     {
@@ -192,7 +192,7 @@ $images=Images::all();
         $departments = Department::all();
         $types = Typeachievement::all();
 
-        return view('dashbord\achievement\createleaderuni', compact('facutlies','departments','types'),['leaderuni'=>$leaderuni]);
+        return view('dashbord.achievement.createleaderuni', compact('facutlies','departments','types'),['leaderuni'=>$leaderuni]);
     }
     public function insert(Doctors $doctor)
     {
@@ -200,7 +200,7 @@ $images=Images::all();
         $departments = Department::all();
         $types = Typeachievement::all();
 
-        return view('dashbord\achievement\create', compact('facutlies','departments','types'),['doctor'=>$doctor]);
+        return view('dashbord.achievement.create', compact('facutlies','departments','types'),['doctor'=>$doctor]);
     }
     public function create(Request $request)
     {

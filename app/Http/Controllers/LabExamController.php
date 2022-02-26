@@ -15,14 +15,14 @@ class LabExamController extends Controller
 
         $labexams = Labexam::all();
 
-        return view('exams\labexam\dashboard',compact('labexams'));
+        return view('exams.labexam.dashboard',compact('labexams'));
     }
     public function indexp(Facutly $facutly )
     {
 
         $labexams = Labexam::all();
 
-        return view('exams\labexam\dashboardp',compact('labexams'),['facutly'=>$facutly ]);
+        return view('exams.labexam.dashboardp',compact('labexams'),['facutly'=>$facutly ]);
     }
     public function indexfac(Facutly $faculty)
     {$labexams = Labexam::all();

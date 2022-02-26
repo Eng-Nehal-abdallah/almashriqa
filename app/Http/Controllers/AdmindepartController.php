@@ -18,7 +18,7 @@ class AdmindepartController extends Controller
         $f=Facutly::all();
         $doctors=Doctors::all();
 
-        return view('admindepart\dashboard', compact('admin','mash','f','doctors'));
+        return view('admindepart.dashboard', compact('admin','mash','f','doctors'));
     }
     public function index()
     {    $Facutlies = Facutly::all();
@@ -32,12 +32,12 @@ class AdmindepartController extends Controller
         $departments = Department::all();
         $admins = Admindepart::all();
 
-        return view('lang\admindepart', compact('admins','Facutlies','departments'));
+        return view('lang.admindepart', compact('admins','Facutlies','departments'));
     }
     // start edit
     public function edit(Admindepart $admindepart)
     {
-        return view('admindepart\edit', ['admindepart' => $admindepart]);
+        return view('admindepart.edit', ['admindepart' => $admindepart]);
     }
 
     // start update

@@ -19,7 +19,7 @@ class MagazinController extends Controller
         $f=Facutly::all();
         $doctors=Doctors::all();
 
-        return view('magazin\dashboard', compact('magazins','mash','f','doctors'));
+        return view('magazin.dashboard', compact('magazins','mash','f','doctors'));
     }
     public function index()
     {$pdf=Pdf::all();
@@ -34,7 +34,7 @@ class MagazinController extends Controller
         $departments = Department::all();
         $magazins = Magazin::all();
         $pdf=Pdf::all();
-        return view('lang\magazin', compact('magazins','faculties','departments','pdf'));
+        return view('lang.magazin', compact('magazins','faculties','departments','pdf'));
     }
     // start destroy
     public function destroy(Magazin $magazin)
@@ -49,7 +49,7 @@ class MagazinController extends Controller
     public function insert()
     {
 
-        return view('magazin\create');
+        return view('magazin.create');
     }
     public function create(Request $request)
     {
@@ -72,7 +72,7 @@ class MagazinController extends Controller
     // start edit
     public function edit(Magazin $magazin)
     {
-        return view('magazin\edit', ['magazin' => $magazin]);
+        return view('magazin.edit', ['magazin' => $magazin]);
     }
 
     // start update

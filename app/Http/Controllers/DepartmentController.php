@@ -55,7 +55,7 @@ $doctors=Doctors::all();
     // start edit
     public function edit(department $department)
     {$facutlies=Facutly::all();
-        return view('department\edit',compact('facutlies') ,['department' => $department]);
+        return view('department.edit',compact('facutlies') ,['department' => $department]);
     }
 
     // start update
@@ -128,7 +128,7 @@ $Department->save();
     public function insert()
     {
         $facutlies = Facutly::all();
-        return view('department\create', compact('facutlies'));
+        return view('department.create', compact('facutlies'));
     }
     public function create(Request $request)
     {

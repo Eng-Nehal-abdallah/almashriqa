@@ -168,7 +168,7 @@
                             <div class="member-info">
                                 <h4>{{ $doct->name_ar }}</h4>
                                 <span>{{ $doct->position_ar }}</span>
-                                <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+                                <a href="/leader/{{ $doct->id }}/show" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
 
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                 <div class="social">
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
-                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
+                                            @if ($social->id_type == $type->id && $leader->id == $social->id_leaderuni)
                                                 <a href="$social->link">{{ $type->name_ar }}</a>
                                             @endif
                                         @endforeach
@@ -198,7 +198,7 @@
                             <div class="member-info">
                                 <h4> {{ $leader->name_ar }} </h4>
                                 <span> {{ $leader->position_ar }} </span>
-                                <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
+                                <a href="/leaderuni/{{ $leader->id }}/show" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
                             </div>
                         </div>
                     </div>

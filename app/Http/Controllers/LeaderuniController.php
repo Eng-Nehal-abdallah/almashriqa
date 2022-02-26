@@ -24,13 +24,13 @@ class LeaderuniController extends Controller
     }
     public function insert_socialmedia(Leaderuni $leaderuni)
     {$types=Type::all();
-        return view('leaderuni\social media\create',compact('types'),['leaderuni' => $leaderuni]);
+        return view('leaderuni.social media.create',compact('types'),['leaderuni' => $leaderuni]);
     }
     public function social(Leaderuni $leaderuni)
     {      $Facutlies = Facutly::all();
         $departments = Department::all();
         $socials = Social::all();
-        return view('leaderuni\social media\dashboard', ['leaderuni' => $leaderuni], compact('socials','Facutlies','departments'));
+        return view('leaderuni.social media.dashboard', ['leaderuni' => $leaderuni], compact('socials','Facutlies','departments'));
     }
 
     public function create_social(Request $request)
@@ -152,7 +152,7 @@ class LeaderuniController extends Controller
         $doctors = Leaderuni::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('doctors\dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
+        return view('doctors.dashboardp',['facutly'=>$facutly], compact('doctors','facutlies','departments'));
     }
     public function index()
     {
@@ -163,20 +163,20 @@ class LeaderuniController extends Controller
         $doctors = Leaderuni::all();
         $facutlies =Facutly::all();
         $departments=Department::all();
-        return view('leaderuni\dashboard', compact('doctors','facutlies','departments','mash','f','d'));
+        return view('leaderuni.dashboard', compact('doctors','facutlies','departments','mash','f','d'));
     }
    //start edit
    public function editdoc(Leaderuni $leaderuni)
    {$facutlies =Facutly::all();
        $departments=Facutly::all();
-       return view('leaderuni\edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
+       return view('leaderuni.edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
    }
 
     //start edit
     public function edit(Leaderuni $leaderuni)
     {$facutlies =Facutly::all();
         $departments=Facutly::all();
-        return view('leaderuni\edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
+        return view('leaderuni.edit' ,compact('facutlies','departments'),['leaderuni' => $leaderuni]);
     }
     //start edit
     public function profile(Leaderuni $doctor)
@@ -195,7 +195,7 @@ class LeaderuniController extends Controller
         $socials=Social::all();
         $types=Typeachievement::all();
         $typs=Type::all();
-        return view('lang\profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
+        return view('lang.profile' ,compact('faculties','departments','achievementes','socials','types','typs'),['doctor' => $doctor]);
     }
     // start update
     public function update(Request $request, Leaderuni $data)

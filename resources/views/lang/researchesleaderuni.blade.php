@@ -180,7 +180,7 @@
             </div>
             <div class="row awesome-project-content portfolio-container">
                 @foreach ($achievements as $ach)
-                    @if ($ach->id_doctor == $doctor->id)
+                    @if ($ach->id_leaderuni == $leaderuni->id)
                         <!-- portfolio-item start -->
                         <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                             <div class="single-awesome-project">

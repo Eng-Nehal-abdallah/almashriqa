@@ -172,7 +172,7 @@
     <!-- start section 1 -->
     <section class="section-1">
         <div class="head text-center">
-            <h3 class="my-3 p-3 ">Acceptance rate and premiums</h3>
+            <h3 class="my-3 p-3 "> AlMashriq University</h3>
             <!-- <p>small text</p> -->
         </div>
         @foreach ($fees as $f)

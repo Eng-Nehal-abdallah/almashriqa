@@ -16,7 +16,7 @@ class TypeahievementController extends Controller
         $mash = Mash::all()->first();
         $f=Facutly::all();
         $doctors=Doctors::all();
-        return view('achievement\Type\dashboard',compact('types','mash','f','doctors'));
+        return view('achievement.Type.dashboard',compact('types','mash','f','doctors'));
     }
 
 
@@ -34,7 +34,7 @@ class TypeahievementController extends Controller
     public function insert()
     {
 
-        return view('achievement\Type\create');
+        return view('achievement.Type.create');
     }
     public function create(Request $request)
     {

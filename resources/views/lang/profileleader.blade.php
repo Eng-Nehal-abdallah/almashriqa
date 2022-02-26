@@ -188,13 +188,13 @@
             <div class="row full-screen align-items-center">
                 <div class="home-text">
 
-                    <h2>{{ $doctor->name_en }} </h2>
-                    <h1> {{ $doctor->private_specific_en }}/{{ $doctor->public_specific_en }}</h1>
+                    <h2>{{ $leader->name_en }} </h2>
+                    <h1> {{ $leader->private_specific_en }}/{{ $leader->public_specific_en }}</h1>
 
                 </div>
                 <div class="home-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="pic">
+                        <img src="/{{ $leader->image }}" class="outer-shadow" alt="pic">
                     </div>
                 </div>
             </div>
@@ -207,20 +207,20 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="information">Information</h2>
+                    <h2 data-heading="information">information</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="about-img">
                     <div class="img-box inner-shadow">
-                        <img src="/{{ $doctor->image }}" class="outer-shadow" alt="pic">
+                        <img src="/{{ $leader->image }}" class="outer-shadow" alt="pic">
                     </div>
                     <!-- social links start -->
                     <!-- social links start -->
                     <div class="social-links">
                         @foreach ($typs as $ty)
                             @foreach ($socials as $s)
-                                @if ($s->id_type == $ty->id && $s->id_doctor == $doctor->id)
+                                @if ($s->id_type == $ty->id && $s->id_leader == $leader->id)
                                     <a href="{{ $s->link }}" class="outer-shadow hover-in-shadow"
                                         target="_blank"><i class="fab fa-">{{ $ty->name_en }}</i></a>
                                 @endif
@@ -235,25 +235,25 @@
 
                 <div class="about-info">
                     <h1 style="color: azure; text-align: center;">
-                        {{ $doctor->details_en }}
+                        {{ $leader->details_en }}
 
                     </h1>
-                    <a href="{{ $doctor->pdf }}" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
-                    <a href="/d/{{ $doctor->id }}/research" class="btn-1 outer-shadow hover-in-shadow">Show Researches</a>
+                    <a href="{{ $leader->pdf }}" class="btn-1 outer-shadow hover-in-shadow">Download CV</a>
+                    <a href="/leaderen/{{ $leader->id }}/research" class="btn-1 outer-shadow hover-in-shadow">Show Researches</a>
                 </div>
 
 
                 <div class="row">
                     <div class="about-tabs">
-                        <span class="tab-item outer-shadow active" data-target=".skills">
-                            <a href="/den/{{ $doctor->id }}/research"> Details Researches </a></span>
+                        <span class="tab-item outer-shadow active" data-target=".skills"> <a
+                                href="/leaderen/{{ $leader->id }}/research">  </a></span>
 
                     </div>
 
-                    {{--  <div class="skill-item" style="">  --}}
+                    {{--  <div class="skill-item" style="">
 
-                        {{--  @foreach ($achievementes as $ach)
-                            @if ($ach->id_doctor == $doctor->id)
+                        @foreach ($achievementes as $ach)
+                            @if ($ach->id_leader == $leader->id)
                                 <!-- skills start -->
                                 <div style="bottom: auto;" class="row">
                                     <div class="skills ">
@@ -268,7 +268,7 @@
                                                 </h2>
                                                 <div class="progress inner-shadow">
                                                     <div class="progress-bar" style="width: calc(50% - 14px)"></div>
-                                                    <a href="{{ $ach->pdf }} ">Download </a>
+                                                    <a href="{{ $ach->pdf }} ">Download cv </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -276,11 +276,11 @@
                             @endif
                         @endforeach  --}}
 
-                    {{--  </div>
+                    </div>
 
 
                 </div>
-            </div>  --}}
+            </div>
         </div>
     </section>
 
@@ -292,7 +292,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2 data-heading="contact">Contact us </h2>
+                    <h2 data-heading="contact">Contact </h2>
                 </div>
             </div>
             <div class="row">
@@ -303,7 +303,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-phone"></i>
                         <span>Phone </span>
-                        <p>{{ $doctor->phone }}</p>
+                        <p>{{ $leader->phone }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -314,7 +314,7 @@
                         <span>Email</span>
 
 
-                        <p>{{ $doctor->email }}</p>
+                        <p>{{ $leader->email }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -323,7 +323,7 @@
                     <div class="contact-item-inner outer-shadow">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Address</span>
-                        <p>{{ $doctor->country }}</p>
+                        <p>{{ $leader->country }}</p>
                     </div>
                 </div>
                 <!-- contact item end -->

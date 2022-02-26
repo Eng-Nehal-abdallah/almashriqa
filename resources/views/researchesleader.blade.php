@@ -13,11 +13,17 @@
     <!-- start box icon -->
 
 
-    <link rel="stylesheet" href="/scss/Tuition-fees.css">
+    <link rel="stylesheet" href="/scss/researchers-inner.css">
     <link rel="stylesheet" href="/scss/table-test.css">
+    @extends('layouts.head-en')
 
-    @extends('layouts.head-ar')
 
+    <!-- start box icon -->
+    <link href='/css/boxicons.min.css' rel='stylesheet'>
+    <!--start fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/navbar.css">
 
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -30,7 +36,6 @@
 </head>
 
 <body>
-
 
     <!-- start navbar -->
     <header id="header" dir="rtl" class="fixed-top">
@@ -144,53 +149,141 @@
     <!-- start light & dark -->
 
 
-    <!-- start haeder -->
-    <div class="header">
-        <div class="caption">
-            <h1 class="heading">ستراتيجية الجامعة</h1>
-        </div>
-
-        <div class="overlay"></div>
-
-    </div>
-
-    <!-- end header -->
 
 
 
     <!-- start section 1 -->
-    <section class="section-1 text-right my-5" dir="rtl">
-
+    <!-- ======= Portfolio Section ======= -->
+    <div id="portfolio" class="portfolio section-1 portfolio-area area-padding fix">
         <div class="container">
-            <div class="head">
-                <h1 class="heading"></h1>
 
-            </div>
-            <div class="row justify-content-around">
-
-                <div class="col-md-12 my-5">
-                    <div class="caption">
-                        <div class="alert alert-light">
-                            <h1> استراتيجه جامعة المشرق </h1>
-                        </div>
-                        <p>{{ $mash->strategy_ar }}</p>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="head ">
+                        <h2 class="heading">كل الابحاث</h2>
+                        <small>{{ $doctor->name_en }}</small>
 
                     </div>
                 </div>
+            </div>
+            <div class="row awesome-project-content portfolio-container">
+                @foreach ($achievements as $ach)
+                    @if ($ach->id_leader == $leader->id)
+                        <!-- portfolio-item start -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+                            <div class="single-awesome-project">
+                                <div class="awesome-img">
+                                    <a name="ssss" href="/achen/{{ $ach->id }}/show"><img
+                                            src="/{{ $ach->image }}" alt="" /></a>
+                                    <div class="add-actions text-center">
+                                        <div class="project-dec">
+                                            <a class="portfolio-lightbox" data-gallery="myGallery"
+                                                href="/achen/{{ $ach->id }}/show">
+                                                <h4>{{ $ach->name_en }}</h4>
+                                                @foreach ($types as $type)
+                                                    @if ($type->id == $ach->id_types)
+                                                        <span>{{ $type->name_en }}</span>
+                                                    @endif
+                                                @endforeach
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio-item end -->
+                    @endif
+                @endforeach
+                {{-- <!-- portfolio-item start -->
+    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+     <div class="single-awesome-project">
+      <div class="awesome-img">
+       <a href="#"><img src="/imgs/header.png" alt="" /></a>
+       <div class="add-actions text-center">
+        <div class="project-dec">
+         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
+          <h4>Business City</h4>
+          <span>Web Development</span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- portfolio-item end -->
+
+    <!-- portfolio-item start -->
+    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+     <div class="single-awesome-project">
+      <div class="awesome-img">
+       <a href="#"><img src="/imgs/header.png" alt="" /></a>
+       <div class="add-actions text-center">
+        <div class="project-dec">
+         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
+          <h4>Business City</h4>
+          <span>Web Development</span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- portfolio-item end -->
+
+    <!-- portfolio-item start -->
+    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+     <div class="single-awesome-project">
+      <div class="awesome-img">
+       <a href="#"><img src="/imgs/header.png" alt="" /></a>
+       <div class="add-actions text-center">
+        <div class="project-dec">
+         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
+          <h4>Business City</h4>
+          <span>Web Development</span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- portfolio-item end -->
+
+    <!-- portfolio-item start -->
+    <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+     <div class="single-awesome-project">
+      <div class="awesome-img">
+       <a href="#"><img src="/imgs/header.png" alt="" /></a>
+       <div class="add-actions text-center">
+        <div class="project-dec">
+         <a class="portfolio-lightbox" data-gallery="myGallery" href="/imgs/header.png">
+          <h4>Business City</h4>
+          <span>Web Development</span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- portfolio-item end --> --}}
+
 
             </div>
         </div>
-
-    </section>
-
-    <!-- end section 1 -->
+    </div><!-- End Portfolio Section -->
 
 
+    <!-- End section 1 -->
 
+
+
+
+    <!-- end section 2 -->
     <!--start footer -->
 
-    @extends('layouts.footer-ar')
+    <!-- start footer -->
+    @extends('layouts.footer-en')
 
+    <!-- start jquery -->
     <!-- start jquery -->
     <script src="/js/jquery-3.6.0.min.js"></script>
     <!-- start owl carousel -->
@@ -208,7 +301,6 @@
 
 
     <script src="/js/nav.js"></script>
-
     <script>
         var bool = true;
 
@@ -216,8 +308,8 @@
             $('#lang').on('click', function() {
 
                 if (bool == true) {
-                    $("body").removeAttr("dir", "ltr");
-                    $("body").attr("dir", "rtl");
+                    $("header").removeAttr("dir", "ltr");
+                    $("header").attr("dir", "rtl");
 
                     $('.section-1').removeClass('text-left')
                     $('.section-1').addClass('text-right')
@@ -226,8 +318,8 @@
                     $('.section-2').addClass('text-right')
                     bool = false;
                 } else if (bool == false) {
-                    $("body").removeAttr("dir");
-                    $("body").attr("dir", "ltr");
+                    $("header").removeAttr("dir");
+                    $("header").attr("dir", "ltr");
 
                     $('.section-1').removeClass('text-right')
                     $('.section-1').addClass('text-left')
@@ -239,6 +331,7 @@
             })
         })
     </script>
+
 
 
 </body>

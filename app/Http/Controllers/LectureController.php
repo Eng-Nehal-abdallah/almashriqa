@@ -52,7 +52,7 @@ $mash = Mash::all()->first();
 $f=Facutly::all();
 $doctors=Doctors::all();
 
-        return view('lecture\dashboard', compact('departments','Facutlies','lectures','mash','f','doctors'));
+        return view('lecture.dashboard', compact('departments','Facutlies','lectures','mash','f','doctors'));
     }
 
     public function indexp(Facutly $facutly)
@@ -60,7 +60,7 @@ $doctors=Doctors::all();
         $lectures = Lecture::all();
 $Facutlies =Facutly::all();
 $departments=Department::all();
-        return view('lecture\dashboardp',['facutly'=>$facutly] ,compact('departments','Facutlies','lectures'));
+        return view('lecture.dashboardp',['facutly'=>$facutly] ,compact('departments','Facutlies','lectures'));
     }
 
     // start destroy
@@ -76,7 +76,7 @@ $departments=Department::all();
     public function insert(Facutly $facutly)
     {
 $facutlies=Facutly::all();
-        return view('lecture\create',compact('facutlies'),['facutly'=>$facutly]);
+        return view('lecture.create',compact('facutlies'),['facutly'=>$facutly]);
     }
     public function create(Request $request)
     {
@@ -99,7 +99,7 @@ $facutlies=Facutly::all();
     // start edit
     public function edit(Lecture $lecture)
     {
-        return view('lecture\edit', ['lecture' => $lecture]);
+        return view('lecture.edit', ['lecture' => $lecture]);
     }
   // public function update(Lecture $lecture)
     // {

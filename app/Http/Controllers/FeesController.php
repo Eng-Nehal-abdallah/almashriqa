@@ -19,7 +19,7 @@ class FeesController extends Controller
 
         $fees = Fees::all();
 
-        return view('fees\dashboard', compact('fees','mash','f','doctors'));
+        return view('fees.dashboard', compact('fees','mash','f','doctors'));
     }
     public function index()
     {
@@ -35,7 +35,7 @@ class FeesController extends Controller
         $departments = Department::all();
         $fees = Fees::all();
 
-        return view('lang\fees', compact('fees', 'faculties', 'departments'));
+        return view('lang.fees', compact('fees', 'faculties', 'departments'));
     }
     // start destroy
     public function destroy(Fees $fees)
@@ -50,7 +50,7 @@ class FeesController extends Controller
     public function insert()
     {
 
-        return view('fees\create');
+        return view('fees.create');
     }
     public function create(Request $request)
     {
@@ -72,7 +72,7 @@ class FeesController extends Controller
     // start edit
     public function edit(Fees $fees)
     {
-        return view('fees\edit', ['fees' => $fees]);
+        return view('fees.edit', ['fees' => $fees]);
     }
 
     // start update

@@ -609,8 +609,15 @@ Route::get('/doctorsen/{Department}/show', [DoctorsController::class, 'shDen']);
 //show profile
 Route::get('docen/{doctor}/show', [DoctorsController::class, 'profileen']);
 //show department for faculty
+//show profile
+Route::get('leader/{leader}/show', [DoctorsController::class, 'profileleader']);
+//show profile
+Route::get('leaderen/{leader}/show', [DoctorsController::class, 'profileenleader']);
 
-
+//show profile
+Route::get('leaderuni/{leaderuni}/show', [DoctorsController::class, 'profileleaderuni']);
+//show profile
+Route::get('leaderunien/{leader}/show', [DoctorsController::class, 'profileenleaderuni']);
 Route::get('/departmenten/{department}/show', [DepartmentController::class, 'shen']);
 //show requiremeznt of faculty
 Route::get('/requirementen', [RequirementController::class, 'indexen']);
@@ -630,6 +637,25 @@ Route::get('/departmentten/{department}/research', [UniversitiesController::clas
 Route::get('/d/{doctor}/research', [UniversitiesController::class, 'doctor']);
 //show all achievement for faculty
 Route::get('/den/{doctor}/research', [UniversitiesController::class, 'doctoren']);
+
+
+
+//show all achievement for faculty
+Route::get('/leader/{leader}/research', [UniversitiesController::class, 'leader']);
+//show all achievement for faculty
+Route::get('/leaderen/{leader}/research', [UniversitiesController::class, 'leaderen']);
+
+
+//show all achievement for faculty
+Route::get('/leaderuni/{leaderuni}/research', [UniversitiesController::class, 'leaderuni']);
+//show all achievement for faculty
+Route::get('/leaderunien/{leaderuni}/research', [UniversitiesController::class, 'leaderunien']);
+
+
+
+
+
+
 //edit faculty
 Route::get('/facutly/{facutly}/edit', [UniversitiesController::class, 'edit']);
 //update code after head
@@ -1334,18 +1360,7 @@ Route::delete('/students/{student}', [StudentfirstController::class, 'destroy'])
 //show page dashboard
 Route::get('/dashboard20/{facutly}', [StudentfirstController::class, 'index'])->middleware(['auth', 'facutly'],['auth','admin']);
 
-// //destroy department
-// Route::delete('/doctors/{doctor}', [DoctorsController::class, 'destroy'])->middleware(['auth', 'facutly'],['auth','admin']);
 
-
-
-// //add doctors
-// Route::post('/create_doctor', [DoctorsController::class, 'create'])->middleware(['auth', 'facutly'],['auth','admin']);
-// //edit department
-// Route::get('/doctor/{doctor}/edit', [DoctorsController::class, 'edit'])->middleware(['auth', 'facutly'],['auth','admin']);
-// //update code after head
-// Route::post('/doctor/{doctor}', [DoctorsController::class, 'update'])->middleware(['auth', 'facutly'],['auth','admin']);
-//dashboard doctor
 Route::get('/dashboard4/{facutly}', [DoctorsController::class, 'indexp'])->middleware(['auth', 'facutly'],['auth','admin']);
 
 Route::group(['middleware' => ['auth', 'facutly']], function () {
@@ -1478,9 +1493,6 @@ Route::get('/gen/{image}/show', [ImageController::class, 'indexshowen']);
     Route::delete('/video/{video}', [VideoController::class, 'destroy'])->middleware(['auth','admin']);
     //show page dashboard
     Route::get('/dashboard24/{image}', [VideoController::class, 'index'])->middleware(['auth','admin']);
-
-
-
 
     //show page dashboard
 Route::get('/dashboard25', [LeaderController::class, 'index'])->middleware(['auth', 'admin'],['auth','doctor']);

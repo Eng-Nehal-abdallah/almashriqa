@@ -15,14 +15,14 @@ class LabController extends Controller
         $labs = Lab::all();
 $Facutlies = Facutly::all();
         $departments = Department::all();
-        return view('lang\lab2', compact('labs','departments','Facutlies'),['department'=>$department]);
+        return view('lang.lab2', compact('labs','departments','Facutlies'),['department'=>$department]);
     }
     public function indexen(Facutly $facutly)
     {
         $labs = Lab::all();
 $Facutlies = Facutly::all();
         $departments = Department::all();
-        return view('lang\lab', compact('labs','departments','Facutlies'),['facutly'=>$facutly]);
+        return view('lang.lab', compact('labs','departments','Facutlies'),['facutly'=>$facutly]);
     }
     public function showen(Lab $lab)
     {$Facutlies = Facutly::all();
@@ -64,7 +64,7 @@ $Facutlies = Facutly::all();
         $doctors=Doctors::all();
 
 $labs=Lab::all();
-        return view('lab\dashboard',compact('labs','mash','f','doctors'));
+        return view('lab.dashboard',compact('labs','mash','f','doctors'));
     }
 
 
@@ -72,7 +72,7 @@ $labs=Lab::all();
     public function edit(Lab $lab)
     {
 
-        return view('lab\edit', ['Lab' => $lab]);
+        return view('lab.edit', ['Lab' => $lab]);
     }
 
     // start update
@@ -137,7 +137,7 @@ $labs=Lab::all();
     public function insert()
     {
 
-        return view('lab\create');
+        return view('lab.create');
     }
     public function create(Request $request)
     {

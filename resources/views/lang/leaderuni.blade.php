@@ -74,7 +74,7 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
+                                    <li><a href="/facutlyen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
@@ -143,6 +143,7 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
+    <!-- end navbar -->
 
     <!-- start light & dark -->
     <div class="dark-mood ">
@@ -174,6 +175,8 @@
                                         @foreach ($socials as $social)
                                             @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
                                                 <a href="$social->link">{{ $type->name_en }}</a>
+
+                                                <a href="$social->link">{{ $type->name_en }}</a>
                                             @endif
                                         @endforeach
                                     @endforeach
@@ -183,6 +186,10 @@
                                 <h4>{{ $doct->name_en }}</h4>
                                 <span>{{ $doct->position_en }}</span>
                                 <a href="#" class="btn btn-dark my-3 ">visit profile</a>
+
+                                <a href="/leaderen/{{ $doct->id }}/show" class="btn btn-dark my-3 ">Visit
+                                    Profile </a>
+
 
                             </div>
                         </div>
@@ -202,8 +209,8 @@
                                 <div class="social">
                                     @foreach ($types as $type)
                                         @foreach ($socials as $social)
-                                            @if ($social->id_type == $type->id && $doct->id == $social->id_leader)
-                                                <a href="$social->link">{{ $type->name_ar }}</a>
+                                            @if ($social->id_type == $type->id && $leader->id == $social->id_leaderuni)
+                                                <a href="$social->link">{{ $type->name_en }}</a>
                                             @endif
                                         @endforeach
                                     @endforeach
@@ -212,7 +219,8 @@
                             <div class="member-info">
                                 <h4> {{ $leader->name_en }} </h4>
                                 <span> {{ $leader->position_en }} </span>
-                                <a href="#" class="btn btn-dark my-3 "> visit profile </a>
+                                <a href="/leaderunien/{{ $leader->id }}/show" class="btn btn-dark my-3 ">Visit
+                                    Profile </a>
                             </div>
                         </div>
                     </div>
