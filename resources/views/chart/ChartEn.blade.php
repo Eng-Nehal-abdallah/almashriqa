@@ -116,13 +116,14 @@
     </div>
     <!-- start light & dark -->
 
+    <br><br>
     {{-- start chart --}}
     <section class="section-1">
         <div class="container-fluid my-1">
 
             <div class="card text-center">
                 <div class="card-header">
-                    Featured
+                    statistics of 2021-2022
                 </div>
 
                 <div id="chartdiv"></div>
@@ -132,20 +133,20 @@
                     <div class="caption one col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>43</h5>
+                            <p class="cold-flex p-1">number of
                             </p>
+                            <h4 class="m-2 p-2">researchers</h4>
                         </div>
                     </div>
 
                     <div class="caption tow col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>4000</h5>
+                            <p class="cold-flex p-1">number of
                             </p>
+                            <h4 class="m-2 p-2">student</h4>
                         </div>
                     </div>
 
@@ -153,19 +154,19 @@
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
                             <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <p class="cold-flex p-1">number of
                             </p>
+                            <h4 class="m-2 p-2">Doctors</h4>
                         </div>
                     </div>
 
                     <div class="caption four col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>5</h5>
+                            <p class="cold-flex p-1">number of
                             </p>
+                            <h4 class="m-2 p-2">College</h4>
                         </div>
                     </div>
 
@@ -173,16 +174,27 @@
                 </div>
 
                 <div class="card-footer text-muted">
-                    2 days ago
+                    Almashriq
                 </div>
             </div>
 
         </div>
     </section>
     {{-- end chart --}}
+    <style>
+        @media(max-width:500px) {
 
+            canvas,
+            #chartdiv {
+                width: 400px !important;
+                height: 400px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                right: 5%;
+            }
+        }
 
-
+    </style>
 
     <!--start footer -->
 
@@ -209,7 +221,7 @@
     <script src="{{ asset('js/chart/main.js') }}"></script>
     <script src="{{ asset('js/chart/percent.js') }}"></script>
     <script src="{{ asset('js/chart/Animated.js') }}"></script>
-    <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/indexEn.js') }}"></script>
 </body>
 
 </html>

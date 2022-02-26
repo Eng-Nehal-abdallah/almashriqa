@@ -132,35 +132,38 @@
 
     {{-- start chart --}}
     <br><br>
-    <section class="section-1">
+    <section class="section-1 overflow-scroll" dir="rtl">
         <div class="container-fluid my-1">
 
             <div class="card text-center">
                 <div class="card-header">
-                    Almashriq
+                    احصائيات عام 2021-2022
                 </div>
 
-                <div id="chartdiv"></div>
+
+                <div style="min-width: 500px;" class="overflow-scroll" id="chartdiv">
+                </div>
+
 
                 <div class="row justify-content-center justify-content-sm-center">
 
                     <div class="caption one col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>43</h5>
+                            <p class="cold-flex p-1">عدد
                             </p>
+                            <h4 class="m-2 p-2">الابحاث</h4>
                         </div>
                     </div>
 
                     <div class="caption tow col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>4000</h5>
+                            <p class="cold-flex p-1">عدد
                             </p>
+                            <h4 class="m-2 p-2">الطلبة</h4>
                         </div>
                     </div>
 
@@ -168,19 +171,19 @@
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
                             <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <p class="cold-flex p-1">عدد
                             </p>
+                            <h4 class="m-2 p-2">الكادر التدريسي</h4>
                         </div>
                     </div>
 
                     <div class="caption four col-sm-6 col-10 col-md-3">
                         <div class="color d-inline"></div>
                         <div class="caption text-center">
-                            <h5>34</h5>
-                            <p class="cold-flex p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                                labore.
+                            <h5>5</h5>
+                            <p class="cold-flex p-1">عدد
                             </p>
+                            <h4 class="m-2 p-2">الكليات</h4>
                         </div>
                     </div>
 
@@ -195,6 +198,21 @@
         </div>
     </section>
     {{-- end chart --}}
+
+    <style>
+        @media(max-width:500px) {
+
+            canvas,
+            #chartdiv {
+                width: 400px !important;
+                height: 380px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                right: 5%;
+            }
+        }
+
+    </style>
 
 
 
@@ -224,7 +242,7 @@
     <script src="{{ asset('js/chart/main.js') }}"></script>
     <script src="{{ asset('js/chart/percent.js') }}"></script>
     <script src="{{ asset('js/chart/Animated.js') }}"></script>
-    <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/indexAr.js') }}"></script>
 </body>
 
 </html>
