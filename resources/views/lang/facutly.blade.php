@@ -109,10 +109,8 @@
                         <ul>
                             <li><a href="/facutlylecen">Term lecture table</a></li>
                             <li><a href="/facutlyexamen">Exam Table </a></li>
-
                         </ul>
                     </li>
-
                     <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
                     <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
                     <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
@@ -157,7 +155,7 @@
     <!-- start light & dark -->
 
     <!-- start section 6 -->
-    <section class="section-6 my-4 " dir="rtl">
+    <section class="section-6 my-4 ">
         <div class="container">
             <div class="alert text-center alert-light">
                 <h5>college leader</h5>
@@ -454,20 +452,20 @@
 
 
     @if ($d->count() > 0)
-        <section class="section-7  py-4">
+        <section class="section-7 text-left my-4  py-4">
             <div class="container">
                 <div class="row justify-content-around">
                     <div class="col-md-5 ">
                         <h2>Departments </h2>
-                        <p>
+                        <p class="text-left">
                             {{ $facutly->details_en }}
                         </p>
-                        <div class="dropdown bg-color float-right">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        <div class="dropdown  float-right">
+                            <button class="btn bg-color dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-expanded="false">
-                                Dropdown button
+                                Departments
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu bg-color" aria-labelledby="dropdownMenuButton">
                                 @foreach ($departments as $department)
                                     @if ($department->id_facutly == $facutly->id)
                                         <a class="dropdown-item"

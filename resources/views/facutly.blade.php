@@ -93,16 +93,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -469,11 +469,11 @@
                             {{ $facutly->details_ar }}
                         </p>
                         <div class="dropdown bg-color float-right">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn bg-color dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-expanded="false">
                                 Dropdown button
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu bg-color" aria-labelledby="dropdownMenuButton">
                                 @foreach ($departments as $department)
                                     @if ($department->id_facutly == $facutly->id)
                                         <a class="dropdown-item"
