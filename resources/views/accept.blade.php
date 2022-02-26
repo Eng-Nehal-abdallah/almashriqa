@@ -79,7 +79,7 @@
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
                             <li><a href="/facutlylab">المختبرات</a></li>
-                            <li><a href="/facutlyresearch">الانجازات </a></li>
+                            <li><a href="/facutlyresearch">الابحاث </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
                             <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
 
@@ -103,18 +103,19 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
+                                            <ul> @foreach ($departments as $depart)
                                         @if ($depart->id_facutly == $f->id)
-                                            <ul>
-                                                <li><a
-                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+
+                                                <li>
+                                                    <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
                                                 </li>
-                                            </ul>
+
                                         @endif
                                     @endforeach
+                                </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -148,8 +149,8 @@
 
     <div class="header">
         <div class="caption">
-            <h1 class="heading">شروط التسجيل</h1>
-            <h5>جامعة المشرق</h5>
+            <h1 class="heading">جامعة المشرق </h1>
+            {{--  <h5>جامعة المشرق</h5>  --}}
         </div>
 
         <div class="overlay"></div>

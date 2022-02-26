@@ -109,15 +109,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-                                            <ul>
-                                                <li><a
-                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                </li>
-                                            </ul>
-                                        @endif
-                                    @endforeach
+                                            <ul> @foreach ($departments as $depart)
+                                                @if ($depart->id_facutly == $f->id)
+
+                                                        <li>
+                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                        </li>
+
+                                                @endif
+                                            @endforeach
+                                        </ul>
                                 </li>
                             @endforeach
                         </ul>

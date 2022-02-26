@@ -80,7 +80,7 @@
 
                             <li><a href="/leaderword">كلمة رئيس الجامعة</a></li>
                             <li><a href="/facutlylab">المختبرات</a></li>
-                            <li><a href="/facutlyresearch">الانجازات </a></li>
+                            <li><a href="/facutlyresearch">الابحاث </a></li>
                             <li><a href="/compuss">الحرم الجامعي</a></li>
                             <li><a class="nav-link scrollto" href="/chart">الاحصائيات </a></li>
 
@@ -107,15 +107,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                    @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-                                            <ul>
-                                                <li><a
-                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                </li>
-                                            </ul>
-                                        @endif
-                                    @endforeach
+                                            <ul> @foreach ($departments as $depart)
+                                                @if ($depart->id_facutly == $f->id)
+
+                                                        <li>
+                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                        </li>
+
+                                                @endif
+                                            @endforeach
+                                        </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -160,7 +161,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="head ">
-                        <h2 class="heading">All achievement</h2>
+                        <h2 class="heading">كل الابحاث</h2>
                         <small>{{ $doctor->name_en }}</small>
 
                     </div>

@@ -83,12 +83,12 @@
                                     <li><a href="/leaderunien">University Presidency </a></li>
                                     <li><a href="/feesen">Tuition fees </a></li>
                                     <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlydocen">Doctors </a></li>
+                                    <li><a href="/facutlyen">Doctors </a></li>
                                     <li><a href="/agreementsen">Agreements </a></li>
 
                                     <li><a href="/leaderworden">University President word</a></li>
                                     <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
+                                    <li><a href="/facutlyresearchen">Researches </a></li>
                                     <li><a href="/compusen">compus </a></li>
                                     <li><a href="/chartEn">statistics </a></li>
 
@@ -98,7 +98,7 @@
                             <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/agreementsen">Registration mechanism </a></li>
+                                    <li><a href="/agreementsen">Registration mechanism</a></li>
                                     <li><a href="/accepten">Acceptable Rules </a></li>
                                     <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
 
@@ -114,18 +114,18 @@
 
 
                                 <ul>
-                                    @foreach ($Facutlies as $f)
+                                    @foreach ($faculties as $f)
                                         <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                                     {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-                                                    <ul>
+                                            <ul>
+                                                @foreach ($departments as $depart)
+                                                    @if ($depart->id_facutly == $f->id)
                                                         <li><a
                                                                 href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                         </li>
-                                                    </ul>
-                                                @endif
-                                            @endforeach
+                                                    @endif
+                                                @endforeach
+                                            </ul>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -150,6 +150,8 @@
 
                 </div>
         </div>
+    </header><!-- End Header -->
+    <!-- end navbar -->
     </header><!-- End Header -->
     <!-- end navbar -->
 
