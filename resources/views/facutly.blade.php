@@ -325,7 +325,7 @@
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_ar }}</p>
                                 <a class="btn bg-color btn-block main m-auto "
-                                    href="/Faculty/{{ $act->id }}/research">التفاصيل</a>
+                                    href="/act/{{ $act->id }}/show">التفاصيل</a>
                             </div>
                         </div>
                     @endif

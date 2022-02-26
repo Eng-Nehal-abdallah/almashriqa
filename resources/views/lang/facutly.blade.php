@@ -131,7 +131,6 @@
 
 
 
-
     <div class="header">
         <div class="content">
             <div class="row justify-content-around">
@@ -322,7 +321,7 @@
 
                                 <p style="font-weight: bold;" class="second">{{ $act->detaila_en }}</p>
                                 <a class="btn bg-color btn-block  main m-auto "
-                                    href="/Faculty/{{ $act->id }}/research">Details</a>
+                                    href="/acten/{{ $act->id }}/show">Details</a>
                             </div>
                         </div>
                     @endif
