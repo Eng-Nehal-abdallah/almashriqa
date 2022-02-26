@@ -164,7 +164,7 @@
                     <div class="col-md-2">
                         <i class="bi bi-check2-circle"></i>
                         <h4>{{ $p->name_en }}</h2>
-                            <a class="btn btn-light" href="/paper/{{ $p->id }}/show">details</a>
+                            <a class="btn btn-light" href="/paperen/{{ $p->id }}/show">details</a>
                     </div>
                 @endforeach
 

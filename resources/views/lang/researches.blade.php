@@ -155,7 +155,7 @@
 
 
             <div class="card border-light mb-3">
-                <h5 class="card-header text-center">All Achievement</h5>
+                <h5 class="card-header text-center">All Researches</h5>
                 <div class="card-body">
                     <div class="row awesome-project-content portfolio-container">
                         @foreach ($achievements as $ach)
@@ -164,12 +164,12 @@
                                 <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item filter-app portfolio-item">
                                     <div class="single-awesome-project">
                                         <div class="awesome-img">
-                                            <a name="link" href="/ach/{{ $ach->id }}/show"><img
+                                            <a name="link" href="/achen/{{ $ach->id }}/show"><img
                                                     src="/{{ $ach->image }}" alt="" /></a>
                                             <div class="add-actions text-center">
                                                 <div class="project-dec">
                                                     <a class="portfolio-lightbox" data-gallery="myGallery"
-                                                        href="/ach/{{ $ach->id }}/show">
+                                                        href="/achen/{{ $ach->id }}/show">
                                                         <h4>{{ $ach->name_en }}</h4>
                                                         @foreach ($types as $type)
                                                             @if ($type->id == $ach->id_types)

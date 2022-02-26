@@ -273,7 +273,7 @@
           <th scope="col">faculty</th>
           <th scope="col">department</th>
 
-          <th scope="col">Edit</th>
+          {{--  <th scope="col">Edit</th>  --}}
           <th scope="col">Add social media</th>
           <th scope="col">show all social media</th>
           <th scope="col">show all achievment media</th>
@@ -356,7 +356,7 @@
 
 
 
-          <td><a class="btn shadow-sm btn-dark" href="/leaderuni/{{ $data->id }}/edit">edit</a></td>
+          {{--  <td><a class="btn shadow-sm btn-dark" href="/leaderuni/{{ $data->id }}/edit">edit</a></td>  --}}
           <td><a class="btn shadow-sm btn-dark" href="/leaderunisocial/{{ $data->id }}/add">Add social media</a></td>
           <td><a class="btn shadow-sm btn-dark" href="/socialleaderuni/{{ $data->id }}/show">show social media</a></td>
           <td><a class="btn shadow-sm btn-dark" href="/achievementleaderuni/{{ $data->id }}/show">show achievement</a></td>

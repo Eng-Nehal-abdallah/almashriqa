@@ -228,7 +228,7 @@
           <th scope="col">faculty</th>
           <th scope="col">department</th>
 
-          <th scope="col">Edit</th>
+          {{--  <th scope="col">Edit</th>  --}}
           <th scope="col">Add social media</th>
           <th scope="col">show all social media</th>
           <th scope="col">show all achievment media</th>
@@ -314,7 +314,7 @@
 
 
 
-          <td><a class="btn shadow-sm btn-dark" href="/doctor/{{ $data->id }}/edit">edit</a></td>
+          {{--  <td><a class="btn shadow-sm btn-dark" href="/doctor/{{ $data->id }}/edit">edit</a></td>  --}}
           <td><a class="btn shadow-sm btn-dark" href="/doctorsocial/{{ $data->id }}/add">Add social media</a></td>
           <td><a class="btn shadow-sm btn-dark" href="/social/{{ $data->id }}/show">show social media</a></td>
           <td><a class="btn shadow-sm btn-dark" href="/achievement/{{ $data->id }}/show">show achievement</a></td>
