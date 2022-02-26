@@ -16,7 +16,7 @@
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
             <!-- Uncomment below if you prefer to use text as a logo -->
-            <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+            <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
 
             <nav id="navbar" class="navbar">
 
@@ -200,6 +200,10 @@
     {{-- end chart --}}
 
     <style>
+        body.dark canvas {
+            color: #fff;
+        }
+
         @media(max-width:500px) {
 
             canvas,
