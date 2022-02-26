@@ -117,16 +117,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -152,7 +152,7 @@
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
-
+    <br><br><br>
     <sectionl class="section-1">
         <div class="container">
             <div class="row justify-content-around">
@@ -166,6 +166,13 @@
             </div>
         </div>
     </sectionl>
+    <style>
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+    </style>
     <br>
     <sectionl class="section-1">
         <div class="container">
