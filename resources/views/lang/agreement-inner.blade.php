@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="text-right" dir="rtl">
+<body class="text-right">
 
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
@@ -133,8 +133,9 @@
 
 
     <!-- start section 2 -->
+    <br><br><br>
 
-    <section class="section-2 ">
+    <section class="section-2 text-left">
         <div class="container-fluid">
             <div class="row justify-content-around">
 

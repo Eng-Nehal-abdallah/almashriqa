@@ -11,10 +11,10 @@
 
 
     <link rel="stylesheet" href="/scss/doctors.css">
+    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/scss/dark&light.css">
-    <link rel="stylesheet" href="{{ asset('scss/table-test.css') }}">
 
 
 
@@ -34,112 +34,96 @@
 
             <a href="/" class="logo"><img src="/icons/Untitled-1.png" alt="" class="img-fluid"></a>
 
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center justify-content-between">
+            <nav id="navbar" class="navbar">
 
-                    <a href="/" class="logo"><img src="./icons/Untitled-1.png" alt=""
-                            class="img-fluid"></a>
-                    <!-- Uncomment below if you prefer to use text as a logo -->
-                    <!-- <h1 class="logo"><a href="/">Butterfly</a></h1> -->
+                <ul>
+                    @guest
 
-                    <nav id="navbar" class="navbar">
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                            </li>
+                            {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
+                        @endif
+                    @else
+                        {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            {{ __('logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+
+                    @endguest
+                    <li class="dropdown"><a href="/en"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/abouten">About University</a></li>
+                            <li><a href="/leaderunien">University Presidency </a></li>
+                            <li><a href="/feesen">Tuition fees </a></li>
+                            <li><a href="/strategyen">University strategy </a></li>
+                            <li><a href="/facutlyen">Doctors </a></li>
+                            <li><a href="/agreementsen">Agreements </a></li>
+                            <li><a href="/leaderworden">University President word</a></li>
+                            <li><a href="/facutlylaben">labs</a></li>
+                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/compusen">compus </a></li>
+                            <li><a href="/chartEn">statistics </a></li>
+
+                            {{-- <li><a href="/papersen">Cellender term </a></li> --}}
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/agreementsen">Registration mechanism</a></li>
+                            <li><a href="/accepten">Acceptable Rules </a></li>
+                            <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
+                                class="bi bi-chevron-down"></i></a>
+
 
                         <ul>
-                            @guest
-
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
-                                    </li>
-                                    {{-- <li><a href="/login"> تسجيل الدخول </a></li> --}}
-                                @endif
-                            @else
-                                {{-- <li><a href="/logout"> تسجيل الخروج </a></li> --}}
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    {{ __('logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-
-
-                            @endguest
-                            <li class="dropdown"><a href="/en"><span>Home</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/abouten">About University</a></li>
-                                    <li><a href="/leaderunien">University Presidency </a></li>
-                                    <li><a href="/feesen">Tuition fees </a></li>
-                                    <li><a href="/strategyen">University strategy </a></li>
-                                    <li><a href="/facutlyen">Doctors </a></li>
-                                    <li><a href="/agreementsen">Agreements </a></li>
-
-                                    <li><a href="/leaderworden">University President word</a></li>
-                                    <li><a href="/facutlylaben">labs</a></li>
-                                    <li><a href="/facutlyresearchen">achievements </a></li>
-                                    <li><a href="/compusen">compus </a></li>
-                                    <li><a href="/chartEn">statistics </a></li>
-
-                                    {{-- <li><a href="/papersen">Cellender term </a></li> --}}
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/agreementsen"><span>Acceptable</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/agreementsen">Registration mechanism</a></li>
-                                    <li><a href="/accepten">Acceptable Rules </a></li>
-                                    <li><a target="_blank" href="https://www.pe-gate.org/">Register Papaer </a></li>
-
-                                </ul>
-                            </li>
-
-
-
-
-
-                            <li class="dropdown"><a href="/facutlyen"><span>Facutlies</span> <i
-                                        class="bi bi-chevron-down"></i></a>
-
-
-                                <ul>
-                                    @foreach ($faculties as $f)
-                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-                                                    <ul>
-                                                        <li><a
-                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                        </li>
-                                                    </ul>
-                                                @endif
-                                            @endforeach
-                                        </li>
+                            @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    @foreach ($departments as $depart)
+                                        @if ($depart->id_facutly == $f->id)
+                                            <ul>
+                                                <li><a
+                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                </li>
+                                            </ul>
+                                        @endif
                                     @endforeach
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
-                                        class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="/facutlylecen">Term lecture table</a></li>
-                                    <li><a href="/facutlyexamen">Exam Table </a></li>
-
-                                </ul>
-                            </li>
-
-                            <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
-                            <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
-                            <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
-
-                            <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+                                </li>
+                            @endforeach
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
-                    </nav><!-- .navbar -->
+                    </li>
+                    <li class="dropdown"><a href="/labexamfacen"><span>Online Studty </span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/facutlylecen">Term lecture table</a></li>
+                            <li><a href="/facutlyexamen">Exam Table </a></li>
+                        </ul>
+                    </li>
 
-                </div>
+                    <li><a class="nav-link scrollto" href="/magazinen">Magazin </a></li>
+                    <li><a class="nav-link scrollto" href="/papersen">Cellender </a></li>
+                    <li><a class="nav-link scrollto" href="/centersen">English Center </a></li>
+
+                    <li><a id="lang" class="nav-link scrollto" href="/">AR </a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle fas fa-menu-bar"></i>
+            </nav><!-- .navbar -->
+
+        </div>
         </div>
     </header><!-- End Header -->
     <!-- end navbar -->
@@ -157,6 +141,17 @@
     <br>
     <br>
 
+    <style>
+        img {
+            height: 250px !important;
+        }
+
+        .col-lg-4 {
+            max-width: 300px !important;
+        }
+
+    </style>
+
 
 
     <!-- ======= Team Section ======= -->
@@ -164,7 +159,6 @@
         <div class="container">
             <h1 class="text-center my-5">رئاسة الجامعة</h1>
             <div class="row text-right">
-
                 @foreach ($doctors as $doct)
                     <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
                         <div class="member">
@@ -185,7 +179,6 @@
                             <div class="member-info">
                                 <h4>{{ $doct->name_en }}</h4>
                                 <span>{{ $doct->position_en }}</span>
-                                <a href="#" class="btn btn-dark my-3 ">visit profile</a>
 
                                 <a href="/leaderen/{{ $doct->id }}/show" class="btn btn-dark my-3 ">Visit
                                     Profile </a>
@@ -202,7 +195,7 @@
 
             <div class="row text-right">
                 @foreach ($leaders as $leader)
-                    <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-sm-12 col-md-5 col-sm-10 d-flex align-items-stretch">
                         <div class="member">
                             <div class="member-img">
                                 <img src="{{ $leader->image }}" class="img-fluid imgs" alt="">
@@ -228,9 +221,6 @@
             </div>
         </div>
     </section><!-- End Team Section -->
-
-
-
 
 
     <!--start footer -->
