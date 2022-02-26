@@ -95,16 +95,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -131,6 +131,7 @@
     <!-- end navbar -->
 
     <!-- start section 2 -->
+    <br><br>
 
     <section class="section-2 ">
         <div class="container-fluid">
@@ -142,7 +143,6 @@
 
                 <div class="col-md-5 col-sm-10">
                     <div class="caption">
-                        <small>جامعة </small>
                         <h2>{{ $agreement->name_ar }}</h2>
                         <p>{{ $agreement->details_ar }}</p>
 

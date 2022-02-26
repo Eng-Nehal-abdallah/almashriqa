@@ -102,16 +102,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -172,7 +172,7 @@
                 <div class="col-md-12 my-5">
                     <div class="caption">
                         <div class="alert alert-light">
-                            <h1> استراتيجه جامعة المشرق </h1>
+                            <h4 class="text-center"> استراتيجه جامعة المشرق </h4>
                         </div>
                         <p>{{ $mash->strategy_ar }}</p>
 

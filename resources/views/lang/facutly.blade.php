@@ -23,10 +23,6 @@
 
     <!-- start box icon -->
 
-
-    <link rel="stylesheet" href="/scss/researchers.css">
-
-
     <!-- start wol js -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
@@ -35,16 +31,13 @@
 
 
     <!-- start wol js -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
     <title>Document</title>
 </head>
 
 {{-- sss --}}
 
-<body>
+<body class="text-left">
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -70,7 +63,7 @@
 
                             <li><a href="/leaderworden">University President word</a></li>
                             <li><a href="/facutlylaben">labs</a></li>
-                            <li><a href="/facutlyresearchen">achievements </a></li>
+                            <li><a href="/facutlyresearchen">Researches </a></li>
                             <li><a href="/compusen">compus </a></li>
                             {{-- <li><a href="/papersen">Cellender term </a></li> --}}
                         </ul>
@@ -93,21 +86,19 @@
                                 class="bi bi-chevron-down"></i></a>
 
 
-                                <ul>
-                                    @foreach ($faculties as $f)
-                                        <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
-                                                    {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                                    <ul>
-                                                        @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li><a
-                                                                href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                        <ul>
+                            @foreach ($faculties as $f)
+                                <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
+                                            {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li><a
+                                                        href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
 
                                 </li>
                             @endforeach
@@ -138,11 +129,7 @@
 
 
 
-<<<<<<< HEAD
-    <ul class="nav justify-content-center child">
-=======
 
->>>>>>> 6540ddc29f1abfedfe62c0e256d962e24388c2a4
 
 
     <div class="header">
@@ -362,18 +349,18 @@
     <section id="trainers" class="trainers ">
         <div class="container" data-aos="fade-up">
             <hr>
-            <h2 class="text-center color my-3">First Student</h2>
+            <h2 class="text-center color my-3">first student</h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 @foreach ($students as $st)
                     @if ($st->id_facutly == $facutly->id)
-                        <div class="col-lg-4  m-1 col-md-6 d-flex align-items-stretch">
+                        <div class="col-lg-4  col-md-6 d-flex align-items-stretch">
 
                             <div class="member">
                                 <img src="/{{ $st->image }}" class="img-fluid" alt="">
-                                <div class="member-content">
+                                <div class="member-content ">
                                     <h1 class="inside bg-color">{{ $st->grade_en }}</h1>
 
-                                    <h4>{{ $st->name_en }}</h4>
+                                    <h4 class=""> {{ $st->name_en }}</h4>
                                     <span
                                         class="badge bg-color d-inline-block badge-secondary p-3">{{ $st->level_en }}</span>
 
@@ -382,8 +369,6 @@
                         </div>
                     @endif
                 @endforeach
-
-
             </div>
 
         </div>
@@ -395,6 +380,7 @@
     <section class="section-5  bg-light">
         <div class="container">
             <div class="caption ">
+                <hr>
                 <h1 class="text-center my-3">
                     LABS
                 </h1>

@@ -22,7 +22,7 @@ body.dark {
 }
 
 section.section-1 {
-  margin: 100px 0;
+  margin: 120px 0 !important;
 }
 
 section.section-1.dark {

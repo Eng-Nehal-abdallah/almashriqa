@@ -97,16 +97,16 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -140,7 +140,7 @@
         <i class="fas moon"></i>
     </div>
     <!-- start light & dark -->
-
+    <br><br><br>
     <!-- start seection 2 -->
     <section class="section-2">
         <div class="row justify-content-around">
@@ -150,6 +150,8 @@
                 <img src="{{ $compus->image }}" alt="">
             </div>
             <div class="col-md-5">
+                <br>
+
                 <h2> {{ $compus->name_ar }}</h2>
                 <p>{{ $compus->details_ar }}.</p>
             </div>

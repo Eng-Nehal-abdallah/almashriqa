@@ -36,12 +36,6 @@ body.dark {
   transition: all 0.3s ease-out;
 }
 
-img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
 ul.child {
   position: absolute;
   top: 80px;
@@ -156,6 +150,12 @@ section.section-1 {
   margin-top: 70px;
 }
 
+section.section-1 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-1 .col-md-3 {
   padding: 20px 5px;
   -webkit-box-align: center;
@@ -208,6 +208,12 @@ section.section-2 {
   border: 1px solid #ffffff;
   -webkit-box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.222);
           box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.222);
+}
+
+section.section-2 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 section.section-2 * {
@@ -275,6 +281,12 @@ section.section-2.dark {
   border: 1px solid #eef0ef;
   overflow: hidden;
   border-radius: 5px;
+}
+
+.trainers img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 .trainers .inside {
@@ -353,6 +365,12 @@ section.section-about {
 
 section.section-about h2 {
   text-transform: uppercase;
+}
+
+section.section-about img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 section.section-5 {
@@ -442,6 +460,12 @@ section.section-5.dark {
   background-color: transparent !important;
 }
 
+section.section-5 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 @media (max-width: 600px) {
   section.section-5 .slick-prev:before,
   section.section-5 .slick-next:before {
@@ -469,6 +493,12 @@ section.section-5.dark {
 
 .section-3.dark .caption h1 {
   color: #fff;
+}
+
+.section-3 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 @media (max-width: 400px) {
@@ -536,6 +566,12 @@ section.section-4.dark {
   color: #fff;
 }
 
+section.section-4 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-5 {
   margin: 50px 0;
   background-color: transparent !important;
@@ -556,6 +592,12 @@ section.section-5.dark {
   color: #fff;
 }
 
+section.section-5 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-6 {
   color: #002101;
 }
@@ -573,6 +615,12 @@ section.section-6 table img {
 
 section.section-6.dark {
   color: #fff;
+}
+
+section.section-6 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -653,6 +701,12 @@ section.section-6.dark {
   color: #0f394c;
 }
 
+.team img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .team .member-img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -714,6 +768,12 @@ section.section-7.dark button {
 
 section.section-7.dark {
   background-color: transparent !important;
+}
+
+section.section-7 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 @media (max-width: 500px) {
@@ -793,6 +853,12 @@ section.section-6.dark {
   background-color: transparent !important;
 }
 
+section.section-6 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-8 li {
   list-style: circle;
 }
@@ -819,6 +885,12 @@ section.section-8.dark {
   background-color: transparent !important;
 }
 
+section.section-8 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 section.section-9 li a {
   color: #333;
 }
@@ -831,6 +903,12 @@ section.section-9 .nav-tabs .nav-link.active {
 
 section.section-9.dark {
   background-color: transparent !important;
+}
+
+section.section-9 img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 footer .footer-top .footer-links {

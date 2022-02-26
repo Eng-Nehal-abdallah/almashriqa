@@ -97,19 +97,21 @@
 
 
                         <ul>
-                            @foreach ($Facutlies as $f)
+                            @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
 
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
 
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -185,7 +187,6 @@
                     @endif
                 @endforeach
 
-<<<<<<< HEAD
                 <div class="alert alert-light">
                     <h2 class="text-center my-5">الكادر التدريسي للكلية </h2>
 
@@ -206,44 +207,47 @@
                                                         <a href="$social->link">{{ $type->name_ar }}</a>
                                                     @endif
                                                 @endforeach
-=======
+
+                                                <h1 class="text-center my-5">الكادر التدريسي للكلية </h1>
+
+                                                <div class="row text-right">
+
+                                                    @foreach ($doctors as $doc)
+                                                        @if ($doc->id_facutly == $facutly->id)
+                                                            <div
+                                                                class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                                                                <div class="member">
+                                                                    <div class="member-img">
+                                                                        <img src="/{{ $doc->image }}"
+                                                                            class="img-fluid imgs" alt="">
+                                                                        <div class="social">
+                                                                            @foreach ($types as $type)
+                                                                                @foreach ($socials as $social)
+                                                                                    @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                                                                                        <a
+                                                                                            href="$social->link">{{ $type->name_ar }}</a>
+                                                                                    @endif
+
+                                                                                @endforeach
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="member-info">
+                                                                        <h4>{{ $doc->name_ar }}</h4>
+                                                                        <span>{{ $doc->private_specific_ar }}/{{ $doc->public_specific_ar }}</span>
+                                                                        <a href="#" class="btn btn-dark my-3 ">زيارة
+                                                                            الملف
+                                                                            الشخصي</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
 
 
-            <h1 class="text-center my-5">الكادر التدريسي للكلية </h1>
 
-            <div class="row text-right">
+                                                </div>
 
-                @foreach ($doctors as $doc)
-                    @if ($doc->id_facutly == $facutly->id)
-                        <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
-                            <div class="member">
-                                <div class="member-img">
-                                    <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
-                                    <div class="social">
-                                        @foreach ($types as $type)
-                                            @foreach ($socials as $social)
-                                                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
-                                                    <a href="$social->link">{{ $type->name_ar }}</a>
-                                                @endif
->>>>>>> 14d1b433ccbf7f075057e0e26507f577c894e96f
-                                            @endforeach
                                         </div>
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>{{ $doc->name_ar }}</h4>
-                                        <span>{{ $doc->private_specific_ar }}/{{ $doc->public_specific_ar }}</span>
-                                        <a href="#" class="btn btn-dark my-3 ">زيارة الملف الشخصي</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-
-
-
-                </div>
-
-            </div>
     </section><!-- End Team Section -->
 
 

@@ -104,16 +104,16 @@
                             @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -160,11 +160,14 @@
         <i class="fas moon"></i>
     </div>
     <!-- start light & dark -->
-
+    <div class="container">
+        <div class="alert my-2 alert-light">
+            <h3 class="text-center ">معدل القبول والاقساط الدراسية لعام 2021-2022</h3>
+        </div>
+    </div>
     <!-- start section 1 -->
     <section class="section-1">
         <div class="head text-center">
-            <h3 class="my-3 p-3 ">معدل القبول والاقساط الدراسية لعام 2021-2022</h3>
             <!-- <p>small text</p> -->
         </div>
         @foreach ($fees as $f)

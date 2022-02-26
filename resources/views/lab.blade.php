@@ -103,16 +103,16 @@
                             @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -169,14 +169,14 @@
             <div class="row">
                 @foreach ($labs as $lab)
                     @if ($lab->id_faculty == $facutly->id)
-                        <div class="col-md-4">
+                        <div class="col-md-4 my-2">
                             <div class="card">
 
                                 <img src="/{{ $lab->image }}" class="card-img" alt="...">
 
 
                             </div>
-                            <div class="card p-3 ">
+                            <div class="card p-3 my-1">
                                 <h4 class="">{{ $lab->name_ar }}</h4>
 
 
@@ -185,7 +185,7 @@
                                     <br>
                                 </p>
                                 <a href="/lab/{{ $lab->id }}/show"
-                                    class="btn  btn-warning main m-auto ">التفاصيل</a>
+                                    class="btn btn-block  btn-warning main m-auto ">التفاصيل</a>
                             </div>
                         </div>
                     @endif

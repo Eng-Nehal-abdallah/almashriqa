@@ -79,7 +79,9 @@ img {
 
 img {
   width: 100% !important;
-  height: 100% !important;
+  -o-object-fit: fill;
+     object-fit: fill;
+  height: 400px;
   display: block;
 }
 
@@ -106,6 +108,7 @@ section.section-1 {
 
 section.section-1 img {
   border-radius: 30px;
+  margin-top: 70px;
 }
 
 footer .footer-top .footer-links {

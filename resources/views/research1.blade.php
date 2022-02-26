@@ -107,16 +107,16 @@
                             @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul> @foreach ($departments as $depart)
-                                                @if ($depart->id_facutly == $f->id)
-
-                                                        <li>
-                                                            <a href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
-                                                        </li>
-
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
+                                                <li>
+                                                    <a
+                                                        href="/department/{{ $depart->id }}/show">{{ $depart->name_ar }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -163,13 +163,13 @@
                             <div class="carousel-item active">
                                 <img src="/{{ $achievement->image }}" class="d-block w-100" alt="...">
                             </div>
-                            @foreach($images as $image)
-                            @if($image->id_achievement ==$achievement->id)
-                            <div class="carousel-item">
-                                <img src="/{{ $image->image }}" class="d-block w-100" alt="...">
-                            </div>
-                            @endif
-@endforeach
+                            @foreach ($images as $image)
+                                @if ($image->id_achievement == $achievement->id)
+                                    <div class="carousel-item">
+                                        <img src="/{{ $image->image }}" class="d-block w-100" alt="...">
+                                    </div>
+                                @endif
+                            @endforeach
 
 
                         </div>
@@ -215,8 +215,7 @@
                                     <div class="single-awesome-project">
                                         <div class="awesome-img">
                                             <a href="/ach/{{ $lab->id }}/show">
-                                                <img src="/{{ $lab->image }}"
-                                                    alt="" /></a>
+                                                <img src="/{{ $lab->image }}" alt="" /></a>
                                             <div class="add-actions text-center">
                                                 <div class="project-dec">
                                                     <a class="portfolio-lightbox" data-gallery="myGallery"

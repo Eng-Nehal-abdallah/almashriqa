@@ -111,17 +111,15 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                             {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul>
-                                                @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
                                                 <li><a
                                                         href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                 </li>
-
-                                        @endif
-                                    @endforeach
-                                </ul>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -187,7 +185,7 @@
 
 
                         <div class="alert alert-light">
-                            <h1 class="heading">Almashriq University strategy</h1>
+                            <h4 class="heading">Almashriq University strategy</h4>
                         </div>
                         <p>{{ $mash->strategy_en }}</p>
 

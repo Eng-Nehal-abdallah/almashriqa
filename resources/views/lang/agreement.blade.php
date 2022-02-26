@@ -97,17 +97,15 @@
                             @foreach ($faculties as $f)
                                 <li class="dropdown"><a href="/Facutlyen/{{ $f->id }}/show"><span>
                                             {{ $f->name_en }}</span> <i class="bi bi-chevron-right"></i></a>
-                                            <ul>
-                                                @foreach ($departments as $depart)
-                                        @if ($depart->id_facutly == $f->id)
-
+                                    <ul>
+                                        @foreach ($departments as $depart)
+                                            @if ($depart->id_facutly == $f->id)
                                                 <li><a
                                                         href="/departmenten/{{ $depart->id }}/show">{{ $depart->name_en }}</a>
                                                 </li>
-
-                                        @endif
-                                    @endforeach
-                                </ul>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -144,12 +142,11 @@
             </div>
             <div class="row justify-content-around">
                 @foreach ($agreements as $ag)
-                    <div class="col-md-5">
+                    <div class="col-md-5 my-2">
                         <img class="rounded" src="{{ $ag->image }}" alt="">
                         <i class="fas fa-handshake"></i>
                         <h2 class="d-inline text-capitalize">{{ $ag->name_en }}</h2>
                         <p>{{ $ag->abstract_en }}</p>
-                        {{-- <a class="btn  btn-light" href"{{ $ag->pdf }}">Download</a> --}}
                         <a href="/agreementsen/{{ $ag->id }}/show" class="btn btn-secondary">More</a>
                     </div>
                 @endforeach

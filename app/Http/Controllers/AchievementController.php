@@ -68,8 +68,8 @@ class AchievementController extends Controller
  public function achievement(achievement $achievement)
     {    $Facutlies = Facutly::all();
         $departments = Department::all();
-$labs=Lab::all();
-$images=Images::all();
+        $labs=Lab::all();
+        $images=Images::all();
 
         $achievements = achievement::all();
         $types = Typeachievement::all();
