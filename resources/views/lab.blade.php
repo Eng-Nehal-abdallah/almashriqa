@@ -100,7 +100,7 @@
 
 
                         <ul>
-                            @foreach ($faculties as $f)
+                            @foreach ($Facutlies as $f)
                                 <li class="dropdown"><a href="/Facutly/{{ $f->id }}/show"><span>
                                             {{ $f->name_ar }}</span> <i class="bi bi-chevron-right"></i></a>
                                     @foreach ($departments as $depart)

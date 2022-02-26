@@ -184,6 +184,7 @@
                     @endif
                 @endforeach
 
+<<<<<<< HEAD
                 <div class="alert alert-light">
                     <h2 class="text-center my-5">الكادر التدريسي للكلية </h2>
 
@@ -204,6 +205,26 @@
                                                         <a href="$social->link">{{ $type->name_ar }}</a>
                                                     @endif
                                                 @endforeach
+=======
+
+
+            <h1 class="text-center my-5">الكادر التدريسي للكلية </h1>
+
+            <div class="row text-right">
+
+                @foreach ($doctors as $doc)
+                    @if ($doc->id_facutly == $facutly->id)
+                        <div class="col-lg-4 col-sm-12 col-md-5 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="/{{ $doc->image }}" class="img-fluid imgs" alt="">
+                                    <div class="social">
+                                        @foreach ($types as $type)
+                                            @foreach ($socials as $social)
+                                                @if ($social->id_type == $type->id && $doc->id == $social->id_leader)
+                                                    <a href="$social->link">{{ $type->name_ar }}</a>
+                                                @endif
+>>>>>>> 14d1b433ccbf7f075057e0e26507f577c894e96f
                                             @endforeach
                                         </div>
                                     </div>
